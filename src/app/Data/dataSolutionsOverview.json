@@ -1,0 +1,44 @@
+[
+  {
+    "icon": "/assets/images/skelton/data-engineering-pipelines-skelton.png",
+    "title": "Data Engineering & Pipelines",
+    "desc": "We design and build the pipelines that move data from your operational systems into a reliable, governed platform — batch, real-time, and everything in between.",
+    "btnText": "Explore Data Engineering",
+    "btnLink": "/data-solutions/data-engineering-pipelines"
+  },
+  {
+    "icon": "/assets/images/skelton/cloud-data-platforms-skelton.png",
+    "title": "Cloud Data Platforms",
+    "desc": "We implement and optimise cloud data warehouses — Snowflake, BigQuery, Databricks, and Redshift — selected and configured for your workload, team, and cost profile.",
+    "btnText": "Explore Cloud Platforms",
+    "btnLink": "/data-solutions/cloud-data-platforms"
+  },
+  {
+    "icon": "/assets/images/skelton/data-governance-quality-skelton.png",
+    "title": "Data Governance & Quality",
+    "desc": "We build the catalogue, lineage, quality rules, and ownership model that turns your data platform from a collection of tables into a trusted, governed asset.",
+    "btnText": "Explore Data Governance",
+    "btnLink": "/data-solutions/data-governance"
+  },
+  {
+    "icon": "/assets/images/skelton/analytics-business-intelligence-skelton.png",
+    "title": "Analytics & Business Intelligence",
+    "desc": "We build the analytics platform and dashboards your teams actually use — with consistent metric definitions, self-serve capability, and data that everyone trusts.",
+    "btnText": "Explore Analytics & BI",
+    "btnLink": "/data-solutions/analytics-business-intelligence"
+  },
+  {
+    "icon": "/assets/images/skelton/reporting-visualisation-skelton.png",
+    "title": "Reporting & Visualisation",
+    "desc": "We design and build reporting systems that deliver the right numbers to the right people automatically — scheduled, governed, and presented in a format decision-makers can use.",
+    "btnText": "Explore Reporting",
+    "btnLink": "/data-solutions/reporting-visualisation"
+  },
+  {
+    "icon": "/assets/images/skelton/data-strategy-consulting-skelton.png",
+    "title": "Data Strategy Consulting",
+    "desc": "We work with CDOs and data leadership to define where data creates the most business value — and build a funded, sequenced roadmap to get there.",
+    "btnText": "Explore Data Strategy",
+    "btnLink": "/data-solutions/data-strategy-consulting"
+  }
+]

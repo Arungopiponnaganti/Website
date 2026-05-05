@@ -1,0 +1,1404 @@
+/* Cloud & DevOps Service Page — supplemental styles */
+/* Extends custom-dev.css; import both on the page */
+
+/* ── Full-width Split Hero ───────────────────────────────── */
+.cd-hero-split {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  background: #111827;
+}
+
+/* Left pane — deep shadow terminal */
+.cd-hero-left {
+  flex: 0 0 50%;
+  /* background: #080808; */
+  background-image: radial-gradient(ellipse at 30% 60%, rgba(74, 222, 128, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(96, 165, 250, 0.04) 0%, transparent 50%);
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+  /* extend up behind fixed header */
+  /* margin-top: -120px; */
+  padding-top: 48px;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  /* definite height so inner flex proportions resolve and overflow: hidden works */
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.cd-terminal-fullpane {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.cd-term-body-full {
+  flex: 1;
+  padding: 32px 40px 40px;
+  font-family: var(--font-mono, 'Courier New', monospace);
+  overflow-y: auto;
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge */
+}
+
+.cd-term-body-full::-webkit-scrollbar {
+  display: none;
+  /* Chrome/Safari */
+}
+
+.cd-term-body-full .cd-tl {
+  font-size: 14px;
+  line-height: 2;
+  white-space: pre;
+}
+
+/* Right pane — dark content */
+.cd-hero-right {
+  flex: 0 0 50%;
+  background: #111827;
+  background-image: radial-gradient(ellipse at 70% 50%, rgba(255, 60, 0, 0.06) 0%, transparent 55%);
+  display: flex;
+  align-items: center;
+  /* extend up behind fixed header */
+  margin-top: -120px;
+  padding-top: 120px;
+}
+
+.cd-hero-content {
+  padding: 80px 72px 80px 64px;
+  max-width: 620px;
+}
+
+/* Eyebrow pill */
+.cd-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(74, 222, 128, 0.08);
+  color: #4ade80;
+  font-size: 12px;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 28px;
+  font-family: var(--font-mono, monospace);
+  font-weight: 500;
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  letter-spacing: 0.02em;
+}
+
+.cd-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Heading */
+.cd-hero-heading {
+  font-size: clamp(32px, 3.2vw, 52px);
+  font-weight: 800;
+  color: #f9fafb;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+/* Subheadline */
+.cd-hero-sub {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #9ca3af;
+  margin-bottom: 32px;
+  max-width: 520px;
+}
+
+/* Tags */
+.cd-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.cd-hero-tag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 99px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #d1d5db;
+  background: rgba(255, 255, 255, 0.05);
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.cd-hero-tag:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* CTAs */
+.cd-hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.cd-cta-primary {
+  display: inline-block;
+  background: #ffffff;
+  color: #0d0d0d;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.18s, transform 0.18s;
+  letter-spacing: -0.01em;
+}
+
+.cd-cta-primary:hover {
+  background: #e5e7eb;
+  color: #0d0d0d;
+  transform: translateY(-1px);
+}
+
+.cd-cta-ghost {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #ff3c00;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.cd-cta-ghost:hover {
+  opacity: 0.75;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .cd-hero-content {
+    padding: 60px 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .cd-hero-split {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .cd-hero-left {
+    flex: none;
+    min-height: 400px;
+    order: 2;
+  }
+
+  .cd-hero-right {
+    flex: none;
+    order: 1;
+  }
+
+  .cd-hero-content {
+    padding: 48px 24px;
+    max-width: 100%;
+  }
+
+  .cd-term-body-full {
+    padding: 20px 24px;
+  }
+
+  .cd-term-body-full .cd-tl {
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+  .cd-term-body-main {
+    padding: 16px 20px;
+  }
+
+  .cd-term-body-main .cd-tl {
+    font-size: 12px;
+  }
+
+  .cd-term-pane-bottom {
+    flex-direction: column;
+  }
+
+  .cd-term-pane-secondary {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+}
+
+/* ── Terminal pane grid (Hero left side) ─────────────────── */
+.cd-terminal-fullpane {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Primary terminal — top ~60% */
+.cd-term-pane-main {
+  flex: 3;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+/* Bottom row: monitoring terminal + table */
+.cd-term-pane-bottom {
+  flex: 2;
+  min-height: 0;
+  display: flex;
+  overflow: hidden;
+}
+
+.cd-term-pane-secondary {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.cd-term-pane-table {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Pane label bar */
+.cd-term-pane-label {
+  padding: 6px 18px;
+  font-size: 9px;
+  font-family: var(--font-mono, monospace);
+  color: #3f4a5a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+/* Primary terminal body (larger font) */
+.cd-term-body-main {
+  flex: 1;
+  min-height: 0;
+  padding: 28px 36px 32px;
+  font-family: var(--font-mono, 'Courier New', monospace);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 18%);
+}
+
+.cd-term-body-main .cd-tl {
+  font-size: 14px;
+  line-height: 2;
+  white-space: pre;
+}
+
+/* Secondary terminal body (smaller) */
+.cd-term-body-sm {
+  flex: 1;
+  min-height: 0;
+  padding: 14px 18px;
+  font-family: var(--font-mono, 'Courier New', monospace);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
+}
+
+.cd-term-body-sm .cd-tl {
+  font-size: 12px;
+  line-height: 1.85;
+  white-space: pre;
+}
+
+/* ── Deploy log table ─────────────────────────────────────── */
+.cd-log-table-wrap {
+  flex: 1;
+  min-height: 0;
+  padding: 10px 16px 14px;
+  overflow: hidden;
+  font-family: var(--font-mono, monospace);
+}
+
+.cd-log-table-header {
+  display: grid;
+  grid-template-columns: 2fr 1.6fr 1fr 0.8fr 1fr;
+  gap: 4px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  margin-bottom: 2px;
+}
+
+.cd-log-table-header span {
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #3f4a5a;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cd-log-row {
+  display: grid;
+  grid-template-columns: 2fr 1.6fr 1fr 0.8fr 1fr;
+  gap: 4px;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  animation: cdRowIn 0.18s ease-out both;
+}
+
+.cd-log-row span {
+  font-size: 9px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@keyframes cdRowIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Terminal Card (Hero) ─────────────────────────────────── */
+.cd-terminal-card {
+  background: #141414;
+  border-radius: 14px;
+  overflow: hidden;
+  margin-left: auto;
+  max-width: 460px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.5);
+}
+
+.cd-term-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: #1e1e1e;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.cd-term-dots {
+  display: flex;
+  gap: 5px;
+}
+
+.cd-term-dots span {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: block;
+}
+
+.cd-term-title {
+  font-size: 12px;
+  color: #555;
+  font-family: var(--font-mono, monospace);
+  margin-left: 6px;
+}
+
+.cd-term-body {
+  padding: 18px 20px 22px;
+  font-family: var(--font-mono, 'Courier New', monospace);
+}
+
+.cd-tl {
+  font-size: 12px;
+  line-height: 1.9;
+  white-space: pre;
+}
+
+.tc-gray {
+  color: #6b7280;
+}
+
+.tc-green {
+  color: #4ade80;
+}
+
+.tc-blue {
+  color: #60a5fa;
+}
+
+.tc-yellow {
+  color: #fbbf24;
+}
+
+.tc-white {
+  color: #e5e5e5;
+}
+
+.tc-cyan {
+  color: #22d3ee;
+}
+
+.cd-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  background: #4ade80;
+  vertical-align: middle;
+  animation: cdBlink 1s step-end infinite;
+}
+
+@keyframes cdBlink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ── Metrics Strip ───────────────────────────────────────── */
+.cd-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-bottom: 1px solid #e5e7eb;
+  background: #fff;
+}
+
+.cd-met {
+  padding: 24px 22px;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cd-met:last-child {
+  border-right: none;
+}
+
+.cd-met-n {
+  font-size: 26px;
+  font-weight: 700;
+  color: #050a1e;
+  font-family: var(--font-mono, monospace);
+  letter-spacing: -0.5px;
+}
+
+.cd-met-l {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.cd-met-trend {
+  font-size: 11px;
+  font-weight: 500;
+  color: #10b981;
+  margin-top: 2px;
+}
+
+@media (max-width: 991px) {
+  .cd-metrics-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575px) {
+  .cd-metrics-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cd-met:nth-child(2n) {
+    border-right: none;
+  }
+}
+
+/* ── Architecture Kanban Board ───────────────────────────── */
+.cd-kanban-wrap {
+  overflow: hidden;
+}
+
+.cd-kanban-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 24px;
+}
+
+.cd-kanban-toolbar-tabs {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0;
+  background: #f4f4f4;
+  /* border: 1px solid #e5e7eb; */
+  border-radius: 12px;
+  padding: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.cd-kanban-board {
+  padding: 20px;
+}
+
+
+/* Column */
+.cd-kb-col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: rgb(0 0 0 / 15%) 6px 8px 15px -14px;
+}
+
+.cd-kb-col-hd {
+  display: flex;
+  align-items: center;
+  padding: 0 2px 4px;
+}
+
+.cd-kb-col-hd-left {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.cd-kb-col-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  display: block;
+}
+
+.cd-kb-col-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.cd-kb-col-cnt {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+  background: #e5e7eb;
+  padding: 1px 7px;
+  border-radius: 99px;
+  line-height: 1.6;
+}
+
+/* Cards list */
+.cd-kb-col-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Card */
+.cd-kb-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px;
+  cursor: pointer;
+  transition: box-shadow 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.cd-kb-card:hover,
+.cd-kb-card.active {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  border-color: #d1d5db;
+  transform: translateY(-1px);
+}
+
+.cd-kb-card.active {
+  border-color: #050a1e;
+  transform: none;
+}
+
+.cd-kb-card-hd {
+  margin-bottom: 8px;
+}
+
+.cd-kb-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 99px;
+  letter-spacing: 0.02em;
+}
+
+.cd-kb-card-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.cd-kb-card-sub {
+  font-size: 11px;
+  color: #9ca3af;
+  line-height: 1.4;
+}
+
+@media (max-width: 767px) {
+  .cd-kanban-board {
+    padding: 14px;
+  }
+
+}
+
+/* ── Architecture Visualiser (legacy — kept for reference) ── */
+.cd-arch-canvas {
+  background: #f8f9fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.cd-arch-layers {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cd-arch-layer {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.cd-layer-lbl {
+  font-size: 10px;
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  width: 82px;
+  flex-shrink: 0;
+  padding-top: 10px;
+}
+
+.cd-layer-nodes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1;
+}
+
+.cd-node {
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  min-width: 100px;
+}
+
+.cd-node:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.cd-node.active {
+  border-color: #050a1e;
+}
+
+.cd-node-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-bottom: 6px;
+}
+
+.cd-node-dot.green {
+  background: #4ade80;
+}
+
+.cd-node-dot.blue {
+  background: #60a5fa;
+}
+
+.cd-node-dot.amber {
+  background: #fbbf24;
+}
+
+.cd-node-dot.purple {
+  background: #a78bfa;
+}
+
+.cd-node-dot.red {
+  background: #f87171;
+}
+
+.cd-node-t {
+  font-size: 12px;
+  font-weight: 600;
+  color: #050a1e;
+  margin-bottom: 2px;
+}
+
+.cd-node-d {
+  font-size: 11px;
+  color: #9ca3af;
+  line-height: 1.3;
+}
+
+.cd-arch-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.cd-at {
+  padding: 8px 20px;
+  font-size: 13px;
+  font-family: inherit;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #6b7280;
+  background: #fff;
+  transition: all 0.15s;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.cd-at:hover {
+  border-color: #d1d5db;
+  color: #374151;
+  background: #f9fafb;
+}
+
+.cd-at.on {
+  background: #e63329;
+  color: #fff;
+  border-color: #e63329;
+}
+
+@media (max-width: 767px) {
+  .cd-layer-lbl {
+    display: none;
+  }
+}
+
+/* ── Services List — dark cards, alternating layout ─────────── */
+
+/* Dark card row */
+.cd-svc-row {
+  background: #0d1526;
+}
+
+/* Image panel — fill cover */
+.cd-svc-img-col {
+  min-height: 220px;
+  overflow: hidden;
+}
+
+.cd-svc-img {
+  transition: transform 0.4s ease;
+}
+
+.cd-svc-row:hover .cd-svc-img {
+  transform: scale(1.04);
+}
+
+/* Description column — right divider on desktop */
+.cd-svc-desc-col {
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Sub-text colour */
+.cd-svc-sub-text {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+/* Tool badges */
+.cd-svc-tool-badge {
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.07);
+  color: rgba(255, 255, 255, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  white-space: nowrap;
+}
+
+/* Deliverables label */
+.cd-svc-del-label {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+/* Deliverables list — dashed separators */
+.cd-svc-del-list li {
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.cd-svc-del-list li:first-child {
+  padding-top: 0 !important;
+}
+
+.cd-svc-del-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0 !important;
+}
+
+/* Dot bullet */
+.cd-svc-del-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  margin-top: 8px;
+  display: inline-block;
+}
+
+/* Deliverable item text */
+.cd-svc-del-text {
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+/* ── Mobile overrides (≤991px) ───────────────────────────── */
+@media (max-width: 991px) {
+  /* Columns always stack: image → desc → points (order-1/2/3 in JSX) */
+
+  .cd-svc-img-col {
+    min-height: 220px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-right: none !important;
+  }
+
+  .cd-svc-desc-col {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
+/* ── Maturity Model v2 (Enterprise Dark) ─────────────────── */
+
+.cdm-section {
+  background: #070d1a;
+}
+
+/* Assessment panel card */
+.cdm-panel {
+  background: #0d1526;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+/* Column header row */
+.cdm-panel-hd {
+  display: grid;
+  grid-template-columns: 240px 1fr 190px;
+  gap: 16px;
+  padding: 12px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.2);
+  font-family: var(--font-mono, monospace);
+}
+
+/* Dimension row */
+.cdm-dim-row {
+  display: grid;
+  grid-template-columns: 240px 1fr 190px;
+  gap: 16px;
+  align-items: center;
+  padding: 18px 28px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.15s ease;
+}
+
+.cdm-dim-row:last-child {
+  border-bottom: none;
+}
+
+.cdm-dim-row:hover {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+/* Dimension label */
+.cdm-dim-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.cdm-dim-num {
+  font-size: 10px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.12);
+  font-family: var(--font-mono, monospace);
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+}
+
+.cdm-dim-name {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #d1d5db;
+  line-height: 1.3;
+}
+
+/* Step indicator */
+.cdm-steps-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.cdm-step-track-bg {
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 1px;
+  pointer-events: none;
+}
+
+.cdm-step-track-fill {
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 2px;
+  background: linear-gradient(to right, #4ade80, #22d3ee);
+  border-radius: 1px;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+.cdm-step-btn {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 12px 2px;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+.cdm-step-btn:focus-visible {
+  outline: 2px solid rgba(74, 222, 128, 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.cdm-step-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.14);
+  background: #070d1a;
+  transition: border-color 0.2s ease, background 0.2s ease,
+              width 0.2s ease, height 0.2s ease, box-shadow 0.2s ease,
+              transform 0.15s ease;
+  display: block;
+}
+
+.cdm-step-btn:hover .cdm-step-dot {
+  border-color: rgba(74, 222, 128, 0.45);
+  transform: scale(1.2);
+}
+
+.cdm-step-btn.cdm-step-active .cdm-step-dot {
+  border-color: #4ade80;
+  background: #4ade80;
+}
+
+.cdm-step-btn.cdm-step-current .cdm-step-dot {
+  width: 14px;
+  height: 14px;
+  border-color: #4ade80;
+  background: #4ade80;
+  box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.15),
+              0 0 10px rgba(74, 222, 128, 0.35);
+}
+
+/* Current state label */
+.cdm-dim-val {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4ade80;
+  text-align: right;
+  font-family: var(--font-mono, monospace);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+/* ── Result panel ─────────────────────────────────────────── */
+.cdm-result {
+  background: #0d1526;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 16px;
+  padding: 28px 32px;
+  margin-top: 16px;
+  animation: cdmIn 0.28s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes cdmIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cdm-result { animation: none; }
+  .cdm-step-track-fill,
+  .cdm-step-dot,
+  .cdm-step-btn .cdm-step-dot { transition: none; }
+}
+
+/* Score header row */
+.cdm-result-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 20px;
+}
+
+.cdm-score-block {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cdm-score {
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1;
+  font-family: var(--font-mono, monospace);
+  letter-spacing: -0.03em;
+  display: block;
+  transition: color 0.4s ease;
+}
+
+.cdm-level-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 11px;
+  border-radius: 99px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: var(--font-mono, monospace);
+  width: fit-content;
+}
+
+.cdm-badge-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.cdm-result-meta {
+  flex: 1;
+  padding-top: 6px;
+}
+
+.cdm-result-label {
+  font-size: 17px;
+  font-weight: 700;
+  color: #f9fafb;
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.cdm-result-sublabel {
+  font-size: 13.5px;
+  color: #6b7280;
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+/* Progress bar */
+.cdm-progress-track {
+  height: 5px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 3px;
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+
+.cdm-progress-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Recommendation cards */
+.cdm-recs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.cdm-rec {
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 16px 18px;
+  border-left-width: 3px;
+  border-left-style: solid;
+  transition: background 0.15s ease;
+}
+
+.cdm-rec:hover {
+  background: rgba(255, 255, 255, 0.045);
+}
+
+.cdm-rec-t {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f3f4f6;
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+
+.cdm-rec-d {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* CTA button */
+.cdm-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  color: #070d1a !important;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 13px 26px;
+  border-radius: 8px;
+  text-decoration: none !important;
+  letter-spacing: -0.01em;
+  transition: background 0.18s ease, transform 0.18s ease;
+  cursor: pointer;
+}
+
+.cdm-cta:hover {
+  background: #e5e7eb;
+  color: #070d1a !important;
+  transform: translateY(-1px);
+}
+
+.cdm-cta:focus-visible {
+  outline: 2px solid rgba(255, 255, 255, 0.5);
+  outline-offset: 3px;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 991px) {
+  .cdm-panel-hd,
+  .cdm-dim-row {
+    grid-template-columns: 200px 1fr 150px;
+    padding: 16px 20px;
+  }
+}
+
+@media (max-width: 767px) {
+  .cdm-panel-hd {
+    display: none;
+  }
+
+  .cdm-dim-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 16px 18px;
+  }
+
+  .cdm-dim-val {
+    text-align: left;
+    font-size: 11px;
+  }
+
+  .cdm-result {
+    padding: 20px 18px;
+  }
+
+  .cdm-result-header {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cdm-score {
+    font-size: 42px;
+  }
+
+  .cdm-recs {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+/* ── Cloud Provider Cards ─────────────────────────────────── */
+.cd-cloud-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.cd-cloud-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.15s, box-shadow 0.15s;
+  background: #fff;
+}
+
+.cd-cloud-card:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.cd-cloud-card.sel {
+  border: 2px solid #050a1e;
+}
+
+.cd-cloud-head {
+  padding: 16px 18px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cd-cloud-logo {
+  width: 32px;
+  height: 32px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.cd-cloud-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #050a1e;
+}
+
+.cd-cloud-cert {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 99px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.cd-cloud-body {
+  padding: 14px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.cd-cloud-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  border-bottom: 1px solid #f3f4f6;
+  padding: 7px 0;
+}
+
+.cd-cloud-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cd-cloud-row-l {
+  color: #9ca3af;
+  flex-shrink: 0;
+}
+
+.cd-cloud-row-r {
+  color: #1f2937;
+  font-weight: 500;
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  .cd-cloud-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Section spacing helpers ─────────────────────────────── */
+.cd-devops-page .cd-section-white {
+  background: #fff;
+}
+
+.cd-devops-page .cd-section-muted {
+  background: #fafbfc;
+}
+
+/* ── Responsive adjustments ──────────────────────────────── */
+@media (max-width: 767px) {
+  .cd-terminal-card {
+    max-width: 100%;
+  }
+}

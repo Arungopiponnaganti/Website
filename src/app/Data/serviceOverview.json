@@ -1,0 +1,58 @@
+[
+  {
+    "icon": "/assets/images/skelton/custom-software-development-skelton.png",
+    "title": "Custom Software Development",
+    "desc": "We build web applications, APIs, and internal tools from a defined brief — using modern frameworks, delivered in sprints with working software at every milestone.",
+    "btnText": "EXPLORE",
+    "btnLink": "/service/custom-software-development"
+  },
+  {
+    "icon": "/assets/images/skelton/product-engineering-skelton.png",
+    "title": "Product Engineering",
+    "desc": "We work as an embedded engineering team on your product — from MVP to production scale — with the architecture and practices to grow without a rebuild.",
+    "btnText": "EXPLORE",
+    "btnLink": "/service/product-engineering"
+  },
+  {
+    "icon": "/assets/images/skelton/application-modernisation-skelton.png",
+    "title": "Application Modernisation",
+    "desc": "We migrate legacy monoliths, re-platform to cloud, and introduce API layers on top of ageing systems — incrementally, without a big-bang rewrite.",
+    "btnText": "EXPLORE",
+    "btnLink": "/service/application-modernisation"
+  },
+  {
+    "icon": "/assets/images/skelton/ux-ui-design-skelton.png",
+    "title": "UX / UI Design",
+    "desc": "We design interfaces that are clear, usable, and aligned to how users actually work — from discovery and wireframes through to production-ready design systems.",
+    "btnText": "EXPLORE",
+    "btnLink": "/service/ux-ui-design"
+  },
+  {
+    "icon": "/assets/images/skelton/cloud-devops-skelton.png",
+    "title": "Cloud & DevOps",
+    "desc": "We design and manage cloud infrastructure — provisioning, CI/CD, monitoring, and cost controls — so your engineering team ships faster with fewer incidents.",
+    "btnText": "EXPLORE",
+    "btnLink": "/service/cloud-devops"
+  },
+  {
+    "icon": "/assets/images/skelton/quality-engineering-skelton.png",
+    "title": "Quality Engineering",
+    "desc": "We build test automation frameworks and QA practices that catch issues before users do — integrated into your delivery pipeline from day one.",
+    "btnText": "EXPLORE",
+    "btnLink": "/service/quality-engineering"
+  },
+  {
+    "icon": "/assets/images/skelton/managed-app-support-skelton.png",
+    "title": "Managed App Support",
+    "desc": "We take operational responsibility for live applications — monitoring, incident response, bug fixes, and minor enhancements — so your team can focus on new development.",
+    "btnText": "EXPLORE",
+    "btnLink": "/service/managed-app-support"
+  },
+  {
+    "icon": "/assets/images/skelton/tech-due-diligence-skelton.png",
+    "title": "Tech Due Diligence",
+    "desc": "We conduct structured technical assessments for investors, acquirers, and leadership teams — covering architecture, code quality, security posture, and team capability.",
+    "btnText": "EXPLORE",
+    "btnLink": "/service/tech-due-diligence"
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "img": "/assets/images/feature1.png",
+    "title": "Software Services",
+    "desc": "Build, modernise and run applications"
+  },
+  {
+    "img": "/assets/images/feature2.png",
+    "title": "AI & Automation",
+    "desc": "Integrate AI into what you already run"
+  },
+  {
+    "img": "/assets/images/feature3.png",
+    "title": "Data Solutions",
+    "desc": "Pipelines, platforms and analytics"
+  },
+  {
+    "img": "/assets/images/feature4.png",
+    "title": "Cloud & DevOps",
+    "desc": "Infrastructure, CI/CD and cost control"
+  },
+  {
+    "img": "/assets/images/feature5.png",
+    "title": "Strategy & Assurance",
+    "desc": "Due diligence, governance and readiness assessments"
+  }
+]

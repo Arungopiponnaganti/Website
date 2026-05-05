@@ -1,0 +1,236 @@
+/* ── Intelligent Document Processing — page-specific styles ── */
+
+.idp-page {
+  font-family: var(--body-color-font, "Fira Sans", sans-serif);
+}
+
+/* ── Hero: dark scanner canvas ── */
+.idp-scanner-canvas {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.idp-scanner-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+.idp-scanner-lbl {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.idp-scan-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.12);
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+.idp-scan-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: idp-blink 1.3s ease-in-out infinite;
+}
+
+@keyframes idp-blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.2; }
+}
+
+.idp-mock-doc {
+  background: transparent;
+  border: 1px solid #2a2a2a;
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.idp-mock-doc-lbl {
+  font-size: 10px;
+  color: #555;
+  margin-bottom: 2px;
+  font-family: var(--font-mono, monospace);
+}
+
+.idp-doc-line {
+  height: 5px;
+  border-radius: 2px;
+  background: #2a2a2a;
+}
+
+.idp-doc-line.hi  { background: #534AB7; opacity: 0.8; }
+.idp-doc-line.hi2 { background: #1D9E75; opacity: 0.7; }
+
+.idp-doc-row {
+  display: flex;
+  gap: 6px;
+}
+
+.idp-arrow-down {
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  animation: idp-pulse-down 1.6s ease-in-out infinite;
+}
+
+@keyframes idp-pulse-down {
+  0%, 100% { color: #333; transform: translateY(0); }
+  50%       { color: #7F77DD; transform: translateY(3px); }
+}
+
+.idp-extracted-box {
+  background: transparent;
+  border: 1px solid #534AB7;
+  border-radius: 8px;
+  padding: 12px;
+}
+
+.idp-ex-label {
+  font-size: 9px;
+  font-weight: 700;
+  color: #7F77DD;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 8px;
+}
+
+.idp-ex-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  border-bottom: 1px solid rgba(83, 74, 183, 0.15);
+  font-size: 11px;
+}
+.idp-ex-row:last-child { border-bottom: none; }
+
+.idp-ex-key { color: #666; }
+.idp-ex-val {
+  font-weight: 600;
+  color: #4ade80;
+  font-family: var(--font-mono, monospace);
+}
+
+.idp-routed-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.idp-routed-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #1D9E75;
+  flex-shrink: 0;
+}
+
+.idp-routed-text {
+  font-size: 10px;
+  color: #555;
+}
+
+/* ── Pipeline visual ── */
+.idp-pipe-flow {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  padding-bottom: 6px;
+  scrollbar-width: none;
+}
+.idp-pipe-flow::-webkit-scrollbar { display: none; }
+
+.idp-pipe-node {
+  flex-shrink: 0;
+  min-width: 108px;
+}
+
+.idp-pn-box {
+  padding: 12px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  transition: border-color 0.15s;
+}
+.idp-pn-box:hover { border-color: #050a1e; }
+
+.idp-pn-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #050a1e;
+  margin-bottom: 2px;
+}
+
+.idp-pn-sub {
+  font-size: 10px;
+  color: #a0a0a0;
+  line-height: 1.35;
+}
+
+.idp-pipe-conn {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  padding: 0 4px;
+}
+
+.idp-pc-line {
+  width: 22px;
+  height: 1px;
+  background: #d1d5db;
+}
+
+.idp-pc-head {
+  width: 0;
+  height: 0;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  border-left: 4px solid #d1d5db;
+}
+
+/* ── Related grid ── */
+.idp-rel-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 991px) {
+  .idp-rel-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .idp-scanner-canvas {
+    display: none;
+  }
+  .idp-rel-grid {
+    grid-template-columns: 1fr;
+  }
+}

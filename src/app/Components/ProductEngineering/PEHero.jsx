@@ -1,0 +1,128 @@
+'use client';
+import Link from 'next/link';
+import React from 'react';
+import Image from 'next/image';
+
+export default function PEHero({
+  badgeText = "Product Engineering",
+  title = "Turn your product idea into a scalable, production-ready platform",
+  subheadline = "From validated MVP to enterprise-grade architecture — MayuraSoft handles the full product lifecycle so your team can focus on what makes your product unique.",
+  tags = ['MVP development', 'Scalable architecture', 'Full-stack engineering', 'Agile delivery', 'Post-launch support'],
+  // primaryCta = { text: "Get a free product audit →", href: "/free-audit?service=product-engineering" },
+  primaryCta = { text: "Get a free product audit →", href: "/contact?service=product-engineering" },
+  secondaryCta = { text: "See how we work", href: "#process" },
+  stats = [
+    { num: '2 wks', lbl: 'From kickoff to first working sprint' },
+    { num: '3× faster', lbl: 'Delivery vs. building an in-house team' },
+    { num: 'MVP → Scale', lbl: 'Single team, full product lifecycle' },
+    { num: 'Fixed scope', lbl: 'Transparent pricing, no bill shock' }
+  ]
+}) {
+  return (
+<div className="hero-area style-three align-items-center" style={{ marginTop: '-120px', paddingTop: '280px', position: 'relative', height: 'auto', minHeight: '800px', overflow: 'hidden' }}>
+
+{/* ✅ Background Image */}
+<Image
+  src="/assets/images/project-engineering-hero.png"
+  alt="background"
+  fill
+  priority
+  sizes="100vw"
+  className="custom-hero-bg-layer"
+/>
+
+{/* Optional overlay (for readability) */}
+<div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.5)', zIndex: 1 }} />
+
+      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+        <div className="row hero align-items-center">
+          <div className="col-lg-7 col-md-12">
+            <div className="hero-contant" style={{ paddingTop: '0' }}>
+              <div 
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '5px',
+                  background: 'rgba(40, 167, 69, 0.1)',
+                  color: '#28a745',
+                  fontSize: '13px',
+                  padding: '4px 12px',
+                  borderRadius: '99px',
+                  marginBottom: '20px',
+                  fontWeight: '600'
+                }}
+              >
+                <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#28a745' }}></div>
+                {badgeText}
+              </div>
+
+              <h1 className="mb-4 d-block">{title}</h1>
+
+              <p className="subheadline text-white" style={{ fontSize: '18px', lineHeight: '1.65', maxWidth: '650px', marginBottom: '30px' }}>
+                {subheadline}
+              </p>
+
+              <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '40px' }}>
+                {tags.map(tag => (
+                  <span key={tag} style={{ fontSize: '13px', padding: '4px 14px', borderRadius: '99px', border: '1px solid rgba(255,255,255,0.2)', color: '#e0e0e0', fontWeight: '500' }}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              <div className="d-flex flex-wrap align-items-center gap-4">
+                <div className="solutek-btn">
+                  <Link href={primaryCta.href} className="btn-2" data-cta="hero-primary">
+                    {primaryCta.text}
+                  </Link>
+                </div>
+                <div className="hero-btn-3">
+                  <div className="hero-btn-profile">
+                    <Link href={secondaryCta.href} onClick={(e) => {
+                      if (secondaryCta.href.startsWith('#')) {
+                        e.preventDefault();
+                        document.getElementById(secondaryCta.href.substring(1))?.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }} style={{ textTransform: 'none', textDecoration: 'none' }}>
+                      <div style={{ color: '#ff3c00', textDecoration: 'none', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>{secondaryCta.text}</div>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-5 col-md-12 d-none d-lg-block">
+            <div 
+              className="hero-card" 
+              style={{
+                background: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(10px)',
+                border: '1px solid rgba(255, 255, 255, 0.1)',
+                borderRadius: '16px',
+                padding: '30px',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '24px',
+                marginLeft: 'auto',
+                maxWidth: '380px'
+              }}
+            >
+              {stats.map((stat, idx) => (
+                <div key={idx} className="hc-stat" style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '4px',
+                  paddingBottom: idx === 3 ? '0' : '20px',
+                  borderBottom: idx === 3 ? 'none' : '1px solid rgba(255, 255, 255, 0.08)'
+                }}>
+                  <div className="hc-num text-white" style={{ fontSize: '28px', fontWeight: '700' }}>{stat.num}</div>
+                  <div className="hc-lbl" style={{ fontSize: '14px', color: '#a0a0a0', fontWeight: '500' }}>{stat.lbl}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}

@@ -1,0 +1,197 @@
+/* <!--==================================================-- */
+/* <!--start Technologies Area -- */
+/* <!--==================================================--> */
+.technologies-area {
+  background: #ffffff;
+  padding: 100px 0 80px;
+  position: relative;
+}
+
+/* ---- Tab Navigation ---- */
+.tech-tabs-wrapper {
+  margin-top: 50px;
+}
+
+.tech-tabs-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 50px;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+.tech-tabs-nav li {
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+.tech-tab-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #1a3c6e;
+  font-family: var(--heading-font);
+  padding: 0 30px 16px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.tech-icon-box {
+      width: 48px !important;
+    height: 48px !important;
+    background-color: #fff !important;
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+}
+.tech-tabs-wrapper .tech-icon-box img{
+ aspect-ratio: unset;
+ height:40px;
+}
+
+.tech-tab-btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ff3c00;
+  transition: width 0.3s ease;
+}
+
+.tech-tab-btn.active {
+  color: #ff3c00;
+}
+
+.tech-tab-btn.active::after {
+  width: 100%;
+}
+
+.tech-tab-btn:hover {
+  color: #ff3c00;
+}
+
+/* ---- Tech Cards ---- */
+.tech-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px 18px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.tech-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.tech-icon-box {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tech-card-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #050a1e;
+  font-family: var(--body-color-font);
+  line-height: 1.2;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .tech-tab-btn {
+    font-size: 16px;
+    padding: 0 20px 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .technologies-area {
+    padding: 90px 0 70px;
+  }
+
+  .tech-tab-btn {
+    font-size: 15px;
+    padding: 0 16px 14px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 767px) {
+  .technologies-area {
+    padding: 80px 0 60px;
+  }
+
+  .tech-tab-btn {
+    font-size: 14px;
+    padding: 0 12px 12px;
+  }
+
+  .tech-card {
+    padding: 14px;
+  }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 599px) {
+  .technologies-area {
+    padding: 70px 0 50px;
+  }
+
+  .tech-tabs-nav {
+    gap: 4px;
+  }
+
+  .tech-tab-btn {
+    font-size: 13px;
+    padding: 0 10px 12px;
+  }
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .technologies-area {
+    padding: 60px 0 40px;
+  }
+
+  .tech-tabs-nav {
+    gap: 4px;
+  }
+
+  .tech-tab-btn {
+    font-size: 13px;
+    padding: 0 8px 10px;
+  }
+
+  .tech-card {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .tech-icon-box {
+    width: 36px;
+    height: 36px;
+  }
+
+  .tech-icon-letter {
+    font-size: 15px;
+  }
+
+  .tech-card-name {
+    font-size: 14px;
+  }
+}

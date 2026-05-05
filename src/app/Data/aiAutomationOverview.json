@@ -1,0 +1,44 @@
+[
+  {
+    "icon": "/assets/images/skelton/ai-integration-services-skelton.png",
+    "title": "AI Integration Services",
+    "desc": "We connect LLMs — GPT-4o, Claude, Gemini, or open-source models — into your existing software via a versioned abstraction layer. Your stack stays intact; intelligence gets added on top.",
+    "btnText": "Explore AI Integration",
+    "btnLink": "/ai-automations/ai-integration"
+  },
+  {
+    "icon": "/assets/images/skelton/workflow-automation-skelton.png",
+    "title": "Workflow Automation",
+    "desc": "We automate document-heavy and repetitive operational processes — invoice processing, approvals, onboarding — using AI for judgment calls and deterministic logic for everything else.",
+    "btnText": "Explore Workflow Automation",
+    "btnLink": "/ai-automations/workflow-automation"
+  },
+  {
+    "icon": "/assets/images/skelton/conversational-ai-chatbots-skelton.png",
+    "title": "Conversational AI & Chatbots",
+    "desc": "We build AI assistants that work on your website, WhatsApp, Slack, or inside your product — answering from your knowledge base, routing to humans when needed.",
+    "btnText": "Explore Conversational AI",
+    "btnLink": "/ai-automations/conversational-ai"
+  },
+  {
+    "icon": "/assets/images/skelton/intelligent-document-processing-skelton.png",
+    "title": "Intelligent Document Processing",
+    "desc": "We extract structured data from invoices, contracts, forms, and medical records using AI — automatically classifying, extracting, validating, and routing to the right system.",
+    "btnText": "Explore IDP",
+    "btnLink": "/ai-automations/document-processing"
+  },
+  {
+    "icon": "/assets/images/skelton/ai-readiness-assessment-skelton.png",
+    "title": "AI Readiness Assessment",
+    "desc": "A structured, free assessment of your organisation's AI readiness — data access, use case clarity, infrastructure, and team capability. Delivered as a written report within 48 hours.",
+    "btnText": "Get free AI assessment",
+    "btnLink": "/ai-automations/ai-readiness"
+  },
+  {
+    "icon": "/assets/images/skelton/ai-governance-ethics-skelton.png",
+    "title": "AI Governance & Ethics",
+    "desc": "We build governance frameworks for AI systems — bias auditing, explainability, EU AI Act alignment, and risk management documentation — so your AI deployment is auditable and defensible.",
+    "btnText": "Explore AI Governance",
+    "btnLink": "/ai-automations/ai-governance"
+  }
+]

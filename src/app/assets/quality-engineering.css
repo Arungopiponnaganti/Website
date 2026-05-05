@@ -1,0 +1,1308 @@
+/* Quality Engineering Service Page — supplemental styles */
+/* Extends custom-dev.css; import both on the page */
+
+/* ── Full-width Split Hero ───────────────────────────────── */
+.qe-hero-split {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  background: #111827;
+}
+
+/* Left pane — dark terminal */
+.qe-hero-left {
+  flex: 0 0 50%;
+  background-image: radial-gradient(ellipse at 30% 60%, rgba(74, 222, 128, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(96, 165, 250, 0.04) 0%, transparent 50%);
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  overflow: hidden;
+  padding-top: 48px;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.qe-terminal-fullpane {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Right pane — dark content */
+.qe-hero-right {
+  flex: 0 0 50%;
+  background: #111827;
+  background-image: radial-gradient(ellipse at 70% 50%, rgba(255, 60, 0, 0.06) 0%, transparent 55%);
+  display: flex;
+  align-items: center;
+  margin-top: -120px;
+  padding-top: 120px;
+}
+
+.qe-hero-content {
+  padding: 80px 72px 80px 64px;
+  max-width: 620px;
+}
+
+/* Eyebrow pill */
+.qe-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(74, 222, 128, 0.08);
+  color: #4ade80;
+  font-size: 12px;
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 28px;
+  font-family: var(--font-mono, monospace);
+  font-weight: 500;
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  letter-spacing: 0.02em;
+}
+
+.qe-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #4ade80;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Heading */
+.qe-hero-heading {
+  font-size: clamp(32px, 3.2vw, 52px);
+  font-weight: 800;
+  color: #f9fafb;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+
+/* Subheadline */
+.qe-hero-sub {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #9ca3af;
+  margin-bottom: 32px;
+  max-width: 520px;
+}
+
+/* Tags */
+.qe-hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.qe-hero-tag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 99px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #d1d5db;
+  background: rgba(255, 255, 255, 0.05);
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.qe-hero-tag:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* CTAs */
+.qe-hero-ctas {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.qe-cta-primary {
+  display: inline-block;
+  background: #ffffff;
+  color: #0d0d0d;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 14px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.18s, transform 0.18s;
+  letter-spacing: -0.01em;
+}
+
+.qe-cta-primary:hover {
+  background: #e5e7eb;
+  color: #0d0d0d;
+  transform: translateY(-1px);
+}
+
+.qe-cta-ghost {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #ff3c00;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.15s;
+}
+
+.qe-cta-ghost:hover {
+  opacity: 0.75;
+}
+
+/* ── Terminal pane grid (Hero left side) ─────────────────── */
+/* Primary terminal — top ~60% */
+.qe-term-pane-main {
+  flex: 3;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+/* Bottom row: coverage summary + suite stats */
+.qe-term-pane-bottom {
+  flex: 2;
+  min-height: 0;
+  display: flex;
+  overflow: hidden;
+}
+
+.qe-term-pane-secondary {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.qe-term-pane-table {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Pane label bar */
+.qe-term-pane-label {
+  padding: 6px 18px;
+  font-size: 9px;
+  font-family: var(--font-mono, monospace);
+  color: #3f4a5a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+/* Primary terminal body */
+.qe-term-body-main {
+  flex: 1;
+  min-height: 0;
+  padding: 28px 36px 32px;
+  font-family: var(--font-mono, 'Courier New', monospace);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 18%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 18%);
+}
+
+.qe-term-body-main .qe-tl {
+  font-size: 14px;
+  line-height: 2;
+  white-space: pre;
+}
+
+/* Secondary terminal body */
+.qe-term-body-sm {
+  flex: 1;
+  min-height: 0;
+  padding: 14px 18px;
+  font-family: var(--font-mono, 'Courier New', monospace);
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 20%);
+}
+
+.qe-term-body-sm .qe-tl {
+  font-size: 12px;
+  line-height: 1.85;
+  white-space: pre;
+}
+
+/* Coverage summary panel */
+.qe-cov-panel-wrap {
+  flex: 1;
+  min-height: 0;
+  padding: 12px 16px 14px;
+  overflow: hidden;
+  font-family: var(--font-mono, monospace);
+}
+
+.qe-cov-panel-header {
+  font-size: 9px;
+  color: #3f4a5a;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.qe-cov-bar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+}
+
+.qe-cov-bar-label {
+  font-size: 11px;
+  color: #6b7280;
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.qe-cov-bar-track {
+  flex: 1;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.qe-cov-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+.qe-cov-bar-pct {
+  font-size: 11px;
+  font-weight: 600;
+  width: 34px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+/* Cursor blink */
+.qe-cursor {
+  display: inline-block;
+  width: 7px;
+  height: 13px;
+  background: #4ade80;
+  vertical-align: middle;
+  margin-left: 2px;
+  animation: qeBlink 1s step-end infinite;
+}
+
+@keyframes qeBlink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Terminal text colors (shared with hero terminal) */
+.qe-page .tc-green {
+  color: #4ade80;
+}
+
+.qe-page .tc-cyan {
+  color: #22d3ee;
+}
+
+.qe-page .tc-blue {
+  color: #60a5fa;
+}
+
+.qe-page .tc-yellow {
+  color: #fbbf24;
+}
+
+.qe-page .tc-gray {
+  color: #6b7280;
+}
+
+.qe-page .tc-white {
+  color: #e5e5e5;
+}
+
+.qe-page .tc-red {
+  color: #f87171;
+}
+
+/* ── Metrics strip ───────────────────────────────────────── */
+.qe-metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.qe-met {
+  padding: 28px 24px;
+  border-right: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.qe-met:last-child {
+  border-right: none;
+}
+
+.qe-met-n {
+  font-size: 28px;
+  font-weight: 700;
+  color: #050a1e;
+  margin-bottom: 6px;
+  letter-spacing: -0.03em;
+}
+
+.qe-met-l {
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.4;
+  margin-bottom: 4px;
+}
+
+.qe-met-trend {
+  font-size: 11px;
+  color: #9ca3af;
+  line-height: 1.4;
+}
+
+/* ── Bug Cost Section ────────────────────────────────────── */
+
+/* Stage card */
+.qebc-stage-btn {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  user-select: none;
+  border-radius: 12px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.qebc-stage-btn:hover:not(.active) {
+  border-color: #e2e8f0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+}
+
+.qebc-stage-btn.active {
+  border-color: transparent;
+  transform: scale(1.02);
+  z-index: 10;
+}
+
+/* Icon container */
+.qebc-icon-wrap {
+  background: #f8fafc;
+  transition: background 0.3s;
+}
+
+/* Stage icon */
+.qebc-stage-icon {
+  color: #94a3b8;
+  transition: color 0.3s;
+}
+
+/* Stage label */
+.qebc-stage-label {
+  color: #475569;
+  transition: color 0.3s;
+}
+
+.qebc-stage-label.active {
+  color: #0f172a;
+}
+
+/* Stage multiplier */
+.qebc-stage-mult {
+  color: #94a3b8;
+  transition: color 0.3s;
+}
+
+/* Progress bar track */
+.qebc-bar-track {
+  height: 6px;
+  background: #f1f5f9;
+}
+
+/* Progress bar fill */
+.qebc-bar-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background-color: #cbd5e1;
+  transition: all 0.7s ease-out;
+}
+
+/* SVG */
+.qebc-svg {
+  overflow: visible;
+}
+
+.qebc-iso-g {
+  transition: opacity 0.5s;
+}
+
+.qebc-iso-poly {
+  transition: all 0.7s ease-out;
+}
+
+/* Chart card */
+.qebc-chart-card {
+  border-radius: 16px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Chart column */
+.qebc-chart-col {
+  width: 20%;
+  cursor: pointer;
+}
+
+/* Chart multiplier label */
+.qebc-chart-mult {
+  font-size: 13px;
+  color: #94a3b8;
+  transition: color 0.3s;
+}
+
+/* Chart stage name */
+.qebc-chart-stage-label {
+  font-size: 11px;
+  color: #64748b;
+}
+
+/* Info card */
+.qebc-info-card {
+  border-radius: 16px;
+  border: 1px solid #f1f5f9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+/* Info badge */
+.qebc-badge {
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Info heading */
+.qebc-info-title {
+  font-size: clamp(18px, 2.2vw, 22px);
+  color: #1e293b;
+}
+
+/* Info description */
+.qebc-info-desc {
+  color: #475569;
+  line-height: 1.7;
+  min-height: 70px;
+  font-size: 15px;
+}
+
+/* Info footer */
+.qebc-info-footer {
+  color: #64748b;
+  border-color: #f1f5f9 !important;
+}
+
+/* Shift-left links */
+.qebc-shift-link {
+  text-decoration: underline;
+  text-decoration-color: #cbd5e1;
+  text-underline-offset: 4px;
+  cursor: pointer;
+  transition: color 0.2s;
+  color: inherit;
+}
+
+.qebc-shift-link:hover {
+  color: #0f172a;
+}
+
+/* ── Services Grid ───────────────────────────────────────── */
+.qe-svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: #e5e7eb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.qe-svc-cell {
+  background: #fff;
+  padding: 24px;
+  cursor: pointer;
+  transition: background 0.12s;
+  position: relative;
+}
+
+.qe-svc-cell:hover,
+.qe-svc-cell.active {
+  background: #f9fafb;
+}
+
+.qe-sc-ic {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+  flex-shrink: 0;
+}
+
+.qe-sc-ic svg {
+  width: 17px;
+  height: 17px;
+}
+
+.qe-sc-t {
+  font-size: 14px;
+  font-weight: 600;
+  color: #050a1e;
+  margin-bottom: 5px;
+}
+
+.qe-sc-d {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.qe-sc-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+.qe-svc-detail {
+  margin-top: 1px;
+  background: #f9fafb;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 24px;
+}
+
+.qe-sd-lbl {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin-bottom: 10px;
+}
+
+.qe-sd-item {
+  font-size: 13px;
+  color: #6b7280;
+  padding: 5px 0;
+  border-bottom: 1px solid #e5e7eb;
+  line-height: 1.45;
+}
+
+.qe-sd-item:last-child {
+  border-bottom: none;
+}
+
+.qe-sd-tool {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 99px;
+  border: 1px solid #e5e7eb;
+  color: #374151;
+  margin: 3px 3px 0 0;
+  background: #fff;
+}
+
+/* ── Coverage Section ────────────────────────────────────── */
+.qe-cov-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.qe-cov-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.qe-cov-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #050a1e;
+}
+
+.qe-cov-desc {
+  font-size: 12px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.qe-cov-note {
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.65;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.qe-cov-note strong {
+  color: #050a1e;
+  font-weight: 600;
+}
+
+/* ── Approach / Timeline ─────────────────────────────────── */
+
+/* Eyebrow pill */
+.qeap-eyebrow {
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.qeap-eyebrow-text {
+  font-size: 11px;
+  font-weight: 700;
+  color: #334155;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Animated ping dot */
+.qeap-ping-wrap {
+  position: relative;
+  display: flex;
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+}
+
+.qeap-ping {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #f87171;
+  opacity: 0.75;
+  animation: qeapPing 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.qeap-ping-dot {
+  position: relative;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  display: block;
+}
+
+@keyframes qeapPing {
+
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Heading */
+.qeap-heading {
+  font-size: clamp(26px, 4vw, 52px);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.qeap-heading-gradient {
+  background: linear-gradient(to right, #ef4444, #fb7185);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.qeap-subtext {
+  font-size: 17px;
+  color: #64748b;
+  max-width: 560px;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+/* Timeline */
+.qeap-timeline-wrap {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.qeap-timeline-track {
+  position: absolute;
+  top: 24px;
+  left: 10%;
+  right: 10%;
+  height: 2px;
+  background: #e2e8f0;
+  border-radius: 9999px;
+}
+
+.qeap-timeline-progress {
+  position: absolute;
+  top: 24px;
+  left: 10%;
+  height: 2px;
+  background: linear-gradient(to right, #ef4444, #fb7185);
+  border-radius: 9999px;
+  transition: width 0.7s ease-in-out;
+  z-index: 1;
+}
+
+/* Timeline nodes */
+.qeap-node {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  color: #94a3b8;
+  font-size: 18px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.qeap-node:hover:not(.qeap-node-active):not(.qeap-node-past) {
+  border-color: #cbd5e1;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.qeap-node-past {
+  background: #fff1f2;
+  color: #f87171;
+  border-color: #fee2e2;
+}
+
+.qeap-node-past:hover {
+  background: #ffe4e6;
+}
+
+.qeap-node-active {
+  background: #fff;
+  color: #ef4444;
+  border-color: #fecaca;
+  box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.1);
+  transform: scale(1.1);
+}
+
+.qeap-node-step {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #94a3b8;
+  margin-bottom: 4px;
+  transition: color 0.3s;
+}
+
+.qeap-node-step.active {
+  color: #ef4444;
+}
+
+.qeap-node-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  transition: color 0.3s;
+}
+
+.qeap-node-title.active {
+  color: #0f172a;
+}
+
+/* ── Layout wrapper ──────────────────────────────────────── */
+/* Desktop: normal block (timeline above, card below) */
+.qeap-layout-wrapper {
+  display: block;
+}
+
+/* Mobile: two-column grid — nav left, card right */
+@media (max-width: 767px) {
+  .qeap-layout-wrapper {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 14px;
+    align-items: start;
+  }
+}
+
+/* ── Mobile vertical nav ─────────────────────────────────── */
+.qeap-mobile-vnav {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Each phase row: [circle+line] + [text label] */
+.qeap-vnode-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+/* Column that holds the circle and the connector line */
+.qeap-vnode-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* Vertical connector between nodes */
+.qeap-vnode-line {
+  width: 2px;
+  flex: 1;
+  min-height: 20px;
+  background: #e2e8f0;
+  border-radius: 9999px;
+  margin: 4px 0;
+}
+
+.qeap-vnode-line.active {
+  background: linear-gradient(to bottom, #ef4444, #fb7185);
+}
+
+/* Text beside each node (step label + title) */
+.qeap-vnode-label {
+  padding-top: 10px;   /* visually center with the 40px node */
+  padding-bottom: 12px;
+}
+
+/* Shrink nodes slightly on mobile so the layout fits narrow screens */
+@media (max-width: 767px) {
+  .qeap-mobile-vnav .qeap-node {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .qeap-mobile-vnav .qeap-node-step {
+    font-size: 9px;
+  }
+
+  .qeap-mobile-vnav .qeap-node-title {
+    font-size: 11px;
+  }
+}
+
+/* On very small screens hide the text labels to keep the card readable */
+@media (max-width: 479px) {
+  .qeap-vnode-label {
+    display: none;
+  }
+
+  .qeap-vnode-item {
+    gap: 0;
+  }
+}
+
+/* Content card */
+.qeap-card {
+  background: #FFF;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 35%, rgba(247, 96, 96, 0.17) 100%);
+  border-radius: 24px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  border: 1px solid #f1f5f9;
+  overflow: hidden;
+  animation: qeapFadeIn 0.5s ease-out;
+}
+
+@keyframes qeapFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* .qeap-card-right {
+  background: #f8fafc;
+  border-left: 1px solid #f1f5f9;
+} */
+
+.qeap-card-heading {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.qeap-card-sub {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Activity list */
+.qeap-activity-item {
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid transparent;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.qeap-activity-item:hover {
+  background: rgba(248, 250, 252, 0.8);
+  border-color: rgba(241, 245, 249, 0.6);
+}
+
+.qeap-check-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  border-radius: 8px;
+  background: #fff1f2;
+  border: 1px solid rgba(254, 202, 202, 0.5);
+  color: #ef4444;
+  font-size: 18px;
+  margin-top: 1px;
+}
+
+.qeap-activity-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+  line-height: 1.6;
+}
+
+/* Terminal icon */
+.qeap-terminal-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f1f5f9;
+  color: #94a3b8;
+  font-size: 18px;
+}
+
+/* Tool pills — mirrors CDCloudProviders pill style */
+.qeap-tool-pill {
+  padding: 10px 12px 10px 18px;
+  min-width: 155px;
+  gap: 12px;
+  border: none;
+  cursor: default;
+}
+
+.qeap-tool-pill-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1e293b;
+  white-space: nowrap;
+}
+
+.qeap-tool-pill-icon {
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  color: #475569;
+}
+
+/* Gradient variants */
+.qeap-tp-blue {
+  background-image: linear-gradient(to right, #dbeafe, #fff);
+}
+
+.qeap-tp-teal {
+  background-image: linear-gradient(to right, #ccfbf1, #fff);
+}
+
+.qeap-tp-green {
+  background-image: linear-gradient(to right, #dcfce7, #fff);
+}
+
+.qeap-tp-yellow {
+  background-image: linear-gradient(to right, #fef9c3, #fff);
+}
+
+.qeap-tp-orange {
+  background-image: linear-gradient(to right, #ffedd5, #fff);
+}
+
+.qeap-tp-purple {
+  background-image: linear-gradient(to right, #ede9fe, #fff);
+}
+
+.qeap-tp-red {
+  background-image: linear-gradient(to right, #fee2e2, #fff);
+}
+
+/* Current focus card */
+.qeap-focus-card {
+  padding: 22px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.qeap-focus-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+}
+
+.qeap-focus-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.qeap-focus-blur {
+  position: absolute;
+  right: -16px;
+  bottom: -16px;
+  width: 96px;
+  height: 96px;
+  background: #fff1f2;
+  border-radius: 50%;
+  filter: blur(24px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* ── Why Us ──────────────────────────────────────────────── */
+.qe-why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.qe-wc {
+  padding: 22px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.qe-wc-ic {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.qe-wc-ic svg {
+  width: 16px;
+  height: 16px;
+}
+
+.qe-wc-t {
+  font-size: 14px;
+  font-weight: 600;
+  color: #050a1e;
+  margin-bottom: 5px;
+}
+
+.qe-wc-d {
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.6;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .qe-hero-content {
+    padding: 60px 48px;
+  }
+}
+
+@media (max-width: 991px) {
+  .qe-svc-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .qe-svc-detail {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .qe-cov-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .qeap-card-right {
+    border-left: none;
+    border-top: 1px solid #f1f5f9;
+  }
+}
+
+@media (max-width: 768px) {
+  .qe-hero-split {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .qe-hero-left {
+    flex: none;
+    min-height: 380px;
+    height: auto;
+    order: 2;
+  }
+
+  .qe-hero-right {
+    flex: none;
+    order: 1;
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .qe-hero-content {
+    padding: 48px 24px;
+    max-width: 100%;
+  }
+
+  .qe-metrics-strip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .qe-why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .qe-term-pane-bottom {
+    flex-direction: column;
+  }
+
+  .qe-term-pane-secondary {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+}
+
+@media (max-width: 575px) {
+  .qe-metrics-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .qe-svc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .qe-svc-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .qe-cov-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .qe-cursor {
+    animation: none;
+  }
+
+  .qe-cov-bar-fill {
+    transition: none;
+  }
+
+  .qebc-stage-btn,
+  .qebc-icon-wrap,
+  .qebc-stage-icon,
+  .qebc-stage-label,
+  .qebc-stage-mult,
+  .qebc-bar-fill,
+  .qebc-iso-g,
+  .qebc-iso-poly,
+  .qebc-chart-mult,
+  .qebc-badge,
+  .qebc-shift-link {
+    transition: none;
+  }
+
+  .qeap-ping {
+    animation: none;
+  }
+
+  .qeap-node,
+  .qeap-node-step,
+  .qeap-node-title,
+  .qeap-vnode-line,
+  .qeap-activity-item,
+  .qeap-tool-tag,
+  .qeap-timeline-progress {
+    transition: none;
+  }
+
+  .qeap-card {
+    animation: none;
+  }
+}

@@ -1,0 +1,69 @@
+.section-title {
+  position: relative;
+}
+
+.section-sub-title {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 22px;
+  background-color: transparent;
+  border: 2px solid #eeeeee;
+  border-radius: 30px;
+  padding: 5px 23px 4px;
+  position: relative;
+  z-index: 1;
+}
+
+.section-main-title {
+  font-size: 42px;
+  font-weight: 700;
+  line-height: 1.2em;
+  margin-bottom: 18px;
+  color: #050a1e;
+}
+
+h2.section-main-title span,
+h1.section-main-title span,
+.section-main-title span {
+  display: inline-block;
+  color: #ff3c00;
+}
+
+.section-title-descr {
+  width: 96%;
+  margin-bottom: 0;
+  font-size: 16px;
+  line-height: 1.8em;
+  color: #666666;
+}
+
+.section-title.text-center .section-title-descr {
+  margin: 0 auto;
+}
+
+/* .section-title.text-center {
+  margin-bottom: 52px;
+} */
+
+.section-title.text-left {
+  margin-bottom: 50px;
+}
+
+
+/* Dark Mode Overrides */
+.section-title.dark-mode .section-main-title {
+  color: #ffffff;
+}
+
+.section-title.dark-mode .section-title-descr {
+  color: #a0aabf;
+}
+
+.section-title.dark-mode .section-sub-title {
+  /* color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1); */
+  background-color: #161a2b;
+  border: 2px solid #40465d;
+}

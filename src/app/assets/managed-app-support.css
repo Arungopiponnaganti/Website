@@ -1,0 +1,259 @@
+/* Managed App Support Specific Styles */
+
+/* 01 HERO & STATUS */
+.mas-status-sidebar {
+  padding: 24px;
+  /* background: rgba(255, 255, 255, 0.05); */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mas-status-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mas-status-note {
+  font-size: 11px;
+  color: #a0a0a0;
+  line-height: 1.5;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mas-uptime-panel {
+  padding: 30px;
+  /* background: rgba(255, 255, 255, 0.05); */
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ut-bar {
+  flex: 1;
+  height: 20px;
+  border-radius: 2px;
+  background: #10b981;
+  cursor: pointer;
+  transition: opacity 0.15s;
+}
+
+.ut-bar.inc {
+  background: #ef4444;
+}
+
+.ut-bar:hover {
+  opacity: 0.7;
+}
+
+/* 04 SLA TIERS */
+.mas-sla-table {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
+  padding: 16px;
+}
+
+.mas-sla-head {
+  display: grid;
+  grid-template-columns: 220px 1fr 1fr 1fr;
+  background: transparent;
+  padding-bottom: 12px;
+  margin-bottom: 12px;
+  border-bottom: 2px solid #f3f4f6;
+  /* Soft line to separate header only */
+}
+
+.mas-sla-row {
+  display: grid;
+  grid-template-columns: 220px 1fr 1fr 1fr;
+  border-bottom: 1px solid #f3f4f6;
+  transition: all 0.2s ease;
+  background: transparent;
+}
+
+.mas-sla-row:last-child {
+  border-bottom: none;
+}
+
+.mas-sla-row:hover {
+  background: #f9fafb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.mas-sla-cell,
+.mas-sla-hcell {
+  padding: 16px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+}
+
+.mas-sla-hcell {
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.mas-sla-hcell.hl {
+  color: #ff3c00;
+}
+
+.mas-sla-cell {
+  color: #6b7280;
+}
+
+.mas-sla-cell.label {
+  font-weight: 600;
+  color: #050a1e;
+}
+
+.mas-sla-cell.hl {
+  background: rgba(255, 60, 0, 0.03);
+}
+
+.mas-check-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #10b981;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 12px;
+}
+
+.mas-dash {
+  width: 16px;
+  height: 2px;
+  background: #d1d5db;
+  border-radius: 1px;
+}
+
+/* 06 MONITORING TABS GRID */
+.mon-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.mon-card {
+  padding: 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.mc-metric {
+  font-size: 11px;
+  font-weight: 600;
+  color: #6b7280;
+  margin-top: 12px;
+  padding: 4px 10px;
+  border-radius: 99px;
+  background: #f3f4f6;
+  display: inline-block;
+}
+
+@media (max-width: 991px) {
+  .mon-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 575px) {
+  .mon-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 07 TRANSITION PLAN */
+.ho-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.ho-row:last-child {
+  border-bottom: none;
+}
+
+.ho-week {
+  padding: 24px 24px 24px 0;
+  border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+}
+
+.ho-right {
+  padding: 24px 0 24px 28px;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 24px;
+}
+
+.ho-out {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  /* border: 1px solid #e5e7eb; */
+}
+
+@media (max-width: 767px) {
+
+  .mas-sla-head,
+  .mas-sla-row {
+    grid-template-columns: 140px 1fr 1fr 1fr;
+  }
+
+  .mas-sla-cell,
+  .mas-sla-hcell {
+    padding: 12px 8px;
+    font-size: 12px;
+  }
+
+  .ho-row {
+    grid-template-columns: 1fr;
+    border-bottom: none;
+  }
+
+  .ho-week {
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 16px 0;
+  }
+
+  .ho-right {
+    grid-template-columns: 1fr;
+    padding: 16px 0 32px 0;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .ho-row:last-child .ho-right {
+    border-bottom: none;
+  }
+}
