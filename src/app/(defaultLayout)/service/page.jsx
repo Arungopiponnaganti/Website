@@ -3,6 +3,9 @@ import BreadCumb from '@/app/Components/Common/BreadCumb';
 import Services4 from '@/app/Components/Services/Services4';
 import Team1 from '@/app/Components/Team/Team1';
 import React from 'react';
+import { getPageMetadata } from '@/utils/seo';
+
+export const metadata = getPageMetadata('/service');
 
 const page = () => {
     return (

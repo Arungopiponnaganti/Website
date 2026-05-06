@@ -141,8 +141,10 @@ export default function QEApproach() {
               return (
                 <div key={phase.id} className="col d-flex flex-column align-items-center">
                   <button
+                    type="button"
                     onClick={() => setActivePhase(i)}
                     className={`qeap-node${isActive ? ' qeap-node-active' : isPast ? ' qeap-node-past' : ''}`}
+                    aria-label={`Select ${phase.step}`}
                   >
                     <i className={`bi ${phase.icon}`} />
                   </button>
@@ -168,8 +170,10 @@ export default function QEApproach() {
                 <div key={phase.id} className="qeap-vnode-item">
                   <div className="qeap-vnode-col">
                     <button
+                      type="button"
                       onClick={() => setActivePhase(i)}
                       className={`qeap-node${isActive ? ' qeap-node-active' : isPast ? ' qeap-node-past' : ''}`}
+                      aria-label={`Select ${phase.step}`}
                     >
                       <i className={`bi ${phase.icon}`} />
                     </button>

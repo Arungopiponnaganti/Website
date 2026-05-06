@@ -4,12 +4,15 @@ import Faq from '@/app/Components/Faq/Faq';
 import Project1 from '@/app/Components/Project/Project1';
 import WhyChooseUs from '@/app/Components/why-choose-us/WhyChooseUs';
 import React from 'react';
+import { getPageMetadata } from '@/utils/seo';
+
+export const metadata = getPageMetadata('/why-choose-us');
 
 const page = () => {
   return (
     <div className='why-choose-us-page'>
       <BreadCumb Title="Why Choose Us"></BreadCumb>
-            <WhyChooseUs
+      <WhyChooseUs
         MainImg="/assets/images/whychooseusnew.png"
         SubTitle="WHY CHOOSE US"
         Title="We Provide The Best<br/>Solution For Your <span>Business.</span>"

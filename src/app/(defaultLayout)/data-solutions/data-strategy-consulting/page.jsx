@@ -9,14 +9,9 @@ import DSDeliverables from '@/app/Components/DataStrategyConsulting/DSDeliverabl
 import DSEngagement from '@/app/Components/DataStrategyConsulting/DSEngagement';
 import DSFaq from '@/app/Components/DataStrategyConsulting/DSFaq';
 import CtaSplit from '@/app/Components/Common/CtaSplit';
+import { getPageMetadata } from '@/utils/seo';
 
-export const metadata = {
-  title: 'Data Strategy Consulting | MayuraSoft',
-  description: 'Your data investments are only as valuable as the strategy behind them. MayuraSoft defines where data can drive the most business value.',
-  alternates: {
-    canonical: 'https://mayurasoft.com/data-solutions/data-strategy-consulting',
-  },
-};
+export const metadata = getPageMetadata('/data-solutions/data-strategy-consulting');
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -62,6 +57,7 @@ export default function DataStrategyConsultingPage() {
             { label: 'Biggest data strategy challenge', type: 'select', options: ['No clear data investment prioritisation', 'Board asking for a data strategy', 'Multiple competing data initiatives, unclear sequencing', 'Data investments not delivering expected ROI', 'Need to justify a large data budget request', 'Scaling fast, need a data foundation plan'] },
           ]}
           formSubmitBtn="Book free session →"
+          subject="Free strategy session request"
         />
 
         {/* Related Services Band */}

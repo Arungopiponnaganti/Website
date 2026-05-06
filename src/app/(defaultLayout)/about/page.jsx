@@ -4,6 +4,9 @@ import Brand from '@/app/Components/Brand/Brand';
 import BreadCumb from '@/app/Components/Common/BreadCumb';
 import Project1 from '@/app/Components/Project/Project1';
 import React from 'react';
+import { getPageMetadata } from '@/utils/seo';
+
+export const metadata = getPageMetadata('/about');
 
 const page = () => {
     return (
@@ -12,10 +15,10 @@ const page = () => {
             <About4
                 MainImg="/assets/images/aboutnew.png"
                 SubTitle="MAYURASOFT COMPANY"
-                Title="We Can Clients With The<br> About <span>Solution.</span>"
-                Content="Monotonectally repurpose maintainable infrastruct whereas MayuraSoft in fermentum quis tempo sapien maximus design."
+                Title="We Help Clients With<br> Technology <span>Solutions.</span>"
+                Content="MayuraSoft delivers enterprise-grade software solutions. We specialize in custom development, cloud infrastructure, and data engineering for businesses worldwide."
                 listTitle1="Best IT Solutions & Service"
-                listTitle2="24 Hour's Customer Service"  
+                listTitle2="24/7 Customer Support"  
                 BoxTitle1="826"
                 BoxTitle2="Satisfied Clients"                  
             ></About4>

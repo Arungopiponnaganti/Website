@@ -6,7 +6,7 @@ const RELATED = [
   {
     title: 'Workflow Automation',
     desc: 'Wrap your AI integration in end-to-end automated workflows',
-    href: '/service/ai-automations',
+    href: '/ai-automations',
   },
   {
     title: 'Cloud & DevOps',

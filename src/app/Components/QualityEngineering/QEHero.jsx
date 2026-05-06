@@ -1,6 +1,50 @@
 'use client';
 import Link from 'next/link';
 import React, { useState, useEffect, useRef } from 'react';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Subject',
+    name: 'subject',
+    type: 'text',
+    placeholder: 'Your Subject Here',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
 
 const TAGS = [
   'Shift-left testing',
@@ -241,6 +285,8 @@ function CoverageBars() {
 
 // ── Hero ──────────────────────────────────────────────────────
 export default function QEHero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="qe-hero-split">
 
@@ -295,7 +341,7 @@ export default function QEHero() {
 
           <div className="qe-hero-ctas">
             {/* <Link href="/free-audit?service=quality-engineering" className="qe-cta-primary" data-cta="hero-primary"> */}
-            <Link href="/contact?service=quality-engineering" className="qe-cta-primary" data-cta="hero-primary">
+            <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="qe-cta-primary" data-cta="hero-primary">
               Get a free QA audit &rarr;
             </Link>
             <button
@@ -309,6 +355,16 @@ export default function QEHero() {
         </div>
       </div>
 
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get a Free QA Audit"
+        description="Fill out the form below and we'll get back to you shortly."
+        submitButtonText="Submit"
+        fields={defaultFormFields}
+        metadata={{ service: 'quality-engineering', pageTitle: 'Quality Engineering' }}
+      />
     </section>
+
   );
 }

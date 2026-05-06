@@ -2,6 +2,50 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Subject',
+    name: 'subject',
+    type: 'text',
+    placeholder: 'Your Subject Here',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
 
 const SCENARIOS = [
   {
@@ -50,6 +94,7 @@ export default function CAIHero() {
   const [messages, setMessages] = useState([...SCENARIOS[0].msgs]);
   const [inputVal, setInputVal] = useState('');
   const [typing, setTyping] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
@@ -93,7 +138,7 @@ export default function CAIHero() {
       }}
     >
       {/* Background decorative shape */}
-      <div
+      {/* <div
         className="hero-left-shape"
         style={{
           position: 'absolute',
@@ -111,7 +156,7 @@ export default function CAIHero() {
           height={680}
           priority
         />
-      </div>
+      </div> */}
 
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className="row hero align-items-center g-4">
@@ -179,7 +224,7 @@ export default function CAIHero() {
 
               <div className="d-flex flex-wrap align-items-center gap-4 mb-5">
                 <div className="solutek-btn">
-                  <Link href="/contact" className="btn-2">
+                  <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="btn-2">
                     Build your bot &rarr;
                   </Link>
                 </div>
@@ -281,6 +326,7 @@ export default function CAIHero() {
                     className="cai-input"
                     type="text"
                     placeholder="Type a message..."
+                    aria-label="Type a message..."
                     value={inputVal}
                     onChange={(e) => setInputVal(e.target.value)}
                     onKeyDown={handleKey}
@@ -294,6 +340,16 @@ export default function CAIHero() {
 
         </div>
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Build Your Bot"
+        description="Fill out the form below and we'll get back to you shortly."
+        submitButtonText="Submit"
+        fields={defaultFormFields}
+        metadata={{ service: 'conversational-ai', pageTitle: 'Conversational AI' }}
+      />
     </div>
   );
 }

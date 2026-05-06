@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
 import './CDPArchitecture.css';
-import { useRouter } from 'next/navigation';
+import DynamicFormModal from '../Common/DynamicFormModal';
 
 const OPTIONS = [
   {
@@ -143,9 +143,52 @@ const PIPELINE_DATA = {
   },
 };
 
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Subject',
+    name: 'subject',
+    type: 'text',
+    placeholder: 'Your Subject Here',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
+
 export default function CDPArchitecture() {
   const [selectedOption, setSelectedOption] = useState('onpremise');
-  const router = useRouter();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const metrics = METRICS[selectedOption];
   const desc = DESCRIPTIONS[selectedOption];
@@ -302,7 +345,7 @@ export default function CDPArchitecture() {
         </div>
 
         <div className="cdpa-cta-wrapper">
-          <button className="cdpa-cta-btn" onClick={() => router.push('/contact')}>
+          <button className="cdpa-cta-btn" onClick={() => setIsModalOpen(true)}>
             Get a recommendation
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -311,6 +354,15 @@ export default function CDPArchitecture() {
           </button>
         </div>
       </div>
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get a recommendation"
+        description="Fill out the form below and we'll get back to you shortly."
+        submitButtonText="Submit"
+        fields={defaultFormFields}
+        metadata={{ service: 'Architecture options', pageTitle: 'Cloud Data Platforms' }}
+      />
     </section>
   );
 }

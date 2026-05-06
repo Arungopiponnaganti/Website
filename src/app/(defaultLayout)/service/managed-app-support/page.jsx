@@ -12,17 +12,9 @@ import MASHandover from '@/app/Components/ManagedAppSupport/MASHandover';
 import MASEngagement from '@/app/Components/ManagedAppSupport/MASEngagement';
 import MASFaq from '@/app/Components/ManagedAppSupport/MASFaq';
 import CtaBand from '@/app/Components/Common/CtaBand';
+import { getPageMetadata } from '@/utils/seo';
 
-export const metadata = {
-  title: 'Managed App Support & 24/7 Monitoring | MayuraSoft',
-  description: 'MayuraSoft provides 24/7 managed support for production applications — monitoring, incident response, patching, and continuous optimisation.',
-  alternates: {
-    canonical: 'https://mayurasoft.com/services/managed-app-support',
-  },
-  openGraph: {
-    images: [{ url: '/assets/og-managed-app-support.png', width: 1200, height: 630 }]
-  }
-};
+export const metadata = getPageMetadata('/service/managed-app-support');
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -55,12 +47,15 @@ export default function ManagedAppSupportPage() {
         <MASHandover />
         <MASEngagement />
         <MASFaq />
-        <CtaBand 
+        <CtaBand
           title="Ready to end the 2 AM pager alarms?"
           description="Get full-stack monitoring, guaranteed response times, and a dedicated engineering team watching over your production application 24/7."
-          primaryBtn={{ href: '/contact', text: 'Get a support plan', dataCta: 'cta-primary' }}
+          primaryBtn={{ text: 'Get a support plan', dataCta: 'cta-primary' }}
           secondaryBtn={{ href: '#whats-included', variant: 'link', text: 'Review what\'s included' }}
           bgClass="bg-white border-top py-5"
+          useModal={true}
+          modalTitle="Get a Support Plan"
+          modalDescription="Fill out the form below and we'll get back to you shortly."
         />
       </div>
     </>

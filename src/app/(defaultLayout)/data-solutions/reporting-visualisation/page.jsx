@@ -8,14 +8,9 @@ import RVSteps from '@/app/Components/ReportingVisualisation/RVSteps';
 import RVWhy from '@/app/Components/ReportingVisualisation/RVWhy';
 import RVEngagement from '@/app/Components/ReportingVisualisation/RVEngagement';
 import CtaSplit from '@/app/Components/Common/CtaSplit';
+import { getPageMetadata } from '@/utils/seo';
 
-export const metadata = {
-  title: 'Reporting & Visualisation | MayuraSoft',
-  description: 'Reports your stakeholders actually read — and act on. MayuraSoft designs and builds automated, executive-ready reporting systems.',
-  alternates: {
-    canonical: 'https://mayurasoft.com/data-solutions/reporting-visualisation',
-  },
-};
+export const metadata = getPageMetadata('/data-solutions/reporting-visualisation');
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -57,6 +52,7 @@ export default function ReportingVisualisationPage() {
             { label: 'Your most important report', type: 'select', options: ['Board / investor monthly report', 'Sales performance dashboard', 'Financial P&L report', 'Operations metrics report', 'Marketing attribution report', 'Other'] },
           ]}
           formSubmitBtn="Request free assessment →"
+          subject="Free report assessment request"
         />
       </div>
     </>

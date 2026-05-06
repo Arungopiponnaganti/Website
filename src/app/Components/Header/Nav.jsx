@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { useRef, useEffect } from 'react';
 import DropDown from './DropDown';
 import MegaMenuServices from './MegaMenuServices';
@@ -24,7 +25,7 @@ export default function Nav({ setMobileToggle }) {
       <li className="offcanvas-nav-header-li">
         <div className="offcanvas-nav-header">
           <a href="/" onClick={() => setMobileToggle(false)}>
-            <img src="/assets/images/mayura-logo.png" alt="Logo" width={130} height={34} style={{ height: 'auto' }} />
+            <Image src="/assets/images/mayura-logo.png" alt="Logo" width={130} height={34} priority />
           </a>
           <button
             className="offcanvas-close-btn"

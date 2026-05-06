@@ -32,20 +32,20 @@ export default function UXUIFaq() {
   const toggle = (i) => setOpenIdx(openIdx === i ? null : i);
 
   return (
-    <section style={{ background: '#fff', padding: '60px 0' }}>
+    <section className="uxui-faq-section">
       <div className="container">
         <div className="row">
 
           {/* Left sticky sidebar */}
           <div className="col-lg-4 col-md-12" >
-            <div style={{ position: 'sticky', top: '120px' }}>
+            <div className="uxui-faq-sticky">
               <SectionTitle
                 SubTitle="Common questions"
                 Title="What clients ask before starting a design engagement"
                 className="text-left"
                 isDarkMode={false}
               />
-              <p style={{ fontSize: '13.5px', color: '#6c757d', lineHeight: '1.65', marginBottom: '24px' }}>
+              <p className="uxui-faq-subtitle">
                 Not seeing what you need? Book a 30-minute discovery call — we&apos;ll answer everything specific to your project.
               </p>
               {/* <Link
@@ -72,33 +72,19 @@ export default function UXUIFaq() {
                 return (
                   <div
                     key={i}
-                    style={{
-                      borderBottom: '1px solid #ebebeb',
-                      cursor: 'pointer',
-                    }}
+                    className="uxui-faq-item"
                     onClick={() => toggle(i)}
                   >
                     {/* Question row */}
-                    <div style={{
-                      display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                      gap: '16px', padding: '18px 0',
-                    }}>
-                      <span style={{ fontSize: '15px', fontWeight: '600', color: '#1a1e2d', lineHeight: '1.4' }}>
+                    <div className="uxui-faq-q-row">
+                      <span className="uxui-faq-q-text">
                         {faq.q}
                       </span>
-                      <div style={{
-                        width: '28px', height: '28px', borderRadius: '50%', flexShrink: 0,
-                        background: isOpen ? '#4361EE' : '#f0f0f0',
-                        display: 'flex', alignItems: 'center', justifyContent: 'center',
-                        transition: 'background 0.2s',
-                      }}>
+                      <div className="uxui-faq-icon-wrapper" style={{ background: isOpen ? '#4361EE' : '#f0f0f0' }}>
                         <i
-                          className="bi bi-plus-lg"
+                          className="bi bi-plus-lg uxui-faq-icon"
                           style={{
-                            fontSize: '13px',
                             color: isOpen ? '#fff' : '#888',
-                            display: 'inline-block',
-                            transition: 'transform 0.25s ease, color 0.2s',
                             transform: isOpen ? 'rotate(45deg)' : 'rotate(0deg)',
                           }}
                         />
@@ -106,15 +92,8 @@ export default function UXUIFaq() {
                     </div>
 
                     {/* Answer (animated) */}
-                    <div style={{
-                      maxHeight: isOpen ? '400px' : '0',
-                      overflow: 'hidden',
-                      transition: 'max-height 0.35s ease',
-                    }}>
-                      <p style={{
-                        fontSize: '13.5px', color: '#6c757d', lineHeight: '1.75',
-                        paddingBottom: '18px', margin: 0,
-                      }}>
+                    <div className="uxui-faq-a-wrapper" style={{ maxHeight: isOpen ? '400px' : '0' }}>
+                      <p className="uxui-faq-a-text">
                         {faq.a}
                       </p>
                     </div>

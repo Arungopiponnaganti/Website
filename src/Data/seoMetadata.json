@@ -1,0 +1,236 @@
+{
+  "/": {
+    "title": "MayuraSoft | Software, AI & Data Engineering Services",
+    "description": "MayuraSoft is an IT services company that helps businesses build reliable software, integrate AI into operations, and turn data into actionable insights.",
+    "keywords": "software development, AI integration, data engineering, cloud platforms, business intelligence, IT services",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/about": {
+    "title": "About MayuraSoft — IT Services Company | 10+ Years",
+    "description": "Learn about MayuraSoft — an IT services company delivering software, AI, and data solutions with 10+ years of experience and a free audit on every engagement.",
+    "keywords": "about mayurasoft, IT services company, software development company, AI integration services",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/service": {
+    "title": "IT Services & Solutions | MayuraSoft",
+    "description": "Explore MayuraSoft's comprehensive IT services including software development, AI automation, cloud DevOps, and quality engineering.",
+    "keywords": "IT services, software development, AI automation, cloud devops, quality engineering",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/service/service-details": {
+    "title": "Service Details | MayuraSoft - Comprehensive IT Services Information",
+    "description": "View detailed information about MayuraSoft's IT services and solutions including software development, AI integration, and data engineering.",
+    "keywords": "service details, software development, AI solutions, IT services",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/service/custom-software-development": {
+    "title": "Custom Software Development | MayuraSoft",
+    "description": "Get custom software solutions tailored to your business needs. From concept to deployment, we deliver scalable, reliable applications.",
+    "keywords": "custom software development, software development services, bespoke software",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/service/product-engineering": {
+    "title": "Product Engineering Services | MayuraSoft",
+    "description": "End-to-end product engineering services from idea validation to production-ready software. Turn your concepts into market-ready products.",
+    "keywords": "product engineering, software product development, MVP development, product design",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/service/application-modernisation": {
+    "title": "Application Modernisation Services | MayuraSoft",
+    "description": "Transform legacy applications into modern, scalable solutions. Upgrade your tech stack with cloud-native architectures.",
+    "keywords": "application modernisation, legacy modernization, software modernization, cloud migration",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/service/cloud-devops": {
+    "title": "Cloud & DevOps Services | MayuraSoft",
+    "description": "Accelerate your cloud journey with our DevOps and cloud infrastructure services. Build scalable, reliable cloud architectures.",
+    "keywords": "cloud devops, devops services, cloud infrastructure, CI/CD, aws, azure",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/service/quality-engineering": {
+    "title": "Quality Engineering Services | MayuraSoft",
+    "description": "Ensure your software quality with comprehensive testing and quality engineering services. From automated testing to performance validation.",
+    "keywords": "quality engineering, software testing, QA services, test automation, quality assurance",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/service/ux-ui-design": {
+    "title": "UX/UI Design Services | MayuraSoft",
+    "description": "Create exceptional user experiences with our end-to-end UX/UI design services. From user research to visual design and prototyping.",
+    "keywords": "UX design, UI design, user experience, user interface design, prototyping",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/service/tech-due-diligence": {
+    "title": "Tech Due Diligence Services | MayuraSoft",
+    "description": "Comprehensive technical due diligence services for investments and acquisitions. Get accurate technical assessments and risk analysis.",
+    "keywords": "tech due diligence, technical assessment, IT audit, technology evaluation",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/service/managed-app-support": {
+    "title": "Managed Application Support | MayuraSoft",
+    "description": "Reliable managed application support and maintenance services. 24/7 monitoring and support for production systems.",
+    "keywords": "managed support, application maintenance, app support services, application monitoring",
+    "ogImage": "/openGraphImage.jpg"
+  },
+"/ai-automations": {
+    "title": "AI Automation & Workflow Services | MayuraSoft",
+    "description": "Transform business operations with AI automation, workflow optimization, conversational AI, and intelligent document processing.",
+    "keywords": "AI automation, artificial intelligence, business automation, AI solutions, machine learning",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/ai-automations/workflow-automation": {
+    "title": "Workflow Automation Services | MayuraSoft",
+    "description": "Streamline your business processes with intelligent workflow automation. Automate repetitive tasks, reduce manual errors, and boost productivity with custom workflow solutions.",
+    "keywords": "workflow automation, process automation, business process automation, workflow software, business automation",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/ai-automations/ai-integration": {
+    "title": "AI Integration Services | MayuraSoft",
+    "description": "Seamlessly integrate AI capabilities into your existing systems and workflows. Expert AI implementation services.",
+    "keywords": "AI integration, machine learning integration, AI implementation, AI services",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/ai-automations/conversational-ai": {
+    "title": "Conversational AI Solutions | MayuraSoft",
+    "description": "Build intelligent chatbots and conversational AI solutions for enhanced customer experience and automate support.",
+    "keywords": "conversational AI, chatbot development, NLP, virtual assistant, chat bot",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/ai-automations/document-processing": {
+    "title": "Intelligent Document Processing | MayuraSoft",
+    "description": "Automate document processing with AI-powered IDP solutions.",
+    "keywords": "document processing, IDP, intelligent document processing, OCR",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/ai-automations/ai-governance": {
+    "title": "AI Governance Services | MayuraSoft",
+    "description": "Establish robust AI governance frameworks for responsible AI usage and compliance. Ensure ethical AI implementation.",
+    "keywords": "AI governance, responsible AI, AI compliance AI ethics, AI risk management",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/ai-automations/ai-readiness": {
+    "title": "AI Readiness Assessment | MayuraSoft",
+    "description": "Evaluate your organization's AI readiness with our comprehensive assessment services.",
+    "keywords": "AI readiness, AI assessment, AI maturity, AI readiness evaluation",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/data-solutions": {
+    "title": "Data Solutions & Engineering Services | MayuraSoft",
+    "description": "Comprehensive data solutions including data governance, engineering pipelines, strategy consulting, and analytics. Transform your data into actionable insights.",
+    "keywords": "data solutions, data engineering, data governance, business intelligence, data strategy, analytics",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/data-solutions/data-governance": {
+    "title": "Data Governance Services | MayuraSoft",
+    "description": "Establish robust data governance frameworks to ensure data quality, compliance, and reliable decision-making across your organization.",
+    "keywords": "data governance, data management, data quality, data compliance, data governance framework",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/data-solutions/cloud-data-platforms": {
+    "title": "Cloud Data Platforms | MayuraSoft",
+    "description": "Build scalable cloud data platforms for modern data architectures.",
+    "keywords": "cloud data platform, data lake, data warehouse, cloud data",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/data-solutions/data-strategy-consulting": {
+    "title": "Data Strategy Consulting | MayuraSoft",
+    "description": "Develop comprehensive data strategies aligned with your business objectives.",
+    "keywords": "data strategy, data consulting, data roadmap, data planning",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/data-solutions/reporting-visualisation": {
+    "title": "Reporting & Visualization | MayuraSoft",
+    "description": "Transform raw data into actionable insights with modern reporting and visualization solutions.",
+    "keywords": "data visualization, reporting, business intelligence, dashboards",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/data-solutions/analytics-business-intelligence": {
+    "title": "Analytics & Business Intelligence | MayuraSoft",
+    "description": "Unlock insights from your data with advanced analytics and BI solutions.",
+    "keywords": "analytics, business intelligence, data analytics, BI solutions",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/data-solutions/data-engineering-pipelines": {
+    "title": "Data Engineering Pipelines | MayuraSoft",
+    "description": "Design and implement efficient data pipelines for seamless data flow.",
+    "keywords": "data engineering, ETL, data pipelines, data integration",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/why-choose-us": {
+    "title": "Why Choose MayuraSoft for IT Services",
+    "description": "Discover why businesses choose MayuraSoft for software development, AI integration, and data engineering solutions. Learn about our expertise and approach.",
+    "keywords": "why choose mayurasoft, IT services provider, software partner",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/pricing": {
+    "title": "Pricing & Plans | MayuraSoft IT Services",
+    "description": "View MayuraSoft's pricing plans for software development and IT services.",
+    "keywords": "pricing, IT services pricing, software development cost",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/testimonial": {
+    "title": "Testimonials | MayuraSoft",
+    "description": "Read what our clients say about working with MayuraSoft.",
+    "keywords": "testimonials, client reviews, mayurasoft reviews",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/blog": {
+    "title": "Blog | MayuraSoft",
+    "description": "Stay updated with the latest insights on software development, AI, and data engineering.",
+    "keywords": "blog, technology blog, software development articles, AI insights",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/blog/blog-details": {
+    "title": "Blog Details | MayuraSoft",
+    "description": "Read our latest articles on technology, software development, and business insights.",
+    "keywords": "blog articles, technology insights, software development",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/blog-sidebar": {
+    "title": "Blog | MayuraSoft",
+    "description": "Explore our blog with a sidebar layout for easy navigation.",
+    "keywords": "blog, technology articles, industry insights",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/faq": {
+    "title": "Frequently Asked Questions | MayuraSoft",
+    "description": "Find answers to frequently asked questions about MayuraSoft's services.",
+    "keywords": "FAQ, frequently asked questions, mayurasoft FAQ",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/contact": {
+    "title": "Contact MayuraSoft — Free Consultation Available",
+    "description": "Get in touch with MayuraSoft to discuss your software development, AI integration, or data engineering needs. Reach out for a free consultation.",
+    "keywords": "contact mayurasoft, IT services contact, get in touch",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/privacy-policy": {
+    "title": "Privacy Policy | MayuraSoft - Data Protection Information",
+    "description": "Read MayuraSoft's Privacy Policy to understand how we collect, use, and protect your personal information when you use our services.",
+    "keywords": "privacy policy, data protection, personal information, GDPR, terms",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/team": {
+    "title": "Our Team | MayuraSoft",
+    "description": "Meet the experienced team at MayuraSoft.",
+    "keywords": "team, mayurasoft team, our experts",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/team/team-details": {
+    "title": "Team Member | MayuraSoft",
+    "description": "Learn more about our team members.",
+    "keywords": "team member, mayurasoft staff",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/project": {
+    "title": "Our Projects | MayuraSoft",
+    "description": "Explore MayuraSoft's portfolio of successful projects.",
+    "keywords": "projects, portfolio, case studies, mayurasoft projects",
+    "ogImage": "/openGraphImage.jpg"
+  },
+  "/project/project-details": {
+    "title": "Project Details | MayuraSoft",
+    "description": "View details of our successful project implementations.",
+    "keywords": "project details, case study",
+    "ogImage": "/openGraphImage.jpg"
+  }
+}

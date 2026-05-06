@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
 
 const DIMENSIONS = [
   {
@@ -117,6 +118,8 @@ function getResult(pct) {
 export default function ARAAssessment() {
   const [scores, setScores] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpenForMailMe, setIsModalOpenForMailMe] = useState(false);
 
   const pickAnswer = (di, oi) => {
     setScores((prev) => ({ ...prev, [di]: oi }));
@@ -148,6 +151,83 @@ export default function ARAAssessment() {
   }));
 
   const barColor = (s) => (s >= 70 ? '#10b981' : s >= 40 ? '#f59e0b' : '#534AB7');
+
+  const formFields = [
+    {
+      label: 'Full Name',
+      name: 'name',
+      type: 'text',
+      placeholder: 'John Smith',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Work Email',
+      name: 'email',
+      type: 'email',
+      placeholder: 'john@company.com',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Company',
+      name: 'company',
+      type: 'text',
+      placeholder: 'Acme Inc.',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Phone',
+      name: 'phone',
+      type: 'tel',
+      placeholder: '+1 (555) 000-0000',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Message',
+      name: 'message',
+      type: 'textarea',
+      placeholder: 'Tell us more about your chatbot configuration needs...',
+      required: false,
+      colSize: 12
+    },
+    // {
+    //   label: 'Current AI Readiness Score',
+    //   name: 'readinessScore',
+    //   type: 'text',
+    //   placeholder: `${pct}%`,
+    //   defaultValue: `${pct}%`,
+    //   required: false,
+    //   colSize: 12,
+    //   readOnly: true,
+    //   readOnlyMessage: 'This is your calculated AI readiness score based on your quiz answers.'
+    // }
+  ];
+
+  const formFieldsForMailMe = [
+    {
+      label: 'Email',
+      name: 'email',
+      type: 'email',
+      placeholder: 'john@company.com',
+      required: true,
+      colSize: 12
+    },
+  ]
+
+  const formMetadata = {
+    sourcePage: 'AI Readiness',
+    sourceSection: 'AI Readiness Assessment',
+    formType: 'Assess your organisation&#39;s AI readiness',
+    pageUrl: typeof window !== 'undefined' ? window.location.pathname : ''
+  };
+
+  const quizAnswers = Object.keys(scores).map(qi => ({
+    question: DIMENSIONS[qi].q,
+    answer: DIMENSIONS[qi].opts[scores[qi]]
+  }));
 
   return (
     <section className="cd-section py-5 pb-3">
@@ -184,15 +264,15 @@ export default function ARAAssessment() {
                     <span className="ai-ara-q-num">{dim.num}</span>
                     <span className="ai-ara-q-label">{dim.title}</span>
                   </div>
-                  <p className="ai-ara-q-text mb-3">{dim.q}</p>
+                  <label htmlFor={`ara-q-${di}`} className="ai-ara-q-text mb-3 d-block">{dim.q}</label>
                   <select
+                    id={`ara-q-${di}`}
                     className="form-select ai-ara-select"
                     value={scores[di] !== undefined ? scores[di] : ''}
                     onChange={(e) => {
                       const val = e.target.value;
                       if (val !== '') pickAnswer(di, parseInt(val, 10));
                     }}
-                    aria-label={dim.q}
                   >
                     <option value="">Select your answer...</option>
                     {dim.opts.map((o, oi) => (
@@ -289,9 +369,9 @@ export default function ARAAssessment() {
                         <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.6)', lineHeight: '1.5' }}>
                           Free PDF with expanded recommendations.
                         </div>
-                        <a href="/contact" className="cd-btn-primary d-block text-center text-decoration-none" style={{ fontSize: '12px', padding: '10px 16px', marginTop: '4px'}}>
+                        <button onClick={() => setIsModalOpenForMailMe(true)} className="cd-btn-primary d-block text-center text-decoration-none" style={{ fontSize: '12px', padding: '10px 16px', marginTop: '4px', border: 'none', cursor: 'pointer' }}>
                           Email me the report
-                        </a>
+                        </button>
                       </div>
                     </div>
                     <div className="col-6">
@@ -300,9 +380,9 @@ export default function ARAAssessment() {
                         <div style={{ fontSize: '11px', color: '#6b7280', lineHeight: '1.5' }}>
                           Free 45-minute session to build your plan.
                         </div>
-                        <a href="/contact" className="cd-btn-primary d-block text-center text-decoration-none" style={{ fontSize: '12px', padding: '10px 16px', marginTop: '4px' }}>
+                        <button onClick={() => setIsModalOpen(true)} className="cd-btn-primary d-block text-center text-decoration-none" style={{ fontSize: '12px', padding: '10px 16px', marginTop: '4px', border: 'none', cursor: 'pointer' }}>
                           Book free consultation
-                        </a>
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -318,6 +398,18 @@ export default function ARAAssessment() {
           </div>
         </div>
       </div>
+      <DynamicFormModal
+        isOpen={isModalOpen || isModalOpenForMailMe}
+        onClose={() => {
+          setIsModalOpen(false);
+          setIsModalOpenForMailMe(false);
+        }}
+        title={isModalOpenForMailMe ? "Email me the report" : "Book Your free consultation"}
+        description={isModalOpenForMailMe ? "Fill out the form below to get your assessment report." : "Fill out the form below to get your complete assessment."}
+        fields={isModalOpenForMailMe ? formFieldsForMailMe : formFields}
+        metadata={formMetadata}
+        quizAnswers={quizAnswers}
+      />
     </section>
   );
 }

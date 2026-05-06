@@ -1,7 +1,51 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Subject',
+    name: 'subject',
+    type: 'text',
+    placeholder: 'Your Subject Here',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
 
 const SIGNALS = [
   {
@@ -25,6 +69,7 @@ const SIGNALS = [
 ];
 
 export default function AGEHero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div
       className="hero-area style-three d-flex align-items-center"
@@ -38,12 +83,12 @@ export default function AGEHero() {
       }}
     >
       {/* Background shape */}
-      <div
+      {/* <div
         className="hero-left-shape"
         style={{ position: 'absolute', top: '20%', transform: 'translateY(-50%)', left: '10%', zIndex: 0, opacity: 0.8 }}
       >
         <Image src="/assets/images/home-3/hero-geo.png" alt="" width={600} height={600} priority />
-      </div>
+      </div> */}
 
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className="row hero align-items-center g-4">
@@ -74,13 +119,13 @@ export default function AGEHero() {
               </h1>
 
               <p className="subheadline text-white" style={{ fontSize: '16px', lineHeight: '1.65', maxWidth: '540px', marginBottom: '32px' }}>
-                MayuraSoft builds AI governance frameworks that make your AI systems transparent, fair, auditable,
+                MayuraSoft builds oversight frameworks that make your AI systems transparent, fair, auditable,
                 and compliant — before regulators, journalists, or users find the gaps first.
               </p>
 
               <div className="d-flex flex-wrap align-items-center gap-4 mb-5">
                 <div className="solutek-btn">
-                  <Link href="/contact" className="btn-2">Start governance review &rarr;</Link>
+                  <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="btn-2">Start governance review &rarr;</Link>
                 </div>
                 <div className="hero-btn-3">
                   <div className="hero-btn-profile">
@@ -164,6 +209,15 @@ export default function AGEHero() {
 
         </div>
       </div>
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Start governance review"
+        description="Fill out the form below and we'll get back to you shortly."
+        submitButtonText="Submit"
+        fields={defaultFormFields}
+        metadata={{ service: 'ai-governance', pageTitle: 'AI Governance & Ethics' }}
+      />
     </div>
   );
 }

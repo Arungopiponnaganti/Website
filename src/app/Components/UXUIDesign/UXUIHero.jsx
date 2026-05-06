@@ -1,7 +1,51 @@
 'use client';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Subject',
+    name: 'subject',
+    type: 'text',
+    placeholder: 'Your Subject Here',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
 
 const stats = [
   { value: '68%', label: 'of users abandon due to poor UX, not bad products' },
@@ -11,48 +55,30 @@ const stats = [
 ];
 
 export default function UXUIHero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="hero-area style-three d-flex align-items-center uxui-hero-wrap">
       {/* ── Full-width animated SVG background ── */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0, left: 0, right: 0, bottom: 0,
-          zIndex: 1,
-          overflow: 'clip',
-        }}
-      >
+      <div className="uxui-hero-bg-container">
 
 
 
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/assets/images/ux-ui-hero.svg"
-          alt=""
+          alt="Abstract geometric design elements representing UI/UX design - shapes, colors and creative patterns"
           aria-hidden="true"
           className="uxui-hero-bg-img"
+          width={1920}
+          height={1080}
         />
 
 
         {/* Left-to-right gradient overlay — keeps text legible */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            background: 'linear-gradient(to right, rgba(7,9,14,1) 0%, rgba(7,9,14,0.97) 38%, rgba(7,9,14,0.75) 55%, rgba(7,9,14,0.25) 75%, transparent 100%)',
-            pointerEvents: 'none',
-          }}
-        />
+        <div className="uxui-hero-overlay-1" />
         {/* Bottom fade to blend hero into next section */}
-        <div
-          style={{
-            position: 'absolute',
-            bottom: 0, left: 0, right: 0,
-            height: '120px',
-            background: 'linear-gradient(to bottom, transparent, rgba(7,9,14,0.6))',
-            pointerEvents: 'none',
-          }}
-        />
+        <div className="uxui-hero-overlay-2" />
 
 </div>
 
@@ -69,19 +95,14 @@ export default function UXUIHero() {
 
 
       {/* ── Hero text content (floats on top of SVG background) ── */}
-      <div className="container" style={{ position: 'relative', zIndex: 2 }}>
+      <div className="container uxui-hero-content-wrap">
         <div className="row">
           <div className="col-lg-6 col-md-10 col-sm-12">
-            <div className="hero-contant" style={{ paddingTop: 0 }}>
+            <div className="hero-contant uxui-hero-content">
 
               {/* Blue service pill */}
-              <div style={{
-                display: 'inline-flex', alignItems: 'center', gap: '7px',
-                background: 'rgba(67, 97, 238, 0.18)', color: '#7c9fff',
-                fontSize: '13px', fontWeight: '700', padding: '5px 16px',
-                borderRadius: '99px', marginBottom: '24px', letterSpacing: '0.03em',
-              }}>
-                <span style={{ width: '7px', height: '7px', borderRadius: '50%', background: '#7c9fff', display: 'inline-block', flexShrink: 0 }} />
+              <div className="uxui-hero-pill">
+                <span className="uxui-hero-pill-dot" />
                 UX / UI Design
               </div>
 
@@ -89,14 +110,14 @@ export default function UXUIHero() {
                 Design that converts visitors into customers&nbsp;&mdash; not just looks good
               </h1>
 
-              <p className="subheadline text-white" style={{ fontSize: '17px', lineHeight: '1.7', maxWidth: '560px', marginBottom: '36px', color: 'rgba(255,255,255,0.72)' }}>
+              <p className="subheadline text-white uxui-hero-desc">
                 MayuraSoft designs interfaces grounded in user research and business data. Every pixel earns its place by serving a measurable outcome — lower bounce rates, higher conversions, faster time-to-value.
               </p>
 
               {/* CTAs */}
               <div className="d-flex flex-wrap align-items-center gap-4 mb-5">
                 <div className="solutek-btn">
-                  <Link href="/contact?service=ux-ui-design" className="btn-2" data-cta="hero-primary">
+                  <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="btn-2" data-cta="hero-primary">
                     Get a free design audit &rarr;
                   </Link>
                 </div>
@@ -105,9 +126,9 @@ export default function UXUIHero() {
                     <Link
                       href="#process"
                       onClick={() => document.getElementById('process')?.scrollIntoView({ behavior: 'smooth' })}
-                      style={{ textTransform: 'none', textDecoration: 'none' }}
+                      className="uxui-hero-link"
                     >
-                      <span style={{ color: '#ff3c00', fontSize: '16px', fontWeight: '600' }}>See our process &darr;</span>
+                      <span className="uxui-hero-link-text">See our process &darr;</span>
                     </Link>
                   </div>
                 </div>
@@ -130,6 +151,16 @@ export default function UXUIHero() {
           </div>
         </div>
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get a Free Design Audit"
+        description="Fill out the form below and we'll get back to you shortly."
+        submitButtonText="Submit"
+        fields={defaultFormFields}
+        metadata={{ service: 'ux-ui-design', pageTitle: 'UX/UI Design' }}
+      />
     </div>
   );
 }

@@ -1,6 +1,50 @@
 'use client';
 import Link from 'next/link';
 import React, { useState, useEffect, useRef } from 'react';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Subject',
+    name: 'subject',
+    type: 'text',
+    placeholder: 'Your Subject Here',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
 
 const TAGS = [
   'Cloud migration',
@@ -91,11 +135,11 @@ const SCRIPT_2 = [
 
 // ── Deploy log table rows ─────────────────────────────────────
 const DEPLOY_LOGS = [
-  { id: 1, pipeline: 'deploy-prod',    branch: 'main',       status: 'pass', time: '14:32', dur: '2m 14s' },
-  { id: 2, pipeline: 'build-test',     branch: 'feat/auth',  status: 'pass', time: '13:21', dur: '1m 08s' },
-  { id: 3, pipeline: 'deploy-staging', branch: 'develop',    status: 'pass', time: '12:45', dur: '3m 22s' },
-  { id: 4, pipeline: 'security-scan',  branch: 'main',       status: 'pass', time: '11:30', dur: '0m 47s' },
-  { id: 5, pipeline: 'infra-plan',     branch: 'infra/k8s',  status: 'warn', time: '10:58', dur: '4m 01s' },
+  { id: 1, pipeline: 'deploy-prod', branch: 'main', status: 'pass', time: '14:32', dur: '2m 14s' },
+  { id: 2, pipeline: 'build-test', branch: 'feat/auth', status: 'pass', time: '13:21', dur: '1m 08s' },
+  { id: 3, pipeline: 'deploy-staging', branch: 'develop', status: 'pass', time: '12:45', dur: '3m 22s' },
+  { id: 4, pipeline: 'security-scan', branch: 'main', status: 'pass', time: '11:30', dur: '0m 47s' },
+  { id: 5, pipeline: 'infra-plan', branch: 'infra/k8s', status: 'warn', time: '10:58', dur: '4m 01s' },
 ];
 
 // ── Line renderer ─────────────────────────────────────────────
@@ -278,6 +322,8 @@ function DeployTable() {
 
 // ── Hero ──────────────────────────────────────────────────────
 export default function CDHero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="cd-hero-split">
 
@@ -331,7 +377,7 @@ export default function CDHero() {
 
           <div className="cd-hero-ctas">
             {/* <Link href="/free-audit?service=cloud-devops" className="cd-cta-primary" data-cta="hero-primary"> */}
-            <Link href="/contact?service=cloud-devops" className="cd-cta-primary" data-cta="hero-primary">
+            <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="cd-cta-primary" data-cta="hero-primary">
               Get a free cloud audit &rarr;
             </Link>
             <button
@@ -343,8 +389,19 @@ export default function CDHero() {
           </div>
 
         </div>
+
       </div>
 
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get a Free Cloud Audit"
+        description="Fill out the form below and we'll get back to you shortly."
+        submitButtonText="Submit"
+        fields={defaultFormFields}
+        metadata={{ service: 'cloud-devops', pageTitle: 'Cloud DevOps' }}
+      />
     </section>
+
   );
 }

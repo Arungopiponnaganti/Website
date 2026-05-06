@@ -13,18 +13,9 @@ import CAIEngagement from '@/app/Components/ConversationalAI/CAIEngagement';
 import CAIFaq from '@/app/Components/ConversationalAI/CAIFaq';
 import CAIRelated from '@/app/Components/ConversationalAI/CAIRelated';
 import CtaBand from '@/app/Components/Common/CtaBand';
+import { getPageMetadata } from '@/utils/seo';
 
-export const metadata = {
-  title: 'Conversational AI & Chatbots | MayuraSoft',
-  description:
-    'MayuraSoft builds custom LLM-powered chatbots and conversational AI agents for customer support, sales, HR, and e-commerce — deployed on your website, WhatsApp, Slack, or Teams. Free 60-min conversation design session.',
-  alternates: {
-    canonical: 'https://mayurasoft.com/ai-automations/conversational-ai',
-  },
-  openGraph: {
-    images: [{ url: '/assets/og-conversational-ai.png', width: 1200, height: 630 }],
-  },
-};
+export const metadata = getPageMetadata('/ai-automations/conversational-ai');
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -62,10 +53,13 @@ export default function ConversationalAIPage() {
         <CtaBand
           title="See what a custom AI assistant would do for your team"
           description="We'll map your top three support or operational use cases, sketch the conversation flows, and estimate the resolution rate you can expect. In 60 minutes. Free."
-          primaryBtn={{ href: '/contact', text: 'Book free design session →', dataCta: 'cta-primary-cai' }}
+          primaryBtn={{ text: 'Book free design session →', dataCta: 'cta-primary-cai' }}
           secondaryBtn={{ href: '/contact', variant: 'link', text: 'Talk to a conversational AI expert' }}
           trustText="Free 60-minute session · Conversation map delivered within 48 hrs · No commitment required"
           bgClass="bg-white border-top py-5"
+          useModal={true}
+          modalTitle="Book Free Design Session"
+          modalDescription="Fill out the form below and we'll get back to you shortly."
         />
       </div>
     </>

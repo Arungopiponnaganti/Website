@@ -19,7 +19,7 @@ const Hero1 = ({ bgImg, SubTitle, Title, Content, BtnText, BtnLink, mainImage, V
 				<div className="row hero align-items-center">
 					<div className="col-lg-6">
 						<div className="hero-contant">
-							<h5>{SubTitle}</h5>
+							<h2 className="hero-subtitle">{SubTitle}</h2>
 							<h1>{parse(Title)}</h1>
 							<p>{Content}</p>
 							<div className="solutek-btn">
@@ -36,7 +36,7 @@ const Hero1 = ({ bgImg, SubTitle, Title, Content, BtnText, BtnLink, mainImage, V
 					</div>
 					<div className="col-lg-6">
 						<div className="hero-thumb">
-							<Image src={mainImage} alt="img" width={452} height={771} />
+							<Image src={mainImage} alt={SubTitle ? `${SubTitle} hero illustration` : 'MayuraSoft hero image'} width={452} height={771} priority />
 						</div>
 					</div>
 				</div>

@@ -61,6 +61,8 @@ export default function UXUITechnologies() {
                     <img
                       src={tool.icon}
                       alt={`${tool.name} logo`}
+                      width={40}
+                      height={40}
                       className="overflow-hidden bg-white shadow-sm rounded-circle p-1 uxui-tool-img"
                     />
                   ) : (
@@ -75,15 +77,6 @@ export default function UXUITechnologies() {
 
         </div>
       </div>
-
-      <style>{`
-        .uxui-tool-pill { min-width: 200px; width: 45%; }
-        .uxui-pill-adobexd { background-image: linear-gradient(to right, pink, white); }
-        .uxui-pill-sketch  { background-image: linear-gradient(to right, powderblue, white); }
-        .uxui-pill-figma   { background-image: linear-gradient(to right, lavender, white); }
-        .uxui-pill-canva   { background-image: linear-gradient(to right, palegoldenrod, white); }
-        .uxui-tool-img     { aspect-ratio: unset; height: 44px; width: 44px; }
-      `}</style>
     </section>
   );
 }

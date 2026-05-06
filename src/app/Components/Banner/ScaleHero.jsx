@@ -19,10 +19,10 @@ const ScaleHero = ({
 
             <div className="scale-hero-content-wrap">
                 <div className="scale-hero-text">
-                    <h1 className="scale-hero-tagline">
+                    <h2 className="scale-hero-tagline">
                         {tagline}
                         {taglineSup && <sup>{taglineSup}</sup>}
-                    </h1>
+                    </h2>
                     <h2 className="scale-hero-subtitle">{subtitle}</h2>
                     <p className="scale-hero-desc">{description}</p>
                     <div className="scale-hero-btns">

@@ -1,25 +1,24 @@
 import React from 'react';
-import Hero1 from '../Components/Banner/Hero1';
-import ScaleHero from '../Components/Banner/ScaleHero';
-import Features from '../Components/Features/Features';
-import About1 from '../Components/About/About1';
-import Services1 from '../Components/Services/Services1';
-import Brand from '../Components/Brand/Brand';
-import Faq from '../Components/Faq/Faq';
-import Testimonial1 from '../Components/Testimonial/Testimonial1';
-import Contact1 from '../Components/Contact/Contact1';
-import Blog1 from '../Components/Blog/Blog1';
-import WhyChooseUs from '../Components/why-choose-us/WhyChooseUs';
-import Technologies from '../Components/technologies/Technologies';
-import Process from '../Components/Process/Process';
-import Testimonial2 from '../Components/Testimonial/Testimonial2';
-import Testimonial3 from '../Components/Testimonial/Testimonial3';
-import Process2 from '../Components/Process/Process2';
-import Project1 from '../Components/Project/Project1';
-import Project2 from '../Components/Project/Project2';
-import ServiceOverview from '../Components/Services/ServiceOverview';
-import AIAutomationOverview from '../Components/Services/AIAutomationOverview';
-import DataSolutionsOverview from '../Components/Services/DataSolutionsOverview';
+import { getPageMetadata } from '@/utils/seo';
+import dynamic from 'next/dynamic';
+
+export const metadata = getPageMetadata('/');
+
+const Hero1 = dynamic(() => import('../Components/Banner/Hero1'), { ssr: true });
+const ScaleHero = dynamic(() => import('../Components/Banner/ScaleHero'), { ssr: true });
+const Features = dynamic(() => import('../Components/Features/Features'), { ssr: true });
+const About1 = dynamic(() => import('../Components/About/About1'));
+const WhyChooseUs = dynamic(() => import('../Components/why-choose-us/WhyChooseUs'));
+const ServiceOverview = dynamic(() => import('../Components/Services/ServiceOverview'));
+const AIAutomationOverview = dynamic(() => import('../Components/Services/AIAutomationOverview'));
+const DataSolutionsOverview = dynamic(() => import('../Components/Services/DataSolutionsOverview'));
+const Technologies = dynamic(() => import('../Components/technologies/Technologies'));
+const Testimonial1 = dynamic(() => import('../Components/Testimonial/Testimonial1'));
+const Testimonial2 = dynamic(() => import('../Components/Testimonial/Testimonial2'));
+const Testimonial3 = dynamic(() => import('../Components/Testimonial/Testimonial3'));
+const Process2 = dynamic(() => import('../Components/Process/Process2'));
+const Faq = dynamic(() => import('../Components/Faq/Faq'));
+const Contact1 = dynamic(() => import('../Components/Contact/Contact1'));
 
 const Home = () => {
     return (
@@ -81,15 +80,6 @@ const Home = () => {
             <Technologies />
             <Testimonial1></Testimonial1>
             <Process2></Process2>
-
-            {/* <Project1 />
-            <Project2 /> */}
-
-
-
-
-
-            {/* <Services1></Services1> */}
 
             <Faq />
 

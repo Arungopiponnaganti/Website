@@ -1,13 +1,58 @@
 'use client';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const formFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Subject',
+    name: 'subject',
+    type: 'text',
+    placeholder: 'Your Subject Here',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your chatbot configuration needs...',
+    required: false,
+    colSize: 12
+  },
+];
 
 export default function CustomDevHero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-//     <div className="hero-area style-three align-items-center" style={{ marginTop: '-120px', paddingTop: '280px', position: 'relative', height: 'auto', minHeight: '800px' }}>
+    //     <div className="hero-area style-three align-items-center" style={{ marginTop: '-120px', paddingTop: '280px', position: 'relative', height: 'auto', minHeight: '800px' }}>
 
-//  <Image src="/assets/images/custom-dev-hero.png" alt="img" width={680} height={680} priority />
+    //  <Image src="/assets/images/custom-dev-hero.png" alt="img" width={680} height={680} priority />
     <div
       className="hero-area style-three align-items-center"
       style={{
@@ -22,7 +67,7 @@ export default function CustomDevHero() {
       {/* ✅ Background Image */}
       <Image
         src="/assets/images/custom-dev-hero.png"
-        alt="background"
+        alt="Custom software development hero background - coding workstation"
         fill
         priority
         sizes="100vw"
@@ -52,8 +97,7 @@ export default function CustomDevHero() {
 
               <div className="d-flex flex-wrap align-items-center gap-4">
                 <div className="solutek-btn">
-                  {/* <Link href="/free-audit?service=custom-dev" className="btn-2" data-cta="hero-primary"> */}
-                  <Link href="/contact?service=custom-dev" className="btn-2" data-cta="hero-primary">
+                  <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="btn-2" data-cta="hero-primary">
                     Get a free scoping session
                   </Link>
                 </div>
@@ -94,6 +138,15 @@ export default function CustomDevHero() {
           </div> */}
         </div>
       </div>
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get a Free Scoping Session"
+        description="Fill out the form below and we'll get back to you shortly."
+        submitButtonText="Submit"
+        fields={formFields}
+        metadata={{ service: 'custom-dev', pageTitle: 'Custom Software Development' }}
+      />
     </div>
   );
 }

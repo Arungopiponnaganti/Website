@@ -2,6 +2,50 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Subject',
+    name: 'subject',
+    type: 'text',
+    placeholder: 'Your Subject Here',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
 
 const HEALTH_ROWS = [
   { domain: 'Data catalogue',    pct: 12, color: '#E24B4A', status: 'Critical',  statusBg: 'rgba(226,75,74,0.18)',  statusColor: '#E24B4A' },
@@ -14,6 +58,7 @@ const HEALTH_ROWS = [
 
 export default function DGHero() {
   const [hoveredRow, setHoveredRow] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div
@@ -21,9 +66,9 @@ export default function DGHero() {
       style={{ marginTop: '0', paddingTop: '200px', paddingBottom: '60px', position: 'relative', height: 'auto', minHeight: '100vh' }}
     >
       {/* Background shape */}
-      <div className="hero-left-shape" style={{ position: 'absolute', top: '20%', transform: 'translateY(-50%)', left: '10%', zIndex: 0, opacity: 0.8 }}>
+      {/* <div className="hero-left-shape" style={{ position: 'absolute', top: '20%', transform: 'translateY(-50%)', left: '10%', zIndex: 0, opacity: 0.8 }}>
         <Image src="/assets/images/home-3/hero-geo.png" alt="" width={680} height={680} priority />
-      </div>
+      </div> */}
 
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className="row align-items-center g-4">
@@ -78,7 +123,7 @@ export default function DGHero() {
 
               <div className="d-flex flex-wrap align-items-center gap-4 mb-5">
                 <div className="solutek-btn">
-                  <Link href="/contact" className="btn-2">Get a free governance audit &rarr;</Link>
+                  <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="btn-2">Get a free governance audit &rarr;</Link>
                 </div>
                 <div className="hero-btn-3">
                   <div className="hero-btn-profile">
@@ -138,6 +183,16 @@ export default function DGHero() {
               </div>
         </div>
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get a Free Governance Audit"
+        description="Fill out the form below and we'll get back to you shortly."
+        submitButtonText="Submit"
+        fields={defaultFormFields}
+        metadata={{ service: 'data-governance', pageTitle: 'Data Governance & Quality' }}
+      />
     </div>
   );
 }

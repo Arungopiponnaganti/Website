@@ -56,17 +56,9 @@ const Footer = () => {
                         <div className="col-lg-6 col-md-12">
                             <div className="address-box d-flex">
                                 <div className="address-icon">
-                                    <Image src="/assets/images/address1.png" alt="img" width={35} height={35} />
-                                </div>
-                                <div className="address-title">
-                                    <h3>{AdressContent.Title}</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 col-md-12">
-                            <div className="address-box2 d-flex">
-                                <div className="address-icon">
-                                    <Image src="/assets/images/address2.png" alt="img" width={34} height={34} />
+<Image src="/assets/images/address1.png" alt="Office location icon" width={35} height={35} />
+
+                                    <Image src="/assets/images/address2.png" alt="Email address icon" width={34} height={34} />
                                 </div>
                                 <div className="solutek-btn">
                                     <Link href="/contact">
@@ -95,10 +87,10 @@ const Footer = () => {
                                 <p className="footer-widget-text">{LogoContent.Content}</p>
                                 <div className="footer-social">
                                     <div className="footer-widget-social">
-                                        <a href="#"><i className="bi bi-facebook"></i></a>
-                                        <a href="#"><i className="bi bi-twitter"></i></a>
-                                        <a href="#"><i className="bi bi-linkedin"></i></a>
-                                        <a href="#"><i className="bi bi-instagram"></i></a>
+                                        <a href="#" aria-label="Follow us on Facebook"><i className="bi bi-facebook" aria-hidden="true"></i></a>
+                                        <a href="#" aria-label="Follow us on Twitter"><i className="bi bi-twitter" aria-hidden="true"></i></a>
+                                        <a href="#" aria-label="Connect on LinkedIn"><i className="bi bi-linkedin" aria-hidden="true"></i></a>
+                                        <a href="#" aria-label="Follow us on Instagram"><i className="bi bi-instagram" aria-hidden="true"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -161,7 +153,7 @@ const Footer = () => {
                         <div className="col-lg-6 col-md-6 col-sm-6">
                             <div className="copyright-list">
                                 <ul>
-                                    <li><Link href="/">Privacy Policy</Link></li>
+                                    <li><Link href="/privacy-policy">Privacy Policy</Link></li>
                                     <li><Link href="/">Supports</Link></li>
                                 </ul>
                             </div>

@@ -41,7 +41,7 @@ export default function IDPRelated() {
             <Link key={i} href={r.href} className="cd-rel-card" style={{ textDecoration: 'none' }}>
               <h4>{r.title}</h4>
               <p>{r.desc}</p>
-              <div className="cd-rel-link">Explore &rarr;</div>
+              <div className="cd-rel-link">View workflow automation service &rarr;</div>
             </Link>
           ))}
         </div>

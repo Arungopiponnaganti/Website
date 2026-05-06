@@ -1,15 +1,61 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Subject',
+    name: 'subject',
+    type: 'text',
+    placeholder: 'Your Subject Here',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
 
 export default function RVHero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="hero-area style-three d-flex align-items-center pb-4" style={{ marginTop: '-120px', paddingTop: '280px', position: 'relative', height: 'auto', minHeight: '800px' }}>
       
       {/* Background Shapes positioned relative to the full section width */}
-      <div className="hero-left-shape" style={{ position: 'absolute', top: '28%', transform: 'translateY(-50%)', left: '10%', zIndex: 0 }}>
+      {/* <div className="hero-left-shape" style={{ position: 'absolute', top: '28%', transform: 'translateY(-50%)', left: '10%', zIndex: 0 }}>
         <Image src="/assets/images/home-3/hero-geo.png" alt="img" width={680} height={680} priority />
-      </div>
+      </div> */}
 
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className="row hero align-items-center">
@@ -33,7 +79,7 @@ export default function RVHero() {
               </h1>
               
               <p className="subheadline text-white" style={{ fontSize: '18px', lineHeight: '1.65', maxWidth: '650px', marginBottom: '30px' }}>
-                MayuraSoft designs and builds reporting systems that deliver the right numbers to the right people at the right time — automated, accurate, and beautifully presented.
+                MayuraSoft builds reporting systems that deliver the right numbers to the right people at the right time — automated, accurate, and beautifully presented.
               </p>
               
               <div className="d-flex flex-wrap gap-2 mb-4">
@@ -44,7 +90,7 @@ export default function RVHero() {
 
               <div className="d-flex flex-wrap align-items-center gap-4 mt-4">
                 <div className="solutek-btn">
-                  <Link href="/contact" className="btn-2">
+                  <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="btn-2">
                     See sample reports &rarr;
                   </Link>
                 </div>
@@ -106,6 +152,16 @@ export default function RVHero() {
 
         </div>
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="See Sample Reports"
+        description="Fill out the form below and we'll get back to you shortly."
+        submitButtonText="Submit"
+        fields={defaultFormFields}
+        metadata={{ service: 'reporting-visualisation', pageTitle: 'Reporting & Visualisation' }}
+      />
     </div>
   );
 }

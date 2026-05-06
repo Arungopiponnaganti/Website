@@ -43,6 +43,20 @@ export default function HeaderStyle2({ variant }) {
   }, [mobileToggle]);
 
   const location = usePathname();
+  const [logoSrc, setLogoSrc] = useState('/assets/images/mayura-logo.png');
+
+  useEffect(() => {
+    const updateLogo = () => {
+      if (window.innerWidth > 1199 && !isSticky) {
+        setLogoSrc('/assets/images/mayura-white-logo.png');
+      } else {
+        setLogoSrc('/assets/images/mayura-logo.png');
+      }
+    };
+    updateLogo();
+    window.addEventListener('resize', updateLogo);
+    return () => window.removeEventListener('resize', updateLogo);
+  }, [isSticky]);
 
   return (
     <>
@@ -61,8 +75,7 @@ export default function HeaderStyle2({ variant }) {
             <div className="cs_main_header_in">
               <div className="cs_main_header_left">
                 <Link href="/" className="cs_site_branding">
-                  <Image src={(typeof window !== 'undefined' &&
-                    window.innerWidth > 1199) && !isSticky ? '/assets/images/mayura-white-logo.png' : '/assets/images/mayura-logo.png'} alt="Logo" width={180} height={50} />
+                  <Image src={logoSrc} alt="Logo" width={180} height={50} />
                 </Link>
               </div>
               <div className="cs_main_header_center">
@@ -84,7 +97,7 @@ export default function HeaderStyle2({ variant }) {
                 <div className="header-btn d-flex align-items-center">
                   <Link href="/contact" className="" >
                     Get a Quote Now
-                    <i class="bi bi-arrow-right"></i>
+                    <i className="bi bi-arrow-right"></i>
                   </Link>
                 </div>
               </div>

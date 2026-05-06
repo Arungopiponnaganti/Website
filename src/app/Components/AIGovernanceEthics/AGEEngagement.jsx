@@ -7,7 +7,7 @@ const PLANS = [
     theme: 'essential',
     badge: 'Assessment',
     badgeStyle: { background: '#FAEEDA', color: '#633806' },
-    title: 'AI governance audit',
+    title: 'AI ethics audit',
     desc: 'A structured assessment of your current AI systems against our six-domain framework — with a gap analysis and prioritised remediation roadmap.',
     features: [
       'Six-domain readiness assessment',
@@ -20,28 +20,28 @@ const PLANS = [
     theme: 'featured',
     badge: 'Most chosen',
     badgeStyle: { background: '#ff3c00', color: '#fff' },
-    title: 'Full governance framework build',
-    desc: 'Complete AI governance framework — policies, processes, monitoring, and training — designed for your organisation and compliant with EU AI Act.',
+    title: 'Full oversight framework build',
+    desc: 'Complete AI oversight framework — policies, processes, monitoring, and training — designed for your organisation and compliant with EU AI Act.',
     features: [
       'AI ethics policy documentation',
       'Model risk management framework',
       'Bias testing & monitoring pipeline',
       'Explainability implementation',
       'Staff training programme',
-      'Board-ready governance report',
+      'Board-ready compliance report',
     ],
   },
   {
     theme: 'enterprise',
     badge: 'Ongoing',
     badgeStyle: { background: '#E1F5EE', color: '#085041' },
-    title: 'Continuous governance monitoring',
-    desc: 'Quarterly governance health reviews — monitoring model drift, bias, and compliance posture as your AI systems evolve.',
+    title: 'Continuous oversight monitoring',
+    desc: 'Quarterly oversight health reviews — monitoring model drift, bias, and compliance posture as your AI systems evolve.',
     features: [
       'Quarterly model bias audit',
       'Regulatory change tracking',
       'Incident response for AI failures',
-      'Annual governance board report',
+      'Annual compliance board report',
     ],
   },
 ];
@@ -53,8 +53,8 @@ export default function AGEEngagement() {
         <SectionTitle
           className="text-center"
           SubTitle="Engagement types"
-          Title="Three governance engagement models"
-          Content="Every engagement begins with a free governance review — we assess your AI systems against our six-domain framework before recommending a scope."
+          Title="Three oversight engagement models"
+          Content="Every engagement begins with a free ethics review — we assess your AI systems against our six-domain framework before recommending a scope."
           isDarkMode={false}
         />
 

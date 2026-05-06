@@ -10,7 +10,7 @@ const CommonServices = ({
   variant = "cards"
 }) => {
   const linkUrl = (item) => item.btnLink || item.href || "#";
-  const linkText = (item) => item.btnText || (variant === "related" ? "Explore →" : "READ MORE");
+  const linkText = (item) => item.btnText || (variant === "related" ? "View Details →" : "Learn More");
   const hasIcon = (item) => !!item.icon;
 
   return (
@@ -27,7 +27,7 @@ const CommonServices = ({
               <div className={variant === "related" ? "cd-rel-card h-100" : "service-single-box h-100"}>
                 {hasIcon(item) && (
                   <div className="service-icon">
-                    <Image src={item.icon} alt="img" width={50} height={50} />
+                    <Image src={item.icon} alt={`${item.title} icon`} width={50} height={50} />
                   </div>
                 )}
                 <div className={variant === "related" ? "" : "service-content"}>
@@ -50,13 +50,13 @@ const CommonServices = ({
         {showShapes && (
           <>
             <div className="service-shape bounce-animate3">
-              <Image src="/assets/images/service5.png" alt="img" width={199} height={420} />
+              <Image src="/assets/images/service5.png" alt="img" width={199} height={420} priority />
             </div>
             <div className="service-shape2">
-              <Image src="/assets/images/service7.png" alt="img" width={100} height={100} />
+              <Image src="/assets/images/service7.png" alt="img" width={100} height={100} priority />
             </div>
             <div className="service-shape3 bounce-animate4">
-              <Image src="/assets/images/service8.png" alt="img" width={341} height={351} />
+              <Image src="/assets/images/service8.png" alt="img" width={341} height={351} priority />
             </div>
           </>
         )}

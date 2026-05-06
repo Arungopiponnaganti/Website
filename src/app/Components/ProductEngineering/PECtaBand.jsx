@@ -8,7 +8,6 @@ export default function PECtaBand() {
       description="Get a free 30-min product audit. We'll assess your current state and come back with a clear scoping recommendation — no pitch, no obligation."
       primaryBtn={{
         text: 'Get free product audit \u2192',
-        href: '/contact',
         dataCta: 'cta-band-primary',
       }}
       secondaryBtn={{
@@ -16,6 +15,9 @@ export default function PECtaBand() {
         href: '/contact',
         variant: 'secondary',
       }}
+      useModal={true}
+      modalTitle="Get Free Product Audit"
+      modalDescription="Fill out the form below and we'll get back to you shortly."
     />
   );
 }

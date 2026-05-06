@@ -10,18 +10,9 @@ import AMWhyUs from '@/app/Components/AppModernisation/AMWhyUs';
 import AMFaq from '@/app/Components/AppModernisation/AMFaq';
 import AMCtaBand from '@/app/Components/AppModernisation/AMCtaBand';
 import Technologies from '@/app/Components/technologies/Technologies';
+import { getPageMetadata } from '@/utils/seo';
 
-export const metadata = {
-  title: 'Application Modernisation Services | MayuraSoft',
-  description:
-    'MayuraSoft migrates legacy applications to modern, cloud-native architectures — zero downtime, full IP ownership, and a structured handover your team can own confidently.',
-  alternates: {
-    canonical: 'https://mayurasoft.com/services/application-modernisation',
-  },
-  openGraph: {
-    images: [{ url: '/assets/og-application-modernisation.png', width: 1200, height: 630 }],
-  },
-};
+export const metadata = getPageMetadata('/service/application-modernisation');
 
 const jsonLd = {
   '@context': 'https://schema.org',

@@ -10,18 +10,9 @@ import IDPEngagement from '@/app/Components/IntelligentDocProcessing/IDPEngageme
 import IDPFaq from '@/app/Components/IntelligentDocProcessing/IDPFaq';
 import IDPRelated from '@/app/Components/IntelligentDocProcessing/IDPRelated';
 import CtaBand from '@/app/Components/Common/CtaBand';
+import { getPageMetadata } from '@/utils/seo';
 
-export const metadata = {
-  title: 'Intelligent Document Processing | MayuraSoft',
-  description:
-    'MayuraSoft builds end-to-end document intelligence pipelines — extracting structured data from invoices, contracts, KYC forms, and more, then routing them to the right system automatically. Free document audit.',
-  alternates: {
-    canonical: 'https://mayurasoft.com/ai-automations/document-processing',
-  },
-  openGraph: {
-    images: [{ url: '/assets/og-intelligent-document-processing.png', width: 1200, height: 630 }],
-  },
-};
+export const metadata = getPageMetadata('/ai-automations/document-processing');
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -56,10 +47,13 @@ export default function IntelligentDocumentProcessingPage() {
         <CtaBand
           title="Start with a free document processing audit"
           description="Send us three sample documents. We'll assess extraction complexity, recommend the right approach, and give you an accuracy estimate — within 48 hours. No commitment required."
-          primaryBtn={{ href: '/contact', text: 'Get free doc audit →', dataCta: 'cta-primary-idp' }}
+          primaryBtn={{ text: 'Get free doc audit →', dataCta: 'cta-primary-idp' }}
           secondaryBtn={{ href: '/contact', variant: 'link', text: 'Book a discovery call' }}
           trustText="Free audit · Written accuracy estimate in 48 hrs · No commitment required"
           bgClass="bg-white border-top py-5"
+          useModal={true}
+          modalTitle="Get Free Doc Audit"
+          modalDescription="Fill out the form below and we'll get back to you shortly."
         />
       </div>
     </>

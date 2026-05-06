@@ -48,7 +48,7 @@
     font-size: 52px;
     font-weight: 800;
     line-height: 1.1;
-    color: #ff3b00;
+    color: #cc2900;
     margin-bottom: 6px;
     font-family: var(--heading-font, 'Poppins', sans-serif);
 }
@@ -57,7 +57,7 @@
     font-size: 18px;
     font-weight: 600;
     vertical-align: super;
-    color: #ff3b00;
+    color: #cc2900;
 }
 
 .scale-hero-subtitle {
@@ -100,9 +100,9 @@
 }
 
 .scale-hero-btn-primary {
-    background-color: #ff3b00;
+    background-color: #cc2900;
     color: #fff;
-    border: 2px solid #ff3b00;
+    border: 2px solid #cc2900;
 }
 
 .scale-hero-btn-primary:hover {
@@ -113,12 +113,12 @@
 
 .scale-hero-btn-outline {
     background-color: transparent;
-    color: #ff3b00;
-    border: 2px solid #ff3b00;
+    color: #cc2900;
+    border: 2px solid #cc2900;
 }
 
 .scale-hero-btn-outline:hover {
-    background-color: #ff3b00;
+    background-color: #cc2900;
     color: #fff;
 }
 

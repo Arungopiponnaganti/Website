@@ -119,6 +119,7 @@ export default function CDServices() {
                     src={svc.img}
                     alt={svc.t}
                     fill
+                    priority={i < 2}
                     style={{ objectFit: 'cover' }}
                     className="cd-svc-img"
                   />

@@ -65,8 +65,8 @@ const Technologies = (
                 <div className="row justify-content-center">
                     <div className="col-lg-8 col-md-10">
                         <div className="section-title text-center">
-                            <h5 className="section-sub-title">{SubTitle}</h5>
-                            <h1 className="section-main-title">{parse(Title)}</h1>
+                            <p className="section-sub-title">{SubTitle}</p>
+                            <h2 className="section-main-title">{parse(Title)}</h2>
                             <p className="section-title-descr">{Content}</p>
                         </div>
                     </div>
@@ -88,7 +88,7 @@ const Technologies = (
 
                     <div className="tech-tab-content">
                         <div className="row g-3">
-                            {techData[activeTab].map((tech) => (
+                            {techData[activeTab].map((tech, i) => (
                                 <div key={tech.name} className="col-lg-3 col-md-4 col-sm-6 col-6">
                                     <div className="tech-card">
                                         <div className="tech-icon-box card p-2">
@@ -97,6 +97,7 @@ const Technologies = (
                                                 alt={tech.name}
                                                 width={40}
                                                 height={40}
+                                                priority={i < 8}
                                             />
                                         </div>
                                         <span className="tech-card-name">{tech.name}</span>

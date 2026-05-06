@@ -1,7 +1,51 @@
 'use client';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Subject',
+    name: 'subject',
+    type: 'text',
+    placeholder: 'Your Subject Here',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
 
 const warningSignals = [
   { icon: 'bi-exclamation-triangle-fill', title: 'Deployments take days',               detail: 'Manual releases, no CI/CD pipeline in sight' },
@@ -17,6 +61,8 @@ const stats = [
 ];
 
 export default function AMHero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div
           className="hero-area style-three align-items-center"
@@ -78,7 +124,7 @@ export default function AMHero() {
               {/* CTAs */}
               <div className="d-flex flex-wrap align-items-center gap-4 mb-5">
                 <div className="solutek-btn">
-                  <Link href="/contact?service=application-modernisation" className="btn-2" data-cta="hero-primary">
+                  <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="btn-2" data-cta="hero-primary">
                     Get a free legacy audit &rarr;
                   </Link>
                 </div>
@@ -179,6 +225,15 @@ export default function AMHero() {
 
         </div>
       </div>
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get a Free Legacy Audit"
+        description="Fill out the form below and we'll get back to you shortly."
+        submitButtonText="Submit"
+        fields={defaultFormFields}
+        metadata={{ service: 'application-modernisation', pageTitle: 'Application Modernisation' }}
+      />
     </div>
   );
 }

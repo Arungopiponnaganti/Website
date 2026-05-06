@@ -9,8 +9,6 @@ export default function CDCtaBand() {
       description="We'll review your current infrastructure, identify cost savings, security gaps, and deployment bottlenecks — and deliver a written report with a prioritised action plan. No commitment required."
       primaryBtn={{
         text: 'Get free cloud audit \u2192',
-        // href: '/free-audit?service=cloud-devops',
-        href: '/contact?service=cloud-devops',
         dataCta: 'cta-band-primary',
       }}
       secondaryBtn={{
@@ -19,6 +17,9 @@ export default function CDCtaBand() {
         variant: 'secondary',
       }}
       trustText="Typically responds within 4 business hours · No sales pitch, just a clear infrastructure report"
+      useModal={true}
+      modalTitle="Get Free Cloud Audit"
+      modalDescription="Fill out the form below and we'll get back to you shortly."
     />
   );
 }

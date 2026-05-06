@@ -1,5 +1,6 @@
 import React from 'react';
 import '@/app/assets/custom-dev.css';
+import '@/app/assets/ux-ui-design.css';
 import UXUIHero from '@/app/Components/UXUIDesign/UXUIHero';
 import UXUIChallenges from '@/app/Components/UXUIDesign/UXUIChallenges';
 import UXUIProcess from '@/app/Components/UXUIDesign/UXUIProcess';
@@ -9,18 +10,9 @@ import UXUITechnologies from '@/app/Components/UXUIDesign/UXUITechnologies';
 import UXUIEngagementModels from '@/app/Components/UXUIDesign/UXUIEngagementModels';
 import UXUIFaq from '@/app/Components/UXUIDesign/UXUIFaq';
 import UXUICtaBand from '@/app/Components/UXUIDesign/UXUICtaBand';
+import { getPageMetadata } from '@/utils/seo';
 
-export const metadata = {
-  title: 'UX / UI Design Services | MayuraSoft',
-  description:
-    'MayuraSoft designs interfaces grounded in user research and business data. UX research, wireframing, prototyping, design systems, and conversion-rate optimisation — tested with real users before development begins.',
-  alternates: {
-    canonical: 'https://mayurasoft.com/services/ux-ui-design',
-  },
-  openGraph: {
-    images: [{ url: '/assets/og-ux-ui-design.png', width: 1200, height: 630 }],
-  },
-};
+export const metadata = getPageMetadata('/service/ux-ui-design');
 
 const jsonLd = {
   '@context': 'https://schema.org',

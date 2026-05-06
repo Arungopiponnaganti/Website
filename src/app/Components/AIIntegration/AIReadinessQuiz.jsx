@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
 
 const QUESTIONS = [
   {
@@ -91,11 +92,12 @@ const RESULTS = [
 export default function AIReadinessQuiz() {
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const pickAnswer = (qi, oi) => {
     setAnswers((prev) => ({ ...prev, [qi]: oi }));
   };
-
+  
   const resetQuiz = () => {
     setAnswers({});
     setSubmitted(false);
@@ -109,6 +111,75 @@ export default function AIReadinessQuiz() {
     ? Math.round(((QUESTIONS.length * 3 - total) / (QUESTIONS.length * 3)) * 100)
     : 0;
   const result = RESULTS.find((r) => pct >= r.min) || RESULTS[RESULTS.length - 1];
+
+  const auditFormFields = [
+    {
+      label: 'Full Name',
+      name: 'name',
+      type: 'text',
+      placeholder: 'John Smith',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Work Email',
+      name: 'email',
+      type: 'email',
+      placeholder: 'john@company.com',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Company',
+      name: 'company',
+      type: 'text',
+      placeholder: 'Acme Inc.',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Phone',
+      name: 'phone',
+      type: 'tel',
+      placeholder: '+1 (555) 000-0000',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Message',
+      name: 'message',
+      type: 'textarea',
+      placeholder: 'Tell us more about your AI integration needs...',
+      required: false,
+      colSize: 12
+    },
+    {
+      label: 'Current AI Readiness Score',
+      name: 'readinessScore',
+      type: 'text',
+      placeholder: `${pct}%`,
+      defaultValue: `${pct}%`,
+      required: false,
+      colSize: 12,
+      readOnly: true,
+      readOnlyMessage: 'This is your calculated AI readiness score based on your quiz answers.'
+    }
+  ];
+
+  const auditFormMetadata = {
+    sourcePage: 'AI Integration',
+    sourceSection: 'Are you ready to integrate AI?',
+    formType: 'Full AI Audit',
+    pageUrl: typeof window !== 'undefined' ? window.location.pathname : '',
+    readinessScore: pct,
+    readinessLevel: result.badge
+  };
+
+  const quizAnswers = Object.keys(answers).map(qi => ({
+    question: QUESTIONS[qi].q,
+    answer: QUESTIONS[qi].opts[answers[qi]]
+  }));
+
 
   return (
     <section className="cd-section ai-quiz-section">
@@ -156,15 +227,15 @@ export default function AIReadinessQuiz() {
                     <span className="ai-quiz-q-num">{q.num}</span>
                     <span className="ai-quiz-q-label">{q.label}</span>
                   </div>
-                  <p className="ai-quiz-q-text mb-3">{q.q}</p>
+                  <label htmlFor={`quiz-q-${qi}`} className="ai-quiz-q-text mb-3 d-block">{q.q}</label>
                   <select
+                    id={`quiz-q-${qi}`}
                     className="form-select ai-quiz-select"
                     value={answers[qi] !== undefined ? answers[qi] : ''}
                     onChange={(e) => {
                       const val = e.target.value;
                       if (val !== '') pickAnswer(qi, parseInt(val, 10));
                     }}
-                    aria-label={q.q}
                   >
                     <option value="">Select your answer...</option>
                     {q.opts.map((o, oi) => (
@@ -257,13 +328,13 @@ export default function AIReadinessQuiz() {
 
                 {/* CTA footer */}
                 <div className="ai-quiz-res-footer p-4 p-lg-5 d-flex flex-column gap-2">
-                  <a
-                    href="/contact"
-                    className="cd-btn-primary d-block text-center text-decoration-none"
-                    style={{ fontSize: '14px', padding: '12px 24px' }}
+                  <button
+                    className="cd-btn-primary d-block text-center"
+                    style={{ fontSize: '14px', padding: '12px 24px', border: 'none', cursor: 'pointer' }}
+                    onClick={() => setIsModalOpen(true)}
                   >
                     Get full AI audit &rarr;
-                  </a>
+                  </button>
                   <button
                     className="ai-quiz-retake-btn w-100"
                     onClick={resetQuiz}
@@ -278,6 +349,16 @@ export default function AIReadinessQuiz() {
 
         </div>
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get Your Full AI Audit"
+        description="Fill out the form below to get your complete AI readiness assessment."
+        fields={auditFormFields}
+        metadata={auditFormMetadata}
+        quizAnswers={quizAnswers}
+      />
     </section>
   );
 }

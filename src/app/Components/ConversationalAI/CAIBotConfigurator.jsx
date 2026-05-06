@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
 import '@/app/assets/ai-integration.css';
 
 const CFG_SECTIONS = [
@@ -55,6 +56,7 @@ const CFG_SECTIONS = [
 export default function CAIBotConfigurator() {
   const [answers, setAnswers] = useState({});
   const [submitted, setSubmitted] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const pickAnswer = (qi, oi) => {
     setAnswers((prev) => ({ ...prev, [qi]: oi }));
@@ -75,6 +77,73 @@ export default function CAIBotConfigurator() {
     }
     setSubmitted(true);
   };
+
+  const formFields = [
+    {
+      label: 'Full Name',
+      name: 'name',
+      type: 'text',
+      placeholder: 'John Smith',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Work Email',
+      name: 'email',
+      type: 'email',
+      placeholder: 'john@company.com',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Company',
+      name: 'company',
+      type: 'text',
+      placeholder: 'Acme Inc.',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Phone',
+      name: 'phone',
+      type: 'tel',
+      placeholder: '+1 (555) 000-0000',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Message',
+      name: 'message',
+      type: 'textarea',
+      placeholder: 'Tell us more about your chatbot configuration needs...',
+      required: false,
+      colSize: 12
+    },
+    // {
+    //   label: 'Current AI Readiness Score',
+    //   name: 'readinessScore',
+    //   type: 'text',
+    //   placeholder: `${pct}%`,
+    //   defaultValue: `${pct}%`,
+    //   required: false,
+    //   colSize: 12,
+    //   readOnly: true,
+    //   readOnlyMessage: 'This is your calculated AI readiness score based on your quiz answers.'
+    // }
+  ];
+
+
+  const formMetadata = {
+    sourcePage: 'Conversational AI',
+    sourceSection: 'Bot configurator',
+    formType: 'Design your chatbot in 60 seconds',
+    pageUrl: typeof window !== 'undefined' ? window.location.pathname : ''
+  };
+
+  const quizAnswers = Object.keys(answers).map(qi => ({
+    question: CFG_SECTIONS[qi].q,
+    answer: CFG_SECTIONS[qi].opts[answers[qi]]
+  }));
 
   return (
     <section className="cd-section ai-quiz-section">
@@ -111,15 +180,15 @@ export default function CAIBotConfigurator() {
                     <span className="ai-quiz-q-num">{section.num}</span>
                     <span className="ai-quiz-q-label">{section.label}</span>
                   </div>
-                  <p className="ai-quiz-q-text mb-3">{section.q}</p>
+                  <label htmlFor={`cfg-q-${qi}`} className="ai-quiz-q-text mb-3 d-block">{section.q}</label>
                   <select
+                    id={`cfg-q-${qi}`}
                     className="form-select ai-quiz-select"
                     value={answers[qi] !== undefined ? answers[qi] : ''}
                     onChange={(e) => {
                       const val = e.target.value;
                       if (val !== '') pickAnswer(qi, parseInt(val, 10));
                     }}
-                    aria-label={section.q}
                   >
                     <option value="">Select your answer...</option>
                     {section.opts.map((o, oi) => (
@@ -198,13 +267,13 @@ export default function CAIBotConfigurator() {
                 </div>
 
                 <div className="ai-quiz-res-footer p-4 p-lg-5 d-flex flex-column gap-2">
-                  <a
-                    href="/contact"
+                  <button
                     className="cd-btn-primary d-block text-center text-decoration-none"
-                    style={{ fontSize: '14px', padding: '12px 24px' }}
+                    style={{ fontSize: '14px', padding: '12px 24px', border: 'none', cursor: 'pointer' }}
+                    onClick={() => setIsModalOpen(true)}
                   >
                     Send this brief to MayuraSoft &rarr;
-                  </a>
+                  </button>
                   <button
                     className="ai-quiz-retake-btn w-100"
                     onClick={resetQuiz}
@@ -217,6 +286,15 @@ export default function CAIBotConfigurator() {
           </div>
         </div>
       </div>
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get Your chatbot configuration brief"
+        description="Fill out the form below to get your complete chatbot configuration assessment."
+        fields={formFields}
+        metadata={formMetadata}
+        quizAnswers={quizAnswers}
+      />
     </section>
   );
 }

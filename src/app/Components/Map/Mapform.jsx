@@ -7,7 +7,16 @@ const MapForm = () => {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-lg-12">
-                        <iframe src={mapUrl}  loading="lazy"></iframe>
+                        <iframe
+                            src={mapUrl}
+                            title="MayuraSoft office location on Google Maps"
+                            width="100%"
+                            height="450"
+                            loading="lazy"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            referrerPolicy="no-referrer-when-downgrade"
+                        ></iframe>
                     </div>
                 </div>
             </div>

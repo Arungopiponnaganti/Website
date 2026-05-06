@@ -16,7 +16,7 @@ const RELATED = [
   {
     title: 'Analytics & Business Intelligence',
     desc: 'Build dashboards on top of governed, trusted data domains',
-    href: '/data-solutions/analytics-bi',
+    href: '/data-solutions/analytics-business-intelligence',
   },
   {
     title: 'AI Integration Services',

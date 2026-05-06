@@ -20,7 +20,7 @@ const AIAutomationOverview = ({ bgImage, ClassAdd }) => {
 
     const settings = {
         dots: false,
-        infinite: true,
+        infinite: false,
         speed: 600,
         slidesToShow: 3,
         slidesToScroll: 1,
@@ -59,7 +59,7 @@ const AIAutomationOverview = ({ bgImage, ClassAdd }) => {
                             <SectionTitle
                                 SubTitle="AI & AUTOMATIONS"
                                 Title="Add <span> AI </span> to what you already run"
-                                Content="We integrate AI models into existing systems, automate repetitive workflows, and build conversational assistants — without requiring a rebuild of what's already working."
+                                Content="We integrate machine learning models into existing systems, build intelligent workflows, and create conversational assistants — without rebuilding your current stack."
                             />
                         </div>
                     </div>
@@ -101,13 +101,13 @@ const AIAutomationOverview = ({ bgImage, ClassAdd }) => {
                                 <div key={i} className="d-flex h-100">
                                     <div className="service-single-box d-flex flex-column pt-4 h-100 w-100 bg-light">
                                         <div className="service-icon mb-0">
-                                            <Image src={item.icon} alt="img" width={100} height={100} />
+                                            <Image src={item.icon} alt={`${item.title} automation service icon`} width={100} height={100} priority={i < 3} />
                                         </div>
                                         <div className="service-content d-flex flex-column flex-grow-1">
                                             <h3 className="service-title">{item.title}</h3>
                                             <p className="service-text flex-grow-1">{item.desc}</p>
                                             <div className="service-btn mt-auto">
-                                                <Link href={item.btnLink}>
+                                                <Link href={item.btnLink} tabIndex="-1">
                                                     <i className="bi bi-plus home-ai-plus-bg"></i><span className="text-light"> {item.btnText}</span>
                                                 </Link>
                                             </div>

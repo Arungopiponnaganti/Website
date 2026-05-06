@@ -30,7 +30,7 @@ const Hero2 = ({bgImg,SubTitle,Title,Content,BtnText,BtnLink,mainImage}) => {
 			<div className="row hero align-items-center">
 				<div className="col-lg-6">
 					<div className="hero-contant">
-						<h5>{SubTitle}</h5>
+						<h2 className="hero-subtitle">{SubTitle}</h2>
 						<h1>{parse(Title)}</h1>
 						<p>{Content}</p>
 						<div className="solutek-btn">

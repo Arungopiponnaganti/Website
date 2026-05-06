@@ -1,6 +1,9 @@
 import BreadCumb from '@/app/Components/Common/BreadCumb';
 import ServiceDetail from '@/app/Components/ServiceDetail/ServiceDetail';
 import React from 'react';
+import { getPageMetadata } from '@/utils/seo';
+
+export const metadata = getPageMetadata('/service/service-details');
 
 const page = () => {
     return (

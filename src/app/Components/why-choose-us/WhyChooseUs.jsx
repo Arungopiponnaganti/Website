@@ -11,8 +11,8 @@ const WhyChooseUs = ({MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxTi
 					<div className="row">
 						<div className="col-lg-6">
 							<div className="section-title text-left">
-								<h5 className="section-sub-title">{SubTitle}</h5>
-								<h1 className="section-main-title">{parse(Title)}</h1>
+								<p className="section-sub-title">{SubTitle}</p>
+								<h2 className="section-main-title">{parse(Title)}</h2>
 								<p className="section-title-descr">{Content}
 								</p>
 							</div>
@@ -34,7 +34,7 @@ const WhyChooseUs = ({MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxTi
 								<div className="col-lg-3 col-md-6 col-sm-6">
 									<div className="why-choose-us-counter-box">
 										<div className="why-choose-us-counter-icon">
-											<Image src="/assets/images/inner/counter-icon.png"  alt="img" width={70} height={72}   />
+											<Image src="/assets/images/inner/counter-icon.png"  alt="img" width={70} height={72} priority />
 										</div>
 										<div className="why-choose-us-counter-content">
 											<h4 className="counter">{BoxTitle1}</h4>

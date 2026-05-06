@@ -13,13 +13,13 @@ const About1 = ({MainImg,ImgTitle,SubTitle,Title,Content,listTitle,BottomText,Bt
                                 <div className="about-shape">
                                     <Image src="/assets/images/about1.png" alt="img" width={40} height={40}   />
                                 </div>
-                                <h4 className="about-title">{ImgTitle}</h4>
+                                <span className="about-title">{ImgTitle}</span>
                             </div>
                         </div>
                         <div className="col-lg-6">
                             <div className="section-title text-left">
-                                <h5 className="section-sub-title">{SubTitle}</h5>
-                                <h1 className="section-main-title">{parse(Title)}</h1>
+                                <p className="section-sub-title">{SubTitle}</p>
+                                <h2 className="section-main-title">{parse(Title)}</h2>
                                 <p className="section-title-descr">{Content}</p>
                             </div>
                             <div className="about-box d-flex align-items-center">

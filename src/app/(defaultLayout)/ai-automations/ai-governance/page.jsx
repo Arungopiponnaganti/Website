@@ -11,18 +11,9 @@ import AGEEngagement from '@/app/Components/AIGovernanceEthics/AGEEngagement';
 import AGEFaq from '@/app/Components/AIGovernanceEthics/AGEFaq';
 import AGERelated from '@/app/Components/AIGovernanceEthics/AGERelated';
 import CtaBand from '@/app/Components/Common/CtaBand';
+import { getPageMetadata } from '@/utils/seo';
 
-export const metadata = {
-  title: 'AI Governance & Ethics | MayuraSoft',
-  description:
-    'MayuraSoft builds AI governance frameworks that make your AI systems transparent, fair, auditable, and compliant — EU AI Act, GDPR, and India DPDPA aligned. Free governance review.',
-  alternates: {
-    canonical: 'https://mayurasoft.com/ai-automations/ai-governance',
-  },
-  openGraph: {
-    images: [{ url: '/assets/og-ai-governance-ethics.png', width: 1200, height: 630 }],
-  },
-};
+export const metadata = getPageMetadata('/ai-automations/ai-governance');
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -58,10 +49,13 @@ export default function AIGovernanceEthicsPage() {
         <CtaBand
           title="Know your AI governance gaps before a regulator or customer finds them"
           description="We assess your current AI systems against our six-domain framework and return a written gap analysis — no commitment required. Response within 4 hours."
-          primaryBtn={{ href: '/contact', text: 'Start free governance review →', dataCta: 'cta-primary-age' }}
+          primaryBtn={{ text: 'Start free governance review →', dataCta: 'cta-primary-age' }}
           secondaryBtn={{ href: '/contact', variant: 'link', text: 'Download ethics framework' }}
           trustText="Written gap analysis · EU AI Act alignment check included · Response within 4 hours"
           bgClass="bg-white border-top py-5"
+          useModal={true}
+          modalTitle="Start Free Governance Review"
+          modalDescription="Fill out the form below and we'll get back to you shortly."
         />
       </div>
     </>

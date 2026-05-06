@@ -134,7 +134,7 @@ export default function UXUIProcess() {
   }, []);
 
   return (
-    <section id="process" className="cd-section" style={{ backgroundColor: '#050a1e', overflow: 'hidden' }}>
+    <section id="process" className="cd-section uxui-process-section">
       <div className="container">
         <SectionTitle
           className="text-center mb-5"
@@ -146,7 +146,7 @@ export default function UXUIProcess() {
 
         <div className="sleek-process-container pristine-container" ref={containerRef}>
           {/* Dynamic Dotted SVG Animation Layer */}
-          <svg className="snake-svg-canvas" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', zIndex: 1 }}>
+          <svg className="snake-svg-canvas uxui-process-svg">
             <defs>
               <clipPath id="uxui-snake-scroll-clip">
                 <rect
@@ -154,7 +154,7 @@ export default function UXUIProcess() {
                   y="0"
                   width="100%"
                   height={`${scrollProgress * 100}%`}
-                  style={{ transition: 'height 0.15s ease-out' }}
+                  className="uxui-process-clip-rect"
                 />
               </clipPath>
             </defs>
@@ -178,7 +178,7 @@ export default function UXUIProcess() {
             />
           </svg>
 
-          <div className="sleek-steps-wrapper" style={{ position: 'relative', zIndex: 2, padding: '40px 0' }}>
+          <div className="sleek-steps-wrapper uxui-process-steps-wrapper">
             {steps.map((s, idx) => (
               <ProcessStep
                 key={s.num}
@@ -191,54 +191,6 @@ export default function UXUIProcess() {
         </div>
       </div>
 
-      <style>{`
-        .uxui-node-core {
-          width: 12px;
-          height: 12px;
-          background-color: #050a1e;
-          border: 2px solid #3b4256;
-          border-radius: 50%;
-          transition: all 0.5s ease;
-        }
-        .uxui-node-ring {
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          border-radius: 50%;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          transition: all 0.6s ease;
-        }
-        .uxui-step:hover .uxui-node-core {
-          background-color: #4361EE;
-          border-color: #4361EE;
-          box-shadow: 0 0 16px rgba(67, 97, 238, 0.6);
-        }
-        .uxui-step:hover .uxui-node-ring {
-          transform: scale(1.6);
-          border-color: rgba(67, 97, 238, 0.2);
-        }
-        .uxui-phase {
-          font-size: 11px;
-          text-transform: uppercase;
-          color: #4361EE;
-          font-weight: 600;
-          letter-spacing: 2px;
-          margin-bottom: 12px;
-          display: block;
-        }
-        .uxui-output {
-          font-size: 13px;
-          color: #cbd5e1;
-          padding-left: 16px;
-          border-left: 2px solid rgba(255, 255, 255, 0.1);
-        }
-        .uxui-output-accent {
-          color: #fff;
-          font-weight: 600;
-        }
-      `}</style>
     </section>
   );
 }

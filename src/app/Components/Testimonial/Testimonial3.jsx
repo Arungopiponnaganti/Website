@@ -28,7 +28,7 @@ const Testimonial3 = () => {
                     <div className="col-lg-5">
                         <div className="section-title text-left">
                             <h6 className="section-sub-title">{TestimonialContent.SubTitle}</h6>
-                            <h1 className="section-main-title test_title_area3">{parse(TestimonialContent.Title)}</h1>
+                            <h2 className="section-main-title test_title_area3">{parse(TestimonialContent.Title)}</h2>
                             <p>{TestimonialContent.Content}</p>
                         </div>
                         <div className="testi-thumb">

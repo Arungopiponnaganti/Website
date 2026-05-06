@@ -52,6 +52,8 @@ export default function CDCloudProviders() {
                   <img
                     src={platform.icon}
                     alt={`${platform.name} logo`}
+                    width={44}
+                    height={44}
                     className="overflow-hidden bg-white shadow-sm rounded-circle p-1 cd-devops-img"
                   />
                 </div>

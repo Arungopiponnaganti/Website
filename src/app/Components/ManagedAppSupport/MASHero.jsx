@@ -2,9 +2,54 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Subject',
+    name: 'subject',
+    type: 'text',
+    placeholder: 'Your Subject Here',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
 
 export default function MASHero() {
   const [uptimeBars, setUptimeBars] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     // Generate 30 bars, mostly OK, a couple warnings/incidents just for visualization.
@@ -56,7 +101,7 @@ export default function MASHero() {
 
               <div className="d-flex flex-wrap align-items-center gap-4">
                 <div className="solutek-btn">
-                  <Link href="/contact" className="btn-2">
+                  <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="btn-2">
                     Get a support plan &rarr;
                   </Link>
                 </div>
@@ -147,6 +192,16 @@ export default function MASHero() {
 
         </div>
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get a Support Plan"
+        description="Fill out the form below and we'll get back to you shortly."
+        submitButtonText="Submit"
+        fields={defaultFormFields}
+        metadata={{ service: 'managed-app-support', pageTitle: 'Managed App Support' }}
+      />
     </div>
   );
 }

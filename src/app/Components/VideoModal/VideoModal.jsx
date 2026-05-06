@@ -7,7 +7,7 @@ const VideoModal = ({ isTrue, iframeSrc, handelClose }) => {
             <div className="cs_video_popup-container">
               <div className="cs_video_popup-align">
                 <div className="embed-responsive embed-responsive-16by9">
-                  <iframe className="embed-responsive-item" src={iframeSrc}></iframe>
+                  <iframe className="embed-responsive-item" src={iframeSrc} title="Video player" width={560} height={315}></iframe>
                 </div>
               </div>
               <div className="cs_video_popup-close" onClick={handelClose}></div>

@@ -63,7 +63,7 @@ function DotGrid({ pattern }) {
 
 export default function UXUIPrinciples() {
   return (
-    <section style={{ background: '#f8f9fa', padding: '90px 0 60px' }}>
+    <section className="uxpr-section">
       <div className="container">
 
         <div className="row mb-5">
@@ -97,104 +97,6 @@ export default function UXUIPrinciples() {
 
       </div>
 
-      <style>{`
-        /* ── List container ── */
-        .uxpr-list {
-          width: 100%;
-        }
-
-        /* ── Row: two items side by side ── */
-        .uxpr-row {
-          display: grid;
-          gap: 24px;
-          grid-template-columns: 1fr 1fr;
-        }
-
-        /* ── Each item: border-top + padding ── */
-        .uxpr-item {
-          display: flex;
-          align-items: flex-start;
-          gap: 24px;
-          padding: 40px 20px;
-          border-top: 1px solid #e0e0e0;
-          transition: background 0.2s ease;
-        }
-        // .uxpr-item-right {
-        //   padding-left: 48px;
-        //   padding-right: 0;
-        // }
-        .uxpr-item:hover {
-          background: rgba(67, 97, 238, 0.03);
-        }
-
-        /* ── Icon column ── */
-        .uxpr-icon-col {
-          flex-shrink: 0;
-          padding-top: 4px;
-        }
-
-        /* ── 3×3 diamond dot grid ── */
-        .uxpr-dot-grid {
-          display: grid;
-          grid-template-columns: repeat(3, 10px);
-          grid-template-rows: repeat(3, 10px);
-          gap: 5px;
-        }
-
-        .uxpr-dot {
-          width: 10px;
-          height: 10px;
-          transform: rotate(45deg) scale(0.65);
-        }
-
-        @keyframes uxpr-fill-pulse {
-          0%, 100% { transform: rotate(45deg) scale(0.65); opacity: 1; }
-          50%       { transform: rotate(45deg) scale(0.45); opacity: 0.5; }
-        }
-        .uxpr-dot.filled {
-          background: #4361EE;
-          animation: uxpr-fill-pulse 2.6s ease-in-out infinite;
-        }
-
-        @keyframes uxpr-hollow-pulse {
-          0%, 100% { transform: rotate(45deg) scale(0.65); opacity: 0.3; }
-          50%       { transform: rotate(45deg) scale(0.85); opacity: 0.65; }
-        }
-        .uxpr-dot.hollow {
-          background: transparent;
-          border: 1.5px solid #4361EE;
-          animation: uxpr-hollow-pulse 2.6s ease-in-out infinite;
-        }
-
-        .uxpr-item:hover .uxpr-dot.filled  { animation-duration: 1s; }
-        .uxpr-item:hover .uxpr-dot.hollow  { animation-duration: 1s; }
-
-        /* ── Text ── */
-        .uxpr-title {
-          font-size: 17px;
-          font-weight: 700;
-          color: #1a1e2d;
-          margin-bottom: 10px;
-          line-height: 1.35;
-        }
-        .uxpr-desc {
-          font-size: 13.5px;
-          color: #6c757d;
-          line-height: 1.72;
-          margin: 0;
-        }
-
-        /* ── Responsive ── */
-        @media (max-width: 767px) {
-          .uxpr-row {
-            grid-template-columns: 1fr;
-          }
-          .uxpr-item,
-          .uxpr-item-right {
-            padding: 28px 0;
-          }
-        }
-      `}</style>
     </section>
   );
 }

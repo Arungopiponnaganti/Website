@@ -5,7 +5,7 @@ const RELATED = [
   {
     title: 'Analytics & Business Intelligence',
     desc: 'Build dashboards and BI layers on top of the clean data we engineer',
-    href: '/data-solutions/analytics-bi',
+    href: '/data-solutions/analytics-business-intelligence',
     icon: '/assets/images/service1.png',
   },
   {

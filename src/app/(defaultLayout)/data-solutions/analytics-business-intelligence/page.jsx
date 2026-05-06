@@ -8,14 +8,9 @@ import ABITools from '@/app/Components/AnalyticsBI/ABITools';
 import ABIEngagement from '@/app/Components/AnalyticsBI/ABIEngagement';
 import ABIFaq from '@/app/Components/AnalyticsBI/ABIFaq';
 import CtaSplit from '@/app/Components/Common/CtaSplit';
+import { getPageMetadata } from '@/utils/seo';
 
-export const metadata = {
-  title: 'Analytics & Business Intelligence | MayuraSoft',
-  description: 'Turn your data into decisions. Not just dashboards. MayuraSoft designs and builds analytics platforms that your business users actually adopt.',
-  alternates: {
-    canonical: 'https://mayurasoft.com/data-solutions/analytics-business-intelligence',
-  },
-};
+export const metadata = getPageMetadata('/data-solutions/analytics-business-intelligence');
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -58,6 +53,7 @@ export default function AnalyticsBIPage() {
             { label: 'Current BI tool', type: 'select', options: ['Power BI', 'Tableau', 'Looker / LookML', 'Metabase', 'No formal BI tool yet'] },
           ]}
           formSubmitBtn="Send audit request →"
+          subject="Free BI audit request"
         />
         
         {/* Related Services Band */}

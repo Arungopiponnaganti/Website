@@ -6,14 +6,17 @@ const SectionTitle = ({
     SubTitle,
     Content,
     className = "text-left",
-    isDarkMode = false
+    isDarkMode = false,
+    titleLevel = 2
 }) => {
     const combinedClassName = `section-title ${className} ${isDarkMode ? 'dark-mode' : ''}`.trim();
+    const TitleTag = `h${titleLevel}`;
+    const SubTitleTag = `h${titleLevel + 1}`;
 
     return (
         <div className={combinedClassName}>
-            {SubTitle && <h5 className="section-sub-title">{SubTitle}</h5>}
-            {Title && <h2 className="section-main-title">{parse(Title)}</h2>}
+            {SubTitle && <SubTitleTag className="section-sub-title">{SubTitle}</SubTitleTag>}
+            {Title && <TitleTag className="section-main-title">{parse(Title)}</TitleTag>}
             {Content && <p className="section-title-descr">{Content}</p>}
         </div>
     );

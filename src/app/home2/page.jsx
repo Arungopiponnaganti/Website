@@ -8,6 +8,9 @@ import Project2 from '../Components/Project/Project2';
 import Testimonial2 from '../Components/Testimonial/Testimonial2';
 import Process from '../Components/Process/Process';
 import Blog2 from '../Components/Blog/Blog2';
+import { getPageMetadata } from '@/utils/seo';
+
+export const metadata = getPageMetadata('/');
 
 const home2 = () => {
     return (

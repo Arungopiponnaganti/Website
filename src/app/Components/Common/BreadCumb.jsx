@@ -15,7 +15,7 @@ const BreadCumb = ({Title}) => {
           <div className="row">
             <div className="col-lg-12">
               <div className="breadcumb-content">
-                <h4>{Title}</h4>
+                <h1>{Title}</h1>
                 <ul className="breadcumb-list">
                   <li><Link href="/">Home</Link></li>
                   <li className="list-arrow">&lt;</li>

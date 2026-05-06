@@ -357,32 +357,33 @@ export default function AMEngagementScopes() {
           display: inline-flex;
           align-items: center;
           gap: 6px;
-          font-size: 12.5px;
+          font-size: 14px;
           font-weight: 600;
-          padding: 9px 18px;
-          border-radius: 7px;
+          padding: 14px 24px;
+          border-radius: 8px;
           text-decoration: none;
           cursor: pointer;
           transition: all 200ms ease;
           white-space: nowrap;
+          min-height: 48px;
         }
         .ams-cta-full { width: 100%; justify-content: center; }
         .ams-cta-primary {
-          background: #ff3c00;
+          background: #cc2900;
           color: #ffffff;
-          border: 1px solid #ff3c00;
+          border: 2px solid #cc2900;
         }
         .ams-cta-primary:hover {
-          background: #e63500;
-          border-color: #e63500;
+          background: #a93226;
+          border-color: #a93226;
           color: #ffffff;
           transform: translateY(-1px);
-          box-shadow: 0 4px 12px rgba(255,60,0,0.28);
+          box-shadow: 0 4px 12px rgba(204,41,0,0.28);
         }
         .ams-cta-ghost {
           background: transparent;
           color: #374151;
-          border: 1px solid #d1d5db;
+          border: 2px solid #d1d5db;
         }
         .ams-cta-ghost:hover {
           background: #f9fafb;
@@ -412,9 +413,9 @@ export default function AMEngagementScopes() {
 
           .ams-tab {
             flex-shrink: 0;
-            font-size: 11.5px;
+            font-size: 13px;
             font-weight: 600;
-            padding: 7px 16px;
+            padding: 10px 20px;
             border-radius: 99px;
             border: 1px solid #e5e7eb;
             background: #ffffff;
@@ -422,6 +423,10 @@ export default function AMEngagementScopes() {
             cursor: pointer;
             transition: all 180ms ease;
             white-space: nowrap;
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
           }
           .ams-tab-active {
             background: #111827;
@@ -429,8 +434,8 @@ export default function AMEngagementScopes() {
             border-color: #111827;
           }
           .ams-tab-featured-active {
-            background: #ff3c00;
-            border-color: #ff3c00;
+            background: #cc2900;
+            border-color: #cc2900;
           }
 
           /* Mobile card */

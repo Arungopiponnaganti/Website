@@ -9,7 +9,7 @@ export default function CustomDevCtaBand() {
       primaryBtn={{
         text: 'Book a free scoping session \u2192',
         // href: '/free-audit?service=custom-dev',
-        href: '/contact?service=custom-dev',
+        // href: '/contact?service=custom-dev',
         dataCta: 'cta-band-primary',
       }}
       secondaryBtn={{
@@ -17,6 +17,9 @@ export default function CustomDevCtaBand() {
         href: 'mailto:info@mayurasoft.com',
         variant: 'link',
       }}
+      useModal={true}
+      modalTitle="Book a Free Scoping Session"
+      modalDescription="Fill out the form below and we'll get back to you shortly."
     />
   );
 }

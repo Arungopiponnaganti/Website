@@ -6,17 +6,9 @@ import PECapabilities from '@/app/Components/ProductEngineering/PECapabilities';
 import PEDevProcess from '@/app/Components/ProductEngineering/PEDevProcess';
 import PEEngagementModels from '@/app/Components/ProductEngineering/PEEngagementModels';
 import CtaBand from '@/app/Components/Common/CtaBand';
+import { getPageMetadata } from '@/utils/seo';
 
-export const metadata = {
-  title: 'Tech Due Diligence Services | MayuraSoft',
-  description: 'Comprehensive Tech Due Diligence for investors and M&A. Uncover technical risks in code quality, architecture scalability, security, and team capabilities.',
-  alternates: {
-    canonical: 'https://mayurasoft.com/services/tech-due-diligence',
-  },
-  openGraph: {
-    images: [{ url: '/assets/og-tech-due-diligence.png', width: 1200, height: 630 }]
-  }
-};
+export const metadata = getPageMetadata('/service/tech-due-diligence');
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -44,7 +36,9 @@ const heroProps = {
     { num: '100+', lbl: 'Systems evaluated' },
     { num: 'Zero', lbl: 'Post-acquisition tech surprises' },
     { num: 'Actionable', lbl: 'Clear remediation roadmaps' }
-  ]
+  ],
+  formTitle: "Request a Sample Audit Report",
+  formMetadata: { service: 'tech-due-diligence', pageTitle: 'Tech Due Diligence' }
 };
 
 const capabilitiesData = [
@@ -194,7 +188,6 @@ export default function TechDueDiligencePage() {
           description="Speak with our lead technical auditors. We can start a Red Flag assessment or full Tech Due Diligence within 48 hours."
           primaryBtn={{
             text: 'Schedule an exploratory call →',
-            href: '/contact?service=tech-due-diligence',
             dataCta: 'tdd-cta-primary'
           }}
           secondaryBtn={{
@@ -203,6 +196,9 @@ export default function TechDueDiligencePage() {
             variant: 'link'
           }}
           trustText="Strictly confidential audits · Signed NDAs required · Reports delivered within 10 days"
+          useModal={true}
+          modalTitle="Schedule an Exploratory Call"
+          modalDescription="Fill out the form below and we'll get back to you shortly."
         />
       </div>
     </>

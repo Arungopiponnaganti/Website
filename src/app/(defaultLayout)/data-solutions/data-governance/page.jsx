@@ -14,18 +14,9 @@ import DGEngagement from '@/app/Components/DataGovernance/DGEngagement';
 import DGFaq from '@/app/Components/DataGovernance/DGFaq';
 import DGRelated from '@/app/Components/DataGovernance/DGRelated';
 import CtaBand from '@/app/Components/Common/CtaBand';
+import { getPageMetadata } from '@/utils/seo';
 
-export const metadata = {
-  title: 'Data Governance & Quality | MayuraSoft',
-  description:
-    'MayuraSoft builds end-to-end data governance frameworks — cataloguing, lineage, quality rules, ownership models, and access controls — that turn ungoverned data into a trusted, compliant organisational asset. Free governance audit to start.',
-  alternates: {
-    canonical: 'https://mayurasoft.com/data-solutions/data-governance',
-  },
-  openGraph: {
-    images: [{ url: '/assets/og-data-governance.png', width: 1200, height: 630 }],
-  },
-};
+export const metadata = getPageMetadata('/data-solutions/data-governance');
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -62,10 +53,13 @@ export default function DataGovernancePage() {
         <CtaBand
           title="Know exactly where your governance gaps are — and the cost of leaving them unfixed"
           description="We assess your current data governance posture across six dimensions and deliver a written scorecard with dimension-level scores, a gap analysis, and a prioritised remediation roadmap. Free, with no commitment required."
-          primaryBtn={{ href: '/contact', text: 'Book free governance audit →', dataCta: 'cta-primary-dg' }}
+          primaryBtn={{ text: 'Book free governance audit →', dataCta: 'cta-primary-dg' }}
           secondaryBtn={{ href: '#', variant: 'link', text: 'Take the governance scanner' }}
           trustText="Free 2-hour session · Written scorecard delivered in 48 hrs · DPDPA & GDPR gap analysis included · No commitment required"
           bgClass="bg-white border-top py-5"
+          useModal={true}
+          modalTitle="Book Free Governance Audit"
+          modalDescription="Fill out the form below and we'll get back to you shortly."
         />
       </div>
     </>

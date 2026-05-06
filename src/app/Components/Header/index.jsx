@@ -59,9 +59,9 @@ export default function Header({ variant }) {
         <div className="container-fluid">
           <div className="cs_main_header_in">
             <div className="cs_main_header_left">
-              <Link className="cs_site_branding" href="/">
-                  <Image src="/assets/images/mayura-logo.png" alt="Logo" width={161} height={42}   />
-              </Link>
+<Link className="cs_site_branding" href="/">
+                  <Image src="/assets/images/mayura-logo.png" alt="MayuraSoft - Software, AI & Data Engineering Company Logo" width={161} height={42} priority />
+               </Link>
               </div>
 
               <div className="cs_main_header_center">

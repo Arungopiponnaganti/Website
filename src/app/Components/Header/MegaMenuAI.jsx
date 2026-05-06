@@ -75,7 +75,7 @@ const MegaMenuAI = forwardRef(function MegaMenuAI({ setMobileToggle, onLinkClick
                 <div className="row g-2">
 
                   <div className="col-md-6">
-                    <h6 className="px-3 mb-4 fw-semibold mega-col-heading">Intelligent Systems</h6>
+                    <h4 className="px-3 mb-4 fw-semibold mega-col-heading">Intelligent Systems</h4>
                     <div className="d-flex flex-column gap-1">
                       {intelligentSystems.map((s) => (
                         <Link href={s.href} key={s.href} onClick={onLinkClick} className="custom-mega-item">
@@ -92,7 +92,7 @@ const MegaMenuAI = forwardRef(function MegaMenuAI({ setMobileToggle, onLinkClick
                   </div>
 
                   <div className="col-md-6">
-                    <h6 className="px-3 mb-4 fw-semibold mega-col-heading">Strategy &amp; Enablement</h6>
+                    <h4 className="px-3 mb-4 fw-semibold mega-col-heading">Strategy &amp; Enablement</h4>
                     <div className="d-flex flex-column gap-1">
                       {strategyEnablement.map((s) => (
                         <Link href={s.href} key={s.href} onClick={onLinkClick} className="custom-mega-item">
@@ -114,9 +114,9 @@ const MegaMenuAI = forwardRef(function MegaMenuAI({ setMobileToggle, onLinkClick
               <div className="col-lg-12 col-xl-4">
                 <div className="poster-card" style={{ background: '#1e1b4b' }}>
                   <div className="poster-bg poster-bg-ai"></div>
-                  <h5 className="mb-4 d-flex align-items-center fw-bold poster-title position-relative z-1 text-white">
+                  <h3 className="mb-4 d-flex align-items-center fw-bold poster-title position-relative z-1 text-white">
                     <i className="bi bi-robot me-3" style={{ color: '#c084fc' }}></i> Next-Gen AI Power
-                  </h5>
+                  </h3>
                   <p className="poster-text position-relative z-1 mb-4">
                     Tap into the power of cutting-edge language models and automation engines to outpace the competition.
                   </p>

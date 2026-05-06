@@ -15,18 +15,9 @@ import CDPRelated from '@/app/Components/CloudDataPlatforms/CDPRelated';
 import CtaBand from '@/app/Components/Common/CtaBand';
 import CDPCapabilities from '@/app/Components/CloudDataPlatforms/CDPCapabilities';
 import CDPUseCases from '@/app/Components/CloudDataPlatforms/CDPUseCases';
+import { getPageMetadata } from '@/utils/seo';
 
-export const metadata = {
-  title: 'Cloud Data Platforms | MayuraSoft',
-  description:
-    'MayuraSoft implements cloud data platforms on AWS, Azure, and GCP — a single, reliable place for all your organisation\'s data. Free platform assessment included.',
-  alternates: {
-    canonical: 'https://mayurasoft.com/data-solutions/cloud-data-platforms',
-  },
-  openGraph: {
-    images: [{ url: '/assets/og-cloud-data-platforms.png', width: 1200, height: 630 }],
-  },
-};
+export const metadata = getPageMetadata('/data-solutions/cloud-data-platforms');
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -76,10 +67,13 @@ export default function CloudDataPlatformsPage() {
         <CtaBand
           title="Understand your current data infrastructure gaps — before committing to any platform"
           description="We review your existing data sources, current reporting setup, and team capability — and return a written assessment covering your gaps, a recommended platform approach, and an indicative scope. This is not a sales presentation. It is a structured technical opinion on your situation."
-          primaryBtn={{ href: '/contact', text: 'Book free assessment →', dataCta: 'cta-primary-cdp' }}
+          primaryBtn={{ text: 'Book free assessment →', dataCta: 'cta-primary-cdp' }}
           secondaryBtn={{ href: '/contact', variant: 'link', text: 'Send us a question first' }}
           trustText="Written assessment delivered within 48 hours · No commitment required · You keep the assessment regardless"
           bgClass="bg-white border-top py-5"
+          useModal={true}
+          modalTitle="Book Free Assessment"
+          modalDescription="Fill out the form below and we'll get back to you shortly."
         />
       </div>
     </>

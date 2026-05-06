@@ -37,7 +37,7 @@
   {
     "icon": "/assets/images/skelton/ai-governance-ethics-skelton.png",
     "title": "AI Governance & Ethics",
-    "desc": "We build governance frameworks for AI systems — bias auditing, explainability, EU AI Act alignment, and risk management documentation — so your AI deployment is auditable and defensible.",
+    "desc": "We build oversight frameworks for AI systems — bias auditing, explainability, EU AI Act alignment, and risk management documentation — so your AI deployment is auditable and defensible.",
     "btnText": "Explore AI Governance",
     "btnLink": "/ai-automations/ai-governance"
   }

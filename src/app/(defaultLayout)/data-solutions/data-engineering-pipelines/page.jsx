@@ -15,18 +15,9 @@ import DEEngagement from '@/app/Components/DataEngineering/DEEngagement';
 import DEFaq from '@/app/Components/DataEngineering/DEFaq';
 import DERelated from '@/app/Components/DataEngineering/DERelated';
 import CtaBand from '@/app/Components/Common/CtaBand';
+import { getPageMetadata } from '@/utils/seo';
 
-export const metadata = {
-  title: 'Data Engineering & Pipelines | MayuraSoft',
-  description:
-    'MayuraSoft designs and builds data infrastructure that turns raw, scattered, unreliable data into a clean, governed, always-available foundation — so your analytics, AI, and reporting always work from the truth. Free data audit to start.',
-  alternates: {
-    canonical: 'https://mayurasoft.com/data-solutions/data-engineering-pipelines',
-  },
-  openGraph: {
-    images: [{ url: '/assets/og-data-engineering.png', width: 1200, height: 630 }],
-  },
-};
+export const metadata = getPageMetadata('/data-solutions/data-engineering-pipelines');
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -65,10 +56,13 @@ export default function DataEngineeringPipelinesPage() {
         <CtaBand
           title="Know exactly what's broken in your data infrastructure — and what to fix first"
           description="We'll review your current pipelines, warehouse, and data quality posture — and return a written audit with a prioritised improvement roadmap. All free, with no commitment required."
-          primaryBtn={{ href: '/contact', text: 'Book free data audit →', dataCta: 'cta-primary-de' }}
+          primaryBtn={{ text: 'Book free data audit →', dataCta: 'cta-primary-de' }}
           secondaryBtn={{ href: '/contact', variant: 'link', text: 'See reference architectures' }}
           trustText="Free 2-hour session · Written report delivered in 48 hrs · No commitment required"
           bgClass="bg-white border-top py-5"
+          useModal={true}
+          modalTitle="Book Free Data Audit"
+          modalDescription="Fill out the form below and we'll get back to you shortly."
         />
       </div>
     </>

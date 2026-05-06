@@ -12,18 +12,9 @@ import QEWhyUs from '@/app/Components/QualityEngineering/QEWhyUs';
 import QEEngagementModels from '@/app/Components/QualityEngineering/QEEngagementModels';
 import QEFaq from '@/app/Components/QualityEngineering/QEFaq';
 import QECtaBand from '@/app/Components/QualityEngineering/QECtaBand';
+import { getPageMetadata } from '@/utils/seo';
 
-export const metadata = {
-  title: 'Quality Engineering Services | MayuraSoft',
-  description:
-    'MayuraSoft builds quality into every sprint — automated test suites, CI/CD pipeline gates, and shift-left QA that keeps your shipping velocity high as your product scales. Get a free QA audit.',
-  alternates: {
-    canonical: 'https://mayurasoft.com/services/quality-engineering',
-  },
-  openGraph: {
-    images: [{ url: '/assets/og-quality-engineering.png', width: 1200, height: 630 }],
-  },
-};
+export const metadata = getPageMetadata('/service/quality-engineering');
 
 const jsonLd = {
   '@context': 'https://schema.org',

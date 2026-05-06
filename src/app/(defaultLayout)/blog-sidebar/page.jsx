@@ -1,6 +1,9 @@
 import Blog4 from '@/app/Components/Blog/Blog4';
 import BreadCumb from '@/app/Components/Common/BreadCumb';
 import React from 'react';
+import { getPageMetadata } from '@/utils/seo';
+
+export const metadata = getPageMetadata('/blog-sidebar');
 
 const page = () => {
     return (

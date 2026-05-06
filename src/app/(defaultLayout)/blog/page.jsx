@@ -1,6 +1,9 @@
 import Blog3 from '@/app/Components/Blog/Blog3';
 import BreadCumb from '@/app/Components/Common/BreadCumb';
 import React from 'react';
+import { getPageMetadata } from '@/utils/seo';
+
+export const metadata = getPageMetadata('/blog');
 
 const page = () => {
     return (

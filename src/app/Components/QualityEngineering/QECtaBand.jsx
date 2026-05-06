@@ -8,8 +8,6 @@ export default function QECtaBand() {
       description="A free QA audit takes 48 hours. We review your test coverage, CI pipeline, and defect escape rate — and return a written report with specific, prioritised recommendations. No commitment required."
       primaryBtn={{
         text: 'Get free QA audit \u2192',
-        // href: '/free-audit?service=quality-engineering',
-        href: '/contact?service=quality-engineering',
         dataCta: 'cta-band-primary',
       }}
       secondaryBtn={{
@@ -18,6 +16,9 @@ export default function QECtaBand() {
         variant: 'secondary',
       }}
       trustText="Typically responds within 48 hours \u00B7 Written audit, not a sales call"
+      useModal={true}
+      modalTitle="Get Free QA Audit"
+      modalDescription="Fill out the form below and we'll get back to you shortly."
     />
   );
 }

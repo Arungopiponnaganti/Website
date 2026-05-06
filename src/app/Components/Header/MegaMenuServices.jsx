@@ -88,7 +88,7 @@ const MegaMenuServices = forwardRef(function MegaMenuServices({ setMobileToggle,
               <div className="col-lg-12 col-xl-8">
                 <div className="row g-2">
                   <div className="col-md-6">
-                    <h6 className="px-3 mb-4 fw-semibold mega-col-heading">Build &amp; Modernise</h6>
+                    <h4 className="px-3 mb-4 fw-semibold mega-col-heading">Build &amp; Modernise</h4>
                     <div className="d-flex flex-column gap-1">
                       {buildServices.map((s) => (
                         <Link href={s.href} key={s.href} onClick={onLinkClick} className="custom-mega-item">
@@ -105,7 +105,7 @@ const MegaMenuServices = forwardRef(function MegaMenuServices({ setMobileToggle,
                   </div>
 
                   <div className="col-md-6">
-                    <h6 className="px-3 mb-4 fw-semibold mega-col-heading">Run &amp; Optimise</h6>
+                    <h4 className="px-3 mb-4 fw-semibold mega-col-heading">Run &amp; Optimise</h4>
                     <div className="d-flex flex-column gap-1">
                       {runServices.map((s) => (
                         <Link href={s.href} key={s.href} onClick={onLinkClick} className="custom-mega-item">
@@ -126,9 +126,9 @@ const MegaMenuServices = forwardRef(function MegaMenuServices({ setMobileToggle,
               <div className="col-lg-12 col-xl-4">
                 <div className="poster-card" style={{ background: '#0f172a' }}>
                   <div className="poster-bg poster-bg-services"></div>
-                  <h5 className="mb-4 d-flex align-items-center fw-bold poster-title position-relative z-1 text-white">
+                  <h3 className="mb-4 d-flex align-items-center fw-bold poster-title position-relative z-1 text-white">
                     <i className="bi bi-rocket-takeoff-fill me-3" style={{ color: '#38bdf8' }}></i> Engineered for Scale
-                  </h5>
+                  </h3>
                   <p className="poster-text position-relative z-1 mb-4">
                     We build robust, scalable architectures that grow with your ambitions and handle enterprise demands seamlessly.
                   </p>

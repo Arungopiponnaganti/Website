@@ -91,7 +91,7 @@ const ServiceDetail = () => {
                                     <div className="col-lg-12 col-md-12">
                                         <div className="tab_container">
                                             <div className="feq-content">
-                                                <h3 className="faq-title">Frequently Asked Questions</h3>
+                                                <h4 className="faq-title">Frequently Asked Questions</h4>
                                                 <p className="faq-description">Alternative innovation to ethical network environmental whiteboard pursue compelling results for premier methods empowerment. Dramatically architect go forward opportunities</p>
                                             </div>
                                             <div id="tab" className="tab_content">

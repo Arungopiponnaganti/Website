@@ -50,7 +50,7 @@ const Faq = () => {
                         <div className="col-lg-6 col-md-12">
                             <div className="tab_container">
                                 <div className="feq-content">
-                                    <h3 className="faq-title">{parse(FaqContent.Title)}</h3>
+                                    <h4 className="faq-title">{parse(FaqContent.Title)}</h4>
                                     <p className="faq-description">{FaqContent.Content}</p>
                                 </div>
                                 <div id="tab1" className="tab_content">

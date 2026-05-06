@@ -10,17 +10,9 @@ import WhyMayuraSoft from '@/app/Components/CustomDev/WhyMayuraSoft';
 import RelatedServices from '@/app/Components/CustomDev/RelatedServices';
 import CtaBand from '@/app/Components/CustomDev/CtaBand';
 import Technologies from '@/app/Components/technologies/Technologies';
+import { getPageMetadata } from '@/utils/seo';
 
-export const metadata = {
-  title: 'Custom Software Development Services | MayuraSoft',
-  description: 'MayuraSoft builds bespoke web, mobile, and enterprise software — scalable, secure, and delivered in agile sprints. Get a free scoping session today.',
-  alternates: {
-    canonical: 'https://mayurasoft.com/services/custom-software-development',
-  },
-  openGraph: {
-    images: [{ url: '/assets/og-custom-dev.png', width: 1200, height: 630 }]
-  }
-};
+export const metadata = getPageMetadata('/service/custom-software-development');
 
 const jsonLd = {
   '@context': 'https://schema.org',

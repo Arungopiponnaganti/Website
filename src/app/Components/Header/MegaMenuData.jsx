@@ -75,7 +75,7 @@ const MegaMenuData = forwardRef(function MegaMenuData({ setMobileToggle, onLinkC
                 <div className="row g-2">
 
                   <div className="col-md-6">
-                    <h6 className="px-3 mb-4 fw-semibold mega-col-heading">Data Infrastructure</h6>
+                    <h4 className="px-3 mb-4 fw-semibold mega-col-heading">Data Infrastructure</h4>
                     <div className="d-flex flex-column gap-1">
                       {dataInfrastructure.map((s) => (
                         <Link href={s.href} key={s.href} onClick={onLinkClick} className="custom-mega-item">
@@ -92,7 +92,7 @@ const MegaMenuData = forwardRef(function MegaMenuData({ setMobileToggle, onLinkC
                   </div>
 
                   <div className="col-md-6">
-                    <h6 className="px-3 mb-4 fw-semibold mega-col-heading">Insights &amp; Reporting</h6>
+                    <h4 className="px-3 mb-4 fw-semibold mega-col-heading">Insights &amp; Reporting</h4>
                     <div className="d-flex flex-column gap-1">
                       {insightsReporting.map((s) => (
                         <Link href={s.href} key={s.href} onClick={onLinkClick} className="custom-mega-item">
@@ -114,9 +114,9 @@ const MegaMenuData = forwardRef(function MegaMenuData({ setMobileToggle, onLinkC
               <div className="col-lg-12 col-xl-4">
                 <div className="poster-card" style={{ background: '#064e3b' }}>
                   <div className="poster-bg poster-bg-data"></div>
-                  <h5 className="mb-4 d-flex align-items-center fw-bold poster-title position-relative z-1 text-white">
+                  <h3 className="mb-4 d-flex align-items-center fw-bold poster-title position-relative z-1 text-white">
                     <i className="bi bi-bar-chart-line-fill me-3" style={{ color: '#34d399' }}></i> Master Your Data
-                  </h5>
+                  </h3>
                   <p className="poster-text position-relative z-1 mb-4">
                     Turn raw unstructured information into a powerful moat for your business with real-time analytics.
                   </p>

@@ -1,30 +1,77 @@
 'use client';
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Subject',
+    name: 'subject',
+    type: 'text',
+    placeholder: 'Your Subject Here',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
 
 export default function PEHero({
   badgeText = "Product Engineering",
   title = "Turn your product idea into a scalable, production-ready platform",
   subheadline = "From validated MVP to enterprise-grade architecture — MayuraSoft handles the full product lifecycle so your team can focus on what makes your product unique.",
   tags = ['MVP development', 'Scalable architecture', 'Full-stack engineering', 'Agile delivery', 'Post-launch support'],
-  // primaryCta = { text: "Get a free product audit →", href: "/free-audit?service=product-engineering" },
-  primaryCta = { text: "Get a free product audit →", href: "/contact?service=product-engineering" },
+  primaryCta = { text: "Get a free product audit →" },
   secondaryCta = { text: "See how we work", href: "#process" },
   stats = [
     { num: '2 wks', lbl: 'From kickoff to first working sprint' },
     { num: '3× faster', lbl: 'Delivery vs. building an in-house team' },
     { num: 'MVP → Scale', lbl: 'Single team, full product lifecycle' },
     { num: 'Fixed scope', lbl: 'Transparent pricing, no bill shock' }
-  ]
+  ],
+  formTitle = "Get a Free Product Audit",
+  formMetadata = { service: 'product-engineering', pageTitle: 'Product Engineering' }
 }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
 <div className="hero-area style-three align-items-center" style={{ marginTop: '-120px', paddingTop: '280px', position: 'relative', height: 'auto', minHeight: '800px', overflow: 'hidden' }}>
 
 {/* ✅ Background Image */}
 <Image
   src="/assets/images/project-engineering-hero.png"
-  alt="background"
+  alt="Product engineering services hero background - modern tech workspace"
   fill
   priority
   sizes="100vw"
@@ -38,7 +85,7 @@ export default function PEHero({
         <div className="row hero align-items-center">
           <div className="col-lg-7 col-md-12">
             <div className="hero-contant" style={{ paddingTop: '0' }}>
-              <div 
+              <div
                 style={{
                   display: 'inline-flex',
                   alignItems: 'center',
@@ -72,7 +119,7 @@ export default function PEHero({
 
               <div className="d-flex flex-wrap align-items-center gap-4">
                 <div className="solutek-btn">
-                  <Link href={primaryCta.href} className="btn-2" data-cta="hero-primary">
+                  <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="btn-2" data-cta="hero-primary">
                     {primaryCta.text}
                   </Link>
                 </div>
@@ -92,8 +139,8 @@ export default function PEHero({
             </div>
           </div>
           <div className="col-lg-5 col-md-12 d-none d-lg-block">
-            <div 
-              className="hero-card" 
+            <div
+              className="hero-card"
               style={{
                 background: 'rgba(255, 255, 255, 0.05)',
                 backdropFilter: 'blur(10px)',
@@ -123,6 +170,16 @@ export default function PEHero({
           </div>
         </div>
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title={formTitle}
+        description="Fill out the form below and we'll get back to you shortly."
+        submitButtonText="Submit"
+        fields={defaultFormFields}
+        metadata={formMetadata}
+      />
     </div>
   );
 }

@@ -18,7 +18,7 @@ const Counter = () => {
                         <div key={i} className="col-lg-3 col-md-6 col-sm-6">
                             <div className="counter-single-box">
                                 <div className="counter-content">
-                                    <h4 className="counter">{item.title}</h4>
+                                    <span className="counter">{item.title}</span>
                                     <p>{item.desc}</p>
                                 </div>
                             </div>

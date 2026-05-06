@@ -1,15 +1,62 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Subject',
+    name: 'subject',
+    type: 'text',
+    placeholder: 'Your Subject Here',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
 
 export default function DSHero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <div className="hero-area style-three d-flex align-items-center" style={{ marginTop: '-120px', paddingTop: '280px', position: 'relative', height: 'auto', minHeight: '800px' }}>
       
       {/* Background Shapes positioned relative to the full section width */}
-      <div className="hero-left-shape" style={{ position: 'absolute', top: '28%', transform: 'translateY(-50%)', left: '10%', zIndex: 0 }}>
+      {/* <div className="hero-left-shape" style={{ position: 'absolute', top: '28%', transform: 'translateY(-50%)', left: '10%', zIndex: 0 }}>
         <Image src="/assets/images/home-3/hero-geo.png" alt="img" width={680} height={680} priority />
-      </div>
+      </div> */}
 
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         <div className="row hero align-items-center mb-5">
@@ -45,7 +92,7 @@ export default function DSHero() {
 
               <div className="d-flex flex-wrap align-items-center gap-4 mt-4">
                 <div className="solutek-btn">
-                  <Link href="/contact" className="btn-2">
+                  <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="btn-2">
                     Start strategy engagement &rarr;
                   </Link>
                 </div>
@@ -103,6 +150,16 @@ export default function DSHero() {
 
         </div>
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Start Strategy Engagement"
+        description="Fill out the form below and we'll get back to you shortly."
+        submitButtonText="Submit"
+        fields={defaultFormFields}
+        metadata={{ service: 'data-strategy', pageTitle: 'Data Strategy Consulting' }}
+      />
     </div>
   );
 }

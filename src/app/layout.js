@@ -7,6 +7,8 @@ import './assets/responsive.css';
 import './assets/why-choose-us.css';
 import './assets/technologies.css';
 import './assets/scale-hero.css';
+import { getPageMetadata } from '@/utils/seo';
+import SkipLink from '@/app/Components/Common/SkipLink';
 
 const fira_sans = Fira_Sans({
   subsets: ['latin'],
@@ -19,19 +21,7 @@ const poppins = Poppins({
   variable: '--heading-font',
 });
 
-export const metadata = {
-  title: {
-    absolute: '',
-    default: 'MayuraSoft',
-    template: '%s | MayuraSoft',
-  },
-  description: 'MayuraSoft',
-  openGraph: {
-    title: 'MayuraSoft',
-    description: 'MayuraSoft',
-    image: '/openGraphImage.jpg',
-  },
-};
+export const metadata = getPageMetadata('/');
 
 export default function RootLayout({ children }) {
   return (
@@ -39,8 +29,11 @@ export default function RootLayout({ children }) {
       <head>
         <meta name="author" content="Themeservices" />
         <link rel="icon" href="/assets/images/mayura-logo-footer.png" sizes="any" />
+        <link rel="preload" as="image" href="/assets/images/hero-thumb.png" />
+        <link rel="preload" as="image" href="/assets/images/ship-new.png" />
       </head>
       <body className={`${fira_sans.variable} ${poppins.variable}`}>
+        <SkipLink />
         {children}
       </body>
     </html>
