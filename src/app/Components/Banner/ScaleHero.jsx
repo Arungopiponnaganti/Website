@@ -40,7 +40,8 @@ const ScaleHero = ({
                         <Image
                             src={heroImage}
                             alt={imageAlt || 'hero image'}
-                            fill
+                            width={800}
+                            height={600}
                             style={{ objectFit: 'cover', objectPosition: 'center' }}
                             priority
                         />

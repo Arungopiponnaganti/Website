@@ -1,6 +1,42 @@
-import Link from 'next/link';
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
 
 const models = [
   {
@@ -57,8 +93,22 @@ export default function PEEngagementModels({
   subTitle = "How to work with us",
   title = "Three engagement models",
   desc = "No single engagement model works for every business. We offer three structures — and help you decide which is right during the discovery call.",
-  engagementModels = models
+  engagementModels = models,
+  pageName = "Product Engineering",
+  sectionName = "Engagement Models"
 }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedModel, setSelectedModel] = useState(null);
+
+  const handleCtaClick = (model) => {
+    setSelectedModel(model);
+    setIsModalOpen(true);
+  };
+
+  const getFormFields = () => {
+    return defaultFormFields;
+  };
+
   return (
     <section className="cd-section " data-background="/assets/images/home-3/service-bg.png">
       <div className="container">
@@ -96,18 +146,35 @@ export default function PEEngagementModels({
                   ))}
                 </ul>
 
-                <Link
-                  href={m.ctaLink}
+                <button
+                  onClick={() => handleCtaClick(m)}
                   className={`cd-engage-cta ${m.featured ? 'cd-cta-filled' : 'cd-cta-outline'}`}
                   data-cta={m.label.toLowerCase().replace(' ', '-')}
                 >
                   {m.ctaText}
-                </Link>
+                </button>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get in Touch"
+        description="Fill out the form below and we'll get back to you shortly."
+        fields={getFormFields()}
+        metadata={{
+          page: pageName,
+          section: sectionName,
+          modal: `${pageName} Contact Form`,
+          engagementModel: selectedModel?.label,
+          engagementModelType: selectedModel?.ctaLink?.split('=')[1],
+          source: pageName.toLowerCase().replace(' ', '-'),
+          formType: `${pageName} - ${selectedModel?.label || 'Inquiry'}`
+        }}
+      />
     </section>
   );
 }

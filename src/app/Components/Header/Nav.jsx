@@ -25,7 +25,7 @@ export default function Nav({ setMobileToggle }) {
       <li className="offcanvas-nav-header-li">
         <div className="offcanvas-nav-header">
           <a href="/" onClick={() => setMobileToggle(false)}>
-            <Image src="/assets/images/mayura-logo.png" alt="Logo" width={130} height={34} priority />
+            <Image src="/assets/images/mayura-logo.png" alt="MayuraSoft Logo" width={130} height={34} priority />
           </a>
           <button
             className="offcanvas-close-btn"

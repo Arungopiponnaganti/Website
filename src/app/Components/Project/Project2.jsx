@@ -102,7 +102,7 @@ const Project2 = () => {
                         <div key={i} className="col-xl-12 col-lg-12">
                             <div className="project-single-box">
                                 <div className="project-thumb">
-                                  <Image src={item.img} alt="img" width={395} height={447}   />
+                                  <Image src={item.img} alt="Project thumbnail" width={395} height={447}   />
                                 </div>
                                 <div className="project-content">
                                     <h4 className="project-title"><Link href="/project/project-details">{item.title}</Link></h4>
@@ -112,7 +112,7 @@ const Project2 = () => {
                                     <span><i className="bi bi-arrow-right"></i></span>
                                 </div>
                                 <div className="project-shape">
-                                    <Image src="/assets/images/home-two/border-shape.png" alt="img" width={395} height={395}   />
+                                    <Image src="/assets/images/home-two/border-shape.png" alt="Project border decoration" width={395} height={395}   />
                                 </div>
                             </div>
                         </div>
@@ -122,7 +122,7 @@ const Project2 = () => {
                 </div>
             </div>
             <div className="project-bg-shape rotateme">
-                <Image src="/assets/images/home-two/project-bg-shape.png" alt="img" width={642} height={642}   />
+                <Image src="/assets/images/home-two/project-bg-shape.png" alt="Project background decoration" width={642} height={642}   />
             </div>
         </div>
     );

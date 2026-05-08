@@ -73,7 +73,7 @@ export default function AGERiskRadar() {
   const toggle = (i) => setOpenIdx(openIdx === i ? -1 : i);
 
   return (
-    <section className="cd-section py-5 pb-3 cd-section-muted border-top border-bottom">
+    <section className="cd-section py-5 pb-5 cd-section-muted border-top border-bottom">
       <div className="container py-4">
         <SectionTitle
           className="mb-2 text-center"

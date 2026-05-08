@@ -64,7 +64,7 @@ export default function PEDevProcess({
   const [activeStep, setActiveStep] = useState(0);
 
   return (
-    <section className="cd-section py-5 cd-section-muted">
+    <section className="cd-section py-5 cd-section-muted" id="process">
       <div className="container py-4">
         <SectionTitle
           className="text-center mb-5"

@@ -32,7 +32,7 @@ const Testimonial3 = () => {
                             <p>{TestimonialContent.Content}</p>
                         </div>
                         <div className="testi-thumb">
-                            <Image src={TestimonialContent.AuthorImage} alt="img" width={330} height={370}   />
+                            <Image src={TestimonialContent.AuthorImage} alt="Testimonial author photo" width={330} height={370}   />
                             <div className="testi-autor">
                                 <h4 className="testi-user-name">{TestimonialContent.AuthorName}
                                     <span>{TestimonialContent.AuthorDesignation}</span>
@@ -40,7 +40,7 @@ const Testimonial3 = () => {
                             </div>
                             <div className="slide-shape">
                                 <div className="slide-shape-inner">
-                                    <Image src="/assets/images/home-3/slide-shape.png" alt="img" width={71} height={370}   />
+                                    <Image src="/assets/images/home-3/slide-shape.png" alt="Testimonial decoration" width={71} height={370}   />
                                 </div>
                             </div>
                         </div>
@@ -70,7 +70,7 @@ const Testimonial3 = () => {
                                                         </div>
                                                         <div className="testi-review-user">
                                                             <div className="testi-quote-icon">
-                                                                <Image src="/assets/images/home-3/testi-quote.png" alt="img" width={38} height={28}   />
+                                                                <Image src="/assets/images/home-3/testi-quote.png" alt="Quote icon" width={38} height={28}   />
                                                             </div>
                                                             <h3>From <span>200+</span> reviews</h3>
                                                         </div>

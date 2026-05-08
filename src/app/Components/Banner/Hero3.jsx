@@ -34,22 +34,22 @@ const Hero3 = () => {
                                     </div>
                                     <div className="hero-btn-3">
                                         <div className="hero-btn-profile">
-                                            <Image src="/assets/images/home-3/hero-pro.png" alt="img" width={56} height={56}   />
+                                            <Image src="/assets/images/home-3/hero-pro.png" alt="Expert profile" width={56} height={56}   />
                                             <Link href="/about"><span>MEET</span>Our Experts</Link>
                                         </div>
                                     </div>
                                     <div className="hero-left-shape">
-                                        <Image src="/assets/images/home-3/hero-geo.png" alt="img" width={680} height={680}   />
+                                        <Image src="/assets/images/home-3/hero-geo.png" alt="Hero background pattern" width={680} height={680}   />
                                     </div>
                                 </div>
                             </div>
                             <div className="col-lg-7 col-md-5">
                                 <div className="hero-thumb-3">
                                     <div className="hero-img hero_image_3">
-                                         <Image src={item.image} alt="img" width={1065} height={800}   />
+                                         <Image src={item.image} alt="Hero slide image" width={1065} height={800}   />
                                     </div>
                                     <div className="hero-thumb-shape">
-                                        <Image src="/assets/images/home-3/hero-rs.png" alt="img" width={439} height={800}   />
+                                        <Image src="/assets/images/home-3/hero-rs.png" alt="Hero decoration shape" width={439} height={800}   />
                                     </div>
                                 </div>
                             </div>

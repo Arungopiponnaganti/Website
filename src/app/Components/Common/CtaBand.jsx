@@ -60,13 +60,29 @@ export default function CtaBand({
   modalTitle = 'Get in Touch',
   modalDescription = 'Fill out the form below and we\'ll get back to you shortly.',
   modalMetadata = {},
+  primaryModalTitle,
+  primaryModalDescription,
+  secondaryModalTitle,
+  secondaryModalDescription,
+  primaryModalFields,
+  secondaryModalFields,
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [activeModalType, setActiveModalType] = useState('primary');
   const secondaryClass = secondaryBtn?.variant === 'secondary' ? 'cd-btn-secondary' : 'cd-btn-link';
 
   const handlePrimaryClick = (e) => {
     if (useModal) {
       e.preventDefault();
+      setActiveModalType('primary');
+      setIsModalOpen(true);
+    }
+  };
+
+  const handleSecondaryClick = (e) => {
+    if (secondaryBtn?.dataCta === 'cta-band-secondary' || secondaryBtn?.dataCta?.includes('cta-secondary')) {
+      e.preventDefault();
+      setActiveModalType('secondary');
       setIsModalOpen(true);
     }
   };
@@ -97,28 +113,37 @@ export default function CtaBand({
                 {primaryBtn?.text}
               </Link>
             )}
-            {secondaryBtn && (
-              <a href={secondaryBtn.href} className={secondaryClass}>
-                {secondaryBtn.text}
-              </a>
-            )}
+      {secondaryBtn && (
+        <a 
+          href={secondaryBtn.href || '#'} 
+          className={secondaryClass}
+          onClick={(secondaryBtn?.dataCta === 'cta-band-secondary' || secondaryBtn?.dataCta?.includes('cta-secondary')) ? handleSecondaryClick : undefined}
+          data-cta={secondaryBtn?.dataCta}
+        >
+          {secondaryBtn.text}
+        </a>
+      )}
           </div>
 
           <div className="cd-cta-trust">{trustText}</div>
         </div>
       </section>
 
-      {useModal && (
-        <DynamicFormModal
-          isOpen={isModalOpen}
-          onClose={() => setIsModalOpen(false)}
-          title={modalTitle}
-          description={modalDescription}
-          submitButtonText="Submit"
-          fields={modalFields}
-          metadata={{ ...modalMetadata, pageTitle: title }}
-        />
-      )}
+  {useModal && (
+    <DynamicFormModal
+      isOpen={isModalOpen}
+      onClose={() => setIsModalOpen(false)}
+      title={activeModalType === 'primary' ? (primaryModalTitle || modalTitle) : (secondaryModalTitle || modalTitle)}
+      description={activeModalType === 'primary' ? (primaryModalDescription || modalDescription) : (secondaryModalDescription || modalDescription)}
+      submitButtonText="Submit"
+      fields={activeModalType === 'primary' ? (primaryModalFields || modalFields) : (secondaryModalFields || modalFields)}
+      metadata={{ 
+        ...modalMetadata, 
+        pageTitle: title,
+        ctaType: activeModalType === 'primary' ? 'primary-button' : 'secondary-button'
+      }}
+    />
+  )}
     </>
   );
 }

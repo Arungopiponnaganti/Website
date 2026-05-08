@@ -384,7 +384,7 @@ export default function CDHero() {
               className="cd-cta-ghost"
               onClick={() => document.getElementById('cd-architecture')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              See our stack
+              See our stack &darr;
             </button>
           </div>
 

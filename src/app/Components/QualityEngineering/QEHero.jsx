@@ -348,7 +348,7 @@ export default function QEHero() {
               className="qe-cta-ghost"
               onClick={() => document.getElementById('qe-approach')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              See our approach
+              See our approach &darr;
             </button>
           </div>
 

@@ -2,50 +2,50 @@ import parse from 'html-react-parser';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const About1 = ({MainImg,ImgTitle,SubTitle,Title,Content,listTitle,BottomText,BtnUrl,BtnText}) => {
+const About1 = ({ MainImg, ImgTitle, SubTitle, Title, Content, listTitle, BottomText, BtnUrl, BtnText }) => {
     return (
         <div className="about-area">
-                <div className="container">
-                    <div className="row align-items-center">
-                        <div className="col-lg-6 col-lg-6">
-                            <div className="about-thumb">
-                                <Image src={MainImg} alt="img" width={636} height={560}   />
-                                <div className="about-shape">
-                                    <Image src="/assets/images/about1.png" alt="img" width={40} height={40}   />
-                                </div>
-                                <span className="about-title">{ImgTitle}</span>
+            <div className="container">
+                <div className="row align-items-center">
+                    <div className="col-lg-6 col-lg-6">
+                        <div className="about-thumb">
+                            <Image src={MainImg} alt="About us image" width={636} height={560} />
+                            <div className="about-shape">
+                                <Image src="/assets/images/about1.png" alt="About us icon" width={40} height={40} />
+                            </div>
+                            <span className="about-title">{ImgTitle}</span>
+                        </div>
+                    </div>
+                    <div className="col-lg-6">
+                        <div className="section-title text-left">
+                            <p className="section-sub-title">{SubTitle}</p>
+                            <h2 className="section-main-title">{parse(Title)}</h2>
+                            <p className="section-title-descr">{Content}</p>
+                        </div>
+                        <div className="about-box d-flex align-items-center">
+                            <div className="about-icon">
+                                <Image src="/assets/images/about4.png" alt="About feature icon" width={45} height={41} />
+                            </div>
+                            <div className="about-tiltle">
+                                <h3>{listTitle}</h3>
                             </div>
                         </div>
-                        <div className="col-lg-6">
-                            <div className="section-title text-left">
-                                <p className="section-sub-title">{SubTitle}</p>
-                                <h2 className="section-main-title">{parse(Title)}</h2>
-                                <p className="section-title-descr">{Content}</p>
-                            </div>
-                            <div className="about-box d-flex align-items-center">
-                                <div className="about-icon">
-                                    <Image src="/assets/images/about4.png" alt="img" width={45} height={41}   />
-                                </div>
-                                <div className="about-tiltle">
-                                    <h3>{listTitle}</h3>
-                                </div>
-                            </div>
-                            <div className="about-text">
-                                <p>{BottomText}</p>
-                            </div>
-                            <div className="solutek-btn">
-                                <Link href={BtnUrl}>
+                        <div className="about-text">
+                            <p>{BottomText}</p>
+                        </div>
+                        <div className="solutek-btn">
+                            <Link href={BtnUrl}>
                                 {BtnText}
-                                    <div className="solutek-hover-btn hover-bx"></div>
-                                    <div className="solutek-hover-btn hover-bx2"></div>
-                                    <div className="solutek-hover-btn hover-bx3"></div>
-                                    <div className="solutek-hover-btn hover-bx4"></div>
-                                </Link>
-                            </div>
+                                <div className="solutek-hover-btn hover-bx"></div>
+                                <div className="solutek-hover-btn hover-bx2"></div>
+                                <div className="solutek-hover-btn hover-bx3"></div>
+                                <div className="solutek-hover-btn hover-bx4"></div>
+                            </Link>
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     );
 };
 

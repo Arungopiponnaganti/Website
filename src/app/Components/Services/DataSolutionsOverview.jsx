@@ -52,10 +52,10 @@ const DataSolutionsOverview = ({ bgImage, ClassAdd }) => {
 
     return (
         <div className={`service-overview-area${ClassAdd ? ` ${ClassAdd}` : ''} p-5`} data-background={bgImage}>
-            <div className="container-fluid">
-                <div className="row project align-items-center">
-                    <div className="col-lg-6">
-                        <div className="section-title text-left">
+            <div className="container">
+                <div className="row align-items-center">
+                    <div className="col-lg-12">
+                        <div className="section-title text-center">
                             <SectionTitle
                                 SubTitle="DATA SOLUTIONS"
                                 Title="Data your teams can trust and act on"
@@ -63,7 +63,7 @@ const DataSolutionsOverview = ({ bgImage, ClassAdd }) => {
                             />
                         </div>
                     </div>
-                    <div className="col-lg-6">
+                    {/* <div className="col-lg-6">
                         <div className="project-right">
                             <div className="cs_slider_arrows cs_style_2 testtimonial_arow_area cs_hide_md">
                                 <div className="cs_left_arrow cs_slider_arrow cs_center" onClick={previous}>
@@ -92,9 +92,9 @@ const DataSolutionsOverview = ({ bgImage, ClassAdd }) => {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
-                <div className="row carousel">
+                {/* <div className="row carousel">
                     <div className="service-overview-list cs_slider_gap_30">
                         <Slider ref={sliderRef} {...settings}>
                             {data.map((item, i) => (
@@ -117,7 +117,42 @@ const DataSolutionsOverview = ({ bgImage, ClassAdd }) => {
                             ))}
                         </Slider>
                     </div>
-                </div>
+                </div> */}
+                <div className="row p-5">
+  {data.map((item, i) => (
+    <div key={i} className="col-lg-4 col-md-6 mb-4 d-flex">
+      
+      <div className="service-single-box d-flex flex-column pt-4 w-100">
+        
+        {/* <div className="service-icon mb-0 text-center">
+          <Image
+            src={item.icon}
+            alt={`${item.title} data solution icon`}
+            width={100}
+            height={100}
+          />
+        </div> */}
+
+        <div className="service-content d-flex flex-column flex-grow-1 text-center">
+          <h3 className="service-title">{item.title}</h3>
+
+          <p className="service-text flex-grow-1">
+            {item.desc}
+          </p>
+
+          {/* <div className="service-btn mt-auto">
+            <Link href={item.btnLink}>
+              <i className="bi bi-plus"></i>
+              <span> {item.btnText}</span>
+            </Link>
+          </div> */}
+        </div>
+
+      </div>
+
+    </div>
+  ))}
+</div>
             </div>
         </div>
     );

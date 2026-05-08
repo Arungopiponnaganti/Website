@@ -31,7 +31,7 @@ const Blog2 = () => {
                             <div className="meta-blog">
                                 <Link href="/blog/blog-details"><span><i className="bi bi-person"></i>HOSSAIN ASIF</span></Link>
                                 <p><span>
-                                <Image src="/assets/images/home-two/mesage-icon.png" alt="img" width={17} height={15}   />
+                                <Image src="/assets/images/home-two/mesage-icon.png" alt="Message icon" width={17} height={15}   />
                                     </span>COMMENTS</p>
                                 </div>
                                 <h3><Link href="/blog/blog-details">{item.title}</Link></h3>

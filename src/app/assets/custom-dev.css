@@ -617,9 +617,9 @@
 }
 
 .cd-cta-filled {
-  background: #cc2900;
+  background: rgb(255, 59, 0);
   color: #fff !important;
-  border: 2px solid #cc2900;
+  border: 2px solid rgb(255, 59, 0);
 }
 
 .cd-cta-filled:hover {

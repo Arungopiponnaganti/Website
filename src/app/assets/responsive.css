@@ -871,7 +871,7 @@
         width: 100%;
     }
 
-    h4.about-title {
+    .about-title {
         left: 7%;
         bottom: 14%;
     }
@@ -2891,7 +2891,7 @@
         display: none;
     }
 
-    h4.about-title {
+    .about-title {
         bottom: 14%;
         left: 7%;
     }

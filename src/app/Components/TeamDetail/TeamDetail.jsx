@@ -19,7 +19,7 @@ const TeamDetail = () => {
         <div className="row align-items-center">
           <div className="col-lg-6">
             <div className="team-thumb">
-              <Image src="/assets/images/inner/team-details.png" alt="img" width={636} height={758} />
+              <Image src="/assets/images/inner/team-details.png" alt="Team member photo" width={636} height={758} />
             </div>
           </div>
           <div className="col-lg-6">

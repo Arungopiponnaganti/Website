@@ -1,9 +1,43 @@
 'use client';
-import Link from 'next/link';
 import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
 
 /* ─── Data ───────────────────────────────────────────────────────── */
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
 const scopes = [
   {
     key: 'replatform',
@@ -71,6 +105,18 @@ export default function AMEngagementScopes() {
   const [activeKey, setActiveKey] = useState('strangler');
   const active = scopes.find(s => s.key === activeKey);
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedScope, setSelectedScope] = useState(null);
+
+  const handleCtaClick = (scope) => {
+    setSelectedScope(scope);
+    setIsModalOpen(true);
+  };
+
+  const getFormFields = () => {
+    return defaultFormFields;
+  };
+
   return (
     <section className="ams-section">
       <div className="container">
@@ -124,9 +170,9 @@ export default function AMEngagementScopes() {
                   <td className="ams-td ams-td-label ams-td-cta-empty" />
                   {scopes.map(s => (
                     <td key={s.key} className={`ams-td ams-td-cell ams-td-cta${s.featured ? ' ams-td-featured' : ''}`}>
-                      <Link href={s.ctaLink} className={`ams-cta${s.featured ? ' ams-cta-primary' : ' ams-cta-ghost'}`}>
+                      <button onClick={() => handleCtaClick(s)} className={`ams-cta${s.featured ? ' ams-cta-primary' : ' ams-cta-ghost'}`}>
                         {s.cta} <ArrowIcon />
-                      </Link>
+                      </button>
                     </td>
                   ))}
                 </tr>
@@ -175,18 +221,32 @@ export default function AMEngagementScopes() {
 
             {/* CTA */}
             <div className="ams-mobile-cta">
-              <Link
-                href={active.ctaLink}
-                className={`ams-cta ams-cta-full${active.featured ? ' ams-cta-primary' : ' ams-cta-ghost'}`}
-              >
+              <button onClick={() => handleCtaClick(active)} className={`ams-cta ams-cta-full${active.featured ? ' ams-cta-primary' : ' ams-cta-ghost'}`}>
                 {active.cta} <ArrowIcon />
-              </Link>
+              </button>
             </div>
           </div>
 
         </div>
 
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get in Touch"
+        description="Fill out the form below and we'll get back to you shortly."
+        fields={getFormFields()}
+        metadata={{
+          page: 'App Modernisation',
+          section: 'Engagement Scopes',
+          modal: 'App Modernisation Contact Form',
+          engagementScope: selectedScope?.title,
+          engagementScopeType: selectedScope?.ctaLink?.split('=')[1],
+          source: 'app-modernisation',
+          formType: `App Modernisation - ${selectedScope?.title || 'Inquiry'}`
+        }}
+      />
 
       <style>{`
         /* ─── Section ─── */
@@ -369,9 +429,9 @@ export default function AMEngagementScopes() {
         }
         .ams-cta-full { width: 100%; justify-content: center; }
         .ams-cta-primary {
-          background: #cc2900;
+          background: rgb(255, 59, 0);
           color: #ffffff;
-          border: 2px solid #cc2900;
+          border: 2px solid rgb(255, 59, 0);
         }
         .ams-cta-primary:hover {
           background: #a93226;
@@ -434,8 +494,8 @@ export default function AMEngagementScopes() {
             border-color: #111827;
           }
           .ams-tab-featured-active {
-            background: #cc2900;
-            border-color: #cc2900;
+            background: rgb(255, 59, 0);
+            border-color: rgb(255, 59, 0);
           }
 
           /* Mobile card */

@@ -56,9 +56,16 @@ const Footer = () => {
                         <div className="col-lg-6 col-md-12">
                             <div className="address-box d-flex">
                                 <div className="address-icon">
-<Image src="/assets/images/address1.png" alt="Office location icon" width={35} height={35} />
+                                    <Image src="/assets/images/address1.png" alt="Office location icon" width={35} height={35} />
+                                </div>
+                                <div className="address-title"><h3>Elevating Customer Experience.</h3></div>
+                            </div>
+                        </div>
+                        <div className="col-lg-6 col-md-12">
+                            <div className="address-box2 d-flex">
+                                <div className="address-icon">
+                                    <Image src="/assets/images/address2.png" alt="Office location icon" width={34} height={34} />
 
-                                    <Image src="/assets/images/address2.png" alt="Email address icon" width={34} height={34} />
                                 </div>
                                 <div className="solutek-btn">
                                     <Link href="/contact">
@@ -81,7 +88,7 @@ const Footer = () => {
                             <div className="footer-widget">
                                 <div className="footer-logo d-flex justify-content-center pe-md-5 me-md-5">
                                     <Link href="/">
-                                        <Image src={LogoContent.img1} alt="img" width={161} height={42} />
+                                        <Image src={LogoContent.img1} alt="MayuraSoft Footer Logo" width={161} height={42} />
                                     </Link>
                                 </div>
                                 <p className="footer-widget-text">{LogoContent.Content}</p>

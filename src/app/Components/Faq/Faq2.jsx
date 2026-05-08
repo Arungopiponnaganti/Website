@@ -55,7 +55,7 @@ const Faq2 = () => {
                     </div>
                     <div className="col-lg-6 col-md-12">
                         <div className="faq-thumb faq_thumb_area">
-                            <Image src="/assets/images/home-3/faq-thumb.png" alt="img" width={885} height={782}   />
+                            <Image src="/assets/images/home-3/faq-thumb.png" alt="FAQ section illustration" width={885} height={782}   />
                         </div>
                     </div>
                 </div>

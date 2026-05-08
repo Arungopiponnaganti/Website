@@ -230,7 +230,7 @@ export default function ARAAssessment() {
   }));
 
   return (
-    <section className="cd-section py-5 pb-3">
+    <section className="cd-section py-5 pb-5">
       <div className="container py-4">
         <div className="row justify-content-center">
           <div className="col-lg-7">

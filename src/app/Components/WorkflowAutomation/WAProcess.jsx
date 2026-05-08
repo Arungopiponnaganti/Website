@@ -63,7 +63,7 @@ export default function WAProcess() {
   const phase = PHASES[active];
 
   return (
-    <section className="cd-section cd-section-light border-bottom py-5 pb-3">
+    <section className="cd-section cd-section-light border-bottom py-5 pb-5">
       <div className="container py-4">
         <SectionTitle
           className="text-center"

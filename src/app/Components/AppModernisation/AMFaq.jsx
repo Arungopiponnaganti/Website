@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
 
 const faqList = [
   {
@@ -32,6 +33,60 @@ const faqList = [
 
 export default function AMFaq() {
   const [openIdx, setOpenIdx] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
+  const defaultFormFields = [
+    {
+      label: 'Full Name',
+      name: 'name',
+      type: 'text',
+      placeholder: 'John Smith',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Email',
+      name: 'email',
+      type: 'email',
+      placeholder: 'john@company.com',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Subject',
+      name: 'subject',
+      type: 'text',
+      placeholder: 'Your Subject Here',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Phone',
+      name: 'phone',
+      type: 'tel',
+      placeholder: '+1 (555) 000-0000',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Message',
+      name: 'message',
+      type: 'textarea',
+      placeholder: 'Tell us more about your project...',
+      required: false,
+      colSize: 12
+    },
+  ];
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleFormSuccess = () => {
+    setTimeout(() => {
+      setIsModalOpen(false);
+    }, 2000);
+  };
 
   return (
     <section style={{ padding: '80px 0', background: '#fff' }}>
@@ -48,16 +103,12 @@ export default function AMFaq() {
                 className="text-left"
                 isDarkMode={false}
               />
-              <Link
-                href="/contact?service=application-modernisation"
-                style={{
-                  display: 'inline-block', padding: '12px 24px', borderRadius: '6px',
-                  fontSize: '14px', fontWeight: '700', textDecoration: 'none',
-                  background: '#1a1e2d', color: '#fff', transition: 'background 0.2s',
-                }}
+              <button
+                onClick={() => setIsModalOpen(true)}
+                className="am-pp-callout-btn"
               >
                 Book a free call &rarr;
-              </Link>
+              </button>
             </div>
           </div>
 
@@ -123,6 +174,20 @@ export default function AMFaq() {
 
         </div>
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={handleModalClose}
+        title="Book Your Free Application Modernisation 30-min call"
+        submitButtonText="Book Free Audit"
+        fields={defaultFormFields}
+        metadata={{
+          service: 'application-modernisation',
+          section: 'Common questions',
+          formType: 'Book a free 30-min call'
+        }}
+        onSuccess={handleFormSuccess}
+      />
 
       <style>{`
         @media (max-width: 991px) {

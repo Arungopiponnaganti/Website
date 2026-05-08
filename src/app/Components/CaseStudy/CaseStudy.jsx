@@ -29,7 +29,7 @@ const CaseStudy = () => {
                             </div>
                             <div className="col-lg-6 col-md-6">
                                 <div className="case-studies-thumb">
-                                    <Image src="/assets/images/home-3/case-studies.png" alt="img" width={568} height={424}   />
+                                    <Image src="/assets/images/home-3/case-studies.png" alt="Case study illustration" width={568} height={424}   />
                                 </div>
                             </div>
                         </div>
@@ -37,7 +37,7 @@ const CaseStudy = () => {
                     <div className="col-lg-6">
                         <div className="case-studies-single-box">
                             <div className="case-studies-thumb">
-                                <Image src="/assets/images/home-3/case-studies2.png" alt="img" width={636} height={454}   />
+                                <Image src="/assets/images/home-3/case-studies2.png" alt="Case study showcase" width={636} height={454}   />
                                 <div className="case-studie-content">
                                     <h3><Link href="/project/project-details">Professional Website Design</Link></h3>
                                     <h6>Mobile App Design</h6>
@@ -51,7 +51,7 @@ const CaseStudy = () => {
                     <div className="col-lg-6">
                         <div className="case-studies-single-box">
                             <div className="case-studies-thumb">
-                                <Image src="/assets/images/home-3/case-studies3.png" alt="img" width={636} height={454}   />
+                                <Image src="/assets/images/home-3/case-studies3.png" alt="Case study feature" width={636} height={454}   />
                                 <div className="case-studie-content">
                                     <h3><Link href="/project/project-details">Professional Website Design</Link></h3>
                                     <h6>Mobile App Design</h6>

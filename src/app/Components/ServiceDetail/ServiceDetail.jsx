@@ -42,7 +42,7 @@ const ServiceDetail = () => {
                             <div className="row">
                                 <div className="col-lg-12">
                                     <div className="services-details-thumb">
-                                        <Image src="/assets/images/inner/service-details.png" alt="img" width={856} height={504}   />
+                                        <Image src="/assets/images/inner/service-details.png" alt="Service details illustration" width={856} height={504}   />
                                     </div>
                                     <div className="services-details-content">
                                         <h4 className="services-details-title">Best Solutions for App Development</h4>
@@ -74,7 +74,7 @@ const ServiceDetail = () => {
                                         <div className="col-lg-6 col-md-6">
                                             <div className="service-details-icon-box">
                                                 <div className="service-det-icon">
-                                                <Image src="/assets/images/inner/det-icon.png" alt="img" width={56} height={60}   />
+                                                <Image src="/assets/images/inner/det-icon.png" alt="Service detail icon" width={56} height={60}   />
                                                 </div>
                                                 <div className="service-det-content">
                                                     <h3>Empowering Your Success</h3>
@@ -120,7 +120,7 @@ const ServiceDetail = () => {
                                             <ul>
                                             {Services.map((item, i) => ( 
                                                 <li key={i}><Link href="/service/service-details">
-                                                    <Image src="/assets/images/inner/category-icon.png" alt="img" width={19} height={14}   />
+                                                    <Image src="/assets/images/inner/category-icon.png" alt="Category icon" width={19} height={14}   />
                                                     {item}<i className="bi bi-arrow-right"></i></Link></li>
                                             ))}
                                             </ul>

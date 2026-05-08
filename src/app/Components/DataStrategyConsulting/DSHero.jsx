@@ -55,7 +55,7 @@ export default function DSHero() {
       
       {/* Background Shapes positioned relative to the full section width */}
       {/* <div className="hero-left-shape" style={{ position: 'absolute', top: '28%', transform: 'translateY(-50%)', left: '10%', zIndex: 0 }}>
-        <Image src="/assets/images/home-3/hero-geo.png" alt="img" width={680} height={680} priority />
+        <Image src="/assets/images/home-3/hero-geo.png" alt="Data strategy hero background" width={680} height={680} priority />
       </div> */}
 
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>

@@ -27,7 +27,7 @@ const RELATED = [
 
 export default function WARelated() {
   return (
-    <section className="cd-section cd-section-light py-5 pb-3 border-top">
+    <section className="cd-section cd-section-light py-5 pb-5 border-top">
       <div className="container py-4">
         <SectionTitle
           className="text-center"

@@ -54,7 +54,7 @@ const ROWS = [
 
 export default function CAIComparison() {
   return (
-    <section className="cd-section py-5 pb-3 cd-section-light border-bottom">
+    <section className="cd-section py-5 pb-5 cd-section-muted border-bottom">
       <div className="container py-4">
         <SectionTitle
           className="text-center"

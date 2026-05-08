@@ -18,10 +18,10 @@ const About2 = ({bgImg,MainImg,SubTitle,Title,Content,listTitle1,listTitle2,Cont
                     <div className="col-lg-6">
                         <div className="about-thumbail">
                             <div className="about-thumb">
-                                <Image src={MainImg} alt="img" width={542} height={575}   />
+                                <Image src={MainImg} alt="About illustration" width={542} height={575}   />
                             </div>
                             <div className="about-shape">
-                                <Image src="/assets/images/home-two/about-shape.png" alt="img" width={166} height={560}   />
+                                <Image src="/assets/images/home-two/about-shape.png" alt="About decorative shape" width={166} height={560}   />
                             </div>
                         </div>
                     </div>
@@ -35,9 +35,9 @@ const About2 = ({bgImg,MainImg,SubTitle,Title,Content,listTitle1,listTitle2,Cont
                             <div className="about-list-item">
                                 <ul>
                                     <li>
-                                        <Image src="/assets/images/home-two/about-icon2.png" alt="img" width={25} height={24}   />
+                                        <Image src="/assets/images/home-two/about-icon2.png" alt="Check icon" width={25} height={24}   />
                                         {listTitle1}</li>
-                                    <li><Image src="/assets/images/home-two/about-icon2.png" alt="img" width={25} height={24}   />{listTitle2}</li>
+                                    <li><Image src="/assets/images/home-two/about-icon2.png" alt="Check icon" width={25} height={24}   />{listTitle2}</li>
                                 </ul>
                             </div>
                             <div className="solutek-btn">
@@ -46,7 +46,7 @@ const About2 = ({bgImg,MainImg,SubTitle,Title,Content,listTitle1,listTitle2,Cont
                             <div className="about-contact-box">
                                 <div className="call-box">
                                     <div className="about-contact">
-                                        <Image src="/assets/images/home-two/call-icon.png" alt="img" width={25} height={25}   />
+                                        <Image src="/assets/images/home-two/call-icon.png" alt="Phone icon" width={25} height={25}   />
                                     </div>
                                     <div className="about-contact-content">
                                         <h4>{ContactText}</h4>

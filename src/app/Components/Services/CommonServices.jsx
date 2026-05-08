@@ -50,13 +50,13 @@ const CommonServices = ({
         {showShapes && (
           <>
             <div className="service-shape bounce-animate3">
-              <Image src="/assets/images/service5.png" alt="img" width={199} height={420} priority />
+              <Image src="/assets/images/service5.png" alt="Service feature image" width={199} height={420} priority />
             </div>
             <div className="service-shape2">
-              <Image src="/assets/images/service7.png" alt="img" width={100} height={100} priority />
+              <Image src="/assets/images/service7.png" alt="Service feature icon" width={100} height={100} priority />
             </div>
             <div className="service-shape3 bounce-animate4">
-              <Image src="/assets/images/service8.png" alt="img" width={341} height={351} priority />
+              <Image src="/assets/images/service8.png" alt="Service decorative image" width={341} height={351} priority />
             </div>
           </>
         )}

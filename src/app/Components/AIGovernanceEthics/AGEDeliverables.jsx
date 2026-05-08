@@ -15,7 +15,7 @@ const DELIVERABLES = [
 
 export default function AGEDeliverables() {
   return (
-    <section className="cd-section py-5 pb-3 border-top border-bottom">
+    <section className="cd-section py-5 pb-5 border-top border-bottom">
       <div className="container py-4">
         <SectionTitle
           className="mb-2 text-center"

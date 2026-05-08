@@ -169,6 +169,58 @@ const DynamicFormModal = ({
             rows={field.rows || 4}
           />
         );
+      case 'date':
+        return (
+          <input
+            {...commonProps}
+            type="date"
+            style={{
+              width: '100%',
+              padding: '0.875rem 1rem',
+              border: errors[field.name] ? '2px solid #ef4444' : '2px solid #e2e8f0',
+              borderRadius: '12px',
+              fontSize: '1rem',
+              color: '#334155',
+              backgroundColor: 'white',
+              transition: 'all 0.2s ease',
+              cursor: 'pointer'
+            }}
+            onFocus={(e) => {
+              e.target.style.borderColor = '#667eea';
+              e.target.style.boxShadow = '0 0 0 3px rgba(102, 126, 234, 0.1)';
+            }}
+            onBlur={(e) => {
+              e.target.style.borderColor = errors[field.name] ? '#ef4444' : '#e2e8f0';
+              e.target.style.boxShadow = 'none';
+            }}
+          />
+        );
+      case 'datetime-local':
+        return (
+          <input
+            {...commonProps}
+            type="datetime-local"
+            style={{
+              width: '100%',
+              padding: '0.875rem 1rem',
+              border: errors[field.name] ? '2px solid #ef4444' : '2px solid #e2e8f0',
+              borderRadius: '12px',
+              fontSize: '1rem',
+              color: '#334155',
+              backgroundColor: 'white',
+              transition: 'all 0.2s ease',
+              cursor: 'pointer'
+            }}
+            onFocus={(e) => {
+              e.target.style.borderColor = '#667eea';
+              e.target.style.boxShadow = '0 0 0 3px rgba(102, 126, 234, 0.1)';
+            }}
+            onBlur={(e) => {
+              e.target.style.borderColor = errors[field.name] ? '#ef4444' : '#e2e8f0';
+              e.target.style.boxShadow = 'none';
+            }}
+          />
+        );
       default:
         return <input {...commonProps} type={field.type} />;
     }
@@ -221,23 +273,7 @@ const DynamicFormModal = ({
               type="button"
               onClick={onClose}
               aria-label="Close"
-              style={{
-                position: 'absolute',
-                top: '1rem',
-                right: '1rem',
-                background: 'rgba(255, 255, 255, 0.2)',
-                border: 'none',
-                borderRadius: '50%',
-                width: '36px',
-                height: '36px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
-                color: 'white',
-                fontSize: '1.25rem',
-                transition: 'all 0.2s ease'
-              }}
+              className='dynamic-form-modal-close-btn'
               onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.3)'}
               onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.2)'}
             >

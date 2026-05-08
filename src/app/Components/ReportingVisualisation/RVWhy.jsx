@@ -3,7 +3,7 @@ import SectionTitle from '../Common/SectionTitle';
 
 export default function RVWhy() {
   return (
-    <section className="py-5 pb-3 bg-white">
+    <section className="py-5 pb-5 bg-white">
       <div className="container py-4">
         <SectionTitle
           className="text-center"

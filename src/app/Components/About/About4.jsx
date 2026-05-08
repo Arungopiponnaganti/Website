@@ -49,7 +49,7 @@ const About4 = ({MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxTitle1,
 								<div className="col-lg-3 col-md-6 col-sm-6">
 									<div className="single-counter-box">
 										<div className="counter-icon">
-											<Image src="/assets/images/inner/counter-icon.png"  alt="img" width={70} height={72} priority />
+											<Image src="/assets/images/inner/counter-icon.png"  alt="Counter icon" width={70} height={72} priority />
 										</div>
 										<div className="counter-content">
 											<h4 className="counter">{BoxTitle1}</h4>
@@ -63,22 +63,22 @@ const About4 = ({MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxTitle1,
 						<div className="col-lg-6 mt-5">
 							<div className="about-us-thumb mt-3">
 								<div className="about-us-img">
-									<Image src={MainImg} alt="img" width={635} height={620}   />
+									<Image src={MainImg} alt="About us illustration" width={635} height={620}   />
 								</div>
 								{/* <div className="about-us-video-icon" onClick={handelClick}>	
 									<span className="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true"><i className="bi bi-play"></i><span>WATCH VIDEO</span></span>
 								</div> */}
 								<div className="about-us-shape">
-								<Image src="/assets/images/inner/us-shape.png" alt="img" width={103} height={22}   />
+								<Image src="/assets/images/inner/us-shape.png" alt="About decorative shape" width={103} height={22}   />
 								</div>
 							</div>
 						</div>
 					</div>
 					<div className="about2-us-shape">
-						<Image src="/assets/images/inner/about-us-sh.png" alt="img" width={205} height={426}   />
+						<Image src="/assets/images/inner/about-us-sh.png" alt="About side decoration" width={205} height={426}   />
 					</div>
 					<div className="about-us-shape2">
-						<Image src="/assets/images/inner/about-us-she.png" alt="img" width={975} height={790}   />
+						<Image src="/assets/images/inner/about-us-she.png" alt="About decorative element" width={975} height={790}   />
 					</div>
 				</div>
 				<VideoModal

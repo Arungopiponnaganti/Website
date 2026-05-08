@@ -131,7 +131,7 @@ export default function PEHero({
                         document.getElementById(secondaryCta.href.substring(1))?.scrollIntoView({ behavior: 'smooth' });
                       }
                     }} style={{ textTransform: 'none', textDecoration: 'none' }}>
-                      <div style={{ color: '#ff3c00', textDecoration: 'none', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>{secondaryCta.text}</div>
+                      <div style={{ color: '#ff3c00', textDecoration: 'none', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>{secondaryCta.text} &darr;</div>
                     </Link>
                   </div>
                 </div>

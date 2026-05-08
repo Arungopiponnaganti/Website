@@ -34,7 +34,7 @@ const WhyChooseUs = ({MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxTi
 								<div className="col-lg-3 col-md-6 col-sm-6">
 									<div className="why-choose-us-counter-box">
 										<div className="why-choose-us-counter-icon">
-											<Image src="/assets/images/inner/counter-icon.png"  alt="img" width={70} height={72} priority />
+											<Image src="/assets/images/inner/counter-icon.png"  alt="Counter icon" width={70} height={72} priority />
 										</div>
 										<div className="why-choose-us-counter-content">
 											<h4 className="counter">{BoxTitle1}</h4>
@@ -48,11 +48,11 @@ const WhyChooseUs = ({MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxTi
 						<div className="col-lg-6 mt-5">
 							<div className="why-choose-us-thumb mt-3">
 								<div className="why-choose-us-img">
-									<Image src={MainImg} alt="img" width={635} height={620}   />
+									<Image src={MainImg} alt="Counter icon" width={635} height={620}   />
 								</div>
 
 								<div className="why-choose-us-shape">
-									<Image src="/assets/images/inner/us-shape.png" alt="img" width={103} height={22}   />
+									<Image src="/assets/images/inner/us-shape.png" alt="Counter icon" width={103} height={22}   />
 								</div>
 							</div>
 						</div>

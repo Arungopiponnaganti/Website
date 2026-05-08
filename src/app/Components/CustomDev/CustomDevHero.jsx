@@ -132,7 +132,7 @@ export default function CustomDevHero() {
           {/* <div className="col-lg-5 col-md-12 d-none d-lg-block">
             <div className="hero-thumb-3">
               <div className="hero-img hero_image_3">
-                <Image src="/assets/images/home-3/hero-thum.png" alt="img" width={1065} height={800} style={{ width: '100%', height: 'auto' }} />
+                <Image src="/assets/images/home-3/hero-thum.png" alt="Custom development hero image" width={1065} height={800} style={{ width: '100%', height: 'auto' }} />
               </div>
             </div>
           </div> */}

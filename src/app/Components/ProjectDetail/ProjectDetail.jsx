@@ -24,7 +24,7 @@ const ProjectDetail = () => {
                     <div className="row">
                         <div className="project-details">
                             <div className="project-details-thumb">
-                                <Image src="/assets/images/inner/project-det-thu.png" alt="img" width={1296} height={673}   />
+                                <Image src="/assets/images/inner/project-det-thu.png" alt="Project details main image" width={1296} height={673}   />
                             </div>
                         </div>
                     </div>
@@ -57,7 +57,7 @@ const ProjectDetail = () => {
                                     <div className="row align-items-center">
                                         <div className="col-lg-6">
                                             <div className="project-details-item-images">
-                                                 <Image src="/assets/images/inner/project-det-img.png" alt="img" width={416} height={284}   />
+                                                 <Image src="/assets/images/inner/project-det-img.png" alt="Project image" width={416} height={284}   />
                                             </div>
                                         </div>
                                         <div className="col-lg-6">
@@ -92,7 +92,7 @@ const ProjectDetail = () => {
                                             <ul>
                                             {Services.map((item, i) => ( 
                                                 <li key={i}><Link href="/service/service-details">
-                                                     <Image src="/assets/images/inner/category-icon.png" alt="img" width={19} height={14}   />
+                                                     <Image src="/assets/images/inner/category-icon.png" alt="Category icon" width={19} height={14}   />
                                                     {item}<i className="bi bi-arrow-right"></i></Link></li>
                                             ))}
                                             </ul>

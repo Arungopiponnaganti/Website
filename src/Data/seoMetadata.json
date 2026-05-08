@@ -37,7 +37,7 @@
   },
   "/service/application-modernisation": {
     "title": "Application Modernisation Services | MayuraSoft",
-    "description": "Transform legacy applications into modern, scalable solutions. Upgrade your tech stack with cloud-native architectures.",
+    "description": "Transform legacy applications into modern, scalable solutions with cloud-native architectures. Upgrade your tech stack and improve performance while reducing operational costs.",
     "keywords": "application modernisation, legacy modernization, software modernization, cloud migration",
     "ogImage": "/openGraphImage.jpg"
   },
@@ -67,7 +67,7 @@
   },
   "/service/managed-app-support": {
     "title": "Managed Application Support | MayuraSoft",
-    "description": "Reliable managed application support and maintenance services. 24/7 monitoring and support for production systems.",
+    "description": "Reliable managed application support and maintenance services with 24/7 monitoring and dedicated support teams. Ensure your production systems run smoothly with proactive maintenance.",
     "keywords": "managed support, application maintenance, app support services, application monitoring",
     "ogImage": "/openGraphImage.jpg"
   },
@@ -85,19 +85,19 @@
   },
   "/ai-automations/ai-integration": {
     "title": "AI Integration Services | MayuraSoft",
-    "description": "Seamlessly integrate AI capabilities into your existing systems and workflows. Expert AI implementation services.",
+    "description": "Seamlessly integrate AI capabilities into your existing systems and workflows with our expert AI implementation services. Boost efficiency and automate complex processes with tailored solutions.",
     "keywords": "AI integration, machine learning integration, AI implementation, AI services",
     "ogImage": "/openGraphImage.jpg"
   },
   "/ai-automations/conversational-ai": {
     "title": "Conversational AI Solutions | MayuraSoft",
-    "description": "Build intelligent chatbots and conversational AI solutions for enhanced customer experience and automate support.",
+    "description": "Build intelligent chatbots and conversational AI solutions for enhanced customer experience. Automate support workflows and provide 24/7 assistance with advanced NLP-powered virtual assistants.",
     "keywords": "conversational AI, chatbot development, NLP, virtual assistant, chat bot",
     "ogImage": "/openGraphImage.jpg"
   },
   "/ai-automations/document-processing": {
     "title": "Intelligent Document Processing | MayuraSoft",
-    "description": "Automate document processing with AI-powered IDP solutions.",
+    "description": "Automate document processing with AI-powered IDP solutions. Extract data from PDFs, images, and handwritten documents with high accuracy using advanced machine learning.",
     "keywords": "document processing, IDP, intelligent document processing, OCR",
     "ogImage": "/openGraphImage.jpg"
   },

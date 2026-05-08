@@ -71,12 +71,14 @@ export async function generateMetadataAsync(props) {
   }
 
   if (searchParams?.model) {
-    dynamicData.title = `${searchParams.model.charAt(0).toUpperCase() + searchParams.model.slice(1).replace(/-/g, ' ')} - ${metadata.title}`;
+    const modelName = searchParams.model.charAt(0).toUpperCase() + searchParams.model.slice(1).replace(/-/g, ' ');
+    dynamicData.title = `${modelName} | MayuraSoft`;
   } else if (searchParams?.service) {
-    dynamicData.title = `${searchParams.service.charAt(0).toUpperCase() + searchParams.service.slice(1).replace(/-/g, ' ')} - ${metadata.title}`;
+    const serviceName = searchParams.service.charAt(0).toUpperCase() + searchParams.service.slice(1).replace(/-/g, ' ');
+    dynamicData.title = `${serviceName} | MayuraSoft`;
   }
 
-  const title = dynamicData.title ? `${dynamicData.title}` : metadata.title;
+  const title = dynamicData.title ? dynamicData.title : metadata.title;
   
   return {
     title,

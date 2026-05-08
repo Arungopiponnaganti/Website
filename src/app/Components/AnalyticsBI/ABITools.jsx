@@ -76,7 +76,7 @@ function DotGrid({ pattern }) {
 
 export default function ABITools() {
   return (
-    <section className='py-5 pb-3' style={{ background: '#fff'}}>
+    <section className='py-5 pb-5' style={{ background: '#fff'}}>
       <div className="container py-4">
         <div className="row mb-2">
           <SectionTitle

@@ -62,7 +62,7 @@ export default function WABeforeAfter() {
   const d = BA_DATA[activeBa];
 
   return (
-    <section className="cd-section cd-section-muted border-top border-bottom py-5 pb-3">
+    <section className="cd-section cd-section-muted border-top border-bottom py-5 pb-5">
       <div className="container py-4">
         <SectionTitle
           className="text-center"

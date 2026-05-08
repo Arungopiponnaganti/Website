@@ -37,19 +37,19 @@ const Hero2 = ({bgImg,SubTitle,Title,Content,BtnText,BtnLink,mainImage}) => {
 							<Link href={BtnLink} className="btn-2">{BtnText}</Link>
 						</div>
 						<div className="hero-btn-shape bounce-animate-3">
-							<Image src="/assets/images/home-two/hero-btn-shape.png" alt="img" width={47} height={47}   />
+							<Image src="/assets/images/home-two/hero-btn-shape.png" alt="Button decoration" width={47} height={47}   />
 						</div>
 					</div>
 				</div>
 				<div className="col-lg-6">
 					<div className="hero-thumb hero_thumb_area2">
-						<Image src={mainImage} alt="img" width={735} height={535}   />
+						<Image src={mainImage} alt="Hero illustration" width={735} height={535}   />
 
 						<div className="hero-thumb-shape bounce-animate-3">
-							<Image src="/assets/images/home-two/hero2-shape.png" alt="img" width={46} height={303}   />
+							<Image src="/assets/images/home-two/hero2-shape.png" alt="Hero decoration shape" width={46} height={303}   />
 						</div>
 						<div className="hero-thumb-shape2 rotateme">
-						    <Image src="/assets/images/home-two/border-shape.png" alt="img" width={405} height={405}   />
+						    <Image src="/assets/images/home-two/border-shape.png" alt="Hero border decoration" width={405} height={405}   />
 						</div>
 						<div className="hero-video-icon" onClick={handelClick}>	
 							<span className="video-vemo-icon hero-icon-video2 venobox vbox-item" data-vbtype="youtube" data-autoplay="true"><i className="bi bi-play"></i></span>

@@ -5,6 +5,7 @@ import BreadCumb from '@/app/Components/Common/BreadCumb';
 import Project1 from '@/app/Components/Project/Project1';
 import React from 'react';
 import { getPageMetadata } from '@/utils/seo';
+import Faq from '@/app/Components/Faq/Faq';
 
 export const metadata = getPageMetadata('/about');
 
@@ -22,6 +23,7 @@ const page = () => {
                 BoxTitle1="826"
                 BoxTitle2="Satisfied Clients"                  
             ></About4>
+            <Faq></Faq>
             {/* <Project1 
                 bgImage="/assets/images/inner/project-bg-3.png"
                 ClassAdd="project-area style-two"

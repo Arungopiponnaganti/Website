@@ -72,10 +72,10 @@ const Process = () => {
                 </div>
             </div>
             <div className="project-bg-shape1 moveLeftBounce">
-                <Image src="/assets/images/home-two/project-rs.png" alt="img" width={215} height={428}   />
+                <Image src="/assets/images/home-two/project-rs.png" alt="Process decoration right" width={215} height={428}   />
             </div>
             <div className="project-bg-shape2 bounce-animate3">
-                 <Image src="/assets/images/home-two/project-ws.png" alt="img" width={187} height={367}   />
+                 <Image src="/assets/images/home-two/project-ws.png" alt="Process decoration left" width={187} height={367}   />
             </div>
         </div>
     );

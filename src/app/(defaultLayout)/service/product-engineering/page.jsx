@@ -35,7 +35,7 @@ export default function ProductEngineeringPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="custom-dev-page">
-        <PEHero />
+        <PEHero secondaryCta={{ text: "See how we deliver", href: "#process" }}/>
         <PECapabilities />
         <PEEngagementModels />
         <PEDevProcess />

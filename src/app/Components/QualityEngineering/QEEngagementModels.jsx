@@ -1,6 +1,42 @@
-import Link from 'next/link';
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your quality engineering needs...',
+    required: false,
+    colSize: 12
+  },
+];
 
 const models = [
   {
@@ -58,7 +94,26 @@ const models = [
   },
 ];
 
-export default function QEEngagementModels() {
+export default function QEEngagementModels({
+  subTitle = "How to engage",
+  title = "Three ways to work with us on quality",
+  desc = "Start with a free QA audit — we assess your current test coverage and pipeline before recommending a scope.",
+  engagementModels = models,
+  pageName = "Quality Engineering",
+  sectionName = "Engagement Models"
+}) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedModel, setSelectedModel] = useState(null);
+
+  const handleCtaClick = (model) => {
+    setSelectedModel(model);
+    setIsModalOpen(true);
+  };
+
+  const getFormFields = () => {
+    return defaultFormFields;
+  };
+
   return (
     <section className="cd-section cd-section-muted">
       <div className="container">
@@ -67,15 +122,15 @@ export default function QEEngagementModels() {
           <div className="col-lg-12">
             <SectionTitle
               className="text-center"
-              SubTitle="How to engage"
-              Title="Three ways to work with us on quality"
-              Content="Start with a free QA audit — we assess your current test coverage and pipeline before recommending a scope."
+              SubTitle={subTitle}
+              Title={title}
+              Content={desc}
             />
           </div>
         </div>
 
         <div className="row g-4 justify-content-center">
-          {models.map((m, i) => (
+          {engagementModels.map((m, i) => (
             <div className="col-lg-4 col-md-6" key={i}>
               <div className={`cd-engage-card${m.featured ? ' featured' : ''}`}>
                 {m.badge && <div className="cd-engage-badge">{m.badge}</div>}
@@ -93,19 +148,36 @@ export default function QEEngagementModels() {
                   ))}
                 </ul>
 
-                <Link
-                  href={m.ctaLink}
+                <button
+                  onClick={() => handleCtaClick(m)}
                   className={`cd-engage-cta${m.featured ? ' cd-cta-filled' : ' cd-cta-outline'}`}
                   data-cta={m.label.toLowerCase().replace(' ', '-')}
                 >
                   {m.ctaText}
-                </Link>
+                </button>
               </div>
             </div>
           ))}
         </div>
 
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get in Touch"
+        description="Fill out the form below and we'll get back to you shortly."
+        fields={getFormFields()}
+        metadata={{
+          page: pageName,
+          section: sectionName,
+          modal: `${pageName} Contact Form`,
+          engagementModel: selectedModel?.label,
+          engagementModelType: selectedModel?.ctaLink?.split('=')[1],
+          source: pageName.toLowerCase().replace(' ', '-'),
+          formType: `${pageName} - ${selectedModel?.label || 'Inquiry'}`
+        }}
+      />
     </section>
   );
 }

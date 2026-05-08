@@ -4,6 +4,9 @@ import Services4 from '@/app/Components/Services/Services4';
 import Team1 from '@/app/Components/Team/Team1';
 import React from 'react';
 import { getPageMetadata } from '@/utils/seo';
+import '@/app/assets/custom-dev.css';
+import Faq from '@/app/Components/Faq/Faq';
+import ServicesCtaBand from '@/app/Components/ctaBands/servicesCtaBand';
 
 export const metadata = getPageMetadata('/service');
 
@@ -12,6 +15,8 @@ const page = () => {
         <div className='service-page'>
             <BreadCumb Title="Services"></BreadCumb>
             <Services4></Services4>
+            <Faq></Faq>
+            <ServicesCtaBand></ServicesCtaBand>
             {/* <Team1></Team1> */}
             {/* <Blog1></Blog1> */}
         </div>

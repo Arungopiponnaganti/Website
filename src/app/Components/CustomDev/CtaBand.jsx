@@ -13,7 +13,7 @@ export default function CustomDevCtaBand() {
         dataCta: 'cta-band-primary',
       }}
       secondaryBtn={{
-        text: 'Or email us at info@mayurasoft.com',
+        text: 'info@mayurasoft.com',
         href: 'mailto:info@mayurasoft.com',
         variant: 'link',
       }}

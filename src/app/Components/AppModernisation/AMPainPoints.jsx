@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
 
 const symptoms = [
   {
@@ -97,6 +98,61 @@ function PainCard({ s, i }) {
 }
 
 export default function AMPainPoints() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Subject',
+    name: 'subject',
+    type: 'text',
+    placeholder: 'Your Subject Here',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
+
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleFormSuccess = () => {
+    setTimeout(() => {
+      setIsModalOpen(false);
+    }, 2000);
+  };
+
   return (
     <section style={{ backgroundColor: '#f8f9fa', padding: '90px 0' }}>
       <div className="container">
@@ -135,12 +191,12 @@ export default function AMPainPoints() {
               <strong style={{ color: '#1a1e2d' }}>Recognise three or more?</strong> — The longer you wait, the higher the migration cost. A free audit gives you a concrete roadmap in 5 business days.
             </p>
           </div>
-          <a
-            href="/contact?service=application-modernisation"
+          <button
+            onClick={() => setIsModalOpen(true)}
             className="am-pp-callout-btn"
           >
             Book free audit &rarr;
-          </a>
+          </button>
         </div>
 
       </div>
@@ -254,6 +310,8 @@ export default function AMPainPoints() {
           white-space: nowrap;
           transition: background 0.2s;
           flex-shrink: 0;
+          border: none;
+          cursor: pointer;
         }
         .am-pp-callout-btn:hover { background: #ff3c00; color: #fff; }
 
@@ -272,6 +330,20 @@ export default function AMPainPoints() {
           .am-pp-watermark { font-size: 60px; }
         }
       `}</style>
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={handleModalClose}
+        title="Book Your Free Application Modernisation Audit"
+        description="Get a comprehensive audit of your application's modernisation needs. Our experts will provide a concrete roadmap within 5 business days."
+        submitButtonText="Book Free Audit"
+        fields={defaultFormFields}
+        metadata={{
+          service: 'application-modernisation',
+          section: 'App Modernisation - Pain Points',
+          formType: 'free-audit-booking'
+        }}
+        onSuccess={handleFormSuccess}
+      />
     </section>
   );
 }

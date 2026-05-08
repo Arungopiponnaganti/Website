@@ -176,11 +176,13 @@ export default function TechDueDiligencePage() {
           steps={processSteps}
         />
         
-        <PEEngagementModels 
-          title="Audit packages tailored to your deal" 
-          subTitle="Engagement Models" 
+        <PEEngagementModels
+          title="Audit packages tailored to your deal"
+          subTitle="Engagement Models"
           desc="Whether you need a quick red-flag check for an early-stage investment or a deep compliance audit for an enterprise M&A, we have a structured model."
-          engagementModels={engagementModelsData} 
+          engagementModels={engagementModelsData}
+          pageName="Tech Due Diligence"
+          sectionName="Audit Packages"
         />
         
         <CtaBand 

@@ -30,7 +30,11 @@ export default function RootLayout({ children }) {
         <meta name="author" content="Themeservices" />
         <link rel="icon" href="/assets/images/mayura-logo-footer.png" sizes="any" />
         <link rel="preload" as="image" href="/assets/images/hero-thumb.png" />
+        <link rel="preload" as="image" href="/_next/image?url=%2Fassets%2Fimages%2Fhero-thumb.png&w=1080&q=75" />
         <link rel="preload" as="image" href="/assets/images/ship-new.png" />
+        <link rel="preload" as="image" href="/assets/images/mayura-logo.png" />
+        <link rel="preload" as="image" href="/_next/image?url=%2Fassets%2Fimages%2Fmayura-logo.png&w=384&q=75" />
+        <link rel="preload" as="image" href="/_next/image?url=%2Fassets%2Fimages%2Finner%2Fcounter-icon.png&w=256&q=75" />
       </head>
       <body className={`${fira_sans.variable} ${poppins.variable}`}>
         <SkipLink />

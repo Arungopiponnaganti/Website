@@ -1,6 +1,7 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
 
 /*
   illus[] — 3-disc composition per card, styled like the reference (circular platforms
@@ -101,6 +102,58 @@ function ChallengeIllustration({ nodes }) {
 }
 
 export default function UXUIChallenges() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const defaultFormFields = [
+    {
+      label: 'Full Name',
+      name: 'name',
+      type: 'text',
+      placeholder: 'John Smith',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Email',
+      name: 'email',
+      type: 'email',
+      placeholder: 'john@company.com',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Subject',
+      name: 'subject',
+      type: 'text',
+      placeholder: 'Your Subject Here',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Phone',
+      name: 'phone',
+      type: 'tel',
+      placeholder: '+1 (555) 000-0000',
+      required: true,
+      colSize: 6
+    },
+    {
+      label: 'Message',
+      name: 'message',
+      type: 'textarea',
+      placeholder: 'Tell us more about your project...',
+      required: false,
+      colSize: 12
+    },
+  ];
+  const handleModalClose = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleFormSuccess = () => {
+    setTimeout(() => {
+      setIsModalOpen(false);
+    }, 2000);
+  };
   return (
     <section className="uxch-section">
       <div className="container">
@@ -160,11 +213,28 @@ export default function UXUIChallenges() {
               {' '}— A free design audit gives you a concrete, prioritised action plan within 48 hours. No sales call required.
             </p>
           </div>
-          <a href="/contact?service=ux-ui-design" className="uxch-callout-btn flex-shrink-0">
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="uxch-callout-btn flex-shrink-0 border-0"
+          >
             Book free audit &rarr;
-          </a>
+          </button>
         </div>
       </div>
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={handleModalClose}
+        title="Book Your Free UX / UI Design Audit"
+        description="Get a comprehensive audit of your UX / UI Design needs. Our experts will provide a concrete roadmap within 2 business days."
+        submitButtonText="Book Free Audit"
+        fields={defaultFormFields}
+        metadata={{
+          service: 'ux-ui-design',
+          section: 'UX/UI Design - Pain Points',
+          formType: 'free-audit-booking'
+        }}
+        onSuccess={handleFormSuccess}
+      />
     </section>
   );
 }

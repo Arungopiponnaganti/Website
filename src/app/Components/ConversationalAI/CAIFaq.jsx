@@ -31,7 +31,7 @@ export default function CAIFaq() {
   const toggle = (idx) => setOpenIdx(openIdx === idx ? -1 : idx);
 
   return (
-    <section className="cd-section py-5 pb-3">
+    <section className="cd-section py-5 pb-5 cd-section-muted">
       <div className="container py-4">
         <div className="row justify-content-center">
           <div className="col-lg-8">

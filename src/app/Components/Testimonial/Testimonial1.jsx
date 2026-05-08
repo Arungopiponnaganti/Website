@@ -62,7 +62,7 @@ const Testimonial1 = () => {
                     <div className="testi-box">
                       <div className="testi-single-box">
                         <div className="testi-icon">
-                          <Image src="/assets/images/testi1.png" alt="img" width={48} height={36} />
+                          <Image src="/assets/images/testi1.png" alt="Testimonial icon" width={48} height={36} />
                         </div>
                         <div className="testi-content">
                           <p className="testi-text">{item.desc}</p>
@@ -77,7 +77,7 @@ const Testimonial1 = () => {
                         </div>
                       </div>
                       <div className="testi-author">
-                        <Image src={item.image} alt="img" width={70} height={70} />
+                        <Image src={item.image} alt="Client photo" width={70} height={70} />
                       </div>
                     </div>
                   </div>

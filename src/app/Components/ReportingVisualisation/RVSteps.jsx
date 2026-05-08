@@ -13,7 +13,7 @@ export default function RVSteps() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="py-5 pb-3 bg-light border-top border-bottom">
+    <section className="py-5 pb-5 bg-light border-top border-bottom">
       <div className="container py-4">
         <SectionTitle
           className="text-center"

@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
 
 const DIMS = [
   {
@@ -114,6 +115,8 @@ function StepIndicator({ dim, value, onChange }) {
 }
 
 export default function CDMaturityModel() {
+  const [isModalOpen, setModalOpen] = useState(false);
+
   const [vals, setVals] = useState(DIMS.map(() => 0));
 
   const update = (i, v) => {
@@ -122,11 +125,32 @@ export default function CDMaturityModel() {
     setVals(next);
   };
 
-  const total      = vals.reduce((a, b) => a + b, 0);
-  const max        = DIMS.length * 4;
-  const pct        = Math.round((total / max) * 100);
+  const total = vals.reduce((a, b) => a + b, 0);
+  const max = DIMS.length * 4;
+  const pct = Math.round((total / max) * 100);
   const hasInteracted = total > 0;
-  const result     = getResult(pct);
+  const result = getResult(pct);
+
+  const getQuizAnswers = () => {
+    return DIMS.map((dim, i) => ({
+      question: dim.lbl,
+      answer: dim.vals[vals[i]]
+    }));
+  };
+
+  const getAssessmentData = () => {
+    return {
+      score: pct,
+      level: result.label,
+      sublabel: result.sublabel,
+      recommendations: result.recs,
+      dimensions: DIMS.map((dim, i) => ({
+        dimension: dim.lbl,
+        selectedLevel: vals[i],
+        selectedValue: dim.vals[vals[i]]
+      }))
+    };
+  };
 
   return (
     <section className="cdm-section cd-section">
@@ -240,13 +264,12 @@ export default function CDMaturityModel() {
                 </div>
 
                 {/* CTA */}
-                <Link
-                  // href="/free-audit?service=cloud-devops&from=maturity"
-                  href="/contact?service=cloud-devops&from=maturity"
+                <button
+                  onClick={() => setModalOpen(true)}
                   className="cdm-cta"
                 >
                   Get a full DevOps assessment &rarr;
-                </Link>
+                </button>
 
               </div>
             )}
@@ -254,6 +277,65 @@ export default function CDMaturityModel() {
           </div>
         </div>
 
+        <DynamicFormModal
+          isOpen={isModalOpen}
+          onClose={() => setModalOpen(false)}
+          title="DevOps Assessment Request"
+          description="Fill out the form below to request a full DevOps assessment."
+          fields={[
+            {
+              label: 'Full Name',
+              name: 'name',
+              type: 'text',
+              placeholder: 'John Smith',
+              required: true,
+              colSize: 6
+            },
+            {
+              label: 'Email',
+              name: 'email',
+              type: 'email',
+              placeholder: 'john@company.com',
+              required: true,
+              colSize: 6
+            },
+            {
+              label: 'Phone',
+              name: 'phone',
+              type: 'tel',
+              placeholder: '+1 (555) 000-0000',
+              required: true,
+              colSize: 6
+            },
+            {
+              label: 'Company',
+              name: 'company',
+              type: 'text',
+              placeholder: 'Your company name',
+              required: false,
+              colSize: 6
+            },
+            {
+              label: 'Message',
+              name: 'message',
+              type: 'textarea',
+              placeholder: 'Tell us more about your project...',
+              required: false,
+              colSize: 12
+            }
+          ]}
+          quizAnswers={getQuizAnswers()}
+          metadata={{
+            page: 'Cloud & DevOps Maturity Assessment',
+            section: 'Maturity Assessment Section',
+            modal: 'DevOps Maturity Assessment Form',
+            source: 'devops-maturity-assessment',
+            formType: 'DevOps Assessment Request',
+            readinessScore: pct,
+            readinessLevel: result.label,
+            assessmentData: getAssessmentData()
+          }}
+        />
       </div>
     </section>
   );

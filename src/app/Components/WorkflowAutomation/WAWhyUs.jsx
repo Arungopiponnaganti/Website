@@ -43,7 +43,7 @@ const WHY_CARDS = [
 
 export default function WAWhyUs() {
   return (
-    <section className="cd-section cd-section-light border-top py-5 pb-3">
+    <section className="cd-section cd-section-light border-top py-5 pb-5">
       <div className="container py-4">
         <SectionTitle
           className="text-center"

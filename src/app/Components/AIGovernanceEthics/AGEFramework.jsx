@@ -130,7 +130,7 @@ export default function AGEFramework() {
   const panelData = DOMAINS[activeDom];
 
   return (
-    <section className="cd-section py-5 pb-3 border-bottom" id="age-framework">
+    <section className="cd-section py-5 pb-5 border-bottom" id="age-framework">
       <div className="container py-4">
         <SectionTitle
           className="text-center mb-2"

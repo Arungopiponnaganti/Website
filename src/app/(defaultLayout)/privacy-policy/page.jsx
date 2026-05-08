@@ -136,7 +136,7 @@ const page = () => {
                                     <div className="contact-details">
                                         <p><strong>MayuraSoft Technologies Pvt. Ltd.</strong></p>
                                         <p>Email: <a href="mailto:privacy@mayurasoft.com">privacy@mayurasoft.com</a></p>
-                                        <p>Website: <a href="https://www.mayurasoft.com">www.mayurasoft.com</a></p>
+                                        <p>Website: <a href="https://mayurasoft.com">mayurasoft.com</a></p>
                                     </div>
                                 </div>
                             </div>
