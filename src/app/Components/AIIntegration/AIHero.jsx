@@ -150,7 +150,7 @@ export default function AIHero() {
                       style={{ textDecoration: 'none' }}
                     >
                       <div style={{ color: '#ff3c00', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>
-                        Build your integration &rarr;
+                        Build your integration &darr;
                       </div>
                     </Link>
                   </div>

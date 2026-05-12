@@ -15,6 +15,22 @@ import AIRelated from '@/app/Components/AIIntegration/AIRelated';
 import CtaBand from '@/app/Components/Common/CtaBand';
 import { getPageMetadata } from '@/utils/seo';
 
+const auditFormFields = [
+  { label: 'Full Name', name: 'name', type: 'text', placeholder: 'John Smith', required: true, colSize: 6 },
+  { label: 'Email', name: 'email', type: 'email', placeholder: 'john@company.com', required: true, colSize: 6 },
+  { label: 'Phone', name: 'phone', type: 'tel', placeholder: '+1 (555) 000-0000', required: true, colSize: 6 },
+  { label: 'Product/Company', name: 'company', type: 'text', placeholder: 'Your product or company name', required: true, colSize: 6 },
+  { label: 'Current Systems', name: 'systems', type: 'textarea', placeholder: 'Tell us about your current systems, workflows, and data sources...', required: false, colSize: 12 },
+];
+
+const callFormFields = [
+  { label: 'Full Name', name: 'name', type: 'text', placeholder: 'John Smith', required: true, colSize: 6 },
+  { label: 'Email', name: 'email', type: 'email', placeholder: 'john@company.com', required: true, colSize: 6 },
+  { label: 'Phone', name: 'phone', type: 'tel', placeholder: '+1 (555) 000-0000', required: true, colSize: 6 },
+  { label: 'Preferred Date', name: 'preferred_date', type: 'date', placeholder: 'MM/DD/YYYY (optional)', required: false, colSize: 6 },
+  { label: 'Brief Description', name: 'brief', type: 'textarea', placeholder: 'Briefly describe your product and what you\'d like to discuss...', required: false, colSize: 12 },
+];
+
 export const metadata = getPageMetadata('/ai-automations/ai-integration');
 
 const jsonLd = {
@@ -53,13 +69,28 @@ export default function AIIntegrationPage() {
         <CtaBand
           title="Find out where AI will move your business metrics — in 48 hours"
           description="We review your systems, workflows, and data — and deliver three specific AI integration opportunities ranked by impact and implementation effort. Written. Actionable. Free."
-          primaryBtn={{ text: 'Get free AI audit →', dataCta: 'cta-primary-ai' }}
-          secondaryBtn={{ href: '/contact', variant: 'link', text: 'Book a discovery call' }}
+          primaryBtn={{
+            text: 'Get free AI audit →',
+            dataCta: 'cta-primary-ai'
+          }}
+          secondaryBtn={{
+            variant: 'link',
+            text: 'Book a discovery call',
+            dataCta: 'cta-secondary-ai'
+          }}
           trustText="No sales pitch · Written opportunity assessment · Delivered within 48 business hours"
           bgClass="bg-white border-top py-5"
           useModal={true}
-          modalTitle="Get Free AI Audit"
-          modalDescription="Fill out the form below and we'll get back to you shortly."
+
+          // Primary button modal (AI audit)
+          primaryModalTitle="Get Free AI Audit"
+          primaryModalDescription="We review your systems, workflows, and data — and deliver three specific AI integration opportunities ranked by impact and implementation effort."
+          primaryModalFields={auditFormFields}
+
+          // Secondary button modal (discovery call)
+          secondaryModalTitle="Book Discovery Call"
+          secondaryModalDescription="Schedule a 30-minute call to discuss your AI integration needs and how we can help you leverage AI to improve your business metrics."
+          secondaryModalFields={callFormFields}
         />
       </div>
     </>

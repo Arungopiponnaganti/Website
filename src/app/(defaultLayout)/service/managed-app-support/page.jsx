@@ -14,6 +14,22 @@ import MASFaq from '@/app/Components/ManagedAppSupport/MASFaq';
 import CtaBand from '@/app/Components/Common/CtaBand';
 import { getPageMetadata } from '@/utils/seo';
 
+const supportPlanFormFields = [
+  { label: 'Full Name', name: 'name', type: 'text', placeholder: 'John Smith', required: true, colSize: 6 },
+  { label: 'Email', name: 'email', type: 'email', placeholder: 'john@company.com', required: true, colSize: 6 },
+  { label: 'Phone', name: 'phone', type: 'tel', placeholder: '+1 (555) 000-0000', required: true, colSize: 6 },
+  { label: 'Company', name: 'company', type: 'text', placeholder: 'Your company name', required: true, colSize: 6 },
+  { label: 'Current Support Challenges', name: 'challenges', type: 'textarea', placeholder: 'Describe your current support challenges and requirements...', required: false, colSize: 12 },
+];
+
+const consultationFormFields = [
+  { label: 'Full Name', name: 'name', type: 'text', placeholder: 'John Smith', required: true, colSize: 6 },
+  { label: 'Email', name: 'email', type: 'email', placeholder: 'john@company.com', required: true, colSize: 6 },
+  { label: 'Phone', name: 'phone', type: 'tel', placeholder: '+1 (555) 000-0000', required: true, colSize: 6 },
+  { label: 'Preferred Date', name: 'preferred_date', type: 'date', placeholder: 'MM/DD/YYYY (optional)', required: false, colSize: 6 },
+  { label: 'Current Infrastructure', name: 'infrastructure', type: 'textarea', placeholder: 'Briefly describe your application and current support setup...', required: false, colSize: 12 },
+];
+
 export const metadata = getPageMetadata('/service/managed-app-support');
 
 const jsonLd = {
@@ -47,16 +63,25 @@ export default function ManagedAppSupportPage() {
         <MASHandover />
         <MASEngagement />
         <MASFaq />
-        <CtaBand
-          title="Ready to end the 2 AM pager alarms?"
-          description="Get full-stack monitoring, guaranteed response times, and a dedicated engineering team watching over your production application 24/7."
-          primaryBtn={{ text: 'Get a support plan', dataCta: 'cta-primary' }}
-          secondaryBtn={{ href: '#whats-included', variant: 'link', text: 'Review what\'s included' }}
-          bgClass="bg-white border-top py-5"
-          useModal={true}
-          modalTitle="Get a Support Plan"
-          modalDescription="Fill out the form below and we'll get back to you shortly."
-        />
+      <CtaBand
+        title="Ready to end the 2 AM pager alarms?"
+        description="Get full-stack monitoring, guaranteed response times, and a dedicated engineering team watching over your production application 24/7."
+        primaryBtn={{ text: 'Get a support plan', dataCta: 'mas-cta-primary' }}
+        secondaryBtn={{ text: 'Book a consultation call', variant: 'link', dataCta: 'mas-cta-secondary' }}
+        bgClass="bg-white border-top py-5"
+        useModal={true}
+        trustText="Typically responds within 4 business hours · No sales pitch, just a clear plan"
+        
+        // Primary button modal (support plan)
+        primaryModalTitle="Get a Support Plan"
+        primaryModalDescription="Tell us about your application and support requirements, and we'll recommend the right plan for your needs."
+        primaryModalFields={supportPlanFormFields}
+        
+        // Secondary button modal (consultation call)
+        secondaryModalTitle="Book Consultation Call"
+        secondaryModalDescription="Schedule a 30-minute call to discuss your managed support needs and how we can help protect your production applications."
+        secondaryModalFields={consultationFormFields}
+      />
       </div>
     </>
   );

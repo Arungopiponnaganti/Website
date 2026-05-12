@@ -1,6 +1,5 @@
 import React from 'react';
-import Link from 'next/link';
-import SectionTitle from '../Common/SectionTitle';
+import RelatedServices from '../Common/RelatedServices';
 
 const RELATED = [
   {
@@ -27,31 +26,12 @@ const RELATED = [
 
 export default function ARARelated() {
   return (
-    <section className="cd-section cd-section-light py-5 border-top">
-      <div className="container py-4">
-        <SectionTitle
-          className="text-center"
-          SubTitle="Next steps after your assessment"
-          Title="Where readiness leads"
-          Content=""
-          isDarkMode={false}
-        />
-        <div className="row g-3">
-          {RELATED.map((r, i) => (
-            <div key={i} className="col-12 col-sm-6 col-md-4 col-lg-3">
-              <Link
-                href={r.href}
-                className="cd-rel-card d-block h-100"
-                style={{ textDecoration: 'none' }}
-              >
-                <h4>{r.title}</h4>
-                <p>{r.desc}</p>
-                <div className="cd-rel-link">Explore →</div>
-              </Link>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    <RelatedServices
+      subTitle="Next steps after your assessment"
+      title="Where readiness leads"
+      services={RELATED}
+      sectionClassName="cd-section cd-section-light py-5 pb-5 border-top"
+      contentClassName="container py-4"
+    />
   );
 }

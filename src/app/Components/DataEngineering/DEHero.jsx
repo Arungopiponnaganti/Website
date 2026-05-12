@@ -154,9 +154,15 @@ export default function DEHero() {
                 </div>
                 <div className="hero-btn-3">
                   <div className="hero-btn-profile">
-                    <div style={{ color: '#ff3c00', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>
-                      See our architecture &rarr;
-                    </div>
+                    <Link
+                      href="#de-architecture"
+                      className='text-decoration-none'
+                      onClick={(e) => { e.preventDefault(); document.getElementById('de-architecture')?.scrollIntoView({ behavior: 'smooth' }); }}
+                    >
+                      <div style={{ color: '#ff3c00', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>
+                        See our architecture &darr;
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </div>

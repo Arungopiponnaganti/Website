@@ -146,7 +146,7 @@ export default function WAHero() {
                 ))}
               </div>
 
-              <div className="d-flex flex-wrap align-items-center gap-4 mb-5">
+              <div className="d-flex flex-wrap align-items-center gap-2 mb-5">
                 <div className="solutek-btn">
                   <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="btn-2">
                     Find my automations &rarr;
@@ -155,15 +155,15 @@ export default function WAHero() {
                 <div className="hero-btn-3">
                   <div className="hero-btn-profile">
                     <Link
-                      href="#wa-roi"
+                      href="#wa-finder"
                       onClick={(e) => {
                         e.preventDefault();
-                        document.getElementById('wa-roi')?.scrollIntoView({ behavior: 'smooth' });
+                        document.getElementById('wa-finder')?.scrollIntoView({ behavior: 'smooth' });
                       }}
                       style={{ textDecoration: 'none' }}
                     >
                       <div style={{ color: '#ff3c00', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>
-                        See ROI calculator &rarr;
+                        See What can be automated &darr;
                       </div>
                     </Link>
                   </div>

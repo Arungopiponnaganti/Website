@@ -13,7 +13,7 @@ import WAWhyUs from '@/app/Components/WorkflowAutomation/WAWhyUs';
 import WAEngagement from '@/app/Components/WorkflowAutomation/WAEngagement';
 import WAFaq from '@/app/Components/WorkflowAutomation/WAFaq';
 import WARelated from '@/app/Components/WorkflowAutomation/WARelated';
-import CtaBand from '@/app/Components/Common/CtaBand';
+import WACtaBand from '@/app/Components/WorkflowAutomation/WACtaBand';
 import { getPageMetadata } from '@/utils/seo';
 
 export const metadata = getPageMetadata('/ai-automations/workflow-automation');
@@ -52,17 +52,7 @@ export default function WorkflowAutomationPage() {
         <WAEngagement />
         <WAFaq />
         <WARelated />
-        <CtaBand
-          title="Find out which of your processes should be running themselves"
-          description="We'll map your highest-value manual processes, estimate the automation coverage possible, and hand you back a ranked list of opportunities — with effort and impact scores. All free, in one 90-minute session."
-          primaryBtn={{ text: 'Book free process audit →', dataCta: 'cta-primary-wa' }}
-          secondaryBtn={{ href: '/contact', variant: 'link', text: 'Talk to an automation expert' }}
-          trustText="Free 90-minute session · Written opportunity map delivered in 48 hrs · No commitment required"
-          bgClass="bg-white border-top py-5"
-          useModal={true}
-          modalTitle="Book Free Process Audit"
-          modalDescription="Fill out the form below and we'll get back to you shortly."
-        />
+        <WACtaBand />
       </div>
     </>
   );

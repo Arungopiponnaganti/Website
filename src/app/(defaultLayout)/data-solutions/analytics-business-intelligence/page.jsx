@@ -8,7 +8,31 @@ import ABITools from '@/app/Components/AnalyticsBI/ABITools';
 import ABIEngagement from '@/app/Components/AnalyticsBI/ABIEngagement';
 import ABIFaq from '@/app/Components/AnalyticsBI/ABIFaq';
 import CtaSplit from '@/app/Components/Common/CtaSplit';
+import RelatedServices from '@/app/Components/Common/RelatedServices';
 import { getPageMetadata } from '@/utils/seo';
+
+const RELATED_SERVICES = [
+  {
+    title: 'Reporting & Visualisation',
+    desc: 'Custom report templates and executive visualisations',
+    href: '/data-solutions/reporting-visualisation',
+  },
+  {
+    title: 'Data Engineering & Pipelines',
+    desc: 'The data infrastructure that feeds every dashboard',
+    href: '/data-solutions/data-engineering-pipelines',
+  },
+  {
+    title: 'Data Governance & Quality',
+    desc: 'Trusted data — the foundation of trusted analytics',
+    href: '/data-solutions/data-governance',
+  },
+  {
+    title: 'Data Strategy Consulting',
+    desc: 'Set the analytics vision before building the platform',
+    href: '/data-solutions/data-strategy-consulting',
+  },
+];
 
 export const metadata = getPageMetadata('/data-solutions/analytics-business-intelligence');
 
@@ -54,30 +78,23 @@ export default function AnalyticsBIPage() {
           ]}
           formSubmitBtn="Send audit request →"
           subject="Free BI audit request"
+          secondaryFormTitle="Book a Call"
+          secondaryFormNote="Schedule a time to speak with our analytics experts."
+          secondaryFormFields={[
+            { label: 'Your name', type: 'text', placeholder: 'Aditya Sharma' },
+            { label: 'Work email', type: 'email', placeholder: 'aditya@company.com' },
+            { label: 'Phone number', type: 'tel', placeholder: '+1 (555) 000-0000' },
+            { label: 'Preferred time', type: 'select', options: ['Morning (9am-12pm)', 'Afternoon (12pm-5pm)', 'Evening (5pm-7pm)'] },
+          ]}
+          secondaryFormSubmitBtn="Schedule call →"
+          secondarySubject="Book a call request"
         />
         
-        {/* Related Services Band */}
-        <section className="py-5 bg-light border-top">
-          <div className="container">
-            <div className="di-section-label mb-3">What pairs with Analytics & BI</div>
-            <div className="row g-3">
-              {[
-                {t:'Reporting & Visualisation', d:'Custom report templates and executive visualisations', link:'/data-solutions/reporting-visualisation'},
-                {t:'Data Engineering & Pipelines', d:'The data infrastructure that feeds every dashboard', link:'/data-solutions/data-engineering-pipelines'},
-                {t:'Data Governance & Quality', d:'Trusted data — the foundation of trusted analytics', link:'/data-solutions/data-governance'},
-                {t:'Data Strategy Consulting', d:'Set the analytics vision before building the platform', link:'/data-solutions/data-strategy-consulting'},
-              ].map((rc, i) => (
-                <div key={i} className="col-12 col-md-6 col-lg-3">
-                  <a href={rc.link} className="d-block p-3 border rounded-3 bg-white text-decoration-none" style={{transition: 'border-color 0.15s'}}>
-                    <div className="fw-semibold text-dark mb-1" style={{fontSize:'14px'}}>{rc.t}</div>
-                    <div className="text-muted mb-2" style={{fontSize:'12px', lineHeight: 1.4}}>{rc.d}</div>
-                    <div className="text-primary fw-medium" style={{fontSize:'12px'}}>Explore &rarr;</div>
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <RelatedServices
+          subTitle="What pairs with Analytics & BI"
+          title="Services BI clients commonly add"
+          services={RELATED_SERVICES}
+        />
 
       </div>
     </>

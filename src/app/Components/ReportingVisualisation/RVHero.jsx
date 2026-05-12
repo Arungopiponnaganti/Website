@@ -97,7 +97,7 @@ export default function RVHero() {
                 <div className="hero-btn-3">
                   <div className="hero-btn-profile">
                     <Link href="#services" style={{ textTransform: 'none', textDecoration: 'none' }}>
-                      <div style={{ color: '#ff3c00', textDecoration: 'none', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>Book a call &darr;</div>
+                      <div style={{ color: '#ff3c00', textDecoration: 'none', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>See how we deliver reports &darr;</div>
                     </Link>
                   </div>
                 </div>

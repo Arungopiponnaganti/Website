@@ -9,6 +9,7 @@ import DSDeliverables from '@/app/Components/DataStrategyConsulting/DSDeliverabl
 import DSEngagement from '@/app/Components/DataStrategyConsulting/DSEngagement';
 import DSFaq from '@/app/Components/DataStrategyConsulting/DSFaq';
 import CtaSplit from '@/app/Components/Common/CtaSplit';
+import RelatedServices from '@/app/Components/Common/RelatedServices';
 import { getPageMetadata } from '@/utils/seo';
 
 export const metadata = getPageMetadata('/data-solutions/data-strategy-consulting');
@@ -60,28 +61,33 @@ export default function DataStrategyConsultingPage() {
           subject="Free strategy session request"
         />
 
-        {/* Related Services Band */}
-        <section className="py-5 bg-light border-top">
-          <div className="container">
-            <div className="di-section-label mb-3">What pairs with data strategy</div>
-            <div className="row g-3">
-              {[
-                {t:'Data Engineering & Pipelines', d:'Execute the infrastructure decisions the strategy defines', link:'/data-solutions/data-engineering-pipelines'},
-                {t:'Cloud Data Platforms', d:'Implement the platform your strategy recommends', link:'/data-solutions/cloud-data-platforms'},
-                {t:'Analytics & Business Intelligence', d:'Build the analytics capabilities the strategy prioritises', link:'/data-solutions/analytics-business-intelligence'},
-                {t:'Data Governance & Quality', d:'The foundation layer every data strategy starts with', link:'/data-solutions/data-governance'},
-              ].map((rc, i) => (
-                <div key={i} className="col-12 col-md-6 col-lg-3">
-                  <a href={rc.link} className="d-block p-3 border rounded-3 bg-white text-decoration-none" style={{transition: 'border-color 0.15s'}}>
-                    <div className="fw-semibold text-dark mb-1" style={{fontSize:'14px'}}>{rc.t}</div>
-                    <div className="text-muted mb-2" style={{fontSize:'12px', lineHeight: 1.4}}>{rc.d}</div>
-                    <div className="text-primary fw-medium" style={{fontSize:'12px'}}>Explore &rarr;</div>
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        <RelatedServices
+          subTitle="What pairs with data strategy"
+          title="Services data strategy clients commonly add"
+          services={[
+            {
+              title: 'Data Engineering & Pipelines',
+              desc: 'Execute the infrastructure decisions the strategy defines',
+              href: '/data-solutions/data-engineering-pipelines',
+            },
+            {
+              title: 'Cloud Data Platforms',
+              desc: 'Implement the platform your strategy recommends',
+              href: '/data-solutions/cloud-data-platforms',
+            },
+            {
+              title: 'Analytics & Business Intelligence',
+              desc: 'Build the analytics capabilities the strategy prioritises',
+              href: '/data-solutions/analytics-business-intelligence',
+            },
+            {
+              title: 'Data Governance & Quality',
+              desc: 'The foundation layer every data strategy starts with',
+              href: '/data-solutions/data-governance',
+            },
+          ]}
+          sectionClassName="cd-section cd-section-light py-5 border-top"
+        />
 
       </div>
     </>

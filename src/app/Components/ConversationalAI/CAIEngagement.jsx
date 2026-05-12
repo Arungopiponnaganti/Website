@@ -1,8 +1,46 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us about your conversational AI needs...',
+    required: false,
+    colSize: 12
+  },
+];
 
 const PLANS = [
   {
+    id: 'discovery',
     theme: 'essential',
     badge: 'Starter',
     badgeStyle: { background: '#E1F5EE', color: '#085041' },
@@ -17,6 +55,7 @@ const PLANS = [
     ],
   },
   {
+    id: 'platform',
     theme: 'featured',
     badge: 'Most chosen',
     badgeStyle: { background: '#ff3c00', color: '#fff' },
@@ -32,6 +71,7 @@ const PLANS = [
     ],
   },
   {
+    id: 'managed',
     theme: 'enterprise',
     badge: 'Ongoing',
     badgeStyle: { background: '#EEEDFE', color: '#3C3489' },
@@ -46,7 +86,22 @@ const PLANS = [
   },
 ];
 
-export default function CAIEngagement() {
+export default function CAIEngagement({
+  pageName = "Conversational AI",
+  sectionName = "How to Engage"
+}) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState(null);
+
+  const handleCtaClick = (plan) => {
+    setSelectedPlan(plan);
+    setIsModalOpen(true);
+  };
+
+  const getFormFields = () => {
+    return defaultFormFields;
+  };
+
   return (
     <section className="cd-section py-5 pb-5 cd-section-light border-top border-bottom">
       <div className="container py-4">
@@ -78,18 +133,35 @@ export default function CAIEngagement() {
                 </ul>
 
                 <div className="mt-auto" style={{ position: 'absolute', bottom: '30px', left: '30px', right: '30px' }}>
-                  <a
-                    href="/contact"
+                  <button
+                    onClick={() => handleCtaClick(plan)}
                     className={`cd-engage-cta ${plan.theme === 'featured' ? 'cd-cta-filled' : 'cd-cta-outline'}`}
                   >
                     Scope this engagement &rarr;
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get in Touch"
+        description="Fill out the form below and we'll get back to you shortly."
+        fields={getFormFields()}
+        metadata={{
+          page: pageName,
+          section: sectionName,
+          modal: `${pageName} Contact Form`,
+          engagementPlan: selectedPlan?.title,
+          engagementPlanType: selectedPlan?.id,
+          source: pageName.toLowerCase().replace(' ', '-'),
+          formType: `${pageName} - ${selectedPlan?.title || 'Inquiry'}`
+        }}
+      />
     </section>
   );
 }

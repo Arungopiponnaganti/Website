@@ -1,6 +1,42 @@
-import React from 'react';
-import Link from 'next/link';
+"use client";
+import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
 
 const ENGAGEMENTS = [
   {
@@ -50,20 +86,38 @@ const ENGAGEMENTS = [
   },
 ];
 
-export default function DGEngagement() {
+export default function DGEngagement({
+  subTitle = "How to engage",
+  title = "Three governance engagement models",
+  desc = "Every engagement starts with a free governance audit — we assess your current state across six dimensions before recommending a scope.",
+  engagements = ENGAGEMENTS,
+  pageName = "Data Governance",
+  sectionName = "Engagement Models"
+}) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedEngagement, setSelectedEngagement] = useState(null);
+
+  const handleCtaClick = (engagement) => {
+    setSelectedEngagement(engagement);
+    setIsModalOpen(true);
+  };
+
+  const getFormFields = () => {
+    return defaultFormFields;
+  };
   return (
     <section className="cd-section cd-section-light border-top border-bottom py-5">
       <div className="container py-2">
         <SectionTitle
           className="mb-4"
-          SubTitle="How to engage"
-          Title="Three governance engagement models"
-          Content="Every engagement starts with a free governance audit — we assess your current state across six dimensions before recommending a scope."
+          SubTitle={subTitle}
+          Title={title}
+          Content={desc}
           isDarkMode={false}
         />
 
         <div className="row g-4">
-          {ENGAGEMENTS.map((eng, i) => (
+          {engagements.map((eng, i) => (
             <div key={i} className="col-lg-4 col-md-6">
               <div className={`cd-engage-card h-100${eng.featured ? ' featured' : ''}`}>
                 {eng.featured && <div className="cd-engage-badge">Most chosen</div>}
@@ -77,17 +131,34 @@ export default function DGEngagement() {
                     <li key={ii}>{item}</li>
                   ))}
                 </ul>
-                <Link
-                  href="/contact"
+                <button
+                  onClick={() => handleCtaClick(eng)}
                   className={`cd-engage-cta ${eng.featured ? 'cd-cta-filled' : 'cd-cta-outline'}`}
                 >
                   Scope this engagement &rarr;
-                </Link>
+                </button>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get in Touch"
+        description="Fill out the form below and we'll get back to you shortly."
+        fields={getFormFields()}
+        metadata={{
+          page: pageName,
+          section: sectionName,
+          modal: `${pageName} Contact Form`,
+          engagementType: selectedEngagement?.title,
+          engagementBadge: selectedEngagement?.badge,
+          source: pageName.toLowerCase().replace(' ', '-'),
+          formType: `${pageName} - ${selectedEngagement?.title || 'Inquiry'}`
+        }}
+      />
     </section>
   );
 }

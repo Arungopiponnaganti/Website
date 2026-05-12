@@ -54,12 +54,18 @@ export default function DataGovernancePage() {
           title="Know exactly where your governance gaps are — and the cost of leaving them unfixed"
           description="We assess your current data governance posture across six dimensions and deliver a written scorecard with dimension-level scores, a gap analysis, and a prioritised remediation roadmap. Free, with no commitment required."
           primaryBtn={{ text: 'Book free governance audit →', dataCta: 'cta-primary-dg' }}
-          secondaryBtn={{ href: '#', variant: 'link', text: 'Take the governance scanner' }}
+          secondaryBtn={{ href: '#', variant: 'link', text: 'Take the governance scanner', dataCta: 'cta-secondary-dg' }}
           trustText="Free 2-hour session · Written scorecard delivered in 48 hrs · DPDPA & GDPR gap analysis included · No commitment required"
           bgClass="bg-white border-top py-5"
           useModal={true}
-          modalTitle="Book Free Governance Audit"
-          modalDescription="Fill out the form below and we'll get back to you shortly."
+
+          // Primary button modal (governance audit)
+          primaryModalTitle="Book Free Governance Audit"
+          primaryModalDescription="Fill out the form below and we'll get back to you shortly."
+
+          // Secondary button modal (governance scanner)
+          secondaryModalTitle="Take the Governance Scanner"
+          secondaryModalDescription="Complete our quick governance scanner to identify your current data governance gaps and receive instant recommendations."
         />
       </div>
     </>

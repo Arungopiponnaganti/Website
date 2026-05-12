@@ -1,6 +1,6 @@
 const MapForm = () => {
     
-    const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233667.9067777347!2d90.11481839453124!3d23.780840500000014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x63e259d796515e63%3A0x8b68319aae711aa1!2sIT%20Park%20BD!5e0!3m2!1sen!2sbd!4v1716707554611!5m2!1sen!2sbd";
+    const mapUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d244280.52524945615!2d78.33712928124997!3d17.385044000000013!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb9775572b0305%3A0x8e0d5a5f5a5f5a5f!2sHyderabad%2C%20Telangana%2C%20India!5e0!3m2!1sen!2sin!4v1716707554611!5m2!1sen!2sin";
 
     return (
         <div className="google-map">

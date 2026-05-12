@@ -8,6 +8,22 @@ import PEEngagementModels from '@/app/Components/ProductEngineering/PEEngagement
 import CtaBand from '@/app/Components/Common/CtaBand';
 import { getPageMetadata } from '@/utils/seo';
 
+const exploratoryCallFormFields = [
+  { label: 'Full Name', name: 'name', type: 'text', placeholder: 'John Smith', required: true, colSize: 6 },
+  { label: 'Email', name: 'email', type: 'email', placeholder: 'john@company.com', required: true, colSize: 6 },
+  { label: 'Phone', name: 'phone', type: 'tel', placeholder: '+1 (555) 000-0000', required: true, colSize: 6 },
+  { label: 'Company/Investment Firm', name: 'company', type: 'text', placeholder: 'Your company or firm name', required: true, colSize: 6 },
+  { label: 'Deal Context', name: 'context', type: 'textarea', placeholder: 'Tell us about the potential deal, target company, and what stage you\'re at...', required: false, colSize: 12 },
+];
+
+const sampleReportFormFields = [
+  { label: 'Full Name', name: 'name', type: 'text', placeholder: 'John Smith', required: true, colSize: 6 },
+  { label: 'Email', name: 'email', type: 'email', placeholder: 'john@company.com', required: true, colSize: 6 },
+  { label: 'Phone', name: 'phone', type: 'tel', placeholder: '+1 (555) 000-0000', required: true, colSize: 6 },
+  { label: 'Company/Investment Firm', name: 'company', type: 'text', placeholder: 'Your company or firm name', required: true, colSize: 6 },
+  { label: 'Report Type Interest', name: 'report_interest', type: 'textarea', placeholder: 'Which type of audit report interests you most? (Red Flag, Full Due Diligence, or Post-Deal Remediation)', required: false, colSize: 12 },
+];
+
 export const metadata = getPageMetadata('/service/tech-due-diligence');
 
 const jsonLd = {
@@ -30,7 +46,7 @@ const heroProps = {
   subheadline: "Comprehensive Tech Due Diligence for investors, PE firms, and M&A. Know exactly what you're buying—code quality, scalability, security, and team capability.",
   tags: ['Pre-deal assessment', 'Code quality audit', 'Architecture review', 'Security & Compliance'],
   primaryCta: { text: "Get a sample audit report →", href: "/contact?service=tech-due-diligence" },
-  secondaryCta: { text: "Book a discovery call", href: "/contact?type=discovery" },
+  secondaryCta: { text: "See Audit Process ", href: "#process" },
   stats: [
     { num: '7-10 days', lbl: 'Standard audit turnaround' },
     { num: '100+', lbl: 'Systems evaluated' },
@@ -185,23 +201,31 @@ export default function TechDueDiligencePage() {
           sectionName="Audit Packages"
         />
         
-        <CtaBand 
-          title="Ready to de-risk your next acquisition?"
-          description="Speak with our lead technical auditors. We can start a Red Flag assessment or full Tech Due Diligence within 48 hours."
-          primaryBtn={{
-            text: 'Schedule an exploratory call →',
-            dataCta: 'tdd-cta-primary'
-          }}
-          secondaryBtn={{
-            text: 'Get a sample audit report',
-            href: '/contact?type=sample-report',
-            variant: 'link'
-          }}
-          trustText="Strictly confidential audits · Signed NDAs required · Reports delivered within 10 days"
-          useModal={true}
-          modalTitle="Schedule an Exploratory Call"
-          modalDescription="Fill out the form below and we'll get back to you shortly."
-        />
+      <CtaBand
+        title="Ready to de-risk your next acquisition?"
+        description="Speak with our lead technical auditors. We can start a Red Flag assessment or full Tech Due Diligence within 48 hours."
+        primaryBtn={{
+          text: 'Schedule an exploratory call →',
+          dataCta: 'tdd-cta-primary'
+        }}
+        secondaryBtn={{
+          text: 'Get a sample audit report',
+          dataCta: 'tdd-cta-secondary',
+          variant: 'link'
+        }}
+        trustText="Strictly confidential audits · Signed NDAs required · Reports delivered within 10 days"
+        useModal={true}
+        
+        // Primary button modal (exploratory call)
+        primaryModalTitle="Schedule an Exploratory Call"
+        primaryModalDescription="Tell us about your potential deal and we'll schedule a call with our lead technical auditors to discuss your Tech Due Diligence needs."
+        primaryModalFields={exploratoryCallFormFields}
+        
+        // Secondary button modal (sample report)
+        secondaryModalTitle="Get a Sample Audit Report"
+        secondaryModalDescription="Request a sample Tech Due Diligence audit report to see our comprehensive assessment approach, methodology, and deliverables."
+        secondaryModalFields={sampleReportFormFields}
+      />
       </div>
     </>
   );

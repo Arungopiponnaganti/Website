@@ -3,7 +3,7 @@ import ProcessCard2 from "./ProcessCard2";
 
 const Process2 = () => {
     return (
-            <div className="working-proces-area">
+            <div className="working-proces-area bg-light">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-12">

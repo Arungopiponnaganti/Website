@@ -83,7 +83,7 @@ const Home = () => {
 
             <Faq />
 
-            <Contact1></Contact1>
+            <Contact1 className="bg-light"></Contact1>
         </div>
     );
 };

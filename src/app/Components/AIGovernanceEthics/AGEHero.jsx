@@ -135,7 +135,7 @@ export default function AGEHero() {
                       style={{ textDecoration: 'none' }}
                     >
                       <div style={{ color: '#ff3c00', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>
-                        See the framework &rarr;
+                        See the framework &darr;
                       </div>
                     </Link>
                   </div>

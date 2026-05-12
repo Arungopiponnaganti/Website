@@ -29,6 +29,26 @@ const jsonLd = {
   serviceType: 'Intelligent Document Processing & AI Data Extraction',
 };
 
+// Form fields for document audit modal
+const auditFormFields = [
+  { label: 'Full Name', name: 'name', type: 'text', placeholder: 'John Smith', required: true, colSize: 6 },
+  { label: 'Email', name: 'email', type: 'email', placeholder: 'john@company.com', required: true, colSize: 6 },
+  { label: 'Phone', name: 'phone', type: 'tel', placeholder: '+1 (555) 000-0000', required: true, colSize: 6 },
+  { label: 'Company', name: 'company', type: 'text', placeholder: 'Your company name', required: true, colSize: 6 },
+  { label: 'Document Types', name: 'document_types', type: 'text', placeholder: 'e.g., invoices, contracts, medical records', required: false, colSize: 12 },
+  { label: 'Current Volume', name: 'volume', type: 'text', placeholder: 'Approximate monthly document volume', required: false, colSize: 6 },
+  { label: 'Message', name: 'message', type: 'textarea', placeholder: 'Tell us about your document processing challenges and goals...', required: false, colSize: 12 },
+];
+
+// Form fields for discovery call modal
+const callFormFields = [
+  { label: 'Full Name', name: 'name', type: 'text', placeholder: 'John Smith', required: true, colSize: 6 },
+  { label: 'Email', name: 'email', type: 'email', placeholder: 'john@company.com', required: true, colSize: 6 },
+  { label: 'Phone', name: 'phone', type: 'tel', placeholder: '+1 (555) 000-0000', required: true, colSize: 6 },
+  { label: 'Preferred Date', name: 'preferred_date', type: 'date', placeholder: 'MM/DD/YYYY (optional)', required: false, colSize: 6 },
+  { label: 'Brief Description', name: 'brief', type: 'textarea', placeholder: 'Briefly describe your document processing needs and what you\'d like to discuss...', required: false, colSize: 12 },
+];
+
 export default function IntelligentDocumentProcessingPage() {
   return (
     <>
@@ -47,13 +67,28 @@ export default function IntelligentDocumentProcessingPage() {
         <CtaBand
           title="Start with a free document processing audit"
           description="Send us three sample documents. We'll assess extraction complexity, recommend the right approach, and give you an accuracy estimate — within 48 hours. No commitment required."
-          primaryBtn={{ text: 'Get free doc audit →', dataCta: 'cta-primary-idp' }}
-          secondaryBtn={{ href: '/contact', variant: 'link', text: 'Book a discovery call' }}
+          primaryBtn={{ 
+            text: 'Get free doc audit →', 
+            dataCta: 'idp-cta-primary' 
+          }}
+          secondaryBtn={{ 
+            text: 'Book a discovery call',
+            variant: 'link', 
+            dataCta: 'idp-cta-secondary' 
+          }}
           trustText="Free audit · Written accuracy estimate in 48 hrs · No commitment required"
           bgClass="bg-white border-top py-5"
           useModal={true}
-          modalTitle="Get Free Doc Audit"
-          modalDescription="Fill out the form below and we'll get back to you shortly."
+          
+          // Primary button modal (document audit)
+          primaryModalTitle="Get Free Doc Audit"
+          primaryModalDescription="Send us three sample documents. We'll assess extraction complexity, recommend the right approach, and give you an accuracy estimate — within 48 hours. No commitment required."
+          primaryModalFields={auditFormFields}
+          
+          // Secondary button modal (discovery call)
+          secondaryModalTitle="Book Discovery Call"
+          secondaryModalDescription="Schedule a 30-minute call to discuss your document processing challenges and how our AI expertise can help automate your workflows."
+          secondaryModalFields={callFormFields}
         />
       </div>
     </>

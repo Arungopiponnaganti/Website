@@ -1,6 +1,7 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
 
 const PLANS = [
   {
@@ -14,6 +15,8 @@ const PLANS = [
       'Performance benchmarks vs. baseline',
       'Production-readiness assessment',
     ],
+    ctaText: 'Scope this →',
+    engagementType: 'proof-of-concept'
   },
   {
     theme: 'featured',
@@ -27,6 +30,8 @@ const PLANS = [
       'Safety, evaluation & monitoring setup',
       'Team training & handover documentation',
     ],
+    ctaText: 'Scope this →',
+    engagementType: 'full-integration'
   },
   {
     theme: 'enterprise',
@@ -39,17 +44,65 @@ const PLANS = [
       'Prompt library management & versioning',
       'Monthly AI performance reporting',
     ],
+    ctaText: 'Scope this →',
+    engagementType: 'retainer'
   },
 ];
 
-export default function AIEngagement() {
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your AI integration needs...',
+    required: false,
+    colSize: 12
+  },
+];
+
+export default function AIEngagement({
+  pageName = "AI Integration",
+  sectionName = "AI Engagement Plans"
+}) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState(null);
+
   const getBadgeStyle = (theme) => {
     switch (theme) {
       case 'essential': return { background: '#EEEDFE', color: '#3C3489' };
-      case 'featured':  return { background: '#ff3c00', color: '#fff'    };
+      case 'featured': return { background: '#ff3c00', color: '#fff' };
       case 'enterprise':return { background: '#E1F5EE', color: '#085041' };
-      default:          return {};
+      default: return {};
     }
+  };
+
+  const handleCtaClick = (plan) => {
+    setSelectedPlan(plan);
+    setIsModalOpen(true);
   };
 
   return (
@@ -83,18 +136,36 @@ export default function AIEngagement() {
                 </ul>
 
                 <div className="mt-auto" style={{ position: 'absolute', bottom: '30px', left: '30px', right: '30px' }}>
-                  <a
-                    href="/contact"
+                  <button
+                    onClick={() => handleCtaClick(plan)}
                     className={`cd-engage-cta ${plan.theme === 'featured' ? 'cd-cta-filled' : 'cd-cta-outline'}`}
+                    data-cta={plan.engagementType}
                   >
-                    Scope this &rarr;
-                  </a>
+                    {plan.ctaText}
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get Started with AI Integration"
+        description={`Let's discuss your ${selectedPlan?.title || 'AI project'}. We'll respond within 24 hours.`}
+        fields={defaultFormFields}
+        metadata={{
+          page: pageName,
+          section: sectionName,
+          modal: `${pageName} Contact Form`,
+          engagementPlan: selectedPlan?.title,
+          engagementType: selectedPlan?.engagementType,
+          source: pageName.toLowerCase().replace(' ', '-'),
+          formType: `${pageName} - ${selectedPlan?.title || 'AI Engagement Inquiry'}`
+        }}
+      />
     </section>
   );
 }

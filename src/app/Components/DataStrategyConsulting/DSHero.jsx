@@ -98,8 +98,8 @@ export default function DSHero() {
                 </div>
                 <div className="hero-btn-3">
                   <div className="hero-btn-profile">
-                    <Link href="#framework" style={{ textTransform: 'none', textDecoration: 'none' }}>
-                      <div style={{ color: '#ff3c00', textDecoration: 'none', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>Download framework &darr;</div>
+                    <Link href="#data-maturity" style={{ textTransform: 'none', textDecoration: 'none' }}>
+                      <div style={{ color: '#ff3c00', textDecoration: 'none', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>See data maturity roadmap &darr;</div>
                     </Link>
                   </div>
                 </div>

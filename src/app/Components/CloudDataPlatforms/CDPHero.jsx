@@ -109,15 +109,21 @@ export default function CDPHero() {
                 <strong style={{ color: '#fff' }}>What it is:</strong> A cloud data platform is a managed environment where data from multiple sources is collected, organised, and made available for analysis and reporting — replacing fragmented systems and manual data movement with a governed foundation your teams can trust.
               </div>
 
-              <div className="d-flex flex-wrap align-items-center gap-4 mb-5">
+              <div className="d-flex flex-wrap align-items-center gap-2 mb-5">
                 <div className="solutek-btn">
                   <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="btn-2">Free platform assessment &rarr;</Link>
                 </div>
                 <div className="hero-btn-3">
                   <div className="hero-btn-profile">
-                    <div style={{ color: '#ff3c00', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>
-                      See the architecture &rarr;
-                    </div>
+                    <Link
+                      href="#cdp-architecture"
+                      onClick={(e) => { e.preventDefault(); document.getElementById('cdp-architecture')?.scrollIntoView({ behavior: 'smooth' }); }}
+                      style={{ textDecoration: 'none' }}
+                    >
+                      <div style={{ color: '#ff3c00', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>
+                        See the architecture &darr;
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </div>

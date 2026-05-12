@@ -132,21 +132,21 @@ export default function ARAHero() {
                 ))}
               </div>
 
-              <div className="d-flex flex-wrap align-items-center gap-4 mb-5">
-                <div className="solutek-btn">
+              <div className="d-flex flex-wrap align-items-center gap-2 mb-5">
+                <div className="solutek-btn me-0">
                   <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="btn-2">Take the free assessment &rarr;</Link>
                 </div>
                 <div className="hero-btn-3">
                   <div className="hero-btn-profile">
-                    {/* <Link
-                      href="/contact"
-                      onClick={(e) => { e.preventDefault(); document.getElementById('ara-dimensions')?.scrollIntoView({ behavior: 'smooth' }); }}
+                    <Link
+                      href="#ara-assessment"
+                      onClick={(e) => { e.preventDefault(); document.getElementById('ara-assessment')?.scrollIntoView({ behavior: 'smooth' }); }}
                       style={{ textDecoration: 'none' }}
-                    > */}
+                    >
                       <div style={{ color: '#ff3c00', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>
-                        See assessment dimensions &rarr;
+                        See assessment &darr;
                       </div>
-                    {/* </Link> */}
+                    </Link>
                   </div>
                 </div>
               </div>

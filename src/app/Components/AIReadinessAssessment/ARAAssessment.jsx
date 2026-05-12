@@ -230,44 +230,44 @@ export default function ARAAssessment() {
   }));
 
   return (
-    <section className="cd-section py-5 pb-5">
+    <section className="cd-section ai-quiz-section" id="ara-assessment">
       <div className="container py-4">
-        <div className="row justify-content-center">
+        <div className="row justify-content-center mb-5">
           <div className="col-lg-7">
             <SectionTitle
               className="text-center"
               SubTitle="AI Readiness Assessment"
               Title="Assess your organisation's AI readiness"
               Content="Answer 6 questions across key dimensions. We'll generate a readiness score with personalised recommendations."
-              isDarkMode={false}
+              isDarkMode={true}
             />
           </div>
         </div>
 
-        <div className="row g-0 rounded-3 overflow-hidden" style={{ border: '1px solid #e5e7eb' }}>
-          <div className="col-md-6 ai-ara-col-left p-4 p-lg-5 d-flex flex-column gap-4" style={{ background: '#fff' }}>
-            <div className="ai-ara-progress">
+        <div className="row g-0 rounded-3 overflow-hidden">
+          <div className="col-md-6 ai-quiz-col-left p-4 p-lg-5 d-flex flex-column gap-4">
+            <div className="ai-quiz-progress">
               <div className="d-flex gap-2 flex-grow-1">
                 {DIMENSIONS.map((_, i) => (
-                  <div key={i} className={`ai-ara-prog-seg${scores[i] !== undefined ? ' done' : ''}`} />
+                  <div key={i} className={`ai-quiz-prog-seg${scores[i] !== undefined ? ' done' : ''}`} />
                 ))}
               </div>
-              <div className="ai-ara-prog-label">
+              <div className="ai-quiz-prog-label">
                 {doneCount} of {DIMENSIONS.length} answered
               </div>
             </div>
 
             <div className="d-flex flex-column gap-4">
               {DIMENSIONS.map((dim, di) => (
-                <div key={di} className="ai-ara-question-card">
+                <div key={di} className="ai-quiz-question-card">
                   <div className="d-flex align-items-center justify-content-between mb-2">
-                    <span className="ai-ara-q-num">{dim.num}</span>
-                    <span className="ai-ara-q-label">{dim.title}</span>
+                    <span className="ai-quiz-q-num">{dim.num}</span>
+                    <span className="ai-quiz-q-label">{dim.title}</span>
                   </div>
-                  <label htmlFor={`ara-q-${di}`} className="ai-ara-q-text mb-3 d-block">{dim.q}</label>
+                  <label htmlFor={`quiz-q-${di}`} className="ai-quiz-q-text mb-3 d-block">{dim.q}</label>
                   <select
-                    id={`ara-q-${di}`}
-                    className="form-select ai-ara-select"
+                    id={`quiz-q-${di}`}
+                    className="form-select ai-quiz-select"
                     value={scores[di] !== undefined ? scores[di] : ''}
                     onChange={(e) => {
                       const val = e.target.value;
@@ -296,30 +296,31 @@ export default function ARAAssessment() {
             )}
           </div>
 
-          <div className="col-md-6 ai-ara-col-right d-flex flex-column" style={{ background: '#fafbfc' }}>
+          <div className="col-md-6 ai-quiz-col-right d-flex flex-column">
+
             {!submitted ? (
               <div className="d-flex flex-column align-items-center justify-content-center text-center flex-grow-1 p-4 p-lg-5">
-                <div className="ai-ara-ph-icon mb-4">
+                <div className="ai-quiz-ph-icon mb-4">
                   <svg width="48" height="48" viewBox="0 0 48 48" fill="none" aria-hidden="true">
-                    <circle cx="24" cy="24" r="22" stroke="rgba(5,10,30,0.1)" strokeWidth="2" />
+                    <circle cx="24" cy="24" r="22" stroke="rgba(255,255,255,0.15)" strokeWidth="2" />
                     <circle
                       cx="24"
                       cy="24"
                       r="22"
-                      stroke="#050a1e"
+                      stroke="rgba(255,255,255,0.6)"
                       strokeWidth="2"
                       strokeDasharray="138"
                       strokeDashoffset={138 - (138 * doneCount / DIMENSIONS.length)}
                       strokeLinecap="round"
-                      style={{ transition: 'stroke-dashoffset 0.4s ease', transformOrigin: 'center', transform: 'rotate(-90deg)', opacity: 0.4 }}
+                      style={{ transition: 'stroke-dashoffset 0.4s ease', transformOrigin: 'center', transform: 'rotate(-90deg)' }}
                     />
-                    <text x="24" y="29" textAnchor="middle" fontSize="14" fontWeight="700" fill="#050a1e">
+                    <text x="24" y="29" textAnchor="middle" fontSize="14" fontWeight="700" fill="rgba(255,255,255,0.9)">
                       {doneCount}/{DIMENSIONS.length}
                     </text>
                   </svg>
                 </div>
-                <div className="ai-ara-ph-title mb-2">Your readiness score appears here</div>
-                <div className="ai-ara-ph-desc">
+                <div className="ai-quiz-ph-title mb-2">Your readiness score appears here</div>
+                <div className="ai-quiz-ph-desc">
                   Answer all {DIMENSIONS.length} questions on the left to get your personalised AI readiness assessment and recommendations.
                 </div>
               </div>
@@ -327,41 +328,42 @@ export default function ARAAssessment() {
               <>
                 <div className="p-4 p-lg-5 flex-grow-1 d-flex flex-column gap-4">
                   <div>
-                    <span className="ai-ara-badge mb-2" style={{ borderColor: result.color, color: result.color }}>
+                    <span className="ai-qr-badge mb-2" style={{ borderColor: result.color, color: result.color }}>
                       Assessment Complete
                     </span>
-                    <div className="ai-ara-level" style={{ color: result.color }}>{result.level}</div>
+                    <div className="ai-qr-level" style={{ color: result.color }}>{result.level}</div>
                   </div>
 
-                  <div className="ai-ara-overall-score" style={{ color: result.color }}>{overallPct}%</div>
-                  <p className="ai-ara-desc mb-0" style={{ color: '#4b5563' }}>
+                  <div className="ai-qr-overall-score" style={{ color: result.color }}>{overallPct}%</div>
+                  <p className="ai-qr-desc mb-0">
                     {result.desc}
                   </p>
 
-                  <div className="ai-ara-dim-scores">
+                  <div className="ai-qr-dim-scores">
                     {dimScores.map((ds, i) => (
-                      <div className="ai-ara-ds-row" key={i}>
-                        <div className="ai-ara-ds-label">{ds.label}</div>
-                        <div className="ai-ara-ds-bar">
-                          <div className="ai-ara-ds-fill" style={{ width: `${ds.score}%`, background: barColor(ds.score) }} />
+                      <div className="ai-qr-ds-row" key={i}>
+                        <div className="ai-qr-ds-label">{ds.label}</div>
+                        <div className="ai-qr-ds-bar">
+                          <div className="ai-qr-ds-fill" style={{ width: `${ds.score}%`, background: barColor(ds.score) }} />
                         </div>
-                        <div className="ai-ara-ds-val">{ds.score}</div>
+                        <div className="ai-qr-ds-val">{ds.score}</div>
                       </div>
                     ))}
                   </div>
 
-                  <div className="ai-ara-priorities-label">Top recommendations</div>
+                  <div className="ai-qr-priorities-label">Top recommendations</div>
                   <div className="d-flex flex-column gap-3">
                     {result.recs.map((r, i) => (
-                      <div key={i} className="ai-ara-rec-card">
-                        <div className="ai-ara-rec-title">{r.t}</div>
-                        <div className="ai-ara-rec-desc">{r.d}</div>
+                      <div key={i} className="ai-qr-rec-card">
+                        <div className="ai-qr-rec-num">{String(i + 1).padStart(2, '0')}</div>
+                        <div className="ai-qr-rec-title">{r.t}</div>
+                        <div className="ai-qr-rec-desc">{r.d}</div>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                <div className="ai-ara-res-footer p-4 p-lg-5 d-flex flex-column gap-3">
+                <div className="ai-quiz-res-footer p-4 p-lg-5 d-flex flex-column gap-3">
                   <div className="row g-3">
                     <div className="col-6">
                       <div style={{ padding: '16px', borderRadius: '10px', background: '#050a1e', height: '100%', display: 'flex', flexDirection: 'column', gap: '8px' }}>
@@ -375,9 +377,9 @@ export default function ARAAssessment() {
                       </div>
                     </div>
                     <div className="col-6">
-                      <div style={{ padding: '16px', borderRadius: '10px', background: '#fff', border: '1px solid #e5e7eb', height: '100%', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <div style={{ fontSize: '13px', fontWeight: '600', color: '#050a1e' }}>Book consultation</div>
-                        <div style={{ fontSize: '11px', color: '#6b7280', lineHeight: '1.5' }}>
+                      <div style={{ padding: '16px', borderRadius: '10px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', height: '100%', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                        <div style={{ fontSize: '13px', fontWeight: '600', color: '#fff' }}>Book consultation</div>
+                        <div style={{ fontSize: '11px', color: 'rgba(255,255,255,0.6)', lineHeight: '1.5' }}>
                           Free 45-minute session to build your plan.
                         </div>
                         <button onClick={() => setIsModalOpen(true)} className="cd-btn-primary d-block text-center text-decoration-none" style={{ fontSize: '12px', padding: '10px 16px', marginTop: '4px', border: 'none', cursor: 'pointer' }}>
@@ -387,7 +389,7 @@ export default function ARAAssessment() {
                     </div>
                   </div>
                   <button
-                    className="ai-ara-retake-btn w-100"
+                    className="ai-quiz-retake-btn w-100"
                     onClick={resetQuiz}
                   >
                     Retake assessment

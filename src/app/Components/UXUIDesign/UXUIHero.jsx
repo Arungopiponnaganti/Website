@@ -96,7 +96,7 @@ export default function UXUIHero() {
 
       {/* ── Hero text content (floats on top of SVG background) ── */}
       <div className="container uxui-hero-content-wrap">
-        <div className="row">
+        <div className="row align-items-center">
           <div className="col-lg-6 col-md-10 col-sm-12">
             <div className="hero-contant uxui-hero-content">
 
@@ -106,7 +106,7 @@ export default function UXUIHero() {
                 UX / UI Design
               </div>
 
-              <h1 className="mb-4 d-block">
+              <h1 className="d-block">
                 Design that converts visitors into customers&nbsp;&mdash; not just looks good
               </h1>
 
@@ -115,7 +115,7 @@ export default function UXUIHero() {
               </p>
 
               {/* CTAs */}
-              <div className="d-flex flex-wrap align-items-center gap-4 mb-5">
+              <div className="uxui-hero-cta-container d-flex flex-wrap align-items-center gap-4 mb-5">
                 <div className="solutek-btn">
                   <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="btn-2" data-cta="hero-primary">
                     Get a free design audit &rarr;
@@ -133,19 +133,6 @@ export default function UXUIHero() {
                   </div>
                 </div>
               </div>
-
-              {/* Stats strip */}
-              {/* <div style={{ display: 'flex', gap: '28px', flexWrap: 'wrap' }}>
-                {stats.map((s, i) => (
-                  <div key={i} style={{ position: 'relative' }}>
-                    {i > 0 && (
-                      <div style={{ position: 'absolute', left: '-14px', top: '4px', height: '32px', width: '1px', background: 'rgba(255,255,255,0.12)' }} />
-                    )}
-                    <div style={{ fontSize: '24px', fontWeight: '700', color: '#fff', marginBottom: '4px' }}>{s.value}</div>
-                    <div style={{ fontSize: '11px', color: '#a0a0a0', textTransform: 'uppercase', letterSpacing: '0.7px', fontWeight: '500', maxWidth: '120px', lineHeight: '1.4' }}>{s.label}</div>
-                  </div>
-                ))}
-              </div> */}
 
             </div>
           </div>

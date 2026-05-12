@@ -81,7 +81,7 @@ export default function WAProcess() {
               className={`p-0 pb-1 sn${active === i ? ' on' : ''}`}
               onClick={() => setActive(i)}
             >
-              <span style={{
+              <span className='pe-2' style={{
                 fontSize: '10px', display: 'block',
                 color: active === i ? 'rgba(255,255,255,0.6)' : '#a0a0a0',
                 // marginBottom: '2px',

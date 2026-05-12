@@ -137,7 +137,7 @@ export default function IDPHero() {
                       style={{ textDecoration: 'none' }}
                     >
                       <div style={{ color: '#ff3c00', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>
-                        See document types &rarr;
+                        See document types &darr;
                       </div>
                     </Link>
                   </div>

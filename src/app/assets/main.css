@@ -2003,7 +2003,7 @@ ul {
 =======================================*/
 
 .hero-area {
-  height: 890px;
+  height: auto;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -3136,6 +3136,15 @@ h3.blog-title-two a:hover {
 
 .service-icon {
   margin-bottom: 33px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-icon svg {
+  width: 60px;
+  height: 60px;
+  transition: 0.5s;
 }
 
 .service-icon img {
@@ -3195,6 +3204,10 @@ p.service-text {
   filter: brightness(0) invert(1);
 }
 
+.service-single-box:hover .service-icon svg {
+  color: #fff;
+}
+
 .service-single-box:hover h3.service-title {
   color: #fff;
 }
@@ -3206,6 +3219,279 @@ p.service-text {
 .service-single-box:hover .service-btn i {
   color: #fff;
   background: #ff6d3e !important;
+}
+
+.service-overview-area .container {
+  max-width: 1600px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  padding: 50px 0;
+}
+
+.service-single-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+}
+
+.service-single-box .service-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-single-box .service-content .service-text {
+  flex-grow: 1;
+}
+
+.ai-services-bg {
+  background: linear-gradient(180deg, #f8f9fa 0%, #fff 100%);
+}
+
+.service-card-alt {
+  background: #fff;
+  border: 1px solid #e8e8e8;
+}
+
+.service-card-alt::before {
+  background: linear-gradient(135deg, #ff3b00 0%, #ff6d3e 100%);
+}
+
+.service-card-alt:hover {
+  border-color: transparent;
+}
+
+@media (max-width: 1399px) {
+  .service-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+}
+
+@media (max-width: 767px) {
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 30px 0;
+  }
+  
+  .service-single-box {
+    padding: 35px 25px 30px;
+  }
+  
+  .service-icon svg {
+    width: 48px;
+    height: 48px;
+  }
+  
+  h3.service-title {
+    font-size: 18px;
+  }
+  
+  p.service-text {
+    font-size: 14px;
+  }
+}
+
+.service-card-modern {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 100%);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px 32px 36px;
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.06),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  overflow: hidden;
+}
+
+.service-card-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #ff3b00 0%, #ff6d3e 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.service-card-modern:hover::before {
+  opacity: 1;
+}
+
+.service-card-modern:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 50px rgba(255, 59, 0, 0.15),
+    0 8px 20px rgba(255, 59, 0, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+  background: transparent;
+}
+
+.service-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.service-icon-wrapper::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: rgba(255, 59, 0, 0.08);
+  transform: scale(0);
+  transition: transform 0.4s ease;
+}
+
+.service-card-modern:hover .service-icon-wrapper::after {
+  transform: scale(1);
+}
+
+.service-icon-wrapper svg {
+  width: 52px;
+  height: 52px;
+  transition: all 0.4s ease;
+}
+
+.service-card-modern:hover .service-icon-wrapper svg {
+  transform: scale(1.1);
+}
+
+.service-card-modern:hover .service-icon-wrapper {
+  color: #fff !important;
+}
+
+.service-card-modern h3.service-title {
+  font-size: 20px;
+  color: #050a1e;
+  font-weight: 700;
+  font-family: var(--heading-font);
+  margin: 0 0 16px;
+  line-height: 1.4;
+  transition: all 0.4s ease;
+}
+
+.service-card-modern p.service-text {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #5a6275;
+  flex-grow: 1;
+  transition: all 0.4s ease;
+}
+
+.service-card-modern:hover h3.service-title,
+.service-card-modern:hover p.service-text {
+  color: #fff;
+}
+
+.service-card-modern .service-card-number {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 48px;
+  font-weight: 800;
+  color: rgba(255, 59, 0, 0.06);
+  font-family: var(--heading-font);
+  line-height: 1;
+  transition: color 0.4s ease;
+}
+
+.service-card-modern:hover .service-card-number {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+.service-card-modern .service-card-border {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ff3b00, transparent);
+  border-radius: 2px;
+  transition: all 0.4s ease;
+  opacity: 0.6;
+}
+
+.service-card-modern:hover .service-card-border {
+  width: 80px;
+  opacity: 1;
+  background: linear-gradient(90deg, transparent, #fff, transparent);
+}
+
+.service-card-modern .service-icon-bg {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 59, 0, 0.08) 0%, transparent 70%);
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+  transition: all 0.4s ease;
+}
+
+.service-card-modern:hover .service-icon-bg {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+}
+
+@media (max-width: 575px) {
+  .service-card-modern {
+    padding: 32px 24px 28px;
+  }
+  
+  .service-icon-wrapper {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 22px;
+  }
+  
+  .service-icon-wrapper svg {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .service-card-modern h3.service-title {
+    font-size: 18px;
+  }
+  
+  .service-card-modern p.service-text {
+    font-size: 14px;
+  }
 }
 
 .service-shape {
@@ -6166,7 +6452,7 @@ ul.list-style-one li a:hover {
   color: #7a7a7a;
   width: 100%;
   opacity: 1;
-  padding: 18px 0 40px;
+  padding: 18px 0 20px;
 }
 
 .hero-area.style-three .solutek-btn {

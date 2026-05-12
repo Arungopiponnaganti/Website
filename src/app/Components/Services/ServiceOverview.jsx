@@ -4,7 +4,73 @@ import data from '../../Data/serviceOverview.json';
 import { useRef } from "react";
 import SectionTitle from "../Common/SectionTitle";
 import Link from "next/link";
-import Image from "next/image";
+
+const serviceIcons = {
+  "Custom Software Development": (
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="8" y="12" width="48" height="40" rx="4" stroke="currentColor" strokeWidth="2.5"/>
+      <path d="M20 28h24M20 36h16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+      <circle cx="48" cy="48" r="8" fill="currentColor"/>
+      <path d="M52 44l4-4M52 52l4 4" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+  ),
+  "Product Engineering": (
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="6" y="16" width="52" height="36" rx="4" stroke="currentColor" strokeWidth="2.5"/>
+      <path d="M14 28h14v8H14zM36 28h14v8H36z" stroke="currentColor" strokeWidth="2"/>
+      <circle cx="21" cy="32" r="3" fill="currentColor"/>
+      <circle cx="43" cy="32" r="3" fill="currentColor"/>
+      <path d="M32 8v8M26 12l6-4 6 4" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  "Application Modernisation": (
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 8L8 24h48L32 8z" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round"/>
+      <path d="M12 24v32h40V24" stroke="currentColor" strokeWidth="2.5"/>
+      <path d="M20 36h24M20 44h16" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      <path d="M44 40l4 4 8-8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  "UX / UI Design": (
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="8" y="8" width="48" height="40" rx="4" stroke="currentColor" strokeWidth="2.5"/>
+      <rect x="14" y="14" width="14" height="14" rx="2" stroke="currentColor" strokeWidth="2"/>
+      <rect x="32" y="14" width="18" height="8" rx="2" stroke="currentColor" strokeWidth="2"/>
+      <rect x="32" y="28" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="2"/>
+      <path d="M18 36h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+  ),
+  "Cloud & DevOps": (
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 44a12 12 0 0 1 0-24 16 16 0 0 1 32 0 12 12 0 0 1 0 24" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+      <path d="M12 36a8 8 0 0 1 0-16 12 12 0 0 1 24 0 8 8 0 0 1 0 16" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+      <circle cx="36" cy="48" r="4" fill="currentColor"/>
+      <path d="M36 52v6M32 56l4 4 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  "Quality Engineering": (
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M32 8L12 20v16c0 13.3 8.5 25.6 20 28 11.5-2.4 20-14.7 20-28V20L32 8z" stroke="currentColor" strokeWidth="2.5" strokeLinejoin="round"/>
+      <path d="M24 32l6 6 10-12" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  ),
+  "Managed App Support": (
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="12" y="8" width="40" height="48" rx="4" stroke="currentColor" strokeWidth="2.5"/>
+      <path d="M24 20h16M24 28h16M24 36h10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+      <circle cx="32" cy="48" r="4" fill="currentColor"/>
+      <path d="M32 44v-4" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+      <path d="M32 52v2" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+    </svg>
+  ),
+  "Tech Due Diligence": (
+    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="32" cy="32" r="24" stroke="currentColor" strokeWidth="2.5"/>
+      <path d="M32 18v14l10 6" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+      <circle cx="32" cy="32" r="2" fill="currentColor"/>
+    </svg>
+  )
+};
 
 const ServiceOverview = ({ bgImage, ClassAdd }) => {
 
@@ -55,8 +121,8 @@ const ServiceOverview = ({ bgImage, ClassAdd }) => {
         <div className={`service-overview-area${ClassAdd ? ` ${ClassAdd}` : ''}`} data-background={bgImage}>
             <div className="container-fluid">
                 <div className="row project align-items-center">
-                    <div className="col-lg-6">
-                        <div className="section-title text-left ">
+                    <div className="col-lg-12">
+                        <div className="section-title text-center ">
                             <SectionTitle
                                 SubTitle="MAYURASOFT SERVICES"
                                 Title="Build, modernise, and run your  <span>software</span>"
@@ -64,61 +130,27 @@ const ServiceOverview = ({ bgImage, ClassAdd }) => {
                             />
                         </div>
                     </div>
-                    <div className="col-lg-6">
-                        <div className="project-right">
-                            <div className="cs_slider_arrows cs_style_2 testtimonial_arow_area cs_hide_md">
-                                <div className="cs_left_arrow cs_slider_arrow cs_center" onClick={previous}>
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clipPath="url(#clip0_so_left)">
-                                            <path d="M6.4 1.59961L7.52 2.71961L3.04 7.19961H16V8.79961H3.04L7.52 13.2796L6.4 14.3996L0 7.99961L6.4 1.59961Z" fill="white" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_so_left">
-                                                <rect width="16" height="16" fill="white" transform="matrix(-1 0 0 1 16 0)" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </div>
-                                <div className="cs_right_arrow cs_slider_arrow cs_center" onClick={next}>
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g clipPath="url(#clip0_so_right)">
-                                            <path d="M9.6 1.59961L8.48 2.71961L12.96 7.19961H0V8.79961H12.96L8.48 13.2796L9.6 14.3996L16 7.99961L9.6 1.59961Z" fill="white" />
-                                        </g>
-                                        <defs>
-                                            <clipPath id="clip0_so_right">
-                                                <rect width="16" height="16" fill="white" />
-                                            </clipPath>
-                                        </defs>
-                                    </svg>
-                                </div>
-                            </div>
+                </div>
+                <div className="container">
+                  <div className="service-grid">
+                    {data.map((item, i) => (
+                      <Link href={item.btnLink} key={i} className="service-single-box text-decoration-none">
+                        <div className="service-icon" style={{ color: '#ff3b00' }}>
+                          {serviceIcons[item.title] || (
+                            <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <circle cx="32" cy="32" r="20" stroke="currentColor" strokeWidth="2.5"/>
+                              <path d="M32 22v20M22 32h20" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round"/>
+                            </svg>
+                          )}
                         </div>
-                    </div>
-                </div>
-                <div className="row carousel">
-                    <div className="service-overview-list cs_slider_gap_30">
-                        <Slider ref={sliderRef} {...settings}>
-                            {data.map((item, i) => (
-                                <div key={i} className="d-flex h-100">
-                                    <div className="service-single-box d-flex flex-column pt-4 h-100 w-100">
-                                        <div className="service-icon mb-0">
-                                            <Image src={item.icon} alt={`${item.title} service icon`} width={100} height={100} priority={i < 3} />
-                                        </div>
-                                        <div className="service-content d-flex flex-column flex-grow-1">
-                                            <h3 className="service-title">{item.title}</h3>
-                                            <p className="service-text flex-grow-1">{item.desc}</p>
-                                            <div className="service-btn mt-auto">
-                                                <Link href={item.btnLink} tabIndex="-1">
-                                                    <i className="bi bi-plus"></i><span> {item.btnText}</span>
-                                                </Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </Slider>
-                    </div>
-                </div>
+                        <div className="service-content text-center">
+                          <h3 className="service-title">{item.title}</h3>
+                          <p className="service-text">{item.desc}</p>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+              </div>
             </div>
         </div>
     );

@@ -22,7 +22,7 @@ export default function DSMaturity() {
   };
 
   return (
-    <section className="py-5 pb-5 bg-white border-top">
+    <section className="py-5 pb-5 bg-white border-top" id="data-maturity">
       <div className="container py-4">
         <SectionTitle
           className="text-center"

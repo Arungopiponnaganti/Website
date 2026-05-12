@@ -5,8 +5,7 @@ import Form from "../Form/Form";
 import loadBackgroudImages from "../Common/loadBackgroudImages";
 import Image from "next/image";
 
-const Contact1 = () => {
-
+const Contact1 = ({className=""}) => {
     useEffect(() => {
         loadBackgroudImages();
       }, []);
@@ -14,7 +13,7 @@ const Contact1 = () => {
 	
       
     return (
-        <div className="contact-area" data-background="/assets/images/contact-bg2.png">
+        <div className={`contact-area ${className}`} data-background="/assets/images/contact-bg2.png">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-6 col-md-7">

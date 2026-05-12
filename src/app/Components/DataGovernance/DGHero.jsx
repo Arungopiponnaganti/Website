@@ -121,15 +121,21 @@ export default function DGHero() {
                 ))}
               </div>
 
-              <div className="d-flex flex-wrap align-items-center gap-4 mb-5">
+              <div className="d-flex flex-wrap align-items-center gap-0 mb-5">
                 <div className="solutek-btn">
                   <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="btn-2">Get a free governance audit &rarr;</Link>
                 </div>
                 <div className="hero-btn-3">
                   <div className="hero-btn-profile">
-                    <div style={{ color: '#ff3c00', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>
-                      Take the scanner &rarr;
-                    </div>
+                    <Link
+                      href="#deliverables"
+                      className='text-decoration-none'
+                      onClick={(e) => { e.preventDefault(); document.getElementById('deliverables')?.scrollIntoView({ behavior: 'smooth' }); }}
+                    >
+                      <div style={{ color: '#ff3c00', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>
+                        See What you receive &darr;
+                      </div>
+                    </Link>
                   </div>
                 </div>
               </div>

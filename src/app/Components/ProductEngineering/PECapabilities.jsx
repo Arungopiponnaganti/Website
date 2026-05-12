@@ -1,8 +1,43 @@
 'use client';
-import React from 'react';
-import Link from 'next/link';
+import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
 import Image from 'next/image';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
 
 const capabilitiesList = [
   {
@@ -37,6 +72,18 @@ export default function PECapabilities({
   content = "Every engagement is scoped to your stage — whether you're at idea, MVP, or scaling to enterprise.",
   capabilities = capabilitiesList
 }) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCapability, setSelectedCapability] = useState(null);
+
+  const handleLearnMoreClick = (capability) => {
+    setSelectedCapability(capability);
+    setIsModalOpen(true);
+  };
+
+  const getFormFields = () => {
+    return defaultFormFields;
+  };
+
   return (
     <section className="cd-section py-5 position-relative" style={{ backgroundColor: '#f8f9fa' }}>
       <div className="container pt-4">
@@ -77,7 +124,21 @@ export default function PECapabilities({
                 <p style={{ fontSize: '14.5px', color: '#6c757d', lineHeight: '1.6', marginBottom: '50px' }}>{item.body}</p>
 
                 <div style={{ position: 'absolute', bottom: '30px', left: '30px' }}>
-                  <Link href="/contact" style={{ color: '#444', fontSize: '14px', fontWeight: '600', textDecoration: 'none' }}>Learn more &rarr;</Link>
+                  <button
+                    onClick={() => handleLearnMoreClick(item)}
+                    className='p-0'
+                    style={{
+                      color: '#444',
+                      fontSize: '14px',
+                      fontWeight: '600',
+                      textDecoration: 'none',
+                      background: 'none',
+                      border: 'none',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    Learn more &rarr;
+                  </button>
                 </div>
 
                 <div style={{ position: 'absolute', bottom: '20px', right: '30px', opacity: 0.15, fontSize: '46px', color: '#1a1e2d', pointerEvents: 'none' }}>
@@ -97,6 +158,23 @@ export default function PECapabilities({
       <div className="service-shape3 bounce-animate4">
         <Image src="/assets/images/service8.png" alt="Service decorative image" width={341} height={351} />
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Learn More"
+        description={`Tell us about your interest in ${selectedCapability?.title || 'our capabilities'}. We'll get back to you shortly.`}
+        fields={getFormFields()}
+        metadata={{
+          page: 'Product Engineering',
+          section: 'PE Capabilities',
+          modal: 'PE Capabilities Contact Form',
+          capability: selectedCapability?.title,
+          capabilityType: selectedCapability?.icon,
+          source: 'pe-capabilities',
+          formType: `PE Capability - ${selectedCapability?.title || 'Inquiry'}`
+        }}
+      />
     </section>
   );
 }

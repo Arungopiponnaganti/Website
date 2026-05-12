@@ -9,7 +9,10 @@
 .uxui-hero-desc { font-size: 17px; line-height: 1.7; max-width: 560px; margin-bottom: 36px; color: rgba(255,255,255,0.72); }
 .uxui-hero-link { text-transform: none; text-decoration: none; }
 .uxui-hero-link-text { color: #ff3c00; font-size: 16px; font-weight: 600; }
-
+.uxui-hero-wrap {
+  position: relative;
+  overflow: hidden;
+}
 /* ── UXUITechnologies.jsx ── */
 .uxui-tool-pill { min-width: 200px; width: 45%; }
 .uxui-pill-adobexd { background-image: linear-gradient(to right, pink, white); }

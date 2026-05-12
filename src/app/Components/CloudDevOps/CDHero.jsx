@@ -238,7 +238,7 @@ function AnimatedTerminal({ script, bodyClass = 'cd-term-body-sm', delay = 0 }) 
       cancelRef.current = true;
       clearTimeout(tid);
     };
-  }, []);
+  }, [delay, script]);
 
   useEffect(() => {
     const el = bodyRef.current;

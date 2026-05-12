@@ -266,7 +266,7 @@ export default function DEArchitecture() {
   };
 
   return (
-    <section className="de-arch-section bg-white pb-5">
+    <section className="de-arch-section bg-white pb-5" id="de-architecture">
       <div className="container">
         <SectionTitle
           SubTitle="Reference architectures"
@@ -280,15 +280,22 @@ export default function DEArchitecture() {
           {OPTIONS.map((opt) => (
             <div
               key={opt.id}
-              className={`dea-option-card ${selectedOption === opt.id ? 'active' : ''}`}
+              className={`dea-option-card position-relative ${selectedOption === opt.id ? 'active' : ''}`}
               onClick={() => setSelectedOption(opt.id)}
               role="button"
               tabIndex={0}
               onKeyDown={(e) => e.key === 'Enter' && setSelectedOption(opt.id)}
             >
-              <div className="dea-option-index">{opt.index}</div>
-              <div className="dea-option-title">{opt.title}</div>
-              <div className="dea-option-desc">{opt.desc}</div>
+
+              <div className="position-absolute top-0 start-0 mt-2 ms-3 fw-bold small text-muted">
+                {opt.index}
+              </div>
+
+              <div className="pt-4">
+                <div className="dea-option-title">{opt.title}</div>
+                <div className="dea-option-desc">{opt.desc}</div>
+              </div>
+
             </div>
           ))}
         </div>

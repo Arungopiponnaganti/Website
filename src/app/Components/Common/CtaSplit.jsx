@@ -57,9 +57,15 @@ export default function CtaSplit({
   formNote,
   formFields,
   formSubmitBtn,
-  subject
+  subject,
+  secondaryFormTitle,
+  secondaryFormNote,
+  secondaryFormFields,
+  secondaryFormSubmitBtn,
+  secondarySubject
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSecondaryModalOpen, setIsSecondaryModalOpen] = useState(false);
   const [formData, setFormData] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
@@ -183,9 +189,9 @@ export default function CtaSplit({
                   </Link>
                 )}
                 {secondaryBtn && (
-                  <Link href={secondaryBtn.href} className="btn btn-outline-dark rounded-2 py-2 px-4 fw-medium">
+                  <button onClick={() => setIsSecondaryModalOpen(true)} className="btn btn-outline-dark rounded-2 py-2 px-4 fw-medium">
                     {secondaryBtn.text}
-                  </Link>
+                  </button>
                 )}
               </div>
             </div>
@@ -257,6 +263,20 @@ export default function CtaSplit({
         fields={defaultFormFields}
         metadata={{ 
           subject: subject, 
+          pageTitle: title,
+          pageUrl: typeof window !== 'undefined' ? window.location.pathname : ''
+        }}
+      />
+
+      <DynamicFormModal
+        isOpen={isSecondaryModalOpen}
+        onClose={() => setIsSecondaryModalOpen(false)}
+        title={secondaryFormTitle || 'Book a Call'}
+        description={secondaryFormNote || 'Schedule a call with us.'}
+        submitButtonText={secondaryFormSubmitBtn || 'Submit'}
+        fields={secondaryFormFields || defaultFormFields}
+        metadata={{ 
+          subject: secondarySubject || subject, 
           pageTitle: title,
           pageUrl: typeof window !== 'undefined' ? window.location.pathname : ''
         }}

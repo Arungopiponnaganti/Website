@@ -13,6 +13,22 @@ import AGERelated from '@/app/Components/AIGovernanceEthics/AGERelated';
 import CtaBand from '@/app/Components/Common/CtaBand';
 import { getPageMetadata } from '@/utils/seo';
 
+const governanceReviewFields = [
+{ label: 'Full Name', name: 'name', type: 'text', placeholder: 'John Smith', required: true, colSize: 6 },
+{ label: 'Email', name: 'email', type: 'email', placeholder: 'john@company.com', required: true, colSize: 6 },
+{ label: 'Phone', name: 'phone', type: 'tel', placeholder: '+1 (555) 000-0000', required: true, colSize: 6 },
+{ label: 'Company', name: 'company', type: 'text', placeholder: 'Your company name', required: true, colSize: 6 },
+{ label: 'AI Systems Description', name: 'ai_description', type: 'textarea', placeholder: 'Briefly describe your current AI systems and governance concerns...', required: false, colSize: 12 },
+];
+
+const ethicsFrameworkFields = [
+{ label: 'Full Name', name: 'name', type: 'text', placeholder: 'John Smith', required: true, colSize: 6 },
+{ label: 'Email', name: 'email', type: 'email', placeholder: 'john@company.com', required: true, colSize: 6 },
+{ label: 'Phone', name: 'phone', type: 'tel', placeholder: '+1 (555) 000-0000', required: false, colSize: 6 },
+{ label: 'Company', name: 'company', type: 'text', placeholder: 'Your company name', required: true, colSize: 6 },
+{ label: 'Framework Needs', name: 'framework_needs', type: 'textarea', placeholder: 'Tell us what specific ethics framework components you need...', required: false, colSize: 12 },
+];
+
 export const metadata = getPageMetadata('/ai-automations/ai-governance');
 
 const jsonLd = {
@@ -46,17 +62,25 @@ export default function AIGovernanceEthicsPage() {
         <AGEEngagement />
         <AGEFaq />
         <AGERelated />
-        <CtaBand
-          title="Know your AI governance gaps before a regulator or customer finds them"
-          description="We assess your current AI systems against our six-domain framework and return a written gap analysis — no commitment required. Response within 4 hours."
-          primaryBtn={{ text: 'Start free governance review →', dataCta: 'cta-primary-age' }}
-          secondaryBtn={{ href: '/contact', variant: 'link', text: 'Download ethics framework' }}
-          trustText="Written gap analysis · EU AI Act alignment check included · Response within 4 hours"
-          bgClass="bg-white border-top py-5"
-          useModal={true}
-          modalTitle="Start Free Governance Review"
-          modalDescription="Fill out the form below and we'll get back to you shortly."
-        />
+      <CtaBand
+        title="Know your AI governance gaps before a regulator or customer finds them"
+        description="We assess your current AI systems against our six-domain framework and return a written gap analysis — no commitment required. Response within 4 hours."
+        primaryBtn={{ text: 'Start free governance review →', dataCta: 'cta-primary-age' }}
+        secondaryBtn={{ text: 'Download ethics framework', variant: 'link', dataCta: 'age-cta-secondary' }}
+        trustText="Written gap analysis · EU AI Act alignment check included · Response within 4 hours"
+        bgClass="bg-white border-top py-5"
+        useModal={true}
+        
+        // Primary button modal (governance review)
+        primaryModalTitle="Start Free Governance Review"
+        primaryModalDescription="We assess your current AI systems against our six-domain framework and return a written gap analysis — response within 4 hours."
+        primaryModalFields={governanceReviewFields}
+        
+        // Secondary button modal (ethics framework)
+        secondaryModalTitle="Download Ethics Framework"
+        secondaryModalDescription="Tell us about your needs and we'll send you our comprehensive AI ethics framework template."
+        secondaryModalFields={ethicsFrameworkFields}
+      />
       </div>
     </>
   );

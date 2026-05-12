@@ -197,7 +197,7 @@ export default function CDPArchitecture() {
   const optionTitle = OPTIONS.find((o) => o.id === selectedOption)?.title || '';
 
   return (
-    <section className="cdp-arch-section pb-5">
+    <section className="cdp-arch-section pb-5" id="cdp-architecture">
       <div className="container">
         <SectionTitle
           SubTitle="Architecture options"
@@ -207,22 +207,26 @@ export default function CDPArchitecture() {
           className='mb-3'
         />
 
-        <div className="cdpa-option-cards">
-          {OPTIONS.map((opt) => (
-            <div
-              key={opt.id}
-              className={`cdpa-option-card ${selectedOption === opt.id ? 'active' : ''}`}
-              onClick={() => setSelectedOption(opt.id)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => e.key === 'Enter' && setSelectedOption(opt.id)}
-            >
-              <div className="cdpa-option-index">{opt.index}</div>
+      <div className="cdpa-option-cards">
+        {OPTIONS.map((opt) => (
+          <div
+            key={opt.id}
+            className={`cdpa-option-card position-relative ${selectedOption === opt.id ? 'active' : ''}`}
+            onClick={() => setSelectedOption(opt.id)}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => e.key === 'Enter' && setSelectedOption(opt.id)}
+          >
+            <div className="position-absolute top-0 start-0 mt-2 ms-3 fw-bold small text-muted">
+              {opt.index}
+            </div>
+            <div className="pt-4">
               <div className="cdpa-option-title">{opt.title}</div>
               <div className="cdpa-option-desc">{opt.desc}</div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
+      </div>
 
         <div className="cdpa-header">
           <div className="cdpa-header-left">

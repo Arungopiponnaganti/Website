@@ -1,9 +1,46 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your automation needs...',
+    required: false,
+    colSize: 12
+  },
+];
 
 const PLANS = [
   {
+    label: 'Single workflow',
     theme: 'essential',
     badge: 'Quick win',
     badgeStyle: { background: '#E1F5EE', color: '#085041' },
@@ -18,6 +55,7 @@ const PLANS = [
     ],
   },
   {
+    label: 'Automation programme',
     theme: 'featured',
     badge: 'Most chosen',
     badgeStyle: { background: '#ff3c00', color: '#fff' },
@@ -32,6 +70,7 @@ const PLANS = [
     ],
   },
   {
+    label: 'Automation-as-a-service',
     theme: 'enterprise',
     badge: 'Ongoing',
     badgeStyle: { background: '#EEEDFE', color: '#3C3489' },
@@ -47,6 +86,18 @@ const PLANS = [
 ];
 
 export default function WAEngagement() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState(null);
+
+  const handleCtaClick = (plan) => {
+    setSelectedPlan(plan);
+    setIsModalOpen(true);
+  };
+
+  const getFormFields = () => {
+    return defaultFormFields;
+  };
+
   return (
     <section className="cd-section py-5 pb-5 cd-section-muted border-top border-bottom">
       <div className="container py-4">
@@ -78,18 +129,35 @@ export default function WAEngagement() {
                 </ul>
 
                 <div className="mt-auto" style={{ position: 'absolute', bottom: '30px', left: '30px', right: '30px' }}>
-                  <a
-                    href="/contact"
+                  <button
+                    onClick={() => handleCtaClick(plan)}
                     className={`cd-engage-cta ${plan.theme === 'featured' ? 'cd-cta-filled' : 'cd-cta-outline'}`}
+                    data-cta={plan.label.toLowerCase().replace(' ', '-')}
                   >
                     Scope this &rarr;
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get in Touch"
+        description="Fill out the form below and we'll get back to you shortly about your automation engagement."
+        fields={getFormFields()}
+        metadata={{
+          page: "Workflow Automation",
+          section: "Engagement Options",
+          modal: "Workflow Automation Contact Form",
+          engagementModel: selectedPlan?.label,
+          source: "workflow-automation",
+          formType: `Workflow Automation - ${selectedPlan?.label || 'Inquiry'}`
+        }}
+      />
     </section>
   );
 }

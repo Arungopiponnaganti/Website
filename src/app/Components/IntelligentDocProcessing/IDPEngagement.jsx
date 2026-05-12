@@ -1,6 +1,7 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
 
 const PLANS = [
   {
@@ -46,7 +47,50 @@ const PLANS = [
   },
 ];
 
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your document processing needs...',
+    required: false,
+    colSize: 12
+  },
+];
+
 export default function IDPEngagement() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState(null);
+
+  const handleCtaClick = (plan) => {
+    setSelectedPlan(plan);
+    setIsModalOpen(true);
+  };
+
   return (
     <section className="cd-section py-5 cd-section-muted border-top border-bottom">
       <div className="container py-4">
@@ -69,15 +113,34 @@ export default function IDPEngagement() {
                   {plan.features.map((f, i) => <li key={i}>{f}</li>)}
                 </ul>
                 <div className="mt-auto" style={{ position: 'absolute', bottom: '30px', left: '30px', right: '30px' }}>
-                  <a href="/contact" className={`cd-engage-cta ${plan.theme === 'featured' ? 'cd-cta-filled' : 'cd-cta-outline'}`}>
+                  <button
+                    onClick={() => handleCtaClick(plan)}
+                    className={`cd-engage-cta ${plan.theme === 'featured' ? 'cd-cta-filled' : 'cd-cta-outline'}`}>
                     Scope this &rarr;
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get in Touch"
+        description="Fill out the form below and we'll get back to you shortly about your document processing needs."
+        fields={defaultFormFields}
+        metadata={{
+          page: "Intelligent Document Processing",
+          section: "Engagement Types",
+          modal: "Intelligent Document Processing Contact Form",
+          engagementModel: selectedPlan?.label,
+          source: "intelligent-document-processing",
+          formType: `Intelligent Document Processing - ${selectedPlan?.label || 'Inquiry'}`
+
+        }}
+      />
     </section>
   );
 }

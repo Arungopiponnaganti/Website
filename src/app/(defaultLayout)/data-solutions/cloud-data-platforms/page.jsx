@@ -63,18 +63,24 @@ export default function CloudDataPlatformsPage() {
         <CDPFaq />
         {/* 11 Related services */}
         <CDPRelated />
-        {/* 12 CTA band */}
-        <CtaBand
-          title="Understand your current data infrastructure gaps — before committing to any platform"
-          description="We review your existing data sources, current reporting setup, and team capability — and return a written assessment covering your gaps, a recommended platform approach, and an indicative scope. This is not a sales presentation. It is a structured technical opinion on your situation."
-          primaryBtn={{ text: 'Book free assessment →', dataCta: 'cta-primary-cdp' }}
-          secondaryBtn={{ href: '/contact', variant: 'link', text: 'Send us a question first' }}
-          trustText="Written assessment delivered within 48 hours · No commitment required · You keep the assessment regardless"
-          bgClass="bg-white border-top py-5"
-          useModal={true}
-          modalTitle="Book Free Assessment"
-          modalDescription="Fill out the form below and we'll get back to you shortly."
-        />
+      {/* 12 CTA band */}
+      <CtaBand
+        title="Understand your current data infrastructure gaps — before committing to any platform"
+        description="We review your existing data sources, current reporting setup, and team capability — and return a written assessment covering your gaps, a recommended platform approach, and an indicative scope. This is not a sales presentation. It is a structured technical opinion on your situation."
+        primaryBtn={{ text: 'Book free assessment →', dataCta: 'cta-primary-cdp' }}
+        secondaryBtn={{ href: '#', variant: 'link', text: 'Send us a question first', dataCta: 'cta-secondary-cdp-question' }}
+        trustText="Written assessment delivered within 48 hours · No commitment required · You keep the assessment regardless"
+        bgClass="bg-white border-top py-5"
+        useModal={true}
+        
+        // Primary button modal (free assessment)
+        primaryModalTitle="Book Free Data Platform Assessment"
+        primaryModalDescription="Tell us about your current data infrastructure, reporting setup, and team capabilities. We'll deliver a written assessment covering gaps, recommended platform approach, and indicative scope within 48 hours."
+        
+        // Secondary button modal (ask a question)
+        secondaryModalTitle="Send Us a Question"
+        secondaryModalDescription="Have a question about your data infrastructure or our services? Send it here and we'll get back to you with a thoughtful response."
+      />
       </div>
     </>
   );

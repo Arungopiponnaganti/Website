@@ -1,5 +1,42 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us about your data platform needs...',
+    required: false,
+    colSize: 12
+  },
+];
 
 const PLANS = [
   {
@@ -46,7 +83,26 @@ const PLANS = [
   },
 ];
 
-export default function CDPEngagement() {
+export default function CDPEngagement({
+  subTitle = "How to engage",
+  title = "Three engagement types",
+  desc = "Every engagement starts with a free platform assessment — we review your current data environment, identify the highest-impact gaps, and recommend a scope before any commitment is made.",
+  engagementTypes = PLANS,
+  pageName = "Cloud Data Platforms",
+  sectionName = "Engagement"
+}) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState(null);
+
+  const handleCtaClick = (plan) => {
+    setSelectedPlan(plan);
+    setIsModalOpen(true);
+  };
+
+  const getFormFields = () => {
+    return defaultFormFields;
+  };
+
   return (
     <section className="cd-section py-5 cd-section-muted border-top border-bottom">
       <div className="container py-4">
@@ -78,18 +134,35 @@ export default function CDPEngagement() {
                 </ul>
 
                 <div className="mt-auto" style={{ position: 'absolute', bottom: '30px', left: '30px', right: '30px' }}>
-                  <a
-                    href="/contact"
+                  <button
+                    onClick={() => handleCtaClick(plan)}
                     className={`cd-engage-cta ${plan.theme === 'featured' ? 'cd-cta-filled' : 'cd-cta-outline'}`}
                   >
                     Scope this &rarr;
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get in Touch"
+        description="Fill out the form below and we'll get back to you shortly."
+        fields={getFormFields()}
+        metadata={{
+          page: pageName,
+          section: sectionName,
+          modal: `${pageName} Contact Form`,
+          engagementType: selectedPlan?.title,
+          engagementTheme: selectedPlan?.theme,
+          source: pageName.toLowerCase().replace(' ', '-'),
+          formType: `${pageName} - ${selectedPlan?.title || 'Inquiry'}`
+        }}
+      />
     </section>
   );
 }

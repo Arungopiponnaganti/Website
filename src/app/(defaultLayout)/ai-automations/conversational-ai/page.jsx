@@ -12,7 +12,7 @@ import CAIComparison from '@/app/Components/ConversationalAI/CAIComparison';
 import CAIEngagement from '@/app/Components/ConversationalAI/CAIEngagement';
 import CAIFaq from '@/app/Components/ConversationalAI/CAIFaq';
 import CAIRelated from '@/app/Components/ConversationalAI/CAIRelated';
-import CtaBand from '@/app/Components/Common/CtaBand';
+import CAICtaBand from '@/app/Components/ConversationalAI/CAICtaBand';
 import { getPageMetadata } from '@/utils/seo';
 
 export const metadata = getPageMetadata('/ai-automations/conversational-ai');
@@ -50,17 +50,7 @@ export default function ConversationalAIPage() {
         <CAIEngagement />
         <CAIFaq />
         <CAIRelated />
-        <CtaBand
-          title="See what a custom AI assistant would do for your team"
-          description="We'll map your top three support or operational use cases, sketch the conversation flows, and estimate the resolution rate you can expect. In 60 minutes. Free."
-          primaryBtn={{ text: 'Book free design session →', dataCta: 'cta-primary-cai' }}
-          secondaryBtn={{ href: '/contact', variant: 'link', text: 'Talk to a conversational AI expert' }}
-          trustText="Free 60-minute session · Conversation map delivered within 48 hrs · No commitment required"
-          bgClass="bg-white border-top py-5"
-          useModal={true}
-          modalTitle="Book Free Design Session"
-          modalDescription="Fill out the form below and we'll get back to you shortly."
-        />
+        <CAICtaBand />
       </div>
     </>
   );

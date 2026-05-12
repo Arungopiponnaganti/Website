@@ -17,6 +17,22 @@ import DERelated from '@/app/Components/DataEngineering/DERelated';
 import CtaBand from '@/app/Components/Common/CtaBand';
 import { getPageMetadata } from '@/utils/seo';
 
+const auditFormFields = [
+  { label: 'Full Name', name: 'name', type: 'text', placeholder: 'John Smith', required: true, colSize: 6 },
+  { label: 'Email', name: 'email', type: 'email', placeholder: 'john@company.com', required: true, colSize: 6 },
+  { label: 'Phone', name: 'phone', type: 'tel', placeholder: '+1 (555) 000-0000', required: true, colSize: 6 },
+  { label: 'Company', name: 'company', type: 'text', placeholder: 'Your company name', required: true, colSize: 6 },
+  { label: 'Current Data Setup', name: 'current_setup', type: 'textarea', placeholder: 'Describe your current data pipelines, warehouse, and main challenges...', required: false, colSize: 12 },
+];
+
+const referenceFormFields = [
+  { label: 'Full Name', name: 'name', type: 'text', placeholder: 'John Smith', required: true, colSize: 6 },
+  { label: 'Email', name: 'email', type: 'email', placeholder: 'john@company.com', required: true, colSize: 6 },
+  { label: 'Phone', name: 'phone', type: 'tel', placeholder: '+1 (555) 000-0000', required: true, colSize: 6 },
+  { label: 'Industry', name: 'industry', type: 'text', placeholder: 'Your industry', required: false, colSize: 6 },
+  { label: 'Specific Interest', name: 'interest', type: 'textarea', placeholder: 'What specific reference architectures or data patterns are you interested in?', required: false, colSize: 12 },
+];
+
 export const metadata = getPageMetadata('/data-solutions/data-engineering-pipelines');
 
 const jsonLd = {
@@ -53,17 +69,25 @@ export default function DataEngineeringPipelinesPage() {
         <DEEngagement />
         <DEFaq />
         <DERelated />
-        <CtaBand
-          title="Know exactly what's broken in your data infrastructure — and what to fix first"
-          description="We'll review your current pipelines, warehouse, and data quality posture — and return a written audit with a prioritised improvement roadmap. All free, with no commitment required."
-          primaryBtn={{ text: 'Book free data audit →', dataCta: 'cta-primary-de' }}
-          secondaryBtn={{ href: '/contact', variant: 'link', text: 'See reference architectures' }}
-          trustText="Free 2-hour session · Written report delivered in 48 hrs · No commitment required"
-          bgClass="bg-white border-top py-5"
-          useModal={true}
-          modalTitle="Book Free Data Audit"
-          modalDescription="Fill out the form below and we'll get back to you shortly."
-        />
+      <CtaBand
+        title="Know exactly what's broken in your data infrastructure — and what to fix first"
+        description="We'll review your current pipelines, warehouse, and data quality posture — and return a written audit with a prioritised improvement roadmap. All free, with no commitment required."
+        primaryBtn={{ text: 'Book free data audit →', dataCta: 'de-cta-primary' }}
+        secondaryBtn={{ text: 'See reference architectures', variant: 'link', dataCta: 'de-cta-secondary' }}
+        trustText="Free 2-hour session · Written report delivered in 48 hrs · No commitment required"
+        bgClass="bg-white border-top py-5"
+        useModal={true}
+        
+        // Primary button modal (data audit)
+        primaryModalTitle="Book Free Data Audit"
+        primaryModalDescription="We'll review your current pipelines, warehouse, and data quality posture — and return a written audit with a prioritised improvement roadmap. All free, with no commitment required."
+        primaryModalFields={auditFormFields}
+        
+        // Secondary button modal (reference architectures)
+        secondaryModalTitle="See Reference Architectures"
+        secondaryModalDescription="Get access to our library of proven data architecture patterns, pipeline designs, and implementation guides tailored to your industry."
+        secondaryModalFields={referenceFormFields}
+      />
       </div>
     </>
   );

@@ -100,7 +100,7 @@ export default function MASHero() {
               </p>
 
               <div className="d-flex flex-wrap align-items-center gap-4">
-                <div className="solutek-btn">
+                <div className="solutek-btn me-0">
                   <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="btn-2">
                     Get a support plan &rarr;
                   </Link>
@@ -111,7 +111,7 @@ export default function MASHero() {
                       e.preventDefault();
                       document.getElementById('whats-included')?.scrollIntoView({ behavior: 'smooth' });
                     }} style={{ textTransform: 'none', textDecoration: 'none' }}>
-                      <div style={{ color: '#ff3c00', textDecoration: 'none', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>See what&apos;s included</div>
+                      <div style={{ color: '#ff3c00', textDecoration: 'none', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>See what&apos;s included &darr;</div>
                     </Link>
                   </div>
                 </div>

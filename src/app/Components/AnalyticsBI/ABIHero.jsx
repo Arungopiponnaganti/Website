@@ -98,7 +98,7 @@ export default function ABIHero() {
                 <div className="hero-btn-3">
                   <div className="hero-btn-profile">
                     <Link href="#use-cases" style={{ textTransform: 'none', textDecoration: 'none' }}>
-                      <div style={{ color: '#ff3c00', textDecoration: 'none', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>See our work &darr;</div>
+                      <div style={{ color: '#ff3c00', textDecoration: 'none', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>See our analytics use cases &darr;</div>
                     </Link>
                   </div>
                 </div>

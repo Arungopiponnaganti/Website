@@ -1,6 +1,42 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
 
 const PLANS = [
   {
@@ -44,7 +80,22 @@ const PLANS = [
   },
 ];
 
-export default function DSEngagement() {
+export default function DSEngagement({
+  pageName = "Data Strategy Consulting",
+  sectionName = "Engagement Models"
+}) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState(null);
+
+  const handleCtaClick = (plan) => {
+    setSelectedPlan(plan);
+    setIsModalOpen(true);
+  };
+
+  const getFormFields = () => {
+    return defaultFormFields;
+  };
+
   return (
     <section className="cd-section py-5 pb-5 cd-section-muted border-top border-bottom">
       <div className="container py-4">
@@ -76,18 +127,34 @@ export default function DSEngagement() {
                 </ul>
 
                 <div className="mt-auto" style={{ position: 'absolute', bottom: '30px', left: '30px', right: '30px' }}>
-                  <a
-                    href="/contact"
+                  <button
+                    onClick={() => handleCtaClick(plan)}
                     className={`cd-engage-cta ${plan.theme === 'featured' ? 'cd-cta-filled' : 'cd-cta-outline'}`}
                   >
                     Scope this &rarr;
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get in Touch"
+        description="Fill out the form below and we'll get back to you shortly."
+        fields={getFormFields()}
+        metadata={{
+          page: pageName,
+          section: sectionName,
+          modal: `${pageName} Contact Form`,
+          engagementModel: selectedPlan?.title,
+          source: pageName.toLowerCase().replace(' ', '-'),
+          formType: `${pageName} - ${selectedPlan?.title || 'Inquiry'}`
+        }}
+      />
     </section>
   );
 }

@@ -14,7 +14,7 @@ const ABI_UCS = [
 
 export default function ABIUseCases() {
   return (
-    <section className="cd-section cd-section-muted border-top border-bottom py-5">
+    <section className="cd-section cd-section-muted border-top border-bottom py-5" id="use-cases">
       <div className="container py-4">
         <SectionTitle
           className="text-center mb-3"

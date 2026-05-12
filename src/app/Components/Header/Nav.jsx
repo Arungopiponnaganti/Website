@@ -5,6 +5,7 @@ import DropDown from './DropDown';
 import MegaMenuServices from './MegaMenuServices';
 import MegaMenuAI from './MegaMenuAI';
 import MegaMenuData from './MegaMenuData';
+import MegaMenuIndustries from './MegaMenuIndustries';
 
 function handleMegaMenuLinkClick() {
   document.documentElement.classList.add('mega-nav-clicked');
@@ -19,6 +20,7 @@ export default function Nav({ setMobileToggle }) {
   const megaMenuServicesRef = useRef(null);
   const megaMenuAIRef = useRef(null);
   const megaMenuDataRef = useRef(null);
+  const megaMenuIndustriesRef = useRef(null);
   return (
     <ul className="cs_nav_list fw-medium" onMouseLeave={clearMegaNavClicked}>
       {/* Offcanvas panel header — hidden on desktop via CSS */}
@@ -48,6 +50,10 @@ export default function Nav({ setMobileToggle }) {
       <li className="menu-item-has-children cs-mega_menu" style={{position: 'relative', zIndex: 10001}}>
         <Link href="/data-solutions" style={{position: 'relative', zIndex: 10001}}><i className="bi bi-bar-chart-fill nav-item-icon"></i>Data Solutions</Link>
         <MegaMenuData ref={megaMenuDataRef} setMobileToggle={setMobileToggle} onLinkClick={() => { handleMegaMenuLinkClick(); setMobileToggle(false); megaMenuDataRef.current?.close(); }} />
+      </li>
+      <li className="menu-item-has-children cs-mega_menu" style={{position: 'relative', zIndex: 10001}}>
+        <Link href="/industries" style={{position: 'relative', zIndex: 10001}}><i className="bi bi-buildings-fill nav-item-icon"></i>Industries</Link>
+        <MegaMenuIndustries ref={megaMenuIndustriesRef} setMobileToggle={setMobileToggle} onLinkClick={() => { handleMegaMenuLinkClick(); setMobileToggle(false); megaMenuIndustriesRef.current?.close(); }} />
       </li>
       {/* <li className="menu-item-has-children">
         <Link href="#"><i className="bi bi-journal-bookmark-fill nav-item-icon"></i>Resources</Link>

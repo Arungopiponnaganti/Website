@@ -1,0 +1,142 @@
+/* Related Services Component Styles */
+/* This component is shared across AI Integration and Workflow Automation pages */
+
+.related-services-header {
+  margin-bottom: 3rem;
+}
+
+.related-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+.related-services-card {
+  display: block;
+  text-decoration: none;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 32px 28px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  color: inherit;
+}
+
+.related-services-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #3C3489, #ff3c00);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.related-services-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: #d1d5db;
+}
+
+.related-services-card:hover::before {
+  transform: scaleX(1);
+}
+
+.related-services-card-content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.related-services-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #050a1e;
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+  font-family: var(--heading-font, "Poppins", sans-serif);
+}
+
+.related-services-description {
+  font-size: 15px;
+  color: #6b7280;
+  line-height: 1.7;
+  margin: 0 0 24px 0;
+  flex-grow: 1;
+}
+
+.related-services-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #3C3489;
+  transition: all 0.2s ease;
+  margin-top: auto;
+}
+
+.related-services-link span {
+  position: relative;
+}
+
+.related-services-link span::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #3C3489;
+  transition: width 0.3s ease;
+}
+
+.related-services-card:hover .related-services-link span::after {
+  width: 100%;
+}
+
+.related-services-arrow {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.related-services-card:hover .related-services-arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive for Related Services */
+@media (max-width: 991px) {
+  .related-services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .related-services-card {
+    padding: 28px 24px;
+  }
+}
+
+@media (max-width: 575px) {
+  .related-services-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .related-services-card {
+    padding: 24px 20px;
+  }
+
+  .related-services-header {
+    margin-bottom: 2rem;
+  }
+}

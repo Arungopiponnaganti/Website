@@ -1,6 +1,7 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
 
 const plans = [
   {
@@ -43,7 +44,52 @@ const plans = [
   }
 ];
 
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Company',
+    name: 'company',
+    type: 'text',
+    placeholder: 'Your Company',
+    required: false,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us about your support requirements...',
+    required: false,
+    colSize: 12
+  }
+];
+
 export default function MASEngagement() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState(null);
   const getBadgeStyle = (theme) => {
     switch (theme) {
       case 'essential': return { background: '#E1F5EE', color: '#085041' };
@@ -51,6 +97,11 @@ export default function MASEngagement() {
       case 'enterprise': return { background: '#EEEDFE', color: '#3C3489' };
       default: return {};
     }
+  };
+
+  const handleCtaClick = (plan) => {
+    setSelectedPlan(plan);
+    setIsModalOpen(true);
   };
 
   return (
@@ -82,14 +133,35 @@ export default function MASEngagement() {
                 </ul>
 
                 <div className="mt-auto" style={{ position: 'absolute', bottom: '30px', left: '30px', right: '30px' }}>
-                  <a href="/contact" className={`cd-engage-cta ${plan.theme === 'featured' ? 'cd-cta-filled' : 'cd-cta-outline'}`}>
+                  <button
+                    onClick={() => handleCtaClick(plan)}
+                    className={`cd-engage-cta ${plan.theme === 'featured' ? 'cd-cta-filled' : 'cd-cta-outline'}`}
+                    data-cta={plan.theme}
+                  >
                     Scope this plan &rarr;
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
           ))}
         </div>
+
+        <DynamicFormModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          title="Get in Touch"
+          description="Fill out the form below and we'll get back to you shortly about your support plan."
+          fields={defaultFormFields}
+          metadata={{
+            page: "Managed Application Support",
+            section: "Support Plans",
+            modal: "Managed Application Support Contact Form",
+            supportPlan: selectedPlan?.title,
+            supportPlanType: selectedPlan?.theme,
+            source: "managed-app-support",
+            formType: `Managed Application Support - ${selectedPlan?.title || 'General Inquiry'}`
+          }}
+        />
       </div>
     </section>
   );

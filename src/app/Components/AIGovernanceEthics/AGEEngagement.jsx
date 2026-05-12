@@ -1,6 +1,42 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import SectionTitle from '../Common/SectionTitle';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const defaultFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
 
 const PLANS = [
   {
@@ -15,6 +51,7 @@ const PLANS = [
       'EU AI Act gap analysis',
       'Prioritised remediation roadmap',
     ],
+    ctaText: 'Scope this &rarr',
   },
   {
     theme: 'featured',
@@ -30,6 +67,7 @@ const PLANS = [
       'Staff training programme',
       'Board-ready compliance report',
     ],
+    ctaText: 'Scope this &rarr',
   },
   {
     theme: 'enterprise',
@@ -43,10 +81,26 @@ const PLANS = [
       'Incident response for AI failures',
       'Annual compliance board report',
     ],
+    ctaText: 'Scope this &rarr',
   },
 ];
 
-export default function AGEEngagement() {
+export default function AGEEngagement({
+  pageName = "AI Governance Ethics",
+  sectionName = "Engagement"
+}) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState(null);
+
+  const handleCtaClick = (plan) => {
+    setSelectedPlan(plan);
+    setIsModalOpen(true);
+  };
+
+  const getFormFields = () => {
+    return defaultFormFields;
+  };
+
   return (
     <section className="cd-section py-5 cd-section-muted border-top border-bottom">
       <div className="container py-4">
@@ -68,16 +122,35 @@ export default function AGEEngagement() {
                 <ul className="cd-engage-list mt-4 mb-5">
                   {plan.features.map((f, i) => <li key={i}>{f}</li>)}
                 </ul>
-                <div className="mt-auto" style={{ position: 'absolute', bottom: '30px', left: '30px', right: '30px' }}>
-                  <a href="/contact" className={`cd-engage-cta ${plan.theme === 'featured' ? 'cd-cta-filled' : 'cd-cta-outline'}`}>
-                    Scope this &rarr;
-                  </a>
-                </div>
-              </div>
+            <div className="mt-auto" style={{ position: 'absolute', bottom: '30px', left: '30px', right: '30px' }}>
+              <button
+                onClick={() => handleCtaClick(plan)}
+                className={`cd-engage-cta ${plan.theme === 'featured' ? 'cd-cta-filled' : 'cd-cta-outline'}`}
+              >
+                {plan.ctaText}
+              </button>
             </div>
-          ))}
+              </div>
         </div>
-      </div>
-    </section>
+      ))}
+    </div>
+  </div>
+
+  <DynamicFormModal
+    isOpen={isModalOpen}
+    onClose={() => setIsModalOpen(false)}
+    title="Get in Touch"
+    description="Fill out the form below and we'll get back to you shortly."
+    fields={getFormFields()}
+    metadata={{
+      page: pageName,
+      section: sectionName,
+      modal: `${pageName} Contact Form`,
+      engagementType: selectedPlan?.title,
+      source: pageName.toLowerCase().replace(' ', '-'),
+      formType: `${pageName} - ${selectedPlan?.title || 'Inquiry'}`
+    }}
+  />
+</section>
   );
 }

@@ -98,7 +98,7 @@ export default function CAIHero() {
   const messagesEndRef = useRef(null);
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }, [messages, typing]);
 
   const loadScenario = (idx) => {
@@ -239,7 +239,7 @@ export default function CAIHero() {
                       style={{ textDecoration: 'none' }}
                     >
                       <div style={{ color: '#ff3c00', cursor: 'pointer', fontSize: '16px', fontWeight: '600' }}>
-                        See bot types &rarr;
+                        See bot types &darr;
                       </div>
                     </Link>
                   </div>

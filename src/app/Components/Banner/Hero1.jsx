@@ -14,7 +14,7 @@ const Hero1 = ({ bgImg, SubTitle, Title, Content, BtnText, BtnLink, mainImage, V
 
 
 	return (
-		<div className="hero-area d-flex align-items-center m-0" data-background={bgImg}>
+		<div className="hero-area d-flex align-items-center m-0 p-0" data-background={bgImg}>
 			<div className="container">
 				<div className="row hero align-items-center">
 					<div className="col-lg-6">
