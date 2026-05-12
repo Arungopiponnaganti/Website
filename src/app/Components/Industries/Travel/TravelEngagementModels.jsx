@@ -92,7 +92,7 @@ const models = [
 export default function TravelEngagementModels({
   subTitle = "How to work with us",
   title = "Travel engagement models",
-  desc: "Choose the engagement model that fits your travel organization's needs and timeline.",
+  desc = "Choose the engagement model that fits your travel organization's needs and timeline.",
   engagementModels = models,
   pageName = "Travel, Logistics & Hospitality",
   sectionName = "Engagement Models"
