@@ -3,19 +3,19 @@ import React from 'react';
 
 const METRICS = [
   {
-    value: '95%',
+    value: '~95%',
     desc: 'Extraction accuracy on well-structured invoices, purchase orders, and forms',
     sub: 'Validated across 50+ document types',
     highlight: true,
   },
   {
-    value: '90%',
+    value: '~90%',
     desc: 'Reduction in manual data entry time after a full document pipeline goes live',
     sub: '10× faster than human keying',
     highlight: true,
   },
   {
-    value: '4 sec',
+    value: '~4 sec',
     desc: 'Average end-to-end processing time per document — from ingest to structured output',
     sub: 'Including OCR, extraction, and validation',
     highlight: false,

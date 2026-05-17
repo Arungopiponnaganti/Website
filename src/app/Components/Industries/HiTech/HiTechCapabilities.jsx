@@ -85,7 +85,7 @@ export default function HiTechCapabilities({
   };
 
   return (
-    <section className="cd-section py-5 position-relative" style={{ backgroundColor: '#f8f9fa' }}>
+    <section id="solutions" className="cd-section py-5 position-relative" style={{ backgroundColor: '#f8f9fa' }}>
       <div className="container pt-4">
         <SectionTitle
           className="text-center"

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import websiteContactInfo from "../../Data/contactInfo.json";
 
 const Footer = () => {
 
@@ -38,6 +39,19 @@ const Footer = () => {
         { title: 'Data Strategy Consulting', link: '/data-solutions/data-strategy-consulting' },
     ];
 
+    const Industries = [
+        { title: 'Banking & Fintech', link: '/industries/banking-fintech' },
+        { title: 'Education', link: '/industries/education' },
+        { title: 'Startups', link: '/industries/startups' },
+        { title: 'Healthcare & Life Sciences', link: '/industries/healthcare-life-sciences' },
+        { title: 'Insurance', link: '/industries/insurance' },
+        { title: 'Manufacturing', link: '/industries/manufacturing' },
+        { title: 'Hi Tech', link: '/industries/hi-tech' },
+        { title: 'Professional Services', link: '/industries/professional-services' },
+        { title: 'Retail & Consumer Goods', link: '/industries/retail-consumer-goods' },
+        { title: 'Travel, Logistics & Hospitality', link: '/industries/travel-logistics-hospitality' },
+    ];
+
     const LogoContent = {
         img1: '/assets/images/mayura-logo-footer.png',
         Content: 'Empowering businesses with innovative software, AI-driven automation, and data solutions that accelerate growth and digital transformation.'
@@ -45,7 +59,7 @@ const Footer = () => {
 
     const AdressContent = {
         Title: 'Elevating Customer Experience.',
-        Number: '+44 920 090 505'
+        Number: websiteContactInfo.phone
     };
 
     return (
@@ -64,11 +78,17 @@ const Footer = () => {
                         <div className="col-lg-6 col-md-12">
                             <div className="address-box2 d-flex">
                                 <div className="address-icon">
-                                    <Image src="/assets/images/address2.png" alt="Office location icon" width={34} height={34} />
-
+                                    <a href={`tel:${AdressContent.Number}`}>
+                                        <Image
+                                            src="/assets/images/address2.png"
+                                            alt="Call icon"
+                                            width={34}
+                                            height={34}
+                                        />
+                                    </a>
                                 </div>
-                                <div className="solutek-btn">
-                                    <Link href="/contact">
+                                <div className="solutek-btn" style={{ color: 'beige' }}>
+                                    <Link href={`tel:${AdressContent.Number}`}>
                                         {AdressContent.Number}
                                         <div className="solutek-hover-btn hover-bx"></div>
                                         <div className="solutek-hover-btn hover-bx2"></div>
@@ -84,7 +104,7 @@ const Footer = () => {
             <div className="footer-area">
                 <div className="container">
                     <div className="row footer">
-                        <div className="col-lg-3 col-md-12">
+                        <div className="col-lg-2 col-md-12">
                             <div className="footer-widget">
                                 <div className="footer-logo d-flex justify-content-center pe-md-5 me-md-5">
                                     <Link href="/">
@@ -109,7 +129,7 @@ const Footer = () => {
                                 </div>
                                 <ul>
                                     {UsefulLinks.map((item, i) => (
-                                        <li key={i}><Link href={item.link}>{item.title}</Link></li>
+                                        <li key={i}><Link href={item.link} className="ps-0">{item.title}</Link></li>
                                     ))}
                                 </ul>
                             </div>
@@ -121,7 +141,7 @@ const Footer = () => {
                                 </div>
                                 <ul>
                                     {Services.map((item, i) => (
-                                        <li key={i}><Link href={item.link}>{item.title}</Link></li>
+                                        <li key={i}><Link href={item.link}  className="ps-0">{item.title}</Link></li>
                                     ))}
                                 </ul>
                             </div>
@@ -133,19 +153,31 @@ const Footer = () => {
                                 </div>
                                 <ul>
                                     {AIAutomations.map((item, i) => (
-                                        <li key={i}><Link href={item.link}>{item.title}</Link></li>
+                                        <li key={i}><Link href={item.link}  className="ps-0">{item.title}</Link></li>
                                     ))}
                                 </ul>
                             </div>
                         </div>
-                        <div className="col-lg-3 col-md-6 col-sm-6">
+                        <div className="col-lg-2 col-md-6 col-sm-6">
                             <div className="footer-widget left">
                                 <div className="widget-title">
                                     <h2>Data Solutions</h2>
                                 </div>
                                 <ul>
                                     {DataSolutions.map((item, i) => (
-                                        <li key={i}><Link href={item.link}>{item.title}</Link></li>
+                                        <li key={i}><Link href={item.link}  className="ps-0">{item.title}</Link></li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </div>
+                        <div className="col-lg-2 col-md-6 col-sm-6">
+                            <div className="footer-widget left">
+                                <div className="widget-title">
+                                    <h2>Industries</h2>
+                                </div>
+                                <ul>
+                                    {Industries.map((item, i) => (
+                                        <li key={i}><Link href={item.link}  className="ps-0">{item.title}</Link></li>
                                     ))}
                                 </ul>
                             </div>

@@ -53,11 +53,11 @@ export default function HealthcareHero({
   subheadline = "From telemedicine platforms to clinical decision support systems, we build HIPAA-compliant healthcare technology that improves patient outcomes and operational efficiency.",
   tags = ['HIPAA compliant', 'Telemedicine', 'EHR integration', 'Clinical decision support', 'Patient engagement'],
   primaryCta = { text: "Get a free healthcare tech consultation →" },
-  secondaryCta = { text: "See our healthcare solutions", href: "#solutions" },
+  secondaryCta = { text: "See our healthcare solutions", href: "#process" },
   stats = [
-    { num: 'HIPAA', lbl: 'Compliant infrastructure' },
+    { num: 'Privacy', lbl: 'Data Handling' },
     { num: '24/7', lbl: 'Support for critical systems' },
-    { num: 'FDA', lbl: 'Regulatory experience' },
+    { num: 'Clinical', lbl: 'Workflow Awareness' },
     { num: 'Secure', lbl: 'End-to-end encryption' }
   ],
   formTitle = "Get a Free Healthcare Tech Consultation",

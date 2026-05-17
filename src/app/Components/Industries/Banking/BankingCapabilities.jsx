@@ -85,7 +85,7 @@ export default function BankingCapabilities({
   };
 
   return (
-    <section className="cd-section py-5 position-relative" style={{ backgroundColor: '#f8f9fa' }}>
+    <section id="solutions" className="cd-section py-5 position-relative" style={{ backgroundColor: '#f8f9fa' }}>
       <div className="container pt-4">
         <SectionTitle
           className="text-center"
@@ -166,7 +166,7 @@ export default function BankingCapabilities({
         description={`Tell us about your interest in ${selectedCapability?.title || 'our financial capabilities'}. We'll get back to you shortly.`}
         fields={getFormFields()}
         metadata={{
-          page: 'Banking & Financial Services',
+          page: 'Banking & Fintech',
           section: 'Banking Capabilities',
           modal: 'Banking Capabilities Contact Form',
           capability: selectedCapability?.title,

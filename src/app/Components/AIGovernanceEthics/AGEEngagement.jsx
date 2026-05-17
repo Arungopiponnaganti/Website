@@ -51,7 +51,7 @@ const PLANS = [
       'EU AI Act gap analysis',
       'Prioritised remediation roadmap',
     ],
-    ctaText: 'Scope this &rarr',
+    ctaText: 'Scope this →',
   },
   {
     theme: 'featured',
@@ -67,7 +67,7 @@ const PLANS = [
       'Staff training programme',
       'Board-ready compliance report',
     ],
-    ctaText: 'Scope this &rarr',
+    ctaText: 'Scope this →',
   },
   {
     theme: 'enterprise',
@@ -81,7 +81,7 @@ const PLANS = [
       'Incident response for AI failures',
       'Annual compliance board report',
     ],
-    ctaText: 'Scope this &rarr',
+    ctaText: 'Scope this →',
   },
 ];
 

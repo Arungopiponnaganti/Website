@@ -35,7 +35,7 @@ export default function ManufacturingPage() {
         <ManufacturingHero />
         <ManufacturingCapabilities />
         <ManufacturingProcess />
-        <Technologies />
+        {/* <Technologies /> */}
         <ManufacturingEngagementModels />
         <ManufacturingWhyMayuraSoft />
       </div>

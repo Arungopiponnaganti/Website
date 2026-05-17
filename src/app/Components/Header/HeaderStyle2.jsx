@@ -4,11 +4,57 @@ import Nav from './Nav';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import DynamicFormModal from '../Common/DynamicFormModal';
+
+const quoteFormFields = [
+  {
+    label: 'Full Name',
+    name: 'name',
+    type: 'text',
+    placeholder: 'John Smith',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'john@company.com',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Subject',
+    name: 'subject',
+    type: 'text',
+    placeholder: 'Your Subject Here',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Phone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: '+1 (555) 000-0000',
+    required: true,
+    colSize: 6
+  },
+  {
+    label: 'Message',
+    name: 'message',
+    type: 'textarea',
+    placeholder: 'Tell us more about your project...',
+    required: false,
+    colSize: 12
+  },
+];
+
 export default function HeaderStyle2({ variant }) {
   const [mobileToggle, setMobileToggle] = useState(false);
   const [isSticky, setIsSticky] = useState();
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const mobileOpenRef = useRef(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -95,7 +141,11 @@ export default function HeaderStyle2({ variant }) {
               </div>
               <div className="cs_main_header_right d-none d-md-flex align-items-center">
                 <div className="header-btn d-flex align-items-center">
-                  <Link href="/contact" className="" >
+                  <Link
+                    href="#"
+                    onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }}
+                    className=""
+                  >
                     Get a Quote Now
                     <i className="bi bi-arrow-right"></i>
                   </Link>
@@ -105,6 +155,16 @@ export default function HeaderStyle2({ variant }) {
           </div>
         </div>
       </header>
+
+      <DynamicFormModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        title="Get a Quote"
+        description="Fill out the form below and we'll get back to you shortly."
+        submitButtonText="Submit"
+        fields={quoteFormFields}
+        metadata={{ service: 'get-a-quote', pageTitle: 'Header', pageUrl: typeof window !== 'undefined' ? window.location.pathname : '' }}
+      />
     </>
   );
 }

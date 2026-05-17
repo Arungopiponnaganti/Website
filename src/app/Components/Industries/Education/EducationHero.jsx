@@ -53,7 +53,7 @@ export default function EducationHero({
   subheadline = "From learning management systems to virtual classrooms, we build education technology that enhances teaching and learning experiences.",
   tags = ['EdTech solutions', 'LMS platforms', 'Virtual classrooms', 'Student engagement', 'Analytics'],
   primaryCta = { text: "Get a free EdTech consultation →" },
-  secondaryCta = { text: "See our education solutions", href: "#solutions" },
+  secondaryCta = { text: "See our education solutions", href: "#process" },
   stats = [
     { num: 'SCORM', lbl: 'Compliant platforms' },
     { num: 'Mobile-first', lbl: 'Learning experiences' },

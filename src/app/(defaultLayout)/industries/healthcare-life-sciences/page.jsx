@@ -35,7 +35,7 @@ export default function HealthcareLifeSciencesPage() {
         <HealthcareHero />
         <HealthcareCapabilities />
         <HealthcareProcess />
-        <Technologies />
+        {/* <Technologies /> */}
         <HealthcareEngagementModels />
         <HealthcareWhyMayuraSoft />
       </div>

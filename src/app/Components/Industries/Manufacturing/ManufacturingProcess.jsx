@@ -10,7 +10,7 @@ const STEPS = [
     cards: [
       { t: 'Factory walkthrough', d: 'With operations managers and engineers', icon: 'bi-people-fill', theme: 'bento-orange' },
       { t: 'System audit', d: 'Existing manufacturing infrastructure', icon: 'bi-gear-fill', theme: 'bento-purple' },
-      { t: 'IoT assessment', d: 'Sensor and connectivity evaluation', icon: 'bi-wifi-fill', theme: 'bento-green' }
+      { t: 'IoT assessment', d: 'Sensor and connectivity evaluation', icon: 'bi-wifi', theme: 'bento-green' }
     ]
   },
   {
@@ -28,9 +28,9 @@ const STEPS = [
     desc: 'We develop smart manufacturing applications with rigorous testing. Each sprint delivers tested, reliable code with full documentation for manufacturing IT teams.',
     outputs: ['Working manufacturing application modules', 'IoT sensor integration', 'Automation system development', 'Comprehensive documentation'],
     cards: [
-      { t: 'Smart development', d: 'Following manufacturing best practices', icon: 'bi-code-slash-fill', theme: 'bento-purple' },
+      { t: 'Smart development', d: 'Following manufacturing best practices', icon: 'bi-code-slash', theme: 'bento-purple' },
       { t: 'IoT integration', d: 'Sensor connectivity and data collection', icon: 'bi-cpu-fill', theme: 'bento-green' },
-      { t: 'Automation testing', d: 'Process validation and safety testing', icon: 'bi-robot-fill', theme: 'bento-orange' }
+      { t: 'Automation testing', d: 'Process validation and safety testing', icon: 'bi-robot', theme: 'bento-orange' }
     ]
   },
   {
@@ -39,8 +39,8 @@ const STEPS = [
     outputs: ['User acceptance testing results', 'Performance validation report', 'Safety certification', 'Operational efficiency metrics'],
     cards: [
       { t: 'Production testing', d: 'With manufacturing professionals', icon: 'bi-person-check-fill', theme: 'bento-blue' },
-      { t: 'Performance validation', d: 'Throughput and efficiency testing', icon: 'bi-graph-up-fill', theme: 'bento-yellow' },
-      { t: 'Safety certification', d: 'Operational safety documentation', icon: 'bi-shield-check-fill', theme: 'bento-pink' }
+      { t: 'Performance validation', d: 'Throughput and efficiency testing', icon: 'bi-graph-up', theme: 'bento-yellow' },
+      { t: 'Safety certification', d: 'Operational safety documentation', icon: 'bi-shield-check', theme: 'bento-pink' }
     ]
   },
   {
@@ -49,8 +49,8 @@ const STEPS = [
     outputs: ['Production deployment', '24/7 monitoring setup', 'Incident response procedures', 'Training and documentation'],
     cards: [
       { t: 'Reliable deployment', d: 'Following manufacturing deployment protocols', icon: 'bi-rocket-takeoff-fill', theme: 'bento-green' },
-      { t: 'Monitoring setup', d: '24/7 production and equipment monitoring', icon: 'bi-activity-fill', theme: 'bento-orange' },
-      { t: 'Staff training', d: 'Comprehensive training for manufacturing teams', icon: 'bi-person-video3-fill', theme: 'bento-purple' }
+      { t: 'Monitoring setup', d: '24/7 production and equipment monitoring', icon: 'bi-activity', theme: 'bento-orange' },
+      { t: 'Staff training', d: 'Comprehensive training for manufacturing teams', icon: 'bi-person-video3', theme: 'bento-purple' }
     ]
   }
 ];

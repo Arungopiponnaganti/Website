@@ -48,20 +48,20 @@ const defaultFormFields = [
 ];
 
 export default function BankingHero({
-  badgeText = "Banking & Financial Services",
+  badgeText = "Banking & Fintech",
   title = "Secure, scalable fintech solutions for modern financial institutions",
   subheadline = "From digital banking platforms to payment processing systems, we build compliant financial technology that enhances customer experience and operational efficiency.",
   tags = ['PCI DSS compliant', 'Digital banking', 'Payment processing', 'Risk management', 'Wealth management'],
   primaryCta = { text: "Get a free fintech consultation →" },
-  secondaryCta = { text: "See our financial solutions", href: "#solutions" },
+  secondaryCta = { text: "See our financial solutions", href: "#process" },
   stats = [
-    { num: 'PCI DSS', lbl: 'Compliant infrastructure' },
+    { num: 'Payment', lbl: 'Security Practices' },
     { num: '99.9%', lbl: 'System uptime SLA' },
-    { num: 'SOC 2', lbl: 'Security certified' },
+    { num: 'Security', lbl: 'Architecture Review' },
     { num: 'Real-time', lbl: 'Transaction processing' }
   ],
   formTitle = "Get a Free Fintech Consultation",
-  formMetadata = { service: 'banking-financial-services', pageTitle: 'Banking & Financial Services' }
+  formMetadata = { service: 'banking-fintech', pageTitle: 'Banking & Fintech' }
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 

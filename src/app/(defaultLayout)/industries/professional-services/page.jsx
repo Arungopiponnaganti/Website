@@ -35,7 +35,7 @@ export default function ProfessionalServicesPage() {
         <ProfessionalServicesHero />
         <ProfessionalServicesCapabilities />
         <ProfessionalServicesProcess />
-        <Technologies />
+        {/* <Technologies /> */}
         <ProfessionalServicesEngagementModels />
         <ProfessionalServicesWhyMayuraSoft />
       </div>

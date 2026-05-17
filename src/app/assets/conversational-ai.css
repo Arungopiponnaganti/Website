@@ -678,6 +678,7 @@
   border: none;
   background: transparent;
   text-align: left;
+  justify-content: left;
   border-radius: 9px;
   cursor: pointer;
   font-size: 13.5px;

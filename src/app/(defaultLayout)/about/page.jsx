@@ -18,10 +18,10 @@ const page = () => {
                 SubTitle="MAYURASOFT COMPANY"
                 Title="We Help Clients With<br> Technology <span>Solutions.</span>"
                 Content="MayuraSoft delivers enterprise-grade software solutions. We specialize in custom development, cloud infrastructure, and data engineering for businesses worldwide."
-                listTitle1="Best IT Solutions & Service"
+                listTitle1="Practical IT Solutions & Services"
                 listTitle2="24/7 Customer Support"  
-                BoxTitle1="826"
-                BoxTitle2="Satisfied Clients"                  
+                BoxTitle1="100%"
+                BoxTitle2="QUALITY FOCUSED"                  
             ></About4>
             <Faq></Faq>
             {/* <Project1 

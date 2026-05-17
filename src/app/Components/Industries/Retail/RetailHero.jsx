@@ -53,7 +53,7 @@ export default function RetailHero({
   subheadline = "From e-commerce platforms to inventory management systems, we build retail technology that enhances customer experience and operational efficiency.",
   tags = ['Omnichannel', 'E-commerce', 'Inventory management', 'Customer experience', 'Analytics'],
   primaryCta = { text: "Get a free retail tech consultation →" },
-  secondaryCta = { text: "See our retail solutions", href: "#solutions" },
+  secondaryCta = { text: "See our retail solutions", href: "#process" },
   stats = [
     { num: 'Omnichannel', lbl: 'Commerce platforms' },
     { num: 'Real-time', lbl: 'Inventory tracking' },

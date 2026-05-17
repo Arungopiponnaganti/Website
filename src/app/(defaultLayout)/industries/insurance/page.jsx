@@ -35,7 +35,7 @@ export default function InsurancePage() {
         <InsuranceHero />
         <InsuranceCapabilities />
         <InsuranceProcess />
-        <Technologies />
+        {/* <Technologies /> */}
         <InsuranceEngagementModels />
         <InsuranceWhyMayuraSoft />
       </div>

@@ -3,7 +3,7 @@ import data from '../../Data/feature.json'
 
 const Features = () => {
     return (
-        <div className="feature-area">
+        <div className="feature-area"  style={{overflow:"hidden"}}>
                 <div className="container">
                     <div className="row about align-items-center">
                         <div className="feature-box">

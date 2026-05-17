@@ -53,7 +53,7 @@ export default function EnergyHero({
   subheadline = "From smart grid solutions to renewable energy management, we build energy technology that optimizes operations and reduces environmental impact.",
   tags = ['Smart grid', 'Renewable energy', 'IoT monitoring', 'Energy analytics', 'Sustainability'],
   primaryCta = { text: "Get a free energy tech consultation →" },
-  secondaryCta = { text: "See our energy solutions", href: "#solutions" },
+  secondaryCta = { text: "See our energy solutions", href: "#process" },
   stats = [
     { num: 'Smart Grid', lbl: 'Ready infrastructure' },
     { num: 'Real-time', lbl: 'Energy monitoring' },

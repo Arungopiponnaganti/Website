@@ -49,8 +49,8 @@ const heroProps = {
   secondaryCta: { text: "See Audit Process ", href: "#process" },
   stats: [
     { num: '7-10 days', lbl: 'Standard audit turnaround' },
-    { num: '100+', lbl: 'Systems evaluated' },
-    { num: 'Zero', lbl: 'Post-acquisition tech surprises' },
+    { num: 'Full-stack', lbl: 'Technical Review' },
+    { num: 'Risk-led', lbl: 'Findings Report' },
     { num: 'Actionable', lbl: 'Clear remediation roadmaps' }
   ],
   formTitle: "Request a Sample Audit Report",

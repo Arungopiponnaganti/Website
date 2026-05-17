@@ -56,10 +56,10 @@ const Home = () => {
                 Content="We deliver software that works, AI that integrates cleanly into your operations, and data pipelines your team can trust. No scope creep. No vendor lock-in. Just reliable outcomes with a free audit and complete handover on every engagement."
                 listTitle1="End-to-End Software Delivery"
                 listTitle2="AI & Data Engineering"
-                BoxTitle1="10+"
-                BoxTitle2="Years of Experience"
-                BtnUrl="/about"
-                BtnText="EXPLORE MORE"
+                BoxTitle1="100%"
+                BoxTitle2="QUALITY FOCUSED"
+                formTitle="Get in Touch"
+                formMetadata={{ pageTitle: 'Home' }}
             ></WhyChooseUs>
             <ScaleHero
                 tagline="Ship Faster."

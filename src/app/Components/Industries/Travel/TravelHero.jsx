@@ -53,7 +53,7 @@ export default function TravelHero({
   subheadline = "From booking platforms to logistics management systems, we build travel technology that enhances customer experience and operational efficiency.",
   tags = ['Smart mobility', 'Logistics management', 'Booking platforms', 'Customer experience', 'Real-time tracking'],
   primaryCta = { text: "Get a free travel tech consultation →" },
-  secondaryCta = { text: "See our travel solutions", href: "#solutions" },
+  secondaryCta = { text: "See our travel solutions", href: "#process" },
   stats = [
     { num: 'Real-time', lbl: 'Tracking systems' },
     { num: 'Smart', lbl: 'Mobility solutions' },

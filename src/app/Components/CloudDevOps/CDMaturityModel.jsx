@@ -174,7 +174,7 @@ export default function CDMaturityModel() {
 
         {/* ── Assessment panel ── */}
         <div className="row justify-content-center">
-          <div className="col-lg-10">
+          <div className="col-lg-12">
 
             <div className="cdm-panel">
               {/* Column headers */}

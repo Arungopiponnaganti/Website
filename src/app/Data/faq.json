@@ -1,14 +1,22 @@
 [
-  {  
-    "title": "What Medical Services Do You Provide?",
-    "desc": "Appropriately promote enterprise-wide vortals throuh innovative information evolve go forward markets whereas synergistic applications power full sound quality vectors without equity invested best practices revolutionize enterprise-wide vortals through innovative."
+  {
+    "title": "What IT services do you provide?",
+    "desc": "We provide end-to-end IT services including custom software development, web and mobile app development, cloud solutions, UI/UX design, quality assurance, DevOps, IT consulting, and ongoing support for businesses of all sizes."
   },
   {
-    "title": "What is your customer geography?",
-    "desc": "Appropriately promote enterprise-wide vortals throuh innovative information evolve go forward markets whereas synergistic applications power full sound quality vectors without equity invested best practices revolutionize enterprise-wide vortals through innovative."
+    "title": "Do you build custom software for specific business needs?",
+    "desc": "Yes. We work closely with clients to understand their workflows, goals, and challenges, then design and develop tailored software solutions that improve efficiency, scalability, and customer experience."
   },
   {
-     "title": "What are the main industries we serve?",
-    "desc": "Appropriately promote enterprise-wide vortals throuh innovative information evolve go forward markets whereas synergistic applications power full sound quality vectors without equity invested best practices revolutionize enterprise-wide vortals through innovative."
+    "title": "Can you support and maintain existing applications?",
+    "desc": "Absolutely. Our team can audit, optimize, modernize, and maintain existing applications, including bug fixes, performance improvements, security updates, feature enhancements, and long-term technical support."
+  },
+  {
+    "title": "Which industries do you serve?",
+    "desc": "We serve clients across industries such as healthcare, finance, education, e-commerce, logistics, real estate, hospitality, and professional services, adapting our technology solutions to each industry’s needs."
+  },
+  {
+    "title": "How do you manage project communication and delivery?",
+    "desc": "We follow a transparent delivery process with clear milestones, regular updates, agile development practices, progress tracking, and dedicated communication channels to keep clients involved throughout the project."
   }
 ]

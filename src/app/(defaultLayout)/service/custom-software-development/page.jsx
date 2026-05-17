@@ -41,7 +41,7 @@ export default function CustomSoftwareDevelopmentPage() {
         <Capabilities />
         <DevProcess />
         {/* <TechStack /> */}
-        <Technologies />
+        {/* <Technologies /> */}
         <EngagementModels />
         <WhyMayuraSoft />
         {/* <RelatedServices /> */}

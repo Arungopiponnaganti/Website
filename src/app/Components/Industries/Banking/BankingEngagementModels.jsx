@@ -94,7 +94,7 @@ export default function BankingEngagementModels({
   title = "Financial engagement models",
   desc = "Choose the engagement model that fits your financial organization's needs and timeline.",
   engagementModels = models,
-  pageName = "Banking & Financial Services",
+  pageName = "Banking & Fintech",
   sectionName = "Engagement Models"
 }) {
   const [isModalOpen, setIsModalOpen] = useState(false);

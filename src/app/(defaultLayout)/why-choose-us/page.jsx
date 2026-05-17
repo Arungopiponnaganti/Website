@@ -19,8 +19,10 @@ const page = () => {
         Content="Monotonectally repurpose maintainable infrastructure whereas MayuraSoft in fermentum quis tempo sapien maximus design."
         listTitle1="Best IT Solutions & Service"
         listTitle2="24 Hour's Customer Service"
-        BoxTitle1="826"
-        BoxTitle2="Satisfied Clients"
+        BoxTitle1="100%"
+        BoxTitle2="QUALITY FOCUSED"
+        formTitle="Get in Touch"
+        formMetadata={{ pageTitle: 'Why Choose Us' }}
       ></WhyChooseUs>
       <Faq />
       {/* <Project1

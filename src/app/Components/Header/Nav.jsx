@@ -96,12 +96,17 @@ export default function Nav({ setMobileToggle }) {
                 <i className="bi bi-award nav-sub-icon"></i>Why Choose Us
               </Link>
             </li>
-            {/* <li>
+            <li>
               <Link href="/careers" onClick={() => setMobileToggle(false)}>
                 <i className="bi bi-briefcase nav-sub-icon"></i>Careers
               </Link>
             </li>
             <li>
+              <Link href="/contact" onClick={() => setMobileToggle(false)}>
+                <i className="bi bi-envelope nav-sub-icon"></i>Contact
+              </Link>
+            </li>
+            {/* <li>
               <Link href="/partners" onClick={() => setMobileToggle(false)}>
                 <i className="bi bi-diagram-3 nav-sub-icon"></i>Partners & Technology
               </Link>

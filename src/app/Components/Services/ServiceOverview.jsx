@@ -132,7 +132,7 @@ const ServiceOverview = ({ bgImage, ClassAdd }) => {
                     </div>
                 </div>
                 <div className="container">
-                  <div className="service-grid">
+                  <div className="service-grid pt-0">
                     {data.map((item, i) => (
                       <Link href={item.btnLink} key={i} className="service-single-box text-decoration-none">
                         <div className="service-icon" style={{ color: '#ff3b00' }}>

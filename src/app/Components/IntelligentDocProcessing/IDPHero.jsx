@@ -94,12 +94,11 @@ export default function IDPHero() {
               </div>
 
               <h1 className="mb-4 d-block" style={{ fontSize: 'clamp(30px, 3.5vw, 44px)', lineHeight: 1.2 }}>
-                Stop rekeying data. Let AI read, classify, and act on every document automatically.
+                Reduce manual document entry with AI-assisted extraction, validation, and routing.
               </h1>
 
               <p className="subheadline text-white" style={{ fontSize: '17px', lineHeight: '1.65', maxWidth: '560px', marginBottom: '32px' }}>
-                MayuraSoft builds end-to-end document intelligence pipelines — extracting structured data from
-                invoices, contracts, forms, and reports, then routing them to the right system and person automatically.
+                MayuraSoft builds document processing workflows that extract structured data from invoices, contracts, forms, and reports, then route it to the right system or review queue.
               </p>
 
               {/* Proof points */}
@@ -109,9 +108,9 @@ export default function IDPHero() {
                 border: '1px solid rgba(255,255,255,0.1)', borderRadius: '10px',
               }}>
                 {[
-                  '95%+ extraction accuracy on well-structured documents',
+                  'Per-field confidence scoring for extracted data',
                   'Works with PDFs, scanned images, emails, and web forms',
-                  'Connects to your ERP, CRM, or any downstream system',
+                  'Connects to ERP, CRM, document management, or internal systems',
                   'Human review queue for low-confidence extractions',
                 ].map((item, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14px', color: '#d1d5db' }}>

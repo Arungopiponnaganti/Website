@@ -11,9 +11,9 @@ export default function ServicesCtaBand() {
         dataCta: 'cta-services-primary',
       }}
       secondaryBtn={{
-        text: 'View our process',
-        href: '/process',
-        variant: 'secondary',
+        text: 'sales@mayurasoft.com',
+        href: 'mailto:sales@mayurasoft.com',
+        variant: 'outline-light',
       }}
       useModal={true}
       modalTitle="Start Your Project"

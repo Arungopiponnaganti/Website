@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const About1 = ({ MainImg, ImgTitle, SubTitle, Title, Content, listTitle, BottomText, BtnUrl, BtnText }) => {
     return (
-        <div className="about-area">
+        <div className="about-area"  style={{overflow:"hidden"}}>
             <div className="container">
                 <div className="row align-items-center">
                     <div className="col-lg-6 col-lg-6">

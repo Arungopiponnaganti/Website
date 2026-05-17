@@ -20,7 +20,7 @@ const STEPS = [
     cards: [
       { t: 'User experience design', d: 'Student and instructor workflows', icon: 'bi-person-fill', theme: 'bento-blue' },
       { t: 'Learning design', d: 'Course structure and learning paths', icon: 'bi-book-fill', theme: 'bento-pink' },
-      { t: 'Accessibility review', d: 'WCAG and educational accessibility', icon: 'bi-universal-access-fill', theme: 'bento-yellow' }
+      { t: 'Accessibility review', d: 'WCAG and educational accessibility', icon: 'bi-eye', theme: 'bento-yellow' }
     ]
   },
   {
@@ -28,8 +28,8 @@ const STEPS = [
     desc: 'We develop engaging educational applications with rigorous testing. Each sprint delivers tested, accessible code with full documentation for educational IT teams.',
     outputs: ['Working educational application modules', 'LMS integration', 'Content management systems', 'Comprehensive documentation'],
     cards: [
-      { t: 'Engaging development', d: 'Following educational best practices', icon: 'bi-code-slash-fill', theme: 'bento-purple' },
-      { t: 'LMS integration', d: 'SCORM, LTI standards implementation', icon: 'diagram-3-fill', theme: 'bento-green' },
+      { t: 'Engaging development', d: 'Following educational best practices', icon: 'bi-code-slash', theme: 'bento-purple' },
+      { t: 'LMS integration', d: 'SCORM, LTI standards implementation', icon: 'bi-diagram-3-fill', theme: 'bento-green' },
       { t: 'Accessibility testing', d: 'WCAG validation and usability testing', icon: 'bi-eye-fill', theme: 'bento-orange' }
     ]
   },
@@ -39,7 +39,7 @@ const STEPS = [
     outputs: ['User acceptance testing results', 'Learning outcome validation', 'Accessibility certification', 'Performance metrics'],
     cards: [
       { t: 'Educational testing', d: 'With educators and students', icon: 'bi-person-check-fill', theme: 'bento-blue' },
-      { t: 'Learning validation', d: 'Outcome and engagement testing', icon: 'bi-graph-up-fill', theme: 'bento-yellow' },
+      { t: 'Learning validation', d: 'Outcome and engagement testing', icon: 'bi-graph-up', theme: 'bento-yellow' },
       { t: 'Accessibility certification', d: 'WCAG and educational documentation', icon: 'bi-file-earmark-check-fill', theme: 'bento-pink' }
     ]
   },
@@ -49,8 +49,8 @@ const STEPS = [
     outputs: ['Production deployment', '24/7 monitoring setup', 'Incident response procedures', 'Training and documentation'],
     cards: [
       { t: 'Reliable deployment', d: 'Following educational deployment protocols', icon: 'bi-rocket-takeoff-fill', theme: 'bento-green' },
-      { t: 'Monitoring setup', d: '24/7 learning platform monitoring', icon: 'bi-activity-fill', theme: 'bento-orange' },
-      { t: 'Staff training', d: 'Comprehensive training for educational teams', icon: 'bi-person-video3-fill', theme: 'bento-purple' }
+      { t: 'Monitoring setup', d: '24/7 learning platform monitoring', icon: 'bi-activity', theme: 'bento-orange' },
+      { t: 'Staff training', d: 'Comprehensive training for educational teams', icon: 'bi-person-video3', theme: 'bento-purple' }
     ]
   }
 ];

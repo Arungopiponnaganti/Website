@@ -39,7 +39,7 @@ export default function ProductEngineeringPage() {
         <PECapabilities />
         <PEEngagementModels />
         <PEDevProcess />
-        <Technologies />
+        {/* <Technologies /> */}
         <PEPricing />
         <PEFaq />
         <PECtaBand />

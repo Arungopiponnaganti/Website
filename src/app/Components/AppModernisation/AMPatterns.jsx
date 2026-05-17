@@ -161,8 +161,8 @@ export default function AMPatterns() {
         <div className="am-pat-layout">
 
           {/* Sidebar nav */}
-          <nav className="qes-nav">
-            <div className="qes-nav-label">Patterns</div>
+          <nav className="am-pat-nav">
+            <div className="am-pat-nav-label">Patterns</div>
             {patterns.map((pat, i) => (
               <button
                 key={pat.id}
@@ -298,9 +298,6 @@ export default function AMPatterns() {
           padding: 8px 12px 6px;
         }
         .am-pat-nav-item {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
           padding: 12px 14px;
           border-radius: 9px;
           border: none;
@@ -310,6 +307,7 @@ export default function AMPatterns() {
           font-weight: 500;
           color: #6b7280;
           text-align: left;
+          justify-content: flex-start;
           cursor: pointer;
           transition: background 0.18s, color 0.18s;
           line-height: 1.35;

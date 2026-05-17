@@ -8,12 +8,12 @@ import BankingWhyMayuraSoft from '@/app/Components/Industries/Banking/BankingWhy
 import Technologies from '@/app/Components/technologies/Technologies';
 import { getPageMetadata } from '@/utils/seo';
 
-export const metadata = getPageMetadata('/industries/banking-financial-services');
+export const metadata = getPageMetadata('/industries/banking-fintech');
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  name: 'Banking & Financial Services',
+  name: 'Banking & Fintech',
   provider: {
     '@type': 'Organization',
     name: 'MayuraSoft',
@@ -21,7 +21,7 @@ const jsonLd = {
   },
   description: 'Secure, scalable fintech solutions for modern banking and financial institutions with compliance and security.',
   areaServed: 'Worldwide',
-  serviceType: 'Banking & Financial Services'
+  serviceType: 'Banking & Fintech'
 };
 
 export default function BankingFinancialServicesPage() {
@@ -35,7 +35,7 @@ export default function BankingFinancialServicesPage() {
         <BankingHero />
         <BankingCapabilities />
         <BankingProcess />
-        <Technologies />
+        {/* <Technologies /> */}
         <BankingEngagementModels />
         <BankingWhyMayuraSoft />
       </div>

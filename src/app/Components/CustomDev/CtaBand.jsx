@@ -1,5 +1,6 @@
 import React from 'react';
 import CtaBand from '../Common/CtaBand';
+import websiteContactInfo from '../../Data/contactInfo.json';
 
 export default function CustomDevCtaBand() {
   return (
@@ -13,8 +14,8 @@ export default function CustomDevCtaBand() {
         dataCta: 'cta-band-primary',
       }}
       secondaryBtn={{
-        text: 'info@mayurasoft.com',
-        href: 'mailto:info@mayurasoft.com',
+        text: websiteContactInfo.email,
+        href: `mailto:${websiteContactInfo.email}`,
         variant: 'link',
       }}
       useModal={true}

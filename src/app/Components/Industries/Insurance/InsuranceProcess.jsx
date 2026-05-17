@@ -28,9 +28,9 @@ const STEPS = [
     desc: 'We develop secure, scalable insurance applications with rigorous testing. Each sprint delivers tested, compliant code with full documentation for insurance IT teams.',
     outputs: ['Working insurance application modules', 'Automated security testing', 'Integration with insurance systems', 'Comprehensive documentation'],
     cards: [
-      { t: 'Secure development', d: 'Following insurance security best practices', icon: 'bi-code-slash-fill', theme: 'bento-purple' },
+      { t: 'Secure development', d: 'Following insurance security best practices', icon: 'bi-code-slash', theme: 'bento-purple' },
       { t: 'Claims integration', d: 'Claims processing and automation', icon: 'bi-clipboard-check-fill', theme: 'bento-green' },
-      { t: 'Compliance testing', d: 'Insurance validation and security audits', icon: 'bi-shield-check-fill', theme: 'bento-orange' }
+      { t: 'Compliance testing', d: 'Insurance validation and security audits', icon: 'bi-shield-check', theme: 'bento-orange' }
     ]
   },
   {
@@ -49,8 +49,8 @@ const STEPS = [
     outputs: ['Production deployment', '24/7 monitoring setup', 'Incident response procedures', 'Training and documentation'],
     cards: [
       { t: 'Secure deployment', d: 'Following insurance deployment protocols', icon: 'bi-rocket-takeoff-fill', theme: 'bento-green' },
-      { t: 'Monitoring setup', d: '24/7 health and security monitoring', icon: 'bi-activity-fill', theme: 'bento-orange' },
-      { t: 'Staff training', d: 'Comprehensive training for insurance teams', icon: 'bi-person-video3-fill', theme: 'bento-purple' }
+      { t: 'Monitoring setup', d: '24/7 health and security monitoring', icon: 'bi-activity', theme: 'bento-orange' },
+      { t: 'Staff training', d: 'Comprehensive training for insurance teams', icon: 'bi-person-video3', theme: 'bento-purple' }
     ]
   }
 ];

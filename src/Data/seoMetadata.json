@@ -7,7 +7,7 @@
   },
   "/about": {
     "title": "About MayuraSoft — IT Services Company | 10+ Years",
-    "description": "Learn about MayuraSoft — an IT services company delivering software, AI, and data solutions with 10+ years of experience and a free audit on every engagement.",
+    "description": "Learn about MayuraSoft — an IT services company delivering software, AI, and data solutions with 100% client satisfaction and a free audit on every engagement.",
     "keywords": "about mayurasoft, IT services company, software development company, AI integration services",
     "ogImage": "/openGraphImage.jpg"
   },
@@ -97,7 +97,7 @@
   },
   "/ai-automations/document-processing": {
     "title": "Intelligent Document Processing | MayuraSoft",
-    "description": "Automate document processing with AI-powered IDP solutions. Extract data from PDFs, images, and handwritten documents with high accuracy using advanced machine learning.",
+    "description": "Automate document intake, extraction, validation, and routing for PDFs, scanned documents, forms, and emails using AI-assisted workflows. Improve accuracy and efficiency with confidence scoring, human review, and seamless integration to downstream systems.",
     "keywords": "document processing, IDP, intelligent document processing, OCR",
     "ogImage": "/openGraphImage.jpg"
   },

@@ -53,7 +53,7 @@ export default function InsuranceHero({
   subheadline = "From policy management systems to claims automation, we build insurance technology that enhances customer experience and operational efficiency.",
   tags = ['Digital insurance', 'Claims automation', 'Policy management', 'Risk assessment', 'Customer experience'],
   primaryCta = { text: "Get a free insurance tech consultation →" },
-  secondaryCta = { text: "See our insurance solutions", href: "#solutions" },
+  secondaryCta = { text: "See our insurance solutions", href: "#process" },
   stats = [
     { num: 'Compliant', lbl: 'Regulatory infrastructure' },
     { num: 'AI-powered', lbl: 'Claims processing' },

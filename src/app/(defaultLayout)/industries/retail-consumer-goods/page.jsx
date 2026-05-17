@@ -35,7 +35,7 @@ export default function RetailConsumerGoodsPage() {
         <RetailHero />
         <RetailCapabilities />
         <RetailProcess />
-        <Technologies />
+        {/* <Technologies /> */}
         <RetailEngagementModels />
         <RetailWhyMayuraSoft />
       </div>

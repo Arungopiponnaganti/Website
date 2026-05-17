@@ -24,7 +24,7 @@ const jsonLd = {
     url: 'https://mayurasoft.com',
   },
   description:
-    'End-to-end document intelligence — AI extraction, classification, validation, and downstream routing for invoices, contracts, KYC forms, medical records, and logistics documents. 95%+ extraction accuracy, 4-second processing, 3-week delivery.',
+    'End-to-end document processing workflows for invoices, contracts, KYC forms, medical records, and logistics documents, with extraction, validation, review queues, and downstream system integration.',
   areaServed: 'Worldwide',
   serviceType: 'Intelligent Document Processing & AI Data Extraction',
 };
@@ -66,7 +66,7 @@ export default function IntelligentDocumentProcessingPage() {
         <IDPRelated />
         <CtaBand
           title="Start with a free document processing audit"
-          description="Send us three sample documents. We'll assess extraction complexity, recommend the right approach, and give you an accuracy estimate — within 48 hours. No commitment required."
+          description="Send us a few sample documents. We'll assess extraction complexity, recommend the right approach, and outline a practical implementation path. No commitment required."
           primaryBtn={{ 
             text: 'Get free doc audit →', 
             dataCta: 'idp-cta-primary' 

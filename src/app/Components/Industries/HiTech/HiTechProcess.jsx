@@ -28,9 +28,9 @@ const STEPS = [
     desc: 'We develop innovative technology applications with rigorous testing. Each sprint delivers tested, scalable code with full documentation for enterprise IT teams.',
     outputs: ['Working technology application modules', 'Cloud infrastructure deployment', 'AI/ML model integration', 'Comprehensive documentation'],
     cards: [
-      { t: 'Innovative development', d: 'Following enterprise technology best practices', icon: 'bi-code-slash-fill', theme: 'bento-purple' },
+      { t: 'Innovative development', d: 'Following enterprise technology best practices', icon: 'bi-code-slash', theme: 'bento-purple' },
       { t: 'Cloud integration', d: 'Cloud-native deployment and scaling', icon: 'bi-cloud-fill', theme: 'bento-green' },
-      { t: 'AI/ML testing', d: 'Model validation and performance testing', icon: 'bi-robot-fill', theme: 'bento-orange' }
+      { t: 'AI/ML testing', d: 'Model validation and performance testing', icon: 'bi-robot', theme: 'bento-orange' }
     ]
   },
   {
@@ -39,8 +39,8 @@ const STEPS = [
     outputs: ['User acceptance testing results', 'Performance validation report', 'Security certification', 'Innovation metrics'],
     cards: [
       { t: 'Technology testing', d: 'With technology professionals', icon: 'bi-person-check-fill', theme: 'bento-blue' },
-      { t: 'Performance validation', d: 'Scalability and performance testing', icon: 'bi-graph-up-fill', theme: 'bento-yellow' },
-      { t: 'Security certification', d: 'Enterprise security documentation', icon: 'bi-shield-check-fill', theme: 'bento-pink' }
+      { t: 'Performance validation', d: 'Scalability and performance testing', icon: 'bi-graph-up', theme: 'bento-yellow' },
+      { t: 'Security certification', d: 'Enterprise security documentation', icon: 'bi-shield-check', theme: 'bento-pink' }
     ]
   },
   {
@@ -49,8 +49,8 @@ const STEPS = [
     outputs: ['Production deployment', '24/7 monitoring setup', 'Incident response procedures', 'Training and documentation'],
     cards: [
       { t: 'Reliable deployment', d: 'Following enterprise deployment protocols', icon: 'bi-rocket-takeoff-fill', theme: 'bento-green' },
-      { t: 'Monitoring setup', d: '24/7 technology infrastructure monitoring', icon: 'bi-activity-fill', theme: 'bento-orange' },
-      { t: 'Staff training', d: 'Comprehensive training for technology teams', icon: 'bi-person-video3-fill', theme: 'bento-purple' }
+      { t: 'Monitoring setup', d: '24/7 technology infrastructure monitoring', icon: 'bi-activity', theme: 'bento-orange' },
+      { t: 'Staff training', d: 'Comprehensive training for technology teams', icon: 'bi-person-video3', theme: 'bento-purple' }
     ]
   }
 ];

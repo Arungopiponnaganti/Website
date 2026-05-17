@@ -126,21 +126,46 @@ export default function AMFaq() {
                   <button
                     onClick={() => setOpenIdx(openIdx === idx ? -1 : idx)}
                     style={{
-                      width: '100%', display: 'flex', justifyContent: 'space-between',
-                      alignItems: 'center', gap: '16px',
-                      padding: '22px 0', border: 'none', background: 'transparent',
-                      textAlign: 'left', cursor: 'pointer', fontFamily: 'inherit',
+                      width: '100%',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      gap: '16px',
+                      padding: '22px 0',
+                      border: 'none',
+                      background: 'transparent',
+                      textAlign: 'left',
+                      cursor: 'pointer',
+                      fontFamily: 'inherit',
                     }}
                   >
-                    <span style={{ fontSize: '16px', fontWeight: '600', color: openIdx === idx ? '#1a1e2d' : '#444', lineHeight: '1.4' }}>
+                    <span
+                      style={{
+                        fontSize: '16px',
+                        fontWeight: '600',
+                        color: openIdx === idx ? '#1a1e2d' : '#444',
+                        lineHeight: '1.4',
+                        textAlign: 'left',
+                        flex: 1,              // takes remaining width
+                        display: 'block',
+                      }}
+                    >
                       {faq.q}
                     </span>
-                    <div style={{
-                      width: '30px', height: '30px', borderRadius: '50%', flexShrink: 0,
-                      background: openIdx === idx ? '#1a1e2d' : '#f0f0f0',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      transition: 'background 0.2s',
-                    }}>
+
+                    <div
+                      style={{
+                        width: '30px',
+                        height: '30px',
+                        borderRadius: '50%',
+                        flexShrink: 0,
+                        background: openIdx === idx ? '#1a1e2d' : '#f0f0f0',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        transition: 'background 0.2s',
+                      }}
+                    >
                       <i
                         className="bi bi-plus-lg"
                         style={{
@@ -153,16 +178,15 @@ export default function AMFaq() {
                       />
                     </div>
                   </button>
-
                   <div style={{
                     maxHeight: openIdx === idx ? '400px' : '0',
                     overflow: 'hidden',
                     transition: 'max-height 0.35s ease',
                   }}>
-                    <p className="am-faq-answer" style={{
+                    <p className="am-faq-answer ps-4" style={{
                       fontSize: '15px', color: '#6c757d', lineHeight: '1.75',
                       margin: '0 0 22px',
-                      paddingRight: '46px',
+                      paddingRight: '40px',
                     }}>
                       {faq.a}
                     </p>

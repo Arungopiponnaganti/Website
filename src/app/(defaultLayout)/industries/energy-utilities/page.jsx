@@ -35,7 +35,7 @@ export default function EnergyUtilitiesPage() {
         <EnergyHero />
         <EnergyCapabilities />
         <EnergyProcess />
-        <Technologies />
+        {/* <Technologies /> */}
         <EnergyEngagementModels />
         <EnergyWhyMayuraSoft />
       </div>

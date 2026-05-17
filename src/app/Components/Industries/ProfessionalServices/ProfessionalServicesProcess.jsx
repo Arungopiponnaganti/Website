@@ -28,9 +28,9 @@ const STEPS = [
     desc: 'We develop secure, scalable professional services applications with rigorous testing. Each sprint delivers tested, compliant code with full documentation for professional services IT teams.',
     outputs: ['Working professional services application modules', 'Automated security testing', 'Integration with professional services systems', 'Comprehensive documentation'],
     cards: [
-      { t: 'Secure development', d: 'Following professional services security best practices', icon: 'bi-code-slash-fill', theme: 'bento-purple' },
+      { t: 'Secure development', d: 'Following professional services security best practices', icon: 'bi-lock-fill', theme: 'bento-purple' },
       { t: 'Practice integration', d: 'Client management and automation', icon: 'bi-gear-fill', theme: 'bento-green' },
-      { t: 'Compliance testing', d: 'Professional services validation and security audits', icon: 'bi-shield-check-fill', theme: 'bento-orange' }
+      { t: 'Compliance testing', d: 'Professional services validation and security audits', icon: 'bi-shield-lock-fill', theme: 'bento-orange' }
     ]
   },
   {
@@ -49,8 +49,8 @@ const STEPS = [
     outputs: ['Production deployment', '24/7 monitoring setup', 'Incident response procedures', 'Training and documentation'],
     cards: [
       { t: 'Secure deployment', d: 'Following professional services deployment protocols', icon: 'bi-rocket-takeoff-fill', theme: 'bento-green' },
-      { t: 'Monitoring setup', d: '24/7 health and security monitoring', icon: 'bi-activity-fill', theme: 'bento-orange' },
-      { t: 'Staff training', d: 'Comprehensive training for professional services teams', icon: 'bi-person-video3-fill', theme: 'bento-purple' }
+      { t: 'Monitoring setup', d: '24/7 health and security monitoring', icon: 'bi-activity', theme: 'bento-orange' },
+      { t: 'Staff training', d: 'Comprehensive training for professional services teams', icon: 'bi-mortarboard-fill', theme: 'bento-purple' }
     ]
   }
 ];

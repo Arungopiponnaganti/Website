@@ -10,7 +10,7 @@ const STEPS = [
     cards: [
       { t: 'Stakeholder workshops', d: 'With banking executives, IT teams', icon: 'bi-people-fill', theme: 'bento-orange' },
       { t: 'Regulatory review', d: 'PCI DSS, SOC 2, financial regulations', icon: 'bi-shield-fill-check', theme: 'bento-purple' },
-      { t: 'System audit', d: 'Existing banking infrastructure', icon: 'bi-bank-fill', theme: 'bento-green' }
+      { t: 'System audit', d: 'Existing banking infrastructure', icon: 'bi-bank', theme: 'bento-green' }
     ]
   },
   {
@@ -28,9 +28,9 @@ const STEPS = [
     desc: 'We develop secure, scalable financial applications with rigorous testing. Each sprint delivers tested, compliant code with full documentation for financial IT teams.',
     outputs: ['Working financial application modules', 'Automated security testing', 'Integration with payment systems', 'Comprehensive documentation'],
     cards: [
-      { t: 'Secure development', d: 'Following financial security best practices', icon: 'bi-code-slash-fill', theme: 'bento-purple' },
+      { t: 'Secure development', d: 'Following financial security best practices', icon: 'bi-code-slash', theme: 'bento-purple' },
       { t: 'Payment integration', d: 'Payment gateway and processing', icon: 'bi-credit-card-fill', theme: 'bento-green' },
-      { t: 'Compliance testing', d: 'PCI DSS validation and security audits', icon: 'bi-shield-check-fill', theme: 'bento-orange' }
+      { t: 'Compliance testing', d: 'PCI DSS validation and security audits', icon: 'bi-shield-check', theme: 'bento-orange' }
     ]
   },
   {
@@ -49,8 +49,8 @@ const STEPS = [
     outputs: ['Production deployment', '24/7 monitoring setup', 'Incident response procedures', 'Training and documentation'],
     cards: [
       { t: 'Secure deployment', d: 'Following financial deployment protocols', icon: 'bi-rocket-takeoff-fill', theme: 'bento-green' },
-      { t: 'Monitoring setup', d: '24/7 health and security monitoring', icon: 'bi-activity-fill', theme: 'bento-orange' },
-      { t: 'Staff training', d: 'Comprehensive training for banking teams', icon: 'bi-person-video3-fill', theme: 'bento-purple' }
+      { t: 'Monitoring setup', d: '24/7 health and security monitoring', icon: 'bi-activity', theme: 'bento-orange' },
+      { t: 'Staff training', d: 'Comprehensive training for banking teams', icon: 'bi-person-video3', theme: 'bento-purple' }
     ]
   }
 ];

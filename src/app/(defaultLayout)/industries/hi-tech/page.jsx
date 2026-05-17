@@ -35,7 +35,7 @@ export default function HiTechPage() {
         <HiTechHero />
         <HiTechCapabilities />
         <HiTechProcess />
-        <Technologies />
+        {/* <Technologies /> */}
         <HiTechEngagementModels />
         <HiTechWhyMayuraSoft />
       </div>

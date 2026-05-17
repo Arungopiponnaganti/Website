@@ -35,7 +35,7 @@ export default function EducationPage() {
         <EducationHero />
         <EducationCapabilities />
         <EducationProcess />
-        <Technologies />
+        {/* <Technologies /> */}
         <EducationEngagementModels />
         <EducationWhyMayuraSoft />
       </div>

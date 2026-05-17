@@ -28,7 +28,7 @@ const STEPS = [
     desc: 'We develop smart energy applications with rigorous testing. Each sprint delivers tested, reliable code with full documentation for energy IT teams.',
     outputs: ['Working energy application modules', 'IoT sensor integration', 'Smart grid system development', 'Comprehensive documentation'],
     cards: [
-      { t: 'Smart development', d: 'Following energy industry best practices', icon: 'bi-code-slash-fill', theme: 'bento-purple' },
+      { t: 'Smart development', d: 'Following energy industry best practices', icon: 'bi-code-slash', theme: 'bento-purple' },
       { t: 'IoT integration', d: 'Sensor connectivity and data collection', icon: 'bi-cpu-fill', theme: 'bento-green' },
       { t: 'Grid testing', d: 'Smart grid validation and testing', icon: 'bi-lightning-charge-fill', theme: 'bento-orange' }
     ]
@@ -40,7 +40,7 @@ const STEPS = [
     cards: [
       { t: 'Energy testing', d: 'With energy professionals', icon: 'bi-person-check-fill', theme: 'bento-blue' },
       { t: 'Performance validation', d: 'Throughput and efficiency testing', icon: 'bi-graph-up-fill', theme: 'bento-yellow' },
-      { t: 'Safety certification', d: 'Operational safety documentation', icon: 'bi-shield-check-fill', theme: 'bento-pink' }
+      { t: 'Safety certification', d: 'Operational safety documentation', icon: 'bi-shield-check', theme: 'bento-pink' }
     ]
   },
   {
@@ -49,8 +49,8 @@ const STEPS = [
     outputs: ['Production deployment', '24/7 monitoring setup', 'Incident response procedures', 'Training and documentation'],
     cards: [
       { t: 'Reliable deployment', d: 'Following energy deployment protocols', icon: 'bi-rocket-takeoff-fill', theme: 'bento-green' },
-      { t: 'Monitoring setup', d: '24/7 energy infrastructure monitoring', icon: 'bi-activity-fill', theme: 'bento-orange' },
-      { t: 'Staff training', d: 'Comprehensive training for energy teams', icon: 'bi-person-video3-fill', theme: 'bento-purple' }
+      { t: 'Monitoring setup', d: '24/7 energy infrastructure monitoring', icon: 'bi-activity', theme: 'bento-orange' },
+      { t: 'Staff training', d: 'Comprehensive training for energy teams', icon: 'bi-person-video3', theme: 'bento-purple' }
     ]
   }
 ];

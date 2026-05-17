@@ -53,7 +53,7 @@ export default function ProfessionalServicesHero({
   subheadline = "From client management systems to practice automation, we build professional services technology that enhances client experience and operational efficiency.",
   tags = ['Client management', 'Practice automation', 'Digital workflows', 'Analytics', 'Compliance'],
   primaryCta = { text: "Get a free professional services consultation →" },
-  secondaryCta = { text: "See our service solutions", href: "#solutions" },
+  secondaryCta = { text: "See our service solutions", href: "#process" },
   stats = [
     { num: 'Compliant', lbl: 'Regulatory infrastructure' },
     { num: 'Digital-first', lbl: 'Service operations' },

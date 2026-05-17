@@ -50,7 +50,7 @@ const Process2 = () => {
                     <div className="row">
                         <div className="col-lg-12">
                             <div className="working-process-bottom">
-                                <p>We are Delivering The Best Customer Experience <span> since 2016</span></p>
+                                <p>We are Delivering The Best Customer Experience <span>from audit to handover</span></p>
                             </div>
                         </div>
                     </div>

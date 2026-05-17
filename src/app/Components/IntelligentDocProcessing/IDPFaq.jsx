@@ -5,23 +5,23 @@ import SectionTitle from '../Common/SectionTitle';
 const FAQ_LIST = [
   {
     q: 'How accurate is AI extraction compared to manual data entry?',
-    a: 'For well-structured documents like standard invoices and forms, our extraction pipelines achieve 95–98% accuracy out of the box — matching or exceeding typical human keying accuracy. For irregular or handwritten documents the baseline is lower (88–93%), but accuracy improves significantly with a fine-tuning pass on your specific document variants. Every extraction also includes a confidence score; anything below your threshold routes automatically to a human review queue rather than propagating low-confidence data downstream.',
+    a: 'Accuracy depends on document layout, scan quality, handwriting, field complexity, and the validation rules around each field. We start by reviewing sample documents, identifying the target fields, and defining confidence thresholds. Fields below your threshold can be routed to a human review queue instead of being posted automatically.',
   },
   {
     q: 'Can it handle documents in multiple languages or regional formats?',
-    a: 'Yes. Our pipelines support multi-language OCR and extraction natively — English, Hindi, Tamil, Arabic, German, French, and 80+ additional languages. Regional format variations (Indian GST invoice formats, EU VAT layouts, US 1099 forms, etc.) are handled through format-specific extraction templates layered on top of the base LLM extraction. In our experience, Indian document variety (GSTIN formats, regional language annotations) is one of the harder challenges — and one we have specifically tuned for.',
+    a: 'Yes, but language and format support should be checked against your actual document samples. Multi-language OCR, regional invoice layouts, GST/VAT formats, and mixed-language annotations can be evaluated during the sample document audit. Based on that review, we recommend extraction templates, validation rules, and review steps for the formats you use most often.',
   },
   {
     q: 'What happens when the extraction gets something wrong?',
-    a: 'Every document gets a per-field confidence score. Fields below a configurable threshold — or documents the model is uncertain about classifying — route automatically to a human review queue with the extracted value pre-populated for correction. Corrections flow back into the model retraining pipeline, so accuracy improves over time. Nothing wrong propagates downstream silently. You also get a monitoring dashboard showing accuracy trends, exception rates, and processing volumes — so you can see if accuracy degrades and investigate before it causes problems.',
+    a: 'Every extracted field can carry a confidence score. Fields below a configurable threshold, or documents the model is uncertain about classifying, can be routed to a review queue with the extracted value pre-populated for correction. Corrections can be captured and used to improve extraction rules, prompts, templates, or models over time. The goal is to prevent uncertain data from moving downstream silently.',
   },
   {
     q: 'Do we need to replace our existing ERP or document management system?',
-    a: 'No. The extraction pipeline sits in front of your existing systems, not instead of them. We build integration connectors to whatever you already run — SAP, Oracle, Tally, QuickBooks, Zoho, Salesforce, SharePoint, or custom internal systems. Documents still end up exactly where they always did; they just arrive structured, verified, and routed automatically rather than requiring manual keying. The most common integration pattern is: receive raw document → extract → validate → post to existing system via API or file-based exchange.',
+    a: 'No. The extraction workflow can sit in front of your existing systems, not replace them. We can connect outputs to ERP, CRM, document management, accounting, or custom internal systems through APIs, webhooks, or file-based exchange. The common pattern is: receive the raw document, extract target fields, validate them, send exceptions for review, and then pass approved data downstream.',
   },
   {
     q: 'How long does it take to go live with a new document type?',
-    a: 'For a standard, well-structured document type (invoice, PO, KYC form), a working extraction pipeline takes 2–4 weeks: one week for dataset preparation and model configuration, one week for validation and integration, one week for UAT with your team. Complex document types with high variation, handwriting, or multi-page structures take 4–8 weeks. Every engagement starts with a free document audit — you send us 20 sample documents and we assess extraction complexity, give you an accuracy estimate, and provide a precise delivery timeline.',
+    a: 'Timeline depends on the document type, layout variation, scan quality, target fields, review rules, and downstream integrations. A focused rollout usually starts with one document type so the extraction, validation, review, and handoff flow can be tested end to end. During the sample document audit, we assess complexity and outline a practical implementation path before recommending scope or timeline.',
   },
 ];
 

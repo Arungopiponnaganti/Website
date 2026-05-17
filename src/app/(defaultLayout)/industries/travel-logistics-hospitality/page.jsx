@@ -35,7 +35,7 @@ export default function TravelLogisticsHospitalityPage() {
         <TravelHero />
         <TravelCapabilities />
         <TravelProcess />
-        <Technologies />
+        {/* <Technologies /> */}
         <TravelEngagementModels />
         <TravelWhyMayuraSoft />
       </div>

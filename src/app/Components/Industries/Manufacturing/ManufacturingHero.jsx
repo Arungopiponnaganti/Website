@@ -53,7 +53,7 @@ export default function ManufacturingHero({
   subheadline = "From IoT-enabled production lines to predictive maintenance systems, we build manufacturing technology that optimizes operations and reduces downtime.",
   tags = ['Industry 4.0', 'IoT integration', 'Predictive maintenance', 'Smart factory', 'Automation'],
   primaryCta = { text: "Get a free manufacturing tech consultation →" },
-  secondaryCta = { text: "See our manufacturing solutions", href: "#solutions" },
+  secondaryCta = { text: "See our manufacturing solutions", href: "#process" },
   stats = [
     { num: 'Industry 4.0', lbl: 'Ready infrastructure' },
     { num: 'Real-time', lbl: 'Production monitoring' },

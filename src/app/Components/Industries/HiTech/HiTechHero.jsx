@@ -53,7 +53,7 @@ export default function HiTechHero({
   subheadline = "From cloud-native applications to AI-powered platforms, we build cutting-edge technology that drives innovation and competitive advantage.",
   tags = ['Cloud-native', 'AI/ML', 'Microservices', 'DevOps', 'Scalable architecture'],
   primaryCta = { text: "Get a free hi-tech consultation →" },
-  secondaryCta = { text: "See our tech solutions", href: "#solutions" },
+  secondaryCta = { text: "See our tech solutions", href: "#process" },
   stats = [
     { num: 'Cloud', lbl: 'Native architecture' },
     { num: 'AI-powered', lbl: 'Intelligent solutions' },

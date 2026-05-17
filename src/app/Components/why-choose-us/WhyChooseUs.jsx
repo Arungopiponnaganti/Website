@@ -1,9 +1,20 @@
 "use client"
 import parse from 'html-react-parser';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
+import DynamicFormModal from '../Common/DynamicFormModal';
 
-const WhyChooseUs = ({MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxTitle1,BoxTitle2}) => {
+const defaultFormFields = [
+  { name: 'fullName', label: 'Full Name', type: 'text', placeholder: 'Enter your full name', required: true },
+  { name: 'email', label: 'Email Address', type: 'email', placeholder: 'Enter your email address', required: true },
+  { name: 'phone', label: 'Phone Number', type: 'tel', placeholder: 'Enter your phone number', required: false },
+  { name: 'company', label: 'Company Name', type: 'text', placeholder: 'Enter your company name', required: false },
+  { name: 'service', label: 'Service Interested In', type: 'select', placeholder: 'Select a service', required: true, options: ['Software Development', 'AI Integration', 'Data Engineering', 'Other'] }
+];
+
+const WhyChooseUs = ({MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxTitle1,BoxTitle2, formTitle, formMetadata}) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
 			<div className="why-choose-us-area">
@@ -24,7 +35,7 @@ const WhyChooseUs = ({MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxTi
 									</ul>
 								</div>
 								<div className="solutek-btn">
-									<Link href="/contact">EXPLORE MORE
+									<Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }}>EXPLORE MORE
 										<div className="solutek-hover-btn hover-bx"></div>
 										<div className="solutek-hover-btn hover-bx2"></div>
 										<div className="solutek-hover-btn hover-bx3"></div>
@@ -38,7 +49,7 @@ const WhyChooseUs = ({MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxTi
 										</div>
 										<div className="why-choose-us-counter-content">
 											<h4 className="counter">{BoxTitle1}</h4>
-											<span>+</span>
+											{/* <span>+</span> */}
 											<p>{BoxTitle2}</p>
 										</div>
 									</div>
@@ -58,6 +69,15 @@ const WhyChooseUs = ({MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxTi
 						</div>
 					</div>
 				</div>
+        <DynamicFormModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          title={formTitle || 'Get in Touch'}
+          description="Fill out the form below and we'll get back to you shortly."
+          submitButtonText="Submit"
+          fields={defaultFormFields}
+          metadata={formMetadata || {}}
+        />
 			</div>
     );
 };
