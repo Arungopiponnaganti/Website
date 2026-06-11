@@ -107,40 +107,36 @@ const jobApplicationFields = [
   { name: 'coverLetter', label: 'Cover Letter', type: 'textarea', placeholder: 'Tell us why you are a great fit for this role...', required: false, fullWidth: true }
 ];
 
-const JobCard = ({ job, isOpen, onToggle, onApply }) => {
+const JobCard = ({ job, onApply }) => {
   return (
     <div
-      className="job-card"
       style={{
         background: '#fff',
         borderRadius: '16px',
-        marginBottom: '20px',
-        border: isOpen ? '2px solid #ff3b00' : '2px solid #e5e7eb',
+        border: '1px solid #e5e7eb',
+        padding: '28px 32px',
         transition: 'all 0.3s ease',
-        overflow: 'hidden',
-        boxShadow: isOpen ? '0 12px 40px rgba(255, 59, 0, 0.15)' : '0 4px 20px rgba(0, 0, 0, 0.06)'
+        boxShadow: '0 4px 15px rgba(0, 0, 0, 0.04)',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '16px'
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.1)';
+        e.currentTarget.style.borderColor = '#ff3b00';
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.04)';
+        e.currentTarget.style.borderColor = '#e5e7eb';
       }}
     >
-      <div
-        className="job-header"
-        onClick={onToggle}
-        style={{
-          padding: '24px 28px',
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          cursor: 'pointer',
-          background: isOpen ? 'linear-gradient(135deg, rgba(255, 59, 0, 0.03) 0%, rgba(255, 107, 53, 0.03) 100%)' : 'transparent'
-        }}
-      >
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '20px' }}>
         <div style={{ flex: 1 }}>
           <h3 style={{
             fontSize: '1.25rem',
-            fontWeight: '800',
-            color: isOpen ? '#ff3b00' : '#1f2937',
-            marginBottom: '8px',
-            letterSpacing: '-0.3px',
-            transition: 'color 0.3s ease'
+            fontWeight: '700',
+            color: '#1f2937',
+            marginBottom: '14px',
           }}>
             {job.title}
           </h3>
@@ -148,10 +144,13 @@ const JobCard = ({ job, isOpen, onToggle, onApply }) => {
             <span style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '6px',
-              fontSize: '0.875rem',
+              gap: '5px',
+              fontSize: '0.85rem',
               color: '#6b7280',
-              fontWeight: '500'
+              fontWeight: '500',
+              background: '#f3f4f6',
+              padding: '4px 10px',
+              borderRadius: '6px'
             }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
@@ -162,10 +161,13 @@ const JobCard = ({ job, isOpen, onToggle, onApply }) => {
             <span style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '6px',
-              fontSize: '0.875rem',
+              gap: '5px',
+              fontSize: '0.85rem',
               color: '#6b7280',
-              fontWeight: '500'
+              fontWeight: '500',
+              background: '#f3f4f6',
+              padding: '4px 10px',
+              borderRadius: '6px'
             }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <circle cx="12" cy="12" r="10" />
@@ -176,160 +178,75 @@ const JobCard = ({ job, isOpen, onToggle, onApply }) => {
             <span style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '6px',
-              fontSize: '0.875rem',
+              gap: '5px',
+              fontSize: '0.85rem',
               color: '#6b7280',
-              fontWeight: '500'
+              fontWeight: '500',
+              background: '#f3f4f6',
+              padding: '4px 10px',
+              borderRadius: '6px'
             }}>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
               </svg>
-              {job.experience} experience
+              {job.experience}
             </span>
           </div>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-          <span style={{
-            background: 'linear-gradient(135deg, #ff3b00 0%, #ff6b35 100%)',
-            color: 'white',
-            padding: '8px 16px',
-            borderRadius: '10px',
-            fontSize: '0.8rem',
-            fontWeight: '700',
-            letterSpacing: '0.5px',
-            textTransform: 'uppercase'
-          }}>
-            Apply Now
-          </span>
-          <i
-            className="bi bi-chevron-down"
-            style={{
-              transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-              transition: 'transform 0.3s ease',
-              color: isOpen ? '#ff3b00' : '#888',
-              fontSize: '1.25rem'
-            }}
-          />
+        <div style={{
+          background: 'linear-gradient(135deg, #ff3b00 0%, #ff6b35 100%)',
+          color: 'white',
+          padding: '10px 20px',
+          borderRadius: '8px',
+          fontSize: '0.8rem',
+          fontWeight: '600',
+          cursor: 'pointer',
+          whiteSpace: 'nowrap',
+          boxShadow: '0 4px 12px rgba(255, 59, 0, 0.3)',
+        }}
+        onClick={() => onApply(job)}>
+          Apply Now
         </div>
       </div>
 
-      <div
-        className="job-details"
-        style={{
-          maxHeight: isOpen ? '600px' : '0',
-          padding: isOpen ? '0 28px 28px 28px' : '0 28px',
-          opacity: isOpen ? 1 : 0,
-          transition: 'all 0.4s ease'
-        }}
-      >
-        <div style={{
-          borderTop: '1px solid #e5e7eb',
-          paddingTop: '20px',
-          marginTop: '0'
+      <div style={{
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingTop: '16px',
+        borderTop: '1px solid #f3f4f6'
+      }}>
+        <span style={{
+          fontSize: '0.9rem',
+          fontWeight: '600',
+          color: '#ff3b00'
         }}>
-          <p style={{
-            color: '#666',
-            fontSize: '0.95rem',
-            lineHeight: '1.7',
-            marginBottom: '20px'
-          }}>
-            {job.description}
-          </p>
-
-          <div style={{ marginBottom: '20px' }}>
-            <h4 style={{
-              fontSize: '1rem',
-              fontWeight: '700',
-              color: '#1f2937',
-              marginBottom: '12px',
-              textTransform: 'uppercase',
-              letterSpacing: '0.5px'
+          {job.salary}
+        </span>
+        <div style={{
+          display: 'flex',
+          gap: '16px',
+          alignItems: 'center'
+        }}>
+          {job.requirements.slice(0, 3).map((req, idx) => (
+            <span key={idx} style={{
+              fontSize: '0.8rem',
+              color: '#9ca3af',
+              background: '#f9fafb',
+              padding: '4px 10px',
+              borderRadius: '4px'
             }}>
-              Requirements
-            </h4>
-            <ul style={{
-              listStyle: 'none',
-              padding: 0,
-              margin: 0,
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-              gap: '10px'
+              {req.split(' ')[0]}...
+            </span>
+          ))}
+          {job.requirements.length > 3 && (
+            <span style={{
+              fontSize: '0.8rem',
+              color: '#6b7280'
             }}>
-              {job.requirements.map((req, idx) => (
-                <li key={idx} style={{
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  gap: '10px',
-                  color: '#4b5563',
-                  fontSize: '0.9rem',
-                  lineHeight: '1.5'
-                }}>
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ff3b00" strokeWidth="2.5" style={{ flexShrink: 0, marginTop: '2px' }}>
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                  {req}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div style={{
-            background: 'linear-gradient(135deg, rgba(255, 59, 0, 0.05) 0%, rgba(255, 107, 53, 0.05) 100%)',
-            padding: '16px 20px',
-            borderRadius: '12px',
-            borderLeft: '4px solid #ff3b00',
-            display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            flexWrap: 'wrap',
-            gap: '12px'
-          }}>
-            <div>
-              <strong style={{
-                display: 'block',
-                fontSize: '0.75rem',
-                color: '#6b7280',
-                textTransform: 'uppercase',
-                letterSpacing: '0.5px',
-                marginBottom: '4px'
-              }}>
-                Salary Range
-              </strong>
-              <span style={{
-                fontSize: '1.1rem',
-                fontWeight: '800',
-                color: '#ff3b00'
-              }}>
-                {job.salary}
-              </span>
-            </div>
-            <button
-              onClick={(e) => { e.stopPropagation(); onApply(job); }}
-              style={{
-                background: 'linear-gradient(135deg, #ff3b00 0%, #ff6b35 100%)',
-                color: 'white',
-                border: 'none',
-                padding: '12px 28px',
-                borderRadius: '12px',
-                fontSize: '0.95rem',
-                fontWeight: '700',
-                cursor: 'pointer',
-                transition: 'all 0.3s ease',
-                boxShadow: '0 6px 20px rgba(255, 59, 0, 0.3)',
-                textTransform: 'uppercase',
-                letterSpacing: '0.5px'
-              }}
-              onMouseEnter={(e) => {
-                e.target.style.transform = 'translateY(-2px)';
-                e.target.style.boxShadow = '0 10px 30px rgba(255, 59, 0, 0.4)';
-              }}
-              onMouseLeave={(e) => {
-                e.target.style.transform = 'translateY(0)';
-                e.target.style.boxShadow = '0 6px 20px rgba(255, 59, 0, 0.3)';
-              }}>
-              Apply for this Role
-            </button>
-          </div>
+              +{job.requirements.length - 3} more
+            </span>
+          )}
         </div>
       </div>
     </div>
@@ -437,13 +354,8 @@ const CareersFAQ = () => {
 };
 
 const CareersPage = ({ className = "" }) => {
-  const [openJobId, setOpenJobId] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [applyingJob, setApplyingJob] = useState(null);
-
-  const toggleJob = (id) => {
-    setOpenJobId(openJobId === id ? null : id);
-  };
 
   const handleApplyJob = (job) => {
     setApplyingJob(job);
@@ -456,13 +368,20 @@ const CareersPage = ({ className = "" }) => {
   };
 
   return (
-    <div className={`careers-page ${className}`}>
-      <section className="cd-section" style={{
-        background: 'linear-gradient(135deg, #1a1e2d 0%, #2d3548 100%)',
-        padding: '80px 0',
-        position: 'relative',
-        overflow: 'hidden'
-      }}>
+    <div className={`careers-page ${className}`} style={{ background: '#050a1e' }}>
+      <div
+        className="hero-area style-three d-flex align-items-center"
+        style={{
+          marginTop: '0',
+          paddingTop: '80px',
+          paddingBottom: '80px',
+          position: 'relative',
+          height: 'auto',
+          minHeight: 'auto',
+          background: '#050a1e',
+          overflow: 'visible'
+        }}
+      >
         <div style={{
           position: 'absolute',
           top: 0,
@@ -473,87 +392,112 @@ const CareersPage = ({ className = "" }) => {
           opacity: 0.5
         }} />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
-          <div className="row justify-content-center text-center">
-            <div className="col-lg-8">
-              <span style={{
-                display: 'inline-block',
-                background: 'linear-gradient(135deg, rgba(255, 59, 0, 0.2) 0%, rgba(255, 107, 53, 0.2) 100%)',
-                border: '1px solid rgba(255, 59, 0, 0.3)',
-                borderRadius: '30px',
-                padding: '8px 20px',
-                fontSize: '0.85rem',
-                fontWeight: '700',
-                color: '#ff6b35',
-                textTransform: 'uppercase',
-                letterSpacing: '1.5px',
-                marginBottom: '20px'
-              }}>
-                We&apos;re Hiring
-              </span>
-              <h1 style={{
-                fontSize: '3rem',
-                fontWeight: '800',
-                color: '#fff',
-                marginBottom: '20px',
-                lineHeight: '1.2',
-                letterSpacing: '-1px'
-              }}>
-                Build Your Career at <span style={{
-                  background: 'linear-gradient(135deg, #ff3b00 0%, #ff6b35 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent'
-                }}>MayuraSoft</span>
-              </h1>
-              <p style={{
-                fontSize: '1.15rem',
-                color: 'rgba(255, 255, 255, 0.7)',
-                maxWidth: '600px',
-                margin: '0 auto 30px',
-                lineHeight: '1.7'
-              }}>
-                Join a team of passionate innovators building cutting-edge software solutions. We are always looking for talented individuals who want to make an impact.
-              </p>
-              <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <div style={{
-                  background: 'rgba(255, 255, 255, 0.1)',
-                  borderRadius: '12px',
-                  padding: '16px 24px',
-                  textAlign: 'center',
-                  backdropFilter: 'blur(10px)'
-                }}>
-                  <span style={{ display: 'block', fontSize: '2rem', fontWeight: '800', color: '#ff6b35' }}>50+</span>
-                  <span style={{ fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.6)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Team Members</span>
+          <div className="row hero align-items-center" style={{ display: 'flex', flexWrap: 'wrap', width: '100%' }}>
+            <div className="col-lg-6 col-md-12">
+              <div className="hero-contant" style={{ paddingTop: '0', maxWidth: '100%' }}>
+                <div style={{ display: 'flex', gap: '8px', marginBottom: '20px', flexWrap: 'wrap' }}>
+                  <span style={{
+                    fontSize: '11px',
+                    fontWeight: '600',
+                    padding: '4px 12px',
+                    borderRadius: '99px',
+                    background: '#FEE2E2',
+                    color: '#DC2626',
+                    border: '1px solid #FCA5A5',
+                  }}>
+                    We&apos;re Hiring
+                  </span>
+                  <span style={{
+                    fontSize: '11px',
+                    fontWeight: '500',
+                    padding: '4px 12px',
+                    borderRadius: '99px',
+                    background: 'rgba(255,255,255,0.1)',
+                    color: '#d1d5db',
+                    border: '1px solid rgba(255,255,255,0.12)',
+                  }}>
+                    Careers
+                  </span>
                 </div>
+
+                <h1 style={{ fontSize: 'clamp(28px, 3.5vw, 48px)', lineHeight: 1.2, color: '#fff', marginBottom: '20px', wordBreak: 'break-word' }}>
+                  Build Your Career at{' '}
+                  <span style={{
+                    background: 'linear-gradient(135deg, #ff3b00 0%, #ff6b35 100%)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    display: 'inline'
+                  }}>MayuraSoft</span>
+                </h1>
+
+                <p style={{ fontSize: '17px', lineHeight: '1.7', maxWidth: '550px', marginBottom: '32px', color: 'rgba(255,255,255,0.7)' }}>
+                  Join a team of passionate innovators building cutting-edge software solutions. We are always looking for talented individuals who want to make an impact.
+                </p>
+
                 <div style={{
-                  background: 'rgba(255, 255, 255, 0.1)',
-                  borderRadius: '12px',
-                  padding: '16px 24px',
-                  textAlign: 'center',
-                  backdropFilter: 'blur(10px)'
+                  display: 'flex',
+                  flexWrap: 'wrap',
+                  gap: '24px',
+                  paddingTop: '20px',
+                  borderTop: '1px solid rgba(255,255,255,0.1)',
                 }}>
-                  <span style={{ display: 'block', fontSize: '2rem', fontWeight: '800', color: '#ff6b35' }}>100+</span>
-                  <span style={{ fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.6)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Projects Delivered</span>
+                  {[
+                    { value: '50+', label: 'Team Members' },
+                    { value: '100+', label: 'Projects Delivered' },
+                    { value: '15+', label: 'Countries Served' },
+                  ].map((s, i) => (
+                    <div key={i} style={{ minWidth: '100px' }}>
+                      <div style={{
+                        fontSize: '26px',
+                        fontWeight: '700',
+                        color: '#ff6b35',
+                        fontFamily: 'var(--font-mono, monospace)',
+                        lineHeight: 1,
+                        marginBottom: '4px',
+                      }}>
+                        {s.value}
+                      </div>
+                      <div style={{ fontSize: '11px', color: '#a0a0a0', lineHeight: 1.35, textTransform: 'uppercase', letterSpacing: '0.5px' }}>{s.label}</div>
+                    </div>
+                  ))}
                 </div>
-                <div style={{
-                  background: 'rgba(255, 255, 255, 0.1)',
-                  borderRadius: '12px',
-                  padding: '16px 24px',
-                  textAlign: 'center',
-                  backdropFilter: 'blur(10px)'
-                }}>
-                  <span style={{ display: 'block', fontSize: '2rem', fontWeight: '800', color: '#ff6b35' }}>15+</span>
-                  <span style={{ fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.6)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Countries Served</span>
+              </div>
+            </div>
+
+            <div className="col-lg-5 col-md-12 d-flex align-items-center justify-content-center" style={{ marginTop: '30px', maxWidth: '100%', overflow: 'visible' }}>
+              <div style={{
+                background: 'rgba(255,255,255,0.03)',
+                border: '1px solid rgba(255,255,255,0.08)',
+                borderRadius: '20px',
+                padding: '28px',
+                backdropFilter: 'blur(10px)',
+                width: '100%',
+                maxWidth: '420px',
+              }}>
+                <h3 style={{ color: '#fff', fontSize: '1.2rem', fontWeight: '700', marginBottom: '16px' }}>Why Join Us?</h3>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                  {['Competitive salary & equity', 'Remote-first culture', 'Learning & development budget', 'Health insurance & wellness', 'Flexible work hours'].map((item, i) => (
+                    <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '14px', color: '#d1d5db' }}>
+                      <span style={{
+                        width: '20px', height: '20px', borderRadius: '50%',
+                        background: 'rgba(255, 59, 0, 0.2)', color: '#ff6b35',
+                        display: 'flex', alignItems: 'center', justifyContent: 'center',
+                        fontSize: '10px', fontWeight: '700', flexShrink: 0, marginTop: '1px',
+                      }}>✓</span>
+                      <span style={{ lineHeight: 1.4 }}>{item}</span>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <section className="cd-section py-5" style={{ background: '#fff' }}>
-        <div className="container py-4">
+      <section className="cd-section py-5" style={{ background: '#f9fafb' }}>
+        <div className="container py-5">
           <div className="row justify-content-center mb-5">
-            <div className="col-lg-6 text-center">
+            <div className="col-lg-8 text-center">
               <SectionTitle
                 SubTitle="OPEN POSITIONS"
                 Title="Explore Opportunities"
@@ -564,15 +508,15 @@ const CareersPage = ({ className = "" }) => {
           </div>
           <div className="row">
             <div className="col-12">
-              {JOBS_LIST.map((job) => (
-                <JobCard
-                  key={job.id}
-                  job={job}
-                  isOpen={openJobId === job.id}
-                  onToggle={() => toggleJob(job.id)}
-                  onApply={handleApplyJob}
-                />
-              ))}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(400px, 1fr))', gap: '20px' }}>
+                {JOBS_LIST.map((job) => (
+                  <JobCard
+                    key={job.id}
+                    job={job}
+                    onApply={handleApplyJob}
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -598,7 +542,7 @@ const CareersPage = ({ className = "" }) => {
           <div className="row justify-content-center text-center">
             <div className="col-lg-8">
               <h2 style={{
-                fontSize: '2.5rem',
+                fontSize: '2.2rem',
                 fontWeight: '800',
                 color: '#fff',
                 marginBottom: '16px',
@@ -607,39 +551,126 @@ const CareersPage = ({ className = "" }) => {
                 Don&apos;t See the Perfect Role?
               </h2>
               <p style={{
-                fontSize: '1.1rem',
+                fontSize: '1.05rem',
                 color: 'rgba(255, 255, 255, 0.9)',
-                marginBottom: '30px',
+                marginBottom: '28px',
                 lineHeight: '1.6'
               }}>
                 We are always on the lookout for exceptional talent. Send us your resume and tell us how you can contribute to our team.
               </p>
-              <button
-                onClick={() => { setApplyingJob(null); setIsModalOpen(true); }}
-                style={{
-                  background: '#fff',
-                  color: '#ff3b00',
-                  border: 'none',
-                  padding: '16px 40px',
-                  borderRadius: '14px',
-                  fontSize: '1rem',
-                  fontWeight: '700',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.2)',
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.5px'
-                }}
-                onMouseEnter={(e) => {
-                  e.target.style.transform = 'translateY(-3px)';
-                  e.target.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.3)';
-                }}
-                onMouseLeave={(e) => {
-                  e.target.style.transform = 'translateY(0)';
-                  e.target.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.2)';
+              <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <button
+                  onClick={() => { setApplyingJob(null); setIsModalOpen(true); }}
+                  style={{
+                    background: '#fff',
+                    color: '#ff3b00',
+                    border: 'none',
+                    padding: '14px 32px',
+                    borderRadius: '12px',
+                    fontSize: '0.95rem',
+                    fontWeight: '700',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    boxShadow: '0 8px 30px rgba(0, 0, 0, 0.2)',
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.5px'
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.transform = 'translateY(-3px)';
+                    e.target.style.boxShadow = '0 12px 40px rgba(0, 0, 0, 0.3)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.transform = 'translateY(0)';
+                    e.target.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.2)';
+                  }}>
+                  Send Your Resume
+                </button>
+                <a
+                  href="mailto:careers@mayurasoft.com"
+                  style={{
+                    background: 'rgba(255,255,255,0.15)',
+                    color: '#fff',
+                    border: '2px solid rgba(255,255,255,0.3)',
+                    padding: '12px 28px',
+                    borderRadius: '12px',
+                    fontSize: '0.95rem',
+                    fontWeight: '600',
+                    cursor: 'pointer',
+                    transition: 'all 0.3s ease',
+                    textDecoration: 'none',
+                  }}
+                  onMouseEnter={(e) => {
+                    e.target.style.background = 'rgba(255,255,255,0.25)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.target.style.background = 'rgba(255,255,255,0.15)';
+                  }}>
+                  Email Us: careers@mayurasoft.com
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="cd-section py-5" style={{ background: '#fff' }}>
+        <div className="container py-4">
+          <div className="row justify-content-center">
+            <div className="col-lg-8 text-center">
+              <SectionTitle
+                SubTitle="ABOUT US"
+                Title="Our Team Culture"
+                Content=""
+                isDarkMode={false}
+              />
+            </div>
+          </div>
+          <div className="row justify-content-center mt-4">
+            <div className="col-lg-10">
+              <div style={{
+                background: '#f9fafb',
+                borderRadius: '20px',
+                padding: '40px',
+                textAlign: 'center'
+              }}>
+                <p style={{
+                  fontSize: '1.1rem',
+                  color: '#4b5563',
+                  lineHeight: '1.8',
+                  maxWidth: '700px',
+                  margin: '0 auto 30px'
                 }}>
-                Send Your Resume
-              </button>
+                  A team of passionate innovators specializing in object-oriented programming languages, database architecture, and analytical problem-solving. Originally a small group of like-minded people, we have grown to a team of 50+ outstanding people, all with the same passion and commitment to produce excellent applications for our clients.
+                </p>
+                <div style={{ display: 'flex', gap: '40px', justifyContent: 'center', flexWrap: 'wrap' }}>
+                  {[
+                    { value: '50+', label: 'Team Members' },
+                    { value: '100+', label: 'Projects Delivered' },
+                    { value: '15+', label: 'Countries' },
+                    { value: '8+', label: 'Years Experience' },
+                  ].map((s, i) => (
+                    <div key={i} style={{ textAlign: 'center' }}>
+                      <div style={{
+                        fontSize: '32px',
+                        fontWeight: '800',
+                        color: '#ff3b00',
+                        lineHeight: 1,
+                        marginBottom: '6px',
+                      }}>
+                        {s.value}
+                      </div>
+                      <div style={{
+                        fontSize: '13px',
+                        color: '#6b7280',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.5px'
+                      }}>
+                        {s.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>

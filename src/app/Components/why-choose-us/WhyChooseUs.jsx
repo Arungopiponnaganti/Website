@@ -35,7 +35,7 @@ const WhyChooseUs = ({MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxTi
 									</ul>
 								</div>
 								<div className="solutek-btn">
-									<Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }}>EXPLORE MORE
+									<Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }}>Book a Free AI/Data Audit
 										<div className="solutek-hover-btn hover-bx"></div>
 										<div className="solutek-hover-btn hover-bx2"></div>
 										<div className="solutek-hover-btn hover-bx3"></div>
@@ -73,8 +73,8 @@ const WhyChooseUs = ({MainImg,SubTitle,Title,Content,listTitle1,listTitle2,BoxTi
           isOpen={isModalOpen}
           onClose={() => setIsModalOpen(false)}
           title={formTitle || 'Get in Touch'}
-          description="Fill out the form below and we'll get back to you shortly."
-          submitButtonText="Submit"
+          description="Share what you are exploring. We will review the fit and recommend the most practical next step."
+          submitButtonText="Request Audit"
           fields={defaultFormFields}
           metadata={formMetadata || {}}
         />

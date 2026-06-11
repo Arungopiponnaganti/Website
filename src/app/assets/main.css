@@ -3408,9 +3408,9 @@ p.service-text {
   background: #ff6d3e !important;
 }
 
-.service-overview-area .container {
+/* .service-overview-area .container {
   max-width: 1600px;
-}
+} */
 
 .service-grid {
   display: grid;

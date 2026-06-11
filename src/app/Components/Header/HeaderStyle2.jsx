@@ -100,7 +100,7 @@ export default function HeaderStyle2({ variant }) {
                     href="/free-ai-data-audit"
                     className=""
                   >
-                    Book a Free Audit
+                    Book a Free AI/Data Audit
                     <i className="bi bi-arrow-right"></i>
                   </Link>
                 </div>

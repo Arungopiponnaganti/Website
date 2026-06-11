@@ -41,7 +41,7 @@ const Process2 = () => {
                                 <ProcessCard2
                                     mainImage="/assets/images/process-3.png"
                                     Number="03"
-                                    Title="Deliver And Handover"
+                                    Title="Delivery And Handover"
                                     Content="We build in focused milestones, document decisions, and hand over systems your team can operate with confidence."
                                 ></ProcessCard2>
                             </div>

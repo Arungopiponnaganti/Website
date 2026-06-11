@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import data from '../../Data/faq.json';
 import Link from "next/link";
 import Image from "next/image";
+import contactInfo from "../../Data/contactInfo.json";
 
 const ServiceDetail = () => {
 
@@ -45,11 +46,11 @@ const ServiceDetail = () => {
                                         <Image src="/assets/images/inner/service-details.png" alt="Service details illustration" width={856} height={504}   />
                                     </div>
                                     <div className="services-details-content">
-                                        <h4 className="services-details-title">Best Solutions for App Development</h4>
+                                        <h4 className="services-details-title">Software, AI, And Data Delivery That Starts With Clarity</h4>
 
-                                        <p className="services-details-desc">Alternative innovation to ethical network environmental whiteboard pursue compelling results for premier methods empowerment. Dramatically architect go forward opportunities before user-centric partnerships.Credibly implement exceptional </p>
+                                        <p className="services-details-desc">MayuraSoft reviews your workflow, current systems, data readiness, integrations, and delivery risks before recommending what to build, automate, modernize, or fix first.</p>
 
-                                        <p className="services-details-desc">Continually fashion orthogonal leadership skills whereas wireless metrics. Uniquely syndicate exceptional opportunities with interdependent users. Globally enhance fully tested meta-services rather than pandemic solutions. Proactively integrate client-integrate go forward architectures and turnkey meta-services.Interactively harness integrated ROI whereas frictionless products. 	
+                                        <p className="services-details-desc">Our delivery model keeps discovery, planning, implementation, QA, documentation, and handover under one accountable team so buyers avoid fragmented vendors and unclear ownership. 	
                                         </p>
                                     </div>
                                     <div className="row">
@@ -57,16 +58,13 @@ const ServiceDetail = () => {
                                             <div className="service-detalis-text-box">
                                                 <div className="service-details-content">
                                                     <h4>Why Choose Us</h4>
-                                                    <p>Alternative innovation to ethical network
-                                                        environmental whiteboard pursue
-                                                        compelling results for premier  methods
-                                                        empowerment forward.</p>
+                                                    <p>We connect business workflow, engineering execution, AI readiness, and data reliability before recommending a solution.</p>
                                                 </div>
                                                 <div className="service-details-list">
                                                     <ul>
-                                                        <li><i className="bi bi-arrow-right"></i>Success Stories</li>
-                                                        <li><i className="bi bi-arrow-right"></i>Success service</li>
-                                                        <li><i className="bi bi-arrow-right"></i>Success store</li>
+                                                        <li><i className="bi bi-arrow-right"></i>Free AI/Data Audit</li>
+                                                        <li><i className="bi bi-arrow-right"></i>Clear delivery plan</li>
+                                                        <li><i className="bi bi-arrow-right"></i>Documentation and handover</li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -78,11 +76,7 @@ const ServiceDetail = () => {
                                                 </div>
                                                 <div className="service-det-content">
                                                     <h3>Empowering Your Success</h3>
-                                                    <p>Alternative innovation to ethical network
-                                                        environmental whiteboard pursue
-                                                        compelling results for premier  methods
-                                                        empowerment forward environmental
-                                                        whiteboard pursue process dsign.
+                                                    <p>From software modernization to AI integration and data engineering, MayuraSoft gives teams a practical path from audit to shipped work.
                                                     </p>
                                                 </div>
                                             </div>
@@ -92,7 +86,7 @@ const ServiceDetail = () => {
                                         <div className="tab_container">
                                             <div className="feq-content">
                                                 <h4 className="faq-title">Frequently Asked Questions</h4>
-                                                <p className="faq-description">Alternative innovation to ethical network environmental whiteboard pursue compelling results for premier methods empowerment. Dramatically architect go forward opportunities</p>
+                                                <p className="faq-description">Common questions about MayuraSoft&apos;s audit-first approach to software, AI, data, and cloud delivery.</p>
                                             </div>
                                             <div id="tab" className="tab_content">
                                                 <ul className="accordion">
@@ -141,8 +135,8 @@ const ServiceDetail = () => {
                                              
                                         </div>
                                         <p className="widget-sidber-contact-text">Call Us Anytime</p>
-                                        <h3 className="widget-sidber-contact-number">+123 (4567) 890</h3>
-                                        <span className="widget-sidber-contact-gmail"><i className="bi bi-envelope-fill"></i>example@gmail.com</span>
+                                        <h3 className="widget-sidber-contact-number">{contactInfo.phone}</h3>
+                                        <span className="widget-sidber-contact-gmail"><i className="bi bi-envelope-fill"></i>{contactInfo.email}</span>
                                         <div className="widget-sidber-contact-btn">
                                            <Link href="/contact">Contact Us <i className="bi bi-arrow-right"></i></Link>
                                         </div>

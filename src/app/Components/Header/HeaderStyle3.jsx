@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import Nav from './Nav';
 import Link from 'next/link';
 import Image from 'next/image';
+import contactInfo from '../../Data/contactInfo.json';
 export default function HeaderStyle3({ variant }) {
   const [mobileToggle, setMobileToggle] = useState(false);
   const [isSticky, setIsSticky] = useState();
@@ -61,9 +62,9 @@ export default function HeaderStyle3({ variant }) {
           <div className="cs_top_header_in">
             <div className="cs_top_header_left header-info">
               <ul className="cs_top_nav d-flex flex-wrap align-items-center cs_fs_12 text-white m-0 p-0">
-                <li><i className="bi bi-geo-alt-fill"></i>New market Sandigo - California</li>
-                <li className="exam-gmail"><i className="bi bi-envelope"></i>example@gmail.com</li>
-                <li><i className="bi bi-alarm"></i>9.00 am - 5.00 pm</li>
+                <li><i className="bi bi-geo-alt-fill"></i>{contactInfo.address}</li>
+                <li className="exam-gmail"><i className="bi bi-envelope"></i>{contactInfo.email}</li>
+                <li><i className="bi bi-alarm"></i>{contactInfo.hours}</li>
               </ul>
             </div>
             <div className="cs_top_header_right">
@@ -108,7 +109,7 @@ export default function HeaderStyle3({ variant }) {
             </div>
             <div className="cs_main_header_right">
             <div className="solutek-btn2">
-						<Link href="/contact">Get A Quote Now</Link>
+						<Link href="/free-ai-data-audit">Book A Call</Link>
 					  </div>
             </div>
           </div>

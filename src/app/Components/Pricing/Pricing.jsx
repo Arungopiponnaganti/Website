@@ -5,7 +5,7 @@ import PricingCard from "./PricingCard";
 const Pricing = () => {
 
     const SectionDesc = {
-        Content:'paradigms. Monotonectally extend open-source mvia competitive methods of empowerment dri revolutionize stand- business.'
+        Content:'Choose a focused engagement that matches your current risk: audit, planning, delivery, modernization, or managed support.'
     }
 
     return (

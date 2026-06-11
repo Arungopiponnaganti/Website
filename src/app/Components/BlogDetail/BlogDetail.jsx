@@ -39,7 +39,7 @@ const BlogDetail = () => {
                                         </div>
                                         <h4 className="blog-details-title">Solution This Business For is Marketing Blog</h4>
 
-                                        <p className="blog-details-desc">Alternative innovation to ethical network environmental whiteboard pursue compelling results for methods empowerment. Dramatically architect go forward opportunities before user-centric Credibly implement exceptional</p>	
+                                        <p className="blog-details-desc">Growing teams often need a practical technology decision before they need another tool. MayuraSoft starts with workflow, software, and data context so the next build has a clear business reason.</p>	
 
                                         <p className="blog-details-desc">Continually fashion orthogonal leadership skills whereas wireless metrics. Uniquely syndicate exce opportunities with interdependent users. Globally enhance fully tested meta-services rather than solutions. Proactively integrate client-integrate go forward architectures and turnkey meta Interactively harness integrated ROI whereas frictionless products. </p>
 

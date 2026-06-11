@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import useFormValidation from "../hooks/useFormValidation";
+import contactInfo from "../../Data/contactInfo.json";
 
 const TeamDetail = () => {
   const {
@@ -41,7 +42,7 @@ const TeamDetail = () => {
                     </div>
                     <div className="contact-info-content">
                       <h4>Call us Any time</h4>
-                      <p>+123 (4567) 890</p>
+                      <p>{contactInfo.phone}</p>
                     </div>
                   </div>
                 </div>
@@ -52,7 +53,7 @@ const TeamDetail = () => {
                     </div>
                     <div className="contact-info-content">
                       <h4>Send E-Mail</h4>
-                      <p>info@gmail.com</p>
+                      <p>{contactInfo.infoEmail}</p>
                     </div>
                   </div>
                 </div>
@@ -72,7 +73,7 @@ const TeamDetail = () => {
                 </div>
                 <div className="contact-info-content">
                   <h4>Location</h4>
-                  <p>21 King Street 5th Floor Hamilton, Ontario Canada</p>
+                  <p>{contactInfo.address}</p>
                 </div>
               </div>
             </div>

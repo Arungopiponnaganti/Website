@@ -8,10 +8,11 @@ import FreeAIDataAuditProcess from "./FreeAIDataAuditProcess";
 import styles from "./FreeAIDataAuditPage.module.css";
 
 const auditFormFields = [
-  { label: "Full Name", name: "name", type: "text", placeholder: "John Smith", required: true, colSize: 6 },
+  { label: "Name", name: "name", type: "text", placeholder: "John Smith", required: true, colSize: 6 },
   { label: "Work Email", name: "email", type: "email", placeholder: "john@company.com", required: true, colSize: 6 },
-  { label: "Phone", name: "phone", type: "tel", placeholder: "+1 (555) 000-0000", required: false, colSize: 6 },
   { label: "Company", name: "company", type: "text", placeholder: "Company name", required: true, colSize: 6 },
+  { label: "Role", name: "role", type: "text", placeholder: "CTO, COO, Founder, Data Lead...", required: false, colSize: 6 },
+  { label: "Website", name: "website", type: "url", placeholder: "https://company.com", required: false, colSize: 6 },
   {
     label: "What are you exploring?",
     name: "interest",
@@ -23,17 +24,25 @@ const auditFormFields = [
       "Software modernization",
       "Data engineering",
       "Product engineering",
-      "Cloud DevOps",
       "Not sure yet",
     ],
   },
   {
-    label: "Briefly describe the challenge",
+    label: "Briefly describe the workflow, system, or data challenge",
     name: "message",
     type: "textarea",
     placeholder: "Tell us about the workflow, software system, or data challenge you want to review.",
     required: true,
     colSize: 12,
+  },
+  {
+    label: "Preferred contact method",
+    name: "preferred_contact_method",
+    type: "select",
+    placeholder: "Select one",
+    required: false,
+    colSize: 6,
+    options: ["Email", "Phone", "WhatsApp", "LinkedIn"],
   },
 ];
 
@@ -118,21 +127,20 @@ export default function FreeAIDataAuditPage() {
                   <div className="d-flex flex-wrap align-items-center gap-2 mb-4">
                     <div className="solutek-btn">
                       <Link href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }} className="btn-2">
-                        Book a free audit &rarr;
+                        Book a Free AI/Data Audit &rarr;
                       </Link>
                     </div>
                     <div className="hero-btn-3">
                       <div className="hero-btn-profile">
                         <Link
-                          href="#audit-review"
+                          href="/service"
                           onClick={(e) => {
-                            e.preventDefault();
-                            document.getElementById("audit-review")?.scrollIntoView({ behavior: "smooth" });
+                            e.currentTarget.blur();
                           }}
                           style={{ textDecoration: "none" }}
                         >
                           <div style={{ color: "#ff3c00", cursor: "pointer", fontSize: "16px", fontWeight: 600 }}>
-                            See what we review &darr;
+                            Explore Services &rarr;
                           </div>
                         </Link>
                       </div>
@@ -305,8 +313,8 @@ export default function FreeAIDataAuditPage() {
         <CtaBand
           title="Choose the right first move before committing build budget"
           description="Share your workflow, software, or data challenge. We will review the fit and return a practical recommendation you can act on."
-          primaryBtn={{ text: "Request free audit →", dataCta: "cta-primary-free-ai-data-audit" }}
-          secondaryBtn={{ variant: "link", text: "Ask a question first", dataCta: "cta-secondary-free-ai-data-audit" }}
+          primaryBtn={{ text: "Book a Free AI/Data Audit →", dataCta: "cta-primary-free-ai-data-audit" }}
+          secondaryBtn={{ variant: "link", text: "Explore Services", dataCta: "cta-secondary-free-ai-data-audit" }}
           trustText="Written recommendation · No commitment required · Built around your current systems"
           bgClass="bg-white border-top py-5"
           useModal={true}

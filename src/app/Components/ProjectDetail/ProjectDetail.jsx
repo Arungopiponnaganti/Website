@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
+import contactInfo from "../../Data/contactInfo.json";
 
 const ProjectDetail = () => {
 
     const InfoBox = [
         {title:'Date', info:'10 January, 2024'},
-        {title:'Client', info:'Kodesolution Ltd'},
-        {title:'Website', info:'www.domain.com'},
-        {title:'Location', info:'New York, USA'},
+        {title:'Client', info:'Growing Business Team'},
+        {title:'Website', info:'mayurasoft.com'},
+        {title:'Location', info:'Hyderabad, India'},
       ];      
 
       const Services = [
@@ -43,16 +44,16 @@ const ProjectDetail = () => {
                             <div className="row">
                                 <div className="col-lg-12">
                                     <div className="project-details-content">
-                                        <h4 className="project-details-title">Here To Know About This Project</h4>
+                                        <h4 className="project-details-title">Audit-Led Technology Roadmap</h4>
 
-                                        <p className="project-details-desc">Alternative innovation to ethical network environmental whiteboard methods empowerment. Dramatically architect go forward opportunities before user-centric partnerships. Credibly implement exceptional </p>
+                                        <p className="project-details-desc">This example reflects MayuraSoft&apos;s typical delivery pattern: map the workflow, review the current software, inspect data readiness, and identify the safest first implementation step.</p>
 
-                                        <p className="project-details-desc">Continually fashion orthogonal leadership skills whereas wireless metrics. Uniquely syndicate exceptional opportunities with interdependent users. Globally enhance fully tested meta-services rather than pandemic solutions. Proactively integrate client-integrate go forward architectures and turnkey meta-services.Interactively harness integrated ROI whereas frictionless products. 	
+                                        <p className="project-details-desc">The output is a practical recommendation that can become a scoped AI automation, software modernization, product engineering, data engineering, or cloud implementation plan. 	
                                         </p>
                                         <div className="project-det-title">
                                             <h3>The Challenge Of Project</h3>
                                         </div>
-                                        <p className="project-det-desc">Innovate wireless e-markets for inexpensive e-markets. Monotonectally grow progressive processes before seamless ideas facilitate an expanded array of scenarios rather than backend users. Objectively impact intuitive users and low-risk high-yield networks. Conveniently supply visionary</p>
+                                        <p className="project-det-desc">The challenge is usually not a lack of ideas. It is deciding which workflow, integration, data gap, or delivery risk should be handled first before more budget is committed.</p>
                                     </div>
                                     <div className="row align-items-center">
                                         <div className="col-lg-6">
@@ -75,7 +76,7 @@ const ProjectDetail = () => {
                                         <a className="project-details-text" href="project-details.html">Competently architect intermandated deliverables client
                                             niches continually underwhelm
                                         </a>
-                                        <p className="project-details-desc">Appropriately communicate economically sound e-commerce after enterprise services. Dramatically target cross-media solutions and error-free platforms. Monotonectally pontificate 24/365 human capital and dynamic potentialities compellingly pursue	
+                                        <p className="project-details-desc">MayuraSoft turns the audit findings into a phased plan with clear responsibilities, delivery risks, documentation needs, and next steps for implementation.	
                                         </p>
                                     </div>
                                 </div>
@@ -103,8 +104,8 @@ const ProjectDetail = () => {
                                          
                                         </div>
                                         <p className="widget-sidber-contact-text">Call Us Anytime</p>
-                                        <h3 className="widget-sidber-contact-number">+123 (4567) 890</h3>
-                                        <span className="widget-sidber-contact-gmail"><i className="bi bi-envelope-fill"></i>example@gmail.com</span>
+                                        <h3 className="widget-sidber-contact-number">{contactInfo.phone}</h3>
+                                        <span className="widget-sidber-contact-gmail"><i className="bi bi-envelope-fill"></i>{contactInfo.email}</span>
                                         <div className="widget-sidber-contact-btn">
                                             <Link href="/contact">Contact Us <i className="bi bi-arrow-right"></i></Link>
                                         </div>
