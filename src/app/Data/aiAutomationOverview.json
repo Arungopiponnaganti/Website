@@ -22,7 +22,7 @@
   },
   {
     "icon": "/assets/images/skelton/intelligent-document-processing-skelton.png",
-    "title": "Intelligent Document Processingkl",
+    "title": "Intelligent Document Processing",
     "desc": "We extract structured data from invoices, contracts, forms, and medical records using AI — automatically classifying, extracting, validating, and routing to the right system.",
     "btnText": "Explore IDP",
     "btnLink": "/ai-automations/document-processing"

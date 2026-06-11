@@ -323,8 +323,8 @@ const Contact1 = ({ className = "" }) => {
     { name: 'name', label: 'Your Name', type: 'text', placeholder: 'John Doe', required: true },
     { name: 'email', label: 'Your Email', type: 'email', placeholder: 'john@example.com', required: true },
     { name: 'phone', label: 'Phone Number', type: 'tel', placeholder: websiteContactInfo.phone, required: true },
-    { name: 'subject', label: 'Subject', type: 'text', placeholder: 'How can we help?', required: true },
-    { name: 'message', label: 'Message', type: 'textarea', placeholder: 'Tell us more about your project...', required: true, fullWidth: true }
+    { name: 'subject', label: 'Subject', type: 'text', placeholder: 'Free AI/Data Audit', required: true },
+    { name: 'message', label: 'Message', type: 'textarea', placeholder: 'Tell us about the workflow, system, or data challenge you want to review.', required: true, fullWidth: true }
   ];
 
   return (
@@ -335,7 +335,7 @@ const Contact1 = ({ className = "" }) => {
             <div className="section-title text-left mb-5">
               <SectionTitle
                 SubTitle="CONTACT US"
-                Title="Make an Online Appointment Booking<br />For Business Planning."
+                Title="Book a Free AI/Data Audit<br />For Your Next Technology Move."
               ></SectionTitle>
             </div>
             <ContactForm

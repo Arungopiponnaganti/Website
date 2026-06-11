@@ -21,8 +21,8 @@ const Process2 = () => {
                                 <ProcessCard2
                                     mainImage="/assets/images/process-1.png"
                                     Number="01"
-                                    Title="PLAN AND RESEARCH"
-                                    Content="Solution is a long established proces reada content a looking at layout point."
+                                    Title="Audit And Prioritize"
+                                    Content="We review your workflows, software, data readiness, and delivery risks to identify the highest-value next move."
                                 ></ProcessCard2>
                             </div>
                         </div>	
@@ -31,8 +31,8 @@ const Process2 = () => {
                                 <ProcessCard2
                                     mainImage="/assets/images/process-2.png"
                                     Number="02"
-                                    Title="Design & Prototyping"
-                                    Content="Solution is a long established proces reada content a looking at layout point."
+                                    Title="Design The Roadmap"
+                                    Content="We map the right software, AI, or data approach with clear scope, dependencies, ownership, and measurable outcomes."
                                 ></ProcessCard2>
                             </div>
                         </div>	
@@ -41,8 +41,8 @@ const Process2 = () => {
                                 <ProcessCard2
                                     mainImage="/assets/images/process-3.png"
                                     Number="03"
-                                    Title="Finial Solution"
-                                    Content="Solution is a long established proces reada content a looking at layout point."
+                                    Title="Deliver And Handover"
+                                    Content="We build in focused milestones, document decisions, and hand over systems your team can operate with confidence."
                                 ></ProcessCard2>
                             </div>
                         </div>			

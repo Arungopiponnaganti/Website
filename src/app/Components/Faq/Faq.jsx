@@ -27,8 +27,8 @@ const Faq = () => {
 
     const FaqContent = {
         img1:'/assets/images/faq-new2.png',
-        Title:'A Comprehensive <span>Guide.</span>',
-        Content:'Alternative innovation network environmental whiteboard pursue  for premier methods empowerment  go forward opportunities'
+        Title:'Practical answers before you <span>spend budget.</span>',
+        Content:'Use the Free AI/Data Audit to clarify what to automate, modernize, build, or fix first across your software, workflows, and data systems.'
       }
 
     return (

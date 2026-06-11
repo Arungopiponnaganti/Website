@@ -35,7 +35,7 @@ const aiIcons = {
       <path d="M12 16l4 8M52 16l-4 8" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
     </svg>
   ),
-  "Intelligent Document Processingkl": (
+  "Intelligent Document Processing": (
     <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M12 8h32l12 12v36a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4z" stroke="currentColor" strokeWidth="2.5"/>
       <path d="M44 8v12h12" stroke="currentColor" strokeWidth="2.5"/>
