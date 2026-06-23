@@ -1,6 +1,10 @@
 import seoMetadata from '@/Data/seoMetadata.json';
 
-const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://mayurasoft.com';
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.mayurasoft.com';
+const COMMON_OG_IMAGE = '/og-image.png';
+const COMMON_OG_IMAGE_WIDTH = 1200;
+const COMMON_OG_IMAGE_HEIGHT = 630;
+const COMMON_OG_IMAGE_TYPE = 'image/png';
 
 function getMetadataByPath(path) {
   const normalizedPath = path === '/' ? '/' : path.replace(/\/$/, '');
@@ -9,7 +13,9 @@ function getMetadataByPath(path) {
 }
 
 export function getPageMetadata(path) {
+  const normalizedPath = path === '/' ? '/' : path.replace(/\/$/, '');
   const metadata = getMetadataByPath(path);
+  const ogImageUrl = `${BASE_URL}${COMMON_OG_IMAGE}`;
 
   return {
     title: metadata.title,
@@ -18,13 +24,14 @@ export function getPageMetadata(path) {
     openGraph: {
       title: metadata.title,
       description: metadata.description,
-      url: `${BASE_URL}${path}`,
+      url: `${BASE_URL}${normalizedPath}`,
       siteName: 'MayuraSoft',
       images: [
         {
-          url: `${BASE_URL}${metadata.ogImage}`,
-          width: 1200,
-          height: 630,
+          url: ogImageUrl,
+          width: COMMON_OG_IMAGE_WIDTH,
+          height: COMMON_OG_IMAGE_HEIGHT,
+          type: COMMON_OG_IMAGE_TYPE,
           alt: metadata.title,
         },
       ],
@@ -35,17 +42,17 @@ export function getPageMetadata(path) {
       card: 'summary_large_image',
       title: metadata.title,
       description: metadata.description,
-      images: [`${BASE_URL}${metadata.ogImage}`],
+      images: [ogImageUrl],
     },
     alternates: {
-      canonical: `${BASE_URL}${path}`,
+      canonical: `${BASE_URL}${normalizedPath}`,
     },
   };
 }
 
 export function generateMetadata(props) {
-  const { params, searchParams } = props || {};
-  let path = '/';
+  const { params, path: explicitPath } = props || {};
+  let path = explicitPath || '/';
   
   if (params?.slug) {
     path = Array.isArray(params.slug) ? `/${params.slug.join('/')}` : `/${params.slug}`;
@@ -55,14 +62,16 @@ export function generateMetadata(props) {
 }
 
 export async function generateMetadataAsync(props) {
-  const { params, searchParams } = props || {};
-  let path = '/';
+  const { params, searchParams, path: explicitPath } = props || {};
+  let path = explicitPath || '/';
   
   if (params?.slug) {
     path = Array.isArray(params.slug) ? `/${params.slug.join('/')}` : `/${params.slug}`;
   }
 
   const metadata = getMetadataByPath(path);
+  const normalizedPath = path === '/' ? '/' : path.replace(/\/$/, '');
+  const ogImageUrl = `${BASE_URL}${COMMON_OG_IMAGE}`;
   
   let dynamicData = {};
   
@@ -87,13 +96,14 @@ export async function generateMetadataAsync(props) {
     openGraph: {
       title,
       description: metadata.description,
-      url: `${BASE_URL}${path}`,
+      url: `${BASE_URL}${normalizedPath}`,
       siteName: 'MayuraSoft',
       images: [
         {
-          url: `${BASE_URL}${metadata.ogImage}`,
-          width: 1200,
-          height: 630,
+          url: ogImageUrl,
+          width: COMMON_OG_IMAGE_WIDTH,
+          height: COMMON_OG_IMAGE_HEIGHT,
+          type: COMMON_OG_IMAGE_TYPE,
           alt: title,
         },
       ],
@@ -104,10 +114,10 @@ export async function generateMetadataAsync(props) {
       card: 'summary_large_image',
       title,
       description: metadata.description,
-      images: [`${BASE_URL}${metadata.ogImage}`],
+      images: [ogImageUrl],
     },
     alternates: {
-      canonical: `${BASE_URL}${path}`,
+      canonical: `${BASE_URL}${normalizedPath}`,
     },
   };
 }
@@ -116,4 +126,4 @@ export function getMetadataKeys() {
   return Object.keys(seoMetadata);
 }
 
-export { BASE_URL, seoMetadata };
+export { BASE_URL, COMMON_OG_IMAGE, seoMetadata };

@@ -73,7 +73,7 @@ export default function HeaderStyle3({ variant }) {
                   <ul>
                     <li><a href="#"><i className="bi bi-facebook"></i></a></li>
                     <li><a href="#"><i className="bi bi-twitter"></i></a></li>
-                    <li><a href="#"><i className="bi bi-linkedin"></i></a></li>
+                    <li><a href="https://www.linkedin.com/company/mayurasoft"><i className="bi bi-linkedin"></i></a></li>
                     <li><a href="#"><i className="bi bi-instagram"></i></a></li>
                 </ul>
                 </div>

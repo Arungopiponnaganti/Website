@@ -116,7 +116,7 @@ const Footer = () => {
                                     <div className="footer-widget-social">
                                         <a href="#" aria-label="Follow us on Facebook"><i className="bi bi-facebook" aria-hidden="true"></i></a>
                                         <a href="#" aria-label="Follow us on Twitter"><i className="bi bi-twitter" aria-hidden="true"></i></a>
-                                        <a href="#" aria-label="Connect on LinkedIn"><i className="bi bi-linkedin" aria-hidden="true"></i></a>
+                                        <a href="https://www.linkedin.com/company/mayurasoft" aria-label="Connect on LinkedIn"><i className="bi bi-linkedin" aria-hidden="true"></i></a>
                                         <a href="#" aria-label="Follow us on Instagram"><i className="bi bi-instagram" aria-hidden="true"></i></a>
                                     </div>
                                 </div>

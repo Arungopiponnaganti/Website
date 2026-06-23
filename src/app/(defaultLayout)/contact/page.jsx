@@ -5,7 +5,7 @@ import React from 'react';
 import { generateMetadataAsync } from '@/utils/seo';
 
 export async function generateMetadata(props) {
-  return generateMetadataAsync(props);
+  return generateMetadataAsync({ ...props, path: '/contact' });
 }
 
 const page = ({ searchParams }) => {

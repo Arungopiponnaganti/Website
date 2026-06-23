@@ -136,7 +136,7 @@
  *      "title": "New Page | MayuraSoft",
  *      "description": "Description of the new page",
  *      "keywords": "keyword1, keyword2, keyword3",
- *      "ogImage": "/openGraphImage.jpg"
+ *      "ogImage": "/og-image.png"
  *    }
  * 
  * 2. In your page file:
