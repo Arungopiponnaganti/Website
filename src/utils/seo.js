@@ -1,10 +1,10 @@
 import seoMetadata from '@/Data/seoMetadata.json';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.mayurasoft.com';
-const COMMON_OG_IMAGE = '/og-image.png';
+const COMMON_OG_IMAGE = '/openGraphImage.jpg';
 const COMMON_OG_IMAGE_WIDTH = 1200;
 const COMMON_OG_IMAGE_HEIGHT = 630;
-const COMMON_OG_IMAGE_TYPE = 'image/png';
+const COMMON_OG_IMAGE_TYPE = 'image/jpeg';
 
 function getMetadataByPath(path) {
   const normalizedPath = path === '/' ? '/' : path.replace(/\/$/, '');
