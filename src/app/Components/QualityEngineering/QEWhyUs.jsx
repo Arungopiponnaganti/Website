@@ -55,7 +55,7 @@ export default function QEWhyUs() {
           <div className="col-lg-12">
             <SectionTitle
               className="text-center"
-              SubTitle="Why MayuraSoft"
+              SubTitle="Why Mayurasoft"
               Title="What separates our <span>quality practice</span>"
             />
           </div>

@@ -1,7 +1,9 @@
 import seoMetadata from '@/Data/seoMetadata.json';
 
 const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.mayurasoft.com';
-const COMMON_OG_IMAGE = '/openGraphImage.jpg';
+const COMMON_OG_IMAGE_PATH = '/openGraphImage.jpg';
+const COMMON_OG_IMAGE_VERSION = 'v=20260623';
+const COMMON_OG_IMAGE = `${COMMON_OG_IMAGE_PATH}?${COMMON_OG_IMAGE_VERSION}`;
 const COMMON_OG_IMAGE_WIDTH = 1200;
 const COMMON_OG_IMAGE_HEIGHT = 630;
 const COMMON_OG_IMAGE_TYPE = 'image/jpeg';
@@ -25,7 +27,7 @@ export function getPageMetadata(path) {
       title: metadata.title,
       description: metadata.description,
       url: `${BASE_URL}${normalizedPath}`,
-      siteName: 'MayuraSoft',
+      siteName: 'Mayurasoft',
       images: [
         {
           url: ogImageUrl,
@@ -81,10 +83,10 @@ export async function generateMetadataAsync(props) {
 
   if (searchParams?.model) {
     const modelName = searchParams.model.charAt(0).toUpperCase() + searchParams.model.slice(1).replace(/-/g, ' ');
-    dynamicData.title = `${modelName} | MayuraSoft`;
+    dynamicData.title = `${modelName} | Mayurasoft`;
   } else if (searchParams?.service) {
     const serviceName = searchParams.service.charAt(0).toUpperCase() + searchParams.service.slice(1).replace(/-/g, ' ');
-    dynamicData.title = `${serviceName} | MayuraSoft`;
+    dynamicData.title = `${serviceName} | Mayurasoft`;
   }
 
   const title = dynamicData.title ? dynamicData.title : metadata.title;
@@ -97,7 +99,7 @@ export async function generateMetadataAsync(props) {
       title,
       description: metadata.description,
       url: `${BASE_URL}${normalizedPath}`,
-      siteName: 'MayuraSoft',
+      siteName: 'Mayurasoft',
       images: [
         {
           url: ogImageUrl,
@@ -126,4 +128,4 @@ export function getMetadataKeys() {
   return Object.keys(seoMetadata);
 }
 
-export { BASE_URL, COMMON_OG_IMAGE, seoMetadata };
+export { BASE_URL, COMMON_OG_IMAGE, COMMON_OG_IMAGE_PATH, COMMON_OG_IMAGE_VERSION, seoMetadata };

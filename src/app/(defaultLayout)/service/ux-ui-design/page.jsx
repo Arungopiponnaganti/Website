@@ -20,7 +20,7 @@ const jsonLd = {
   name: 'UX / UI Design',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com',
   },
   description:

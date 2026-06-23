@@ -79,7 +79,7 @@ export default function RVHero() {
               </h1>
               
               <p className="subheadline text-white" style={{ fontSize: '18px', lineHeight: '1.65', maxWidth: '650px', marginBottom: '30px' }}>
-                MayuraSoft builds reporting systems that deliver the right numbers to the right people at the right time — automated, accurate, and beautifully presented.
+                Mayurasoft builds reporting systems that deliver the right numbers to the right people at the right time — automated, accurate, and beautifully presented.
               </p>
               
               <div className="d-flex flex-wrap gap-2 mb-4">

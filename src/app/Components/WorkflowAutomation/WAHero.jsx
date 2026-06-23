@@ -116,7 +116,7 @@ export default function WAHero() {
                 className="subheadline text-white"
                 style={{ fontSize: '17px', lineHeight: '1.65', maxWidth: '580px', marginBottom: '32px' }}
               >
-                MayuraSoft maps, designs, and builds end-to-end workflow automations — connecting
+                Mayurasoft maps, designs, and builds end-to-end workflow automations — connecting
                 your apps, data, and teams so that work moves forward without anyone pushing it.
               </p>
 

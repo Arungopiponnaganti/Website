@@ -18,7 +18,7 @@ const page = () => {
                                     <h2>Privacy Policy</h2>
                                     <p className="last-updated">Last Updated: May 05, 2026</p>
                                     <p>
-                                        At MayuraSoft, we value your privacy and are committed to protecting your personal information. 
+                                        At Mayurasoft, we value your privacy and are committed to protecting your personal information. 
                                         This Privacy Policy explains how we collect, use, disclose, and safeguard your data when you visit 
                                         our website or use our services.
                                     </p>
@@ -134,7 +134,7 @@ const page = () => {
                                         If you have any questions or concerns about this Privacy Policy or our data practices, please contact us:
                                     </p>
                                     <div className="contact-details">
-                                        <p><strong>MayuraSoft Technologies Pvt. Ltd.</strong></p>
+                                        <p><strong>Mayurasoft Technologies Pvt. Ltd.</strong></p>
                                         <p>Email: <a href="mailto:privacy@mayurasoft.com">privacy@mayurasoft.com</a></p>
                                         <p>Website: <a href="https://mayurasoft.com">mayurasoft.com</a></p>
                                     </div>

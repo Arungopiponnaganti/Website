@@ -16,7 +16,7 @@ const page = () => {
         MainImg="/assets/images/whychooseusnew.png"
         SubTitle="WHY CHOOSE US"
         Title="Practical Technology Delivery<br/>For <span>Growing Teams.</span>"
-        Content="MayuraSoft brings software development, AI integration, automation, data engineering, and cloud delivery into one accountable roadmap. We start with a practical audit, identify the safest first move, and deliver with documentation, governance, and full handover."
+        Content="Mayurasoft brings software development, AI integration, automation, data engineering, and cloud delivery into one accountable roadmap. We start with a practical audit, identify the safest first move, and deliver with documentation, governance, and full handover."
         listTitle1="Audit-first roadmap before build spend"
         listTitle2="Software, AI, data, and cloud under one team"
         BoxTitle1="100%"

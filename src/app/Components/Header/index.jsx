@@ -60,7 +60,7 @@ export default function Header({ variant }) {
           <div className="cs_main_header_in">
             <div className="cs_main_header_left">
 <Link className="cs_site_branding" href="/">
-                  <Image src="/assets/images/mayura-logo.png" alt="MayuraSoft - Software, AI & Data Engineering Company Logo" width={161} height={42} priority />
+                  <Image src="/assets/images/mayura-logo.png" alt="Mayurasoft - Software, AI & Data Engineering Company Logo" width={161} height={42} priority />
                </Link>
               </div>
 

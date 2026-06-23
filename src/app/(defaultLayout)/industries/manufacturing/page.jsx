@@ -16,7 +16,7 @@ const jsonLd = {
   name: 'Manufacturing',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com'
   },
   description: 'Smart factory solutions and Industry 4.0 transformation for modern manufacturing enterprises.',

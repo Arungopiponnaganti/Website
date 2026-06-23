@@ -9,7 +9,7 @@ const MapForm = () => {
                     <div className="col-lg-12">
                         <iframe
                             src={mapUrl}
-                            title="MayuraSoft office location on Google Maps"
+                            title="Mayurasoft office location on Google Maps"
                             width="100%"
                             height="450"
                             loading="lazy"

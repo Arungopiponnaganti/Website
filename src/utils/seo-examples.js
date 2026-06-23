@@ -35,7 +35,7 @@
  *   if (searchParams?.title) {
  *     return {
  *       ...baseMetadata,
- *       title: `${searchParams.title} | MayuraSoft`,
+ *       title: `${searchParams.title} | Mayurasoft`,
  *     };
  *   }
  *   
@@ -63,12 +63,12 @@
  *   
  *   if (!post) {
  *     return {
- *       title: 'Post Not Found | MayuraSoft',
+ *       title: 'Post Not Found | Mayurasoft',
  *     };
  *   }
  *   
  *   return {
- *     title: `${post.title} | MayuraSoft`,
+ *     title: `${post.title} | Mayurasoft`,
  *     description: post.excerpt,
  *     openGraph: {
  *       title: post.title,
@@ -109,7 +109,7 @@
  *   const project = await getProject(projectId);
  *   
  *   return {
- *     title: `${project.title} | MayuraSoft`,
+ *     title: `${project.title} | Mayurasoft`,
  *     description: project.summary,
  *     openGraph: {
  *       title: project.title,
@@ -133,10 +133,10 @@
  * 
  * 1. Add the route to src/Data/seoMetadata.json:
  *    "/new-page": {
- *      "title": "New Page | MayuraSoft",
+ *      "title": "New Page | Mayurasoft",
  *      "description": "Description of the new page",
  *      "keywords": "keyword1, keyword2, keyword3",
- *      "ogImage": "/openGraphImage.jpg"
+ *      "ogImage": "/openGraphImage.jpg?v=20260623"
  *    }
  * 
  * 2. In your page file:

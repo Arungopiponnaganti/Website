@@ -61,7 +61,7 @@ const models = [
     badge: 'Most popular',
     headline: 'You need ongoing velocity',
     bestFor: 'Product companies, growing engineering teams',
-    desc: 'A dedicated MayuraSoft squad embedded in your product cycle. Fixed monthly retainer, flexible scope, two-week sprints.',
+    desc: 'A dedicated Mayurasoft squad embedded in your product cycle. Fixed monthly retainer, flexible scope, two-week sprints.',
     includes: [
       'Dedicated engineers (1–6 FTE)',
       'Sprint planning & retrospectives',
@@ -79,7 +79,7 @@ const models = [
     badge: null,
     headline: 'You need to fill a skills gap',
     bestFor: 'Teams with capacity constraints',
-    desc: 'Embed senior MayuraSoft engineers directly in your existing team. Your processes, your tools, our talent.',
+    desc: 'Embed senior Mayurasoft engineers directly in your existing team. Your processes, your tools, our talent.',
     includes: [
       'Senior engineers only (5+ years)',
       '2-week trial period',

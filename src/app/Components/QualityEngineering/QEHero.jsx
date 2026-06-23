@@ -330,7 +330,7 @@ export default function QEHero() {
           </h1>
 
           <p className="qe-hero-sub">
-            MayuraSoft builds quality into every sprint — not as a phase at the end, but as an engineering discipline from day one. Automated, comprehensive, and designed to keep shipping velocity high as your product scales.
+            Mayurasoft builds quality into every sprint — not as a phase at the end, but as an engineering discipline from day one. Automated, comprehensive, and designed to keep shipping velocity high as your product scales.
           </p>
 
           <div className="qe-hero-tags">

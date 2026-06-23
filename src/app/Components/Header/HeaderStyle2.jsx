@@ -76,7 +76,7 @@ export default function HeaderStyle2({ variant }) {
             <div className="cs_main_header_in">
               <div className="cs_main_header_left">
                 <Link href="/" className="cs_site_branding">
-                  <Image src={logoSrc} alt="MayuraSoft Logo" width={180} height={50} />
+                  <Image src={logoSrc} alt="Mayurasoft Logo" width={180} height={50} />
                 </Link>
               </div>
               <div className="cs_main_header_center">

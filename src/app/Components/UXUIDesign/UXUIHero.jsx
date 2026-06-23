@@ -111,7 +111,7 @@ export default function UXUIHero() {
               </h1>
 
               <p className="subheadline text-white uxui-hero-desc">
-                MayuraSoft designs interfaces grounded in user research and business data. Every pixel earns its place by serving a measurable outcome — lower bounce rates, higher conversions, faster time-to-value.
+                Mayurasoft designs interfaces grounded in user research and business data. Every pixel earns its place by serving a measurable outcome — lower bounce rates, higher conversions, faster time-to-value.
               </p>
 
               {/* CTAs */}

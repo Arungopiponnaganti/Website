@@ -15,7 +15,7 @@ const METRICS = [
   },
   {
     value: '75+',
-    desc: 'Governance health score across all six dimensions after a MayuraSoft engagement — up from a typical 20',
+    desc: 'Governance health score across all six dimensions after a Mayurasoft engagement — up from a typical 20',
     sub: '↑ From critical to strong in one programme',
     highlight: true,
   },

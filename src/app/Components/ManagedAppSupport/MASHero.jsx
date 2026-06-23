@@ -96,7 +96,7 @@ export default function MASHero() {
               </h1>
 
               <p className="subheadline text-white" style={{ fontSize: '18px', lineHeight: '1.65', maxWidth: '650px', marginBottom: '30px' }}>
-                MayuraSoft provides 24/7 managed support for production applications — monitoring, incident response, patching, and continuous optimisation — so your engineering team can focus on building, not firefighting.
+                Mayurasoft provides 24/7 managed support for production applications — monitoring, incident response, patching, and continuous optimisation — so your engineering team can focus on building, not firefighting.
               </p>
 
               <div className="d-flex flex-wrap align-items-center gap-4">

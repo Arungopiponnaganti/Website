@@ -250,7 +250,7 @@ export default function CAIBotConfigurator() {
                   </div>
 
                   <p className="ai-qr-desc mb-0">
-                    Based on your selections, here&apos;s your bot configuration summary. Review the details below and send this brief directly to MayuraSoft for a detailed scoping questionnaire.
+                    Based on your selections, here&apos;s your bot configuration summary. Review the details below and send this brief directly to Mayurasoft for a detailed scoping questionnaire.
                   </p>
 
                   <div className="ai-qr-priorities-label">Configuration summary</div>
@@ -272,7 +272,7 @@ export default function CAIBotConfigurator() {
                     style={{ fontSize: '14px', padding: '12px 24px', border: 'none', cursor: 'pointer' }}
                     onClick={() => setIsModalOpen(true)}
                   >
-                    Send this brief to MayuraSoft &rarr;
+                    Send this brief to Mayurasoft &rarr;
                   </button>
                   <button
                     className="ai-quiz-retake-btn w-100"

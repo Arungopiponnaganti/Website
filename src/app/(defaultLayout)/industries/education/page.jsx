@@ -16,7 +16,7 @@ const jsonLd = {
   name: 'Education',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com'
   },
   description: 'Modern digital learning systems and education technology solutions that enhance teaching and learning experiences.',

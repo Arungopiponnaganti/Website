@@ -20,7 +20,7 @@ const jsonLd = {
   name: 'Custom Software Development',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com'
   },
   description: 'Bespoke web, mobile, and enterprise software development services delivered in agile sprints.',

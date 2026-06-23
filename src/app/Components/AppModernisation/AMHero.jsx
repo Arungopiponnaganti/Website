@@ -118,7 +118,7 @@ export default function AMHero() {
               </h1>
 
               <p className="subheadline text-white" style={{ fontSize: '18px', lineHeight: '1.65', maxWidth: '640px', marginBottom: '36px' }}>
-                MayuraSoft migrates ageing applications to modern, cloud-native architectures — zero downtime, full IP ownership, and a structured handover your team can own confidently.
+                Mayurasoft migrates ageing applications to modern, cloud-native architectures — zero downtime, full IP ownership, and a structured handover your team can own confidently.
               </p>
 
               {/* CTAs */}

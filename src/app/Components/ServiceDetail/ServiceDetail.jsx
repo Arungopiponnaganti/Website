@@ -48,7 +48,7 @@ const ServiceDetail = () => {
                                     <div className="services-details-content">
                                         <h4 className="services-details-title">Software, AI, And Data Delivery That Starts With Clarity</h4>
 
-                                        <p className="services-details-desc">MayuraSoft reviews your workflow, current systems, data readiness, integrations, and delivery risks before recommending what to build, automate, modernize, or fix first.</p>
+                                        <p className="services-details-desc">Mayurasoft reviews your workflow, current systems, data readiness, integrations, and delivery risks before recommending what to build, automate, modernize, or fix first.</p>
 
                                         <p className="services-details-desc">Our delivery model keeps discovery, planning, implementation, QA, documentation, and handover under one accountable team so buyers avoid fragmented vendors and unclear ownership. 	
                                         </p>
@@ -76,7 +76,7 @@ const ServiceDetail = () => {
                                                 </div>
                                                 <div className="service-det-content">
                                                     <h3>Empowering Your Success</h3>
-                                                    <p>From software modernization to AI integration and data engineering, MayuraSoft gives teams a practical path from audit to shipped work.
+                                                    <p>From software modernization to AI integration and data engineering, Mayurasoft gives teams a practical path from audit to shipped work.
                                                     </p>
                                                 </div>
                                             </div>
@@ -86,7 +86,7 @@ const ServiceDetail = () => {
                                         <div className="tab_container">
                                             <div className="feq-content">
                                                 <h4 className="faq-title">Frequently Asked Questions</h4>
-                                                <p className="faq-description">Common questions about MayuraSoft&apos;s audit-first approach to software, AI, data, and cloud delivery.</p>
+                                                <p className="faq-description">Common questions about Mayurasoft&apos;s audit-first approach to software, AI, data, and cloud delivery.</p>
                                             </div>
                                             <div id="tab" className="tab_content">
                                                 <ul className="accordion">

@@ -23,7 +23,7 @@ const jsonLd = {
   name: 'Conversational AI & Chatbots',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com',
   },
   description:

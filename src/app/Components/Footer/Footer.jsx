@@ -108,7 +108,7 @@ const Footer = () => {
                             <div className="footer-widget">
                                 <div className="footer-logo d-flex justify-content-center pe-md-5 me-md-5">
                                     <Link href="/">
-                                        <Image src={LogoContent.img1} alt="MayuraSoft Footer Logo" width={161} height={42} />
+                                        <Image src={LogoContent.img1} alt="Mayurasoft Footer Logo" width={161} height={42} />
                                     </Link>
                                 </div>
                                 <p className="footer-widget-text">{LogoContent.Content}</p>
@@ -186,7 +186,7 @@ const Footer = () => {
                     <div className="row copyright">
                         <div className="col-lg-6 col-md-6 col-sm-6">
                             <div className="-copyright-text">
-                                <p>© Copyright 2026 By MayuraSoft</p>
+                                <p>© Copyright 2026 By Mayurasoft</p>
                             </div>
                         </div>
                         <div className="col-lg-6 col-md-6 col-sm-6">

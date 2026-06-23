@@ -24,7 +24,7 @@ const jsonLd = {
   name: 'Workflow Automation Services',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com',
   },
   description:

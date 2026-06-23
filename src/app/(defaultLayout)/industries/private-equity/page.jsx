@@ -13,7 +13,7 @@ const jsonLd = {
   name: 'Private Equity',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com',
   },
   description:

@@ -15,7 +15,7 @@ const jsonLd = {
   name: 'Startups',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com'
   },
   description: 'MVP to market-ready software development for startups with agile methodology and rapid time-to-market.',

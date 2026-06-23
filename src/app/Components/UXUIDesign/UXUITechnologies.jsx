@@ -43,7 +43,7 @@ export default function UXUITechnologies() {
             <SectionTitle
               SubTitle="Tools & Platforms"
               Title="Technologies We Work On"
-              Content="MayuraSoft delivers exceptional design experiences through constant innovation by using cutting-edge, industry-standard design tools."
+              Content="Mayurasoft delivers exceptional design experiences through constant innovation by using cutting-edge, industry-standard design tools."
               isDarkMode={false}
             />
           </div>

@@ -70,7 +70,7 @@ const PLANS = [
     badge: 'Advisory',
     badgeStyle: { background: '#d1fae5', color: '#065f46' },
     title: 'Fractional CDO / data advisor',
-    desc: 'A senior MayuraSoft data strategist embedded as your part-time CDO — attending leadership meetings, shaping investment decisions, and mentoring your data team.',
+    desc: 'A senior Mayurasoft data strategist embedded as your part-time CDO — attending leadership meetings, shaping investment decisions, and mentoring your data team.',
     features: [
       '2 days per month on-site or remote',
       'Quarterly strategy review and update',

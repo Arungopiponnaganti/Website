@@ -20,7 +20,7 @@ const jsonLd = {
   name: 'Data Strategy Consulting',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com',
   },
   description: 'Data value mapping, capability gap analysis, and sequenced 12-24 month roadmaps for CDOs and data leaders.',
@@ -46,7 +46,7 @@ export default function DataStrategyConsultingPage() {
         <CtaSplit 
           tag="Free strategy session · 90 minutes"
           title="One conversation to clarify your data priorities for the next 12 months"
-          description="A senior MayuraSoft data strategist will review your current data landscape, your business goals, and return a prioritised view of where data can move the needle most — in writing, within 48 hours."
+          description="A senior Mayurasoft data strategist will review your current data landscape, your business goals, and return a prioritised view of where data can move the needle most — in writing, within 48 hours."
           items={['Written summary delivered within 48 hours', 'Independent view — not a sales pitch for our services', 'No commitment required to attend']}
           primaryBtn={{ text: 'Book free strategy session →', href: '/contact' }}
           secondaryBtn={{ text: 'Download framework', href: '/contact' }}

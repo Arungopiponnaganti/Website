@@ -60,7 +60,7 @@ const Project1 = ({bgImage,ClassAdd}) => {
                     <div className="col-lg-6">
                         <div className="section-title text-left ps-5">
                             <SectionTitle
-                                    SubTitle="MayuraSoft PROJECT"
+                                    SubTitle="Mayurasoft PROJECT"
                                     Title="Explore Our Recent <span>Projects.</span>"
                                     className="ps-5"
                             ></SectionTitle>

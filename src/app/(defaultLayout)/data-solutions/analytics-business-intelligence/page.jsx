@@ -42,7 +42,7 @@ const jsonLd = {
   name: 'Analytics & Business Intelligence',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com',
   },
   description: 'End-to-end analytics platforms with semantic layer, self-serve reporting, and team training.',

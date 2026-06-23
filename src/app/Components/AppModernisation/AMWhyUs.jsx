@@ -41,7 +41,7 @@ const reasons = [
   },
   {
     title: 'Your team owns it when we leave',
-    body: 'Every engagement ends with documentation, runbooks, and training. We\'re not building a dependency on MayuraSoft — we\'re building capability inside your organisation.',
+    body: 'Every engagement ends with documentation, runbooks, and training. We\'re not building a dependency on Mayurasoft — we\'re building capability inside your organisation.',
     gradient: 'linear-gradient(135deg, #4ade80 0%, #22c55e 100%)',
     iconColor: '#ffffff',
     icon: (c) => (
@@ -92,7 +92,7 @@ export default function AMWhyUs() {
         <div className="row mb-2">
           <div className="col-lg-7">
             <SectionTitle
-              SubTitle="Why MayuraSoft"
+              SubTitle="Why Mayurasoft"
               Title="What makes us the right partner for legacy modernisation"
               className="text-left"
               isDarkMode={false}

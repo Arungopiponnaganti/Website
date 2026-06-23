@@ -16,7 +16,7 @@ const jsonLd = {
   name: 'Healthcare & Life Sciences',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com'
   },
   description: 'Patient-centric digital platforms and healthcare technology solutions that improve patient outcomes and operational efficiency.',

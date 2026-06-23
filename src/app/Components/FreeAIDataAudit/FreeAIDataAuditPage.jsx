@@ -121,7 +121,7 @@ export default function FreeAIDataAuditPage() {
                   </h1>
 
                   <p className="subheadline text-white" style={{ fontSize: "18px", lineHeight: 1.65, maxWidth: "610px", marginBottom: "30px", color: "#d8deeb" }}>
-                    MayuraSoft reviews your workflow, software, and data context, then gives you a practical recommendation before you commit budget to AI, dashboards, or a rebuild.
+                    Mayurasoft reviews your workflow, software, and data context, then gives you a practical recommendation before you commit budget to AI, dashboards, or a rebuild.
                   </p>
 
                   <div className="d-flex flex-wrap align-items-center gap-2 mb-4">
@@ -319,7 +319,7 @@ export default function FreeAIDataAuditPage() {
           bgClass="bg-white border-top py-5"
           useModal={true}
           primaryModalTitle="Book a Free AI/Data Audit"
-          primaryModalDescription="Tell us what you are trying to improve. MayuraSoft will review your workflow, software, data readiness, and delivery constraints before recommending the next step."
+          primaryModalDescription="Tell us what you are trying to improve. Mayurasoft will review your workflow, software, data readiness, and delivery constraints before recommending the next step."
           primaryModalFields={auditFormFields}
           secondaryModalTitle="Ask About The Audit"
           secondaryModalDescription="Send us your question about the audit process, fit, or expected output."
@@ -332,7 +332,7 @@ export default function FreeAIDataAuditPage() {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         title="Book a Free AI/Data Audit"
-        description="Tell us what you are trying to improve. MayuraSoft will review your workflow, software, data readiness, and delivery constraints before recommending the next step."
+        description="Tell us what you are trying to improve. Mayurasoft will review your workflow, software, data readiness, and delivery constraints before recommending the next step."
         submitButtonText="Request Audit"
         fields={auditFormFields}
         metadata={{

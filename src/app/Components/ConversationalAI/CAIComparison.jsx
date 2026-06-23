@@ -70,7 +70,7 @@ export default function CAIComparison() {
             <div className="cai-cmp-hc">Capability</div>
             <div className="cai-cmp-hc dim">No bot</div>
             <div className="cai-cmp-hc dim">Off-the-shelf (Intercom, Freshchat)</div>
-            <div className="cai-cmp-hc highlight">MayuraSoft custom LLM bot</div>
+            <div className="cai-cmp-hc highlight">Mayurasoft custom LLM bot</div>
           </div>
 
           {/* Rows */}

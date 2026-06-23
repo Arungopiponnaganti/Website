@@ -91,7 +91,7 @@ export default function DGPillars() {
           className="text-center mb-3"
           SubTitle="Our governance framework"
           Title="Six pillars — every dimension of data governance addressed"
-          Content="Every MayuraSoft data governance engagement covers these six areas — from catalogue to compliance."
+          Content="Every Mayurasoft data governance engagement covers these six areas — from catalogue to compliance."
           isDarkMode={false}
         />
 

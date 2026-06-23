@@ -92,7 +92,7 @@ export default function DGHero() {
               </h1>
 
               <p className="subheadline text-white" style={{ fontSize: '17px', lineHeight: '1.65', maxWidth: '560px', marginBottom: '28px' }}>
-                MayuraSoft builds the data governance frameworks — cataloguing, lineage, quality rules,
+                Mayurasoft builds the data governance frameworks — cataloguing, lineage, quality rules,
                 ownership, and access controls — that turn your data from a liability into a trusted
                 organisational asset.
               </p>
@@ -147,7 +147,7 @@ export default function DGHero() {
           {/* ── Right: governance health dashboard ── */}
           <div className="col-lg-6 col-md-12 mt-4 mt-lg-0 d-flex align-items-center justify-content-center">
             <div className="dg-health-canvas" style={{ width: '100%', maxWidth: '500px' }}>
-              <div className="dg-health-label">Governance health dashboard — before MayuraSoft</div>
+              <div className="dg-health-label">Governance health dashboard — before Mayurasoft</div>
               <div className="dg-health-card">
                 <div className="dg-health-card-title">Typical client state at engagement start</div>
                 {HEALTH_ROWS.map((row, i) => (
@@ -168,7 +168,7 @@ export default function DGHero() {
                 ))}
               </div>
               <div className="dg-health-note">
-                After a 12-week MayuraSoft governance engagement, every metric above typically moves to 75+.
+                After a 12-week Mayurasoft governance engagement, every metric above typically moves to 75+.
                 Take the free scanner below to see where your organisation sits today.
               </div>
             </div>

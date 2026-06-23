@@ -119,7 +119,7 @@ export default function AGEHero() {
               </h1>
 
               <p className="subheadline text-white" style={{ fontSize: '16px', lineHeight: '1.65', maxWidth: '540px', marginBottom: '32px' }}>
-                MayuraSoft builds oversight frameworks that make your AI systems transparent, fair, auditable,
+                Mayurasoft builds oversight frameworks that make your AI systems transparent, fair, auditable,
                 and compliant — before regulators, journalists, or users find the gaps first.
               </p>
 

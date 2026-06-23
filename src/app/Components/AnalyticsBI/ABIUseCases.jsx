@@ -20,7 +20,7 @@ export default function ABIUseCases() {
           className="text-center mb-3"
           SubTitle="Analytics use cases"
           Title="What we build — by business function"
-          Content="Every MayuraSoft analytics engagement covers these core use cases — built on clean data and tuned for your team's decisions."
+          Content="Every Mayurasoft analytics engagement covers these core use cases — built on clean data and tuned for your team's decisions."
           isDarkMode={false}
         />
 

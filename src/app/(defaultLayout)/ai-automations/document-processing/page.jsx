@@ -20,7 +20,7 @@ const jsonLd = {
   name: 'Intelligent Document Processing',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com',
   },
   description:

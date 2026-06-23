@@ -98,7 +98,7 @@ export default function IDPHero() {
               </h1>
 
               <p className="subheadline text-white" style={{ fontSize: '17px', lineHeight: '1.65', maxWidth: '560px', marginBottom: '32px' }}>
-                MayuraSoft builds document processing workflows that extract structured data from invoices, contracts, forms, and reports, then route it to the right system or review queue.
+                Mayurasoft builds document processing workflows that extract structured data from invoices, contracts, forms, and reports, then route it to the right system or review queue.
               </p>
 
               {/* Proof points */}

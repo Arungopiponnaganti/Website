@@ -16,7 +16,7 @@ const jsonLd = {
   name: 'Energy & Utilities',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com'
   },
   description: 'Smart energy and operations technology for modern utilities with sustainability and efficiency focus.',

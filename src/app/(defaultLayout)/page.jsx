@@ -28,7 +28,7 @@ const Home = () => {
                 bgImg="/assets/images/hero-bg.png"
                 SubTitle="Software · AI · Data"
                 Title="Build software. <br/> <span style='color:#ff3b00'> Automate work. </span> <br/> Decide with data."
-                Content="MayuraSoft is an IT services company that helps businesses build reliable software, integrate AI into operations, and turn data into something their teams can trust and act on."
+                Content="Mayurasoft is an IT services company that helps businesses build reliable software, integrate AI into operations, and turn data into something their teams can trust and act on."
                 BtnText="EXPLORE MORE"
                 BtnLink="/about"
                 mainImage="/assets/images/hero-thumb.png"
@@ -42,7 +42,7 @@ const Home = () => {
                 ImgTitle="TRUSTED IT PARTNER"
                 SubTitle="ABOUT US"
                 Title="IT Services Built for How Modern<br> <span>Businesses Work.</span>"
-                Content="MayuraSoft helps businesses build reliable software, integrate AI into day-to-day operations, and establish data infrastructure their teams can act on. We skip the lengthy proposals — every engagement starts with a free audit and ends with a full handover."
+                Content="Mayurasoft helps businesses build reliable software, integrate AI into day-to-day operations, and establish data infrastructure their teams can act on. We skip the lengthy proposals — every engagement starts with a free audit and ends with a full handover."
                 listTitle="Software · AI Integration · Data Engineering"
                 BottomText="Whether you're launching a new product, modernising a legacy system, or building a governed data platform — we cover the full stack under one contract. No fragmented vendors, no handoff gaps."
                 BtnUrl="/about"
@@ -52,7 +52,7 @@ const Home = () => {
                 MainImg="/assets/images/why-choose-us.webp"
                 ImgTitle="BEST IT SOLUTION"
                 SubTitle="WHY CHOOSE US"
-                Title="Why Businesses<br> Choose <span>MayuraSoft.</span>"
+                Title="Why Businesses<br> Choose <span>Mayurasoft.</span>"
                 Content="We deliver software that works, AI that integrates cleanly into your operations, and data pipelines your team can trust. No scope creep. No vendor lock-in. Just reliable outcomes with a free audit and complete handover on every engagement."
                 listTitle1="End-to-End Software Delivery"
                 listTitle2="AI & Data Engineering"
@@ -64,13 +64,13 @@ const Home = () => {
             <ScaleHero
                 tagline="Ship Faster."
                 subtitle="Built for teams that can't afford to slow down."
-                description="From prototype to production, MayuraSoft moves quickly because we've already solved the hard problems. Software that ships on schedule, AI that works in practice, data pipelines that hold under load — one team, one contract."
+                description="From prototype to production, Mayurasoft moves quickly because we've already solved the hard problems. Software that ships on schedule, AI that works in practice, data pipelines that hold under load — one team, one contract."
                 btn1Text="KNOW MORE"
                 btn1Link="/about"
                 btn2Text="HOW WE WORK"
                 btn2Link="/about"
                 heroImage="/assets/images/ship-new.png"
-                imageAlt="MayuraSoft IT Services"
+                imageAlt="Mayurasoft IT Services"
             />
             <ServiceOverview ClassAdd={'sservice-area'} />
             <AIAutomationOverview ClassAdd={'sservice-area bg-white'} />

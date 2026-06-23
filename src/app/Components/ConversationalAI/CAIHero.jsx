@@ -191,7 +191,7 @@ export default function CAIHero() {
                 className="subheadline text-white"
                 style={{ fontSize: '17px', lineHeight: '1.65', maxWidth: '580px', marginBottom: '32px' }}
               >
-                MayuraSoft builds custom LLM-powered chatbots and conversational AI agents for customer
+                Mayurasoft builds custom LLM-powered chatbots and conversational AI agents for customer
                 support, internal operations, sales, and beyond — deployed on your website, WhatsApp,
                 Slack, or any channel your users already use.
               </p>
@@ -289,7 +289,7 @@ export default function CAIHero() {
               <div className="cai-chat-header">
                 <div className="cai-chat-avatar">AI</div>
                 <div>
-                  <div className="cai-chat-name">Aria · MayuraSoft AI assistant</div>
+                  <div className="cai-chat-name">Aria · Mayurasoft AI assistant</div>
                   <div className="cai-chat-status">
                     <span className="cai-status-dot" />
                     Online · typically replies in seconds

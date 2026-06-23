@@ -427,7 +427,7 @@ const CareersPage = ({ className = "" }) => {
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
                     display: 'inline'
-                  }}>MayuraSoft</span>
+                  }}>Mayurasoft</span>
                 </h1>
 
                 <p style={{ fontSize: '17px', lineHeight: '1.7', maxWidth: '550px', marginBottom: '32px', color: 'rgba(255,255,255,0.7)' }}>

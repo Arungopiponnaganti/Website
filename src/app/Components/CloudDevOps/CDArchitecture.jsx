@@ -60,7 +60,7 @@ export default function CDArchitecture() {
           <div className="col-lg-7">
             <SectionTitle
               SubTitle="Infrastructure blueprint"
-              Title="What a MayuraSoft cloud architecture looks like"
+              Title="What a Mayurasoft cloud architecture looks like"
               isDarkMode={false}
             />
           </div>

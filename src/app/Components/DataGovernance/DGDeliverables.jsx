@@ -33,7 +33,7 @@ const DELIVERABLES = [
         week: 'Wk 10–12',
         phase: 'Phase 4',
         title: 'Monitoring, training & handover',
-        body: 'Governance health dashboard live. All data owners and stewards trained on responsibilities. Runbooks for every governance process documented. First governance council meeting facilitated by MayuraSoft.',
+        body: 'Governance health dashboard live. All data owners and stewards trained on responsibilities. Runbooks for every governance process documented. First governance council meeting facilitated by Mayurasoft.',
         output: 'Governance dashboard, Training completion, Process runbooks, First council meeting'
     },
 ];

@@ -39,7 +39,7 @@ const jsonLd = {
   name: 'AI Integration Services',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com',
   },
   description:

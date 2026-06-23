@@ -13,7 +13,7 @@ const jsonLd = {
   name: 'Travel, Transportation, Logistics & Hospitality',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com',
   },
   description:

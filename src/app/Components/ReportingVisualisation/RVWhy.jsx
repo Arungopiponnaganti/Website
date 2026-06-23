@@ -8,7 +8,7 @@ export default function RVWhy() {
         <SectionTitle
           className="text-center"
           SubTitle="Our approach"
-          Title="What separates a MayuraSoft report from a spreadsheet export"
+          Title="What separates a Mayurasoft report from a spreadsheet export"
           Content=""
           isDarkMode={false}
         />

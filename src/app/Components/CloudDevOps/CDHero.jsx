@@ -366,7 +366,7 @@ export default function CDHero() {
           </h1>
 
           <p className="cd-hero-sub">
-            MayuraSoft designs, builds, and manages cloud infrastructure and CI/CD pipelines — so your engineering team deploys with confidence every single day, not once a quarter.
+            Mayurasoft designs, builds, and manages cloud infrastructure and CI/CD pipelines — so your engineering team deploys with confidence every single day, not once a quarter.
           </p>
 
           <div className="cd-hero-tags">

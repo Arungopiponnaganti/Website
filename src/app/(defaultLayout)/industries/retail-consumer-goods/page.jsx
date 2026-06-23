@@ -16,7 +16,7 @@ const jsonLd = {
   name: 'Retail & Consumer Goods',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com'
   },
   description: 'Omnichannel commerce platforms for modern retailers with customer experience and operational efficiency focus.',

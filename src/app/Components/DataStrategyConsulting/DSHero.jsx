@@ -80,7 +80,7 @@ export default function DSHero() {
               </h1>
               
               <p className="subheadline text-white" style={{ fontSize: '18px', lineHeight: '1.65', maxWidth: '650px', marginBottom: '30px' }}>
-                MayuraSoft works directly with CDOs, CTOs, and data leadership teams to define where data can drive the most business value — and build the roadmap that gets there, prioritised by impact and sequenced by feasibility.
+                Mayurasoft works directly with CDOs, CTOs, and data leadership teams to define where data can drive the most business value — and build the roadmap that gets there, prioritised by impact and sequenced by feasibility.
               </p>
               
               <div className="d-flex flex-column gap-2 mb-4" style={{fontSize: '15px', color: '#cbd5e1'}}>
@@ -111,7 +111,7 @@ export default function DSHero() {
           {/* Right Framework Visual */}
           <div className="col-lg-5 col-md-12 mt-5 mt-lg-0 d-flex justify-content-center">
             <div className="ds-fw-visual w-100" style={{maxWidth: '540px', boxShadow: '0 20px 40px rgba(0,0,0,0.2)'}}>
-              <div className="ds-fw-label">MayuraSoft data strategy framework</div>
+              <div className="ds-fw-label">Mayurasoft data strategy framework</div>
               
               <div className="ds-fw-row">
                 <div className="ds-fw-node" style={{background: '#ede9fe', borderColor: '#ddd6fe'}}>

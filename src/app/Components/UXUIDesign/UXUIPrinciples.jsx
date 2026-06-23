@@ -69,7 +69,7 @@ export default function UXUIPrinciples() {
         <div className="row mb-5">
             <SectionTitle
               SubTitle="Our philosophy"
-              Title="Six principles every MayuraSoft design is held against"
+              Title="Six principles every Mayurasoft design is held against"
               className="text-center"
               isDarkMode={false}
               Content={"These aren&apos;t aspirational values — they&apos;re the criteria we use to evaluate every design decision before it leaves our studio."}

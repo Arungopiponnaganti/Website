@@ -129,7 +129,7 @@ export default function AIHero() {
                 className="subheadline text-white"
                 style={{ fontSize: '17px', lineHeight: '1.65', maxWidth: '580px', marginBottom: '32px' }}
               >
-                MayuraSoft integrates GPT-4, Claude, Gemini, and open-source LLMs directly into your
+                Mayurasoft integrates GPT-4, Claude, Gemini, and open-source LLMs directly into your
                 existing systems and workflows. Your stack stays intact. Intelligence gets added on top.
               </p>
 

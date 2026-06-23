@@ -16,7 +16,7 @@ const jsonLd = {
   name: 'Hi Tech',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com'
   },
   description: 'Innovative enterprise technology solutions for the digital age with cloud-native, AI/ML, and microservices architecture.',

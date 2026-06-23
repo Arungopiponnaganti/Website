@@ -86,7 +86,7 @@ export default function ABIHero() {
               </h1>
 
               <p className="subheadline text-white" style={{ fontSize: '18px', lineHeight: '1.65', maxWidth: '650px', marginBottom: '40px' }}>
-                MayuraSoft builds analytics platforms that your business users actually adopt — with consistent metrics, self-serve reporting, and insights that drive real decisions, not vanity charts.
+                Mayurasoft builds analytics platforms that your business users actually adopt — with consistent metrics, self-serve reporting, and insights that drive real decisions, not vanity charts.
               </p>
 
               <div className="d-flex flex-wrap align-items-center gap-4">

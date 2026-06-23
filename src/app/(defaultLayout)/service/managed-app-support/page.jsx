@@ -38,7 +38,7 @@ const jsonLd = {
   name: 'Managed App Support',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com'
   },
   description: '24/7 managed support for production applications including monitoring, incident response, SLA-backed uptime, and continuous optimization.',

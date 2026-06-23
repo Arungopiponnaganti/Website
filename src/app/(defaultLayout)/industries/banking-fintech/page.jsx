@@ -16,7 +16,7 @@ const jsonLd = {
   name: 'Banking & Fintech',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com'
   },
   description: 'Secure, scalable fintech solutions for modern banking and financial institutions with compliance and security.',

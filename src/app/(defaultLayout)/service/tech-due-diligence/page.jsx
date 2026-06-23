@@ -32,7 +32,7 @@ const jsonLd = {
   name: 'Tech Due Diligence',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com'
   },
   description: 'Comprehensive Tech Due Diligence for investors and M&A. Code, architecture, security, and infrastructure assessments.',

@@ -16,7 +16,7 @@ const jsonLd = {
   name: 'Insurance',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com'
   },
   description: 'Digital insurance transformation for modern carriers with compliance and security focus.',

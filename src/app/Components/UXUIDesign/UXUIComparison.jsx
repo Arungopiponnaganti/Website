@@ -69,7 +69,7 @@ export default function UXUIComparison() {
           <div className="uxcmp-label-spacer" />
           <div className="uxcmp-label uxcmp-label-good">
             <i className="bi bi-check-circle-fill" />
-            <span>With MayuraSoft</span>
+            <span>With Mayurasoft</span>
           </div>
         </div>
 

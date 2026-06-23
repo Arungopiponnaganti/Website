@@ -67,7 +67,7 @@ const capabilitiesList = [
 ];
 
 export default function PECapabilities({
-  title = "What you get from a MayuraSoft product engagement",
+  title = "What you get from a Mayurasoft product engagement",
   subTitle = "Capabilities",
   content = "Every engagement is scoped to your stage — whether you're at idea, MVP, or scaling to enterprise.",
   capabilities = capabilitiesList

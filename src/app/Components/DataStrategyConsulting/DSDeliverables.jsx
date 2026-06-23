@@ -8,7 +8,7 @@ export default function DSDeliverables() {
         <SectionTitle
           className="text-center"
           SubTitle="Deliverables"
-          Title="What you receive from a MayuraSoft data strategy engagement"
+          Title="What you receive from a Mayurasoft data strategy engagement"
           Content=""
           isDarkMode={false}
         />

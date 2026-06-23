@@ -18,7 +18,7 @@ const jsonLd = {
   name: 'AI Readiness Assessment',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com',
   },
   description:

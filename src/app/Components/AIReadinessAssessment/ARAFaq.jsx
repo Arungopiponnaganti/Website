@@ -13,7 +13,7 @@ const FAQ_LIST = [
   },
   {
     q: 'What happens after I see my score?',
-    a: 'You can take the score as-is and use it internally, or book a free 45-minute consultation where we walk through your specific dimension scores, explain what each means in practice for your industry, and help you build a 90-day AI adoption plan. The consultation is non-commercial — it\'s designed to give you something useful regardless of whether you engage MayuraSoft for any implementation work.',
+    a: 'You can take the score as-is and use it internally, or book a free 45-minute consultation where we walk through your specific dimension scores, explain what each means in practice for your industry, and help you build a 90-day AI adoption plan. The consultation is non-commercial — it\'s designed to give you something useful regardless of whether you engage Mayurasoft for any implementation work.',
   },
   {
     q: 'Our organisation is large — is this assessment relevant at different levels?',

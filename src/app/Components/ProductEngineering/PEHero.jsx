@@ -50,7 +50,7 @@ const defaultFormFields = [
 export default function PEHero({
   badgeText = "Product Engineering",
   title = "Turn your product idea into a scalable, production-ready platform",
-  subheadline = "From validated MVP to enterprise-grade architecture — MayuraSoft handles the full product lifecycle so your team can focus on what makes your product unique.",
+  subheadline = "From validated MVP to enterprise-grade architecture — Mayurasoft handles the full product lifecycle so your team can focus on what makes your product unique.",
   tags = ['MVP development', 'Scalable architecture', 'Full-stack engineering', 'Agile delivery', 'Post-launch support'],
   primaryCta = { text: "Get a free product audit →" },
   secondaryCta = { text: "See how we work", href: "#process" },

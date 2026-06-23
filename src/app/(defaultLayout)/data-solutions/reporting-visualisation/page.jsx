@@ -18,7 +18,7 @@ const jsonLd = {
   name: 'Reporting & Visualisation',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com',
   },
   description: 'Automated executive and operational reporting systems delivered in Power BI, Tableau, or custom portals.',

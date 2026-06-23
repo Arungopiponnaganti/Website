@@ -5,7 +5,7 @@ import SectionTitle from '../Common/SectionTitle';
 const faqList = [
   {
     q: 'We already have a DevOps engineer — do we still need managed support?',
-    a: 'Managed support and a DevOps engineer serve different functions. Your DevOps engineer builds and improves the infrastructure — they shouldn\'t be on-call at 2am for a production incident on top of their build work. MayuraSoft handles the operational layer — monitoring, incident response, patching — so your DevOps engineer can focus on platform improvement without being the permanent on-call person for every alert.'
+    a: 'Managed support and a DevOps engineer serve different functions. Your DevOps engineer builds and improves the infrastructure — they shouldn\'t be on-call at 2am for a production incident on top of their build work. Mayurasoft handles the operational layer — monitoring, incident response, patching — so your DevOps engineer can focus on platform improvement without being the permanent on-call person for every alert.'
   },
   {
     q: 'How do you handle incidents without knowing our application deeply?',

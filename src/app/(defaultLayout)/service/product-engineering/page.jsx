@@ -19,7 +19,7 @@ const jsonLd = {
   name: 'Product Engineering',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com'
   },
   description: 'Full product lifecycle engineering — from MVP to enterprise-grade platform — delivered in agile sprints with fixed-scope transparent pricing.',

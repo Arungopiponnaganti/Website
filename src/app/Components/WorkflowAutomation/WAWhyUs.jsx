@@ -47,7 +47,7 @@ export default function WAWhyUs() {
       <div className="container py-4">
         <SectionTitle
           className="text-center"
-          SubTitle="Why MayuraSoft"
+          SubTitle="Why Mayurasoft"
           Title="What separates our automation practice"
           Content=""
           isDarkMode={false}

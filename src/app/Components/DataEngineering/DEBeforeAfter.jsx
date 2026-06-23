@@ -188,7 +188,7 @@ export default function DEBeforeAfter() {
               <AfterIconDisplay icon={d.afterIcon} />
               <div className="am-ba-state-label am-ba-state-label--after">
                 <span className="am-ba-state-dot am-ba-state-dot--after" />
-                With MayuraSoft platform
+                With Mayurasoft platform
               </div>
               <h3 className="am-ba-headline am-ba-headline--after">{d.afterHeadline}</h3>
               <ul className="am-ba-points">

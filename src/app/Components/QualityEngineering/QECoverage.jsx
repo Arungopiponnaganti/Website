@@ -38,7 +38,7 @@ export default function QECoverage() {
             <SectionTitle
               className="text-center"
               SubTitle="Test coverage standards"
-              Title='What <span>"fully covered"</span> means at MayuraSoft'
+              Title='What <span>"fully covered"</span> means at Mayurasoft'
               Content="We don't stop at unit tests. Every engagement includes coverage across four testing layers — each with a defined minimum threshold."
             />
           </div>

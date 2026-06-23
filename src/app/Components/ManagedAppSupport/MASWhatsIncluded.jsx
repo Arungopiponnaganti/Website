@@ -43,7 +43,7 @@ export default function MASWhatsIncluded() {
           className="text-center mb-5"
           SubTitle="What's included"
           Title="Everything in a managed support engagement"
-          Content="Every MayuraSoft support plan includes these six pillars — not as add-ons, but as the baseline."
+          Content="Every Mayurasoft support plan includes these six pillars — not as add-ons, but as the baseline."
           isDarkMode={false}
         />
 

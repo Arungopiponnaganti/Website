@@ -17,7 +17,7 @@ const page = () => {
                 MainImg="/assets/images/aboutnew.png"
                 SubTitle="MAYURASOFT COMPANY"
                 Title="We Help Clients With<br> Technology <span>Solutions.</span>"
-                Content="MayuraSoft delivers enterprise-grade software solutions. We specialize in custom development, cloud infrastructure, and data engineering for businesses worldwide."
+                Content="Mayurasoft delivers enterprise-grade software solutions. We specialize in custom development, cloud infrastructure, and data engineering for businesses worldwide."
                 listTitle1="Practical IT Solutions & Services"
                 listTitle2="24/7 Customer Support"  
                 BoxTitle1="100%"

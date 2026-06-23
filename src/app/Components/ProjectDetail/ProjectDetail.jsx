@@ -46,7 +46,7 @@ const ProjectDetail = () => {
                                     <div className="project-details-content">
                                         <h4 className="project-details-title">Audit-Led Technology Roadmap</h4>
 
-                                        <p className="project-details-desc">This example reflects MayuraSoft&apos;s typical delivery pattern: map the workflow, review the current software, inspect data readiness, and identify the safest first implementation step.</p>
+                                        <p className="project-details-desc">This example reflects Mayurasoft&apos;s typical delivery pattern: map the workflow, review the current software, inspect data readiness, and identify the safest first implementation step.</p>
 
                                         <p className="project-details-desc">The output is a practical recommendation that can become a scoped AI automation, software modernization, product engineering, data engineering, or cloud implementation plan. 	
                                         </p>
@@ -76,7 +76,7 @@ const ProjectDetail = () => {
                                         <a className="project-details-text" href="project-details.html">Competently architect intermandated deliverables client
                                             niches continually underwhelm
                                         </a>
-                                        <p className="project-details-desc">MayuraSoft turns the audit findings into a phased plan with clear responsibilities, delivery risks, documentation needs, and next steps for implementation.	
+                                        <p className="project-details-desc">Mayurasoft turns the audit findings into a phased plan with clear responsibilities, delivery risks, documentation needs, and next steps for implementation.	
                                         </p>
                                     </div>
                                 </div>

@@ -129,7 +129,7 @@ export default function DEHero() {
               </h1>
 
               <p className="subheadline text-white" style={{ fontSize: '17px', lineHeight: '1.65', maxWidth: '560px', marginBottom: '28px' }}>
-                MayuraSoft builds and delivers data infrastructure that turns raw, scattered, unreliable information into a clean, governed,
+                Mayurasoft builds and delivers data infrastructure that turns raw, scattered, unreliable information into a clean, governed,
                 always-available foundation — so your analytics, AI, and reporting always work from the truth.
               </p>
 

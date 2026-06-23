@@ -33,7 +33,7 @@ export async function generateMetadata(props) {
   // Example: Override metadata based on query parameters
   // In a real app, you might fetch from a database
   if (searchParams?.title) {
-    dynamicTitle = `${searchParams.title} | MayuraSoft`;
+    dynamicTitle = `${searchParams.title} | Mayurasoft`;
   }
   
   if (searchParams?.description) {
@@ -48,7 +48,7 @@ export async function generateMetadata(props) {
   // const slug = params?.slug;
   // if (slug) {
   //   const post = await getBlogPost(slug);
-  //   dynamicTitle = `${post.title} | MayuraSoft`;
+  //   dynamicTitle = `${post.title} | Mayurasoft`;
   //   dynamicDescription = post.excerpt;
   //   ogImage = post.coverImage;
   // }

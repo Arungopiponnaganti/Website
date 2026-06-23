@@ -16,7 +16,7 @@ const jsonLd = {
   name: 'Professional Services',
   provider: {
     '@type': 'Organization',
-    name: 'MayuraSoft',
+    name: 'Mayurasoft',
     url: 'https://mayurasoft.com'
   },
   description: 'Digital-first service operations for modern professional firms with compliance and security focus.',
